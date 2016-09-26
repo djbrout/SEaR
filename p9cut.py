@@ -2,10 +2,10 @@
 
 '''
 
-Scene Modeling Photometric Pipeline
+Scene Modeling
 
 Dillon Brout
-6/16/2016
+9/26/2016
 dbrout@physics.upenn.edu
 
 '''
@@ -172,6 +172,15 @@ if __name__ == "__main__":
     if masklist is None:
         print('--masklist= should not be null.')
         raise
-    if weights is None:
+    if weightslist is None:
         print ('--weightslist= should not be null.')
         raise
+
+
+    imagelist = ['','','']
+    psflist = ['','','']
+    masklist = ['','','']
+    weightslist = ['','','']
+    zptlist = [31,31,31]
+    ras = []
+    decs = []
