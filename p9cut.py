@@ -184,3 +184,8 @@ if __name__ == "__main__":
     zptlist = [31,31,31]
     ras = []
     decs = []
+    outdir = './results'
+    rootdir = './ex_images'
+
+    obj = smp(imagelist=imagelist,psflist=psflist,weightslist=weightslist,masklist=masklist,
+              ras=ras,decs=decs,zptlist=zptlist,outdir=outdir,rootdir=rootdir)
