@@ -38,14 +38,15 @@ import chkpsf
 
 class smp:
     def __init__(self, imagelist=None, psflist=None, weightslist=None, masklist=None,
-                 ras=None, decs=None, zptlist=None,
+                 ras=None, decs=None, zptlist=None, skylist=None,
                  outdir=None, rootdir=None):
+
         #these should all be of the same size
-        self.imagelist = imagelist
-        self.psflist = psflist
-        self.weightslist = weightslist
-        self.masklist = masklist
-        self.zptlist = zptlist
+        self.imagelist = imagelist # list of filenames
+        self.psflist = psflist # list of filenames
+        self.weightslist = weightslist # list of filenames
+        self.masklist = masklist # list of filenames
+        self.zptlist = np.array(zptlist) #list/array of floats
 
         if len(self.imagelist) != len(self.psflist):
             print 'all input image related lists must be the same size'
@@ -67,10 +68,18 @@ class smp:
             print 'ras and decs must be the same size'
             raise
 
+        if not skylist is None:
+            print 'Sky values for each candidate not provided, calculating...'
+            self.skylist = self.calcsky()
+        else:
+            self.skylist = np.array(skylist) # list/array of floats
+
     def rundmc(self, numsteps=5000):
         self.numsteps = numsteps
         pass
 
+    def calcsky(self):
+        pass
 
 
 
