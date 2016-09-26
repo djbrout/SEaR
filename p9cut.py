@@ -182,10 +182,10 @@ if __name__ == "__main__":
     masklist = ['','','']
     weightslist = ['','','']
     zptlist = [31,31,31]
-    ras = []
-    decs = []
+    ras = [41.0]
+    decs = [0.7]
     outdir = './results'
     rootdir = './ex_images'
 
     obj = smp(imagelist=imagelist,psflist=psflist,weightslist=weightslist,masklist=masklist,
-              ras=ras,decs=decs,zptlist=zptlist,outdir=outdir,rootdir=rootdir)
+              ra=ras,dec=decs,zptlist=zptlist,outdir=outdir,rootdir=rootdir)
