@@ -36,12 +36,40 @@ import dilltools as dt
 import chkpsf
 
 
+class smp:
+    def __init__(self, imagelist=None, psflist=None, weightslist=None, masklist=None,
+                 ras=None, decs=None, zptlist=None,
+                 outdir=None, rootdir=None):
+        #these should all be of the same size
+        self.imagelist = imagelist
+        self.psflist = psflist
+        self.weightslist = weightslist
+        self.masklist = masklist
+        self.zptlist = zptlist
 
+        if len(self.imagelist) != len(self.psflist):
+            print 'all input image related lists must be the same size'
+            raise
+        if len(self.psflist) != len(self.weightslist):
+            print 'all input image related lists must be the same size'
+            raise
+        if len(self.weightslist) != len(self.masklist):
+            print 'all input image related lists must be the same size'
+            raise
+        if len(self.zptlist) != len(self.masklist):
+            print 'all input image related lists must be the same size'
+            raise
 
+        self.ras =ras
+        self.decs = decs
 
+        if len(self.ras) != len(self.decs):
+            print 'ras and decs must be the same size'
+            raise
 
-
-
+    def rundmc(self, numsteps=5000):
+        self.numsteps = numsteps
+        pass
 
 
 
