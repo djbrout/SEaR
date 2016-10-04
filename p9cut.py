@@ -20,7 +20,6 @@ and you can place outdir and rootdir inside a default.config in your p9cut.py di
 
 
 import numpy as np
-import exceptions
 import os
 import sys
 import matplotlib as m
@@ -37,21 +36,31 @@ import dilltools as dt
 class model:
     def __init__(self,
                  image=None, template=None,
-                 impsf=None, templatepsf=None,
-                 imweight=None, templateweight=None,
-                 imzpt=None, templatezpt=None,
+                 imagepsf=None, templatepsf=None,
+                 imageweight=None, templateweight=None,
+                 imagezpt=None, templatezpt=None,
+                 imagesky=None,templatesky=None,
+                 imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
-                 outdir=None, rootdir=None,
+                 outdir=None, rootdir=None, fermigrid=None,
                  numiter=5000, floatpos=False, stampsize=11):
+
+        self.tstart = time.time()
 
         self.image = image
         self.template = template
-        self.impsf = impsf
+        self.impsf = imagepsf
         self.templatepsf = templatepsf
-        self.imweight = imweight
+        self.imweight = imageweight
         self.templateweight = templateweight
-        self.imzpt = imzpt
+        self.imzpt = imagezpt
         self.templatezpt = templatezpt
+        self.imagesky=imagesky
+        self.templatesky = templatesky
+        self.imageskyerr = imageskyerr
+        self.templateskyerr = templateskyerr
+        self.outdir = outdir
+        self.rootdir = rootdir
 
         self.ix = ix
         self.iy = iy
@@ -64,10 +73,18 @@ class model:
 
         self.Nimage = 2 #This is hardcoded for one image and one template
 
-        self.setupmcmc()
-        self.rundmc()
+        self.fermigrid = fermigrid
 
-    def setupmcmc(self):
+        if self.fermigrid:
+            self.setupFermi()
+        else:
+            if not os.path.exists(self.outdir):
+                os.makedirs(self.outdir)
+
+        self.setupMCMC()
+        self.runDMC()
+
+    def setupMCMC(self):
 
         #GRABBING IMAGE STAMPS
         self.data = np.zeros((2, self.stampsize, self.stampsize))
@@ -82,7 +99,7 @@ class model:
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
             raise('candidate is too close to edge of ccd')
         else:
-            yhi = np.ceil(self.iy) + (self.stampsize-1)/2
+            yhi = np.ceil(self.iy) + (self.stampsize-1)/2 + 1
         if self.ix - (self.stampsize-1)/2 < 0:
             raise ('candidate is too close to edge of ccd')
         else:
@@ -90,10 +107,18 @@ class model:
         if self.ix + (self.stampsize-1)/2 > imagedata.shape[1]:
             raise ('candidate is too close to edge of ccd')
         else:
-            xhi = np.ceil(self.ix) + (self.stampsize-1)/2
+            xhi = np.ceil(self.ix) + (self.stampsize-1)/2 + 1
 
         self.data[0,:,:] = imagedata[ylow:yhi,xlow:xhi]
         self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
+
+        if not self.imagesky is None:
+            self.data[0,:,:] -= self.imagesky
+        if not self.imageskyerr is None:
+            self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
+        if not self.imzpt is None:
+            self.data[0, :, :] *= 10 ** (.4(31.-self.imzpt))
+            self.weights[0, :, :] *= 10 ** (.4(31. - self.imzpt))
 
         #GRABBING TEMPLATE STAMPS
         templatedata = pf.getdata(os.path.join(self.rootdir,self.template))
@@ -105,7 +130,7 @@ class model:
         if self.ty + (self.stampsize - 1) / 2 > imagedata.shape[0]:
             raise ('candidate is too close to edge of ccd')
         else:
-            yhi = np.ceil(self.ty) + (self.stampsize - 1) / 2
+            yhi = np.ceil(self.ty) + (self.stampsize - 1) / 2 + 1
         if self.tx - (self.stampsize - 1) / 2 < 0:
             raise ('candidate is too close to edge of ccd')
         else:
@@ -113,11 +138,18 @@ class model:
         if self.tx + (self.stampsize - 1) / 2 > imagedata.shape[1]:
             raise ('candidate is too close to edge of ccd')
         else:
-            xhi = np.ceil(self.tx) + (self.stampsize - 1) / 2
+            xhi = np.ceil(self.tx) + (self.stampsize - 1) / 2 + 1
 
         self.data[1,:,:] = templatedata[ylow:yhi,xlow:xhi]
         self.weights[1,:,:] = templateweightdata[ylow:yhi,xlow:xhi]
 
+        if not self.templatesky is None:
+            self.data[1, :, :] -= self.templatesky
+        if not self.templateskyerr is None:
+            self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
+        if not self.imzpt is None:
+            self.data[1, :, :] *= 10 ** (.4(31. - self.templatezpt))
+            self.weights[1, :, :] *= 10 ** (.4(31. - self.templatezpt))
 
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
@@ -130,7 +162,7 @@ class model:
 
 
 
-    def rundmc(self):
+    def runDMC(self):
         aaa = mcmc.metropolis_hastings(
             galmodel=galmodel
             , modelvec=modelvec
@@ -172,12 +204,9 @@ class model:
             , isworker=self.worker
         )
 
-    modelveco = copy(modelvec)
-    if self.fermilog:
-        self.tmpwriter.appendfile('DONE... saving snfit\n', self.fermilogfile)
-    # sys.exit()
-    modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
-    print 'TOTAL SMP SN TIME ', time.time() - tstart
+
+        modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
+        print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
 
     def build_psfex(self, psffile, x, y, stampsize):
@@ -201,11 +230,22 @@ class model:
         return psfout
 
 
+    def setupFermi(self):
+        self.tmpwriter = dt.tmpwriter(useifdh=True)
+        if not os.path.exists('./working/'):
+            os.makedirs('./working/')
+        print os.popen('ifdh cp -D '+self.image+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.template+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.impsf+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.templatepsf+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.imweight+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.templateweight+' ./working/').read()
 
+        self.rootdir = './working'
 
 def readCandFile(file):
-
-    return ra, dec, images, templates, psfs, weights, zpts
+    #read in the file and grab the following data
+    return xpixfloat, ypixfloat, imagepath, templatepath, imagepsfpath, templatepsfpath, imageweightpath, templateweightpath, imagezptfloat, templatezptfloat
 
 
 if __name__ == "__main__":
@@ -219,9 +259,13 @@ if __name__ == "__main__":
             args = sys.argv[1:]
 
         opt, arg = getopt.getopt(
-            args, "hs:o:r:n:i:cl:s",
+            args, "hs:o:r:n:i:cl:s:fg",
             longopts=["outdir=", "rootdir=", "floatpos","numiter=","index=","candlist=",
-                      "stampsize="])
+                      "stampsize=","fermigrid","imagexpix=","imageypix=",
+                      "templatexpix=","templateypix=",
+                      "image=","template=",
+                      "imagepsf=","templatepsf=","imageweight=","templateweight=",
+                      "imagezpt=","templatezpt="])
 
 
         # print opt
@@ -239,9 +283,9 @@ if __name__ == "__main__":
         args = sys.argv[1:]
 
         opt_command, arg = getopt.getopt(
-            args, "hs:cf:cl:o:r:n:i:s",
+            args, "hs:cf:cl:o:r:n:i:s:fg",
             longopts=["help", "candfile=","candlist=", "outdir=", "rootdir=",
-                      "floatpos","numiter=","index=","stampsize="])
+                      "floatpos","numiter=","index=","stampsize=","fermigrid"])
 
     except getopt.GetoptError as err:
         print
@@ -253,8 +297,13 @@ if __name__ == "__main__":
     index = None
     candlist = None
     floatpos = False
+    fermigrid = False
     numiter = 5000
     stampsize=11
+
+    numdefaults = 0
+
+    ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt, imagesky, templatesky, imageskyerr, templateskyerr = None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None
 
     print 'Default arguments from default.config', opt
 
@@ -275,6 +324,56 @@ if __name__ == "__main__":
             candlist = a
         elif o in ["-s", "--stampsize"]:
             stampsize = int(a)
+        elif o in ["-fg","--fermigrid"]:
+            fermigrid = True
+        elif o in ["--imagexpix"]:
+            ix = float(a)
+            numdefaults += 1
+        elif o in ["--imageypix"]:
+            iy = float(a)
+            numdefaults += 1
+        elif o in ["--templatexpix"]:
+            tx = float(a)
+            numdefaults += 1
+        elif o in ["--templateypix"]:
+            ty = float(a)
+            numdefaults += 1
+        elif o in ["--image"]:
+            imagepath = a
+            numdefaults += 1
+        elif o in ["--template"]:
+            templatepath = a
+            numdefaults += 1
+        elif o in ["--imagepsf"]:
+            imagepsf = a
+            numdefaults += 1
+        elif o in ["--templatepsf"]:
+            templatepsf = a
+            numdefaults += 1
+        elif o in ["--imageweight"]:
+            imageweight = a
+            numdefaults += 1
+        elif o in ["--templateweight"]:
+            templateweight = a
+            numdefaults += 1
+        elif o in ["--imagezpt"]:
+            imagezpt = float(a)
+            numdefaults += 1
+        elif o in ["--templatezpt"]:
+            templatezpt = float(a)
+            numdefaults += 1
+        elif o in ["--imagesky"]:
+            imagepsky = a
+            numdefaults += 1
+        elif o in ["--templatesky"]:
+            templatesky = a
+            numdefaults += 1
+        elif o in ["--imageskyerr"]:
+            imagepskyerr = a
+            numdefaults += 1
+        elif o in ["--templateskyerr"]:
+            templateskyerr = a
+            numdefaults += 1
         else:
             print
             "Warning: option", o, "with argument", a, "is not recognized"
@@ -299,6 +398,8 @@ if __name__ == "__main__":
             numiter = a
         elif o in ["-s", "--stampsize"]:
             stampsize = int(a)
+        elif o in ["-fg","--fermigrid"]:
+            fermigrid = True
         else:
             print
             "Warning: option", o, "with argument", a, "is not recognized"
@@ -308,21 +409,28 @@ if __name__ == "__main__":
         print '--stampsize must be an odd number!'
         raise
 
+
     if not index is None:
         if candlist is None:
-            print ('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
-            raise
-        candfile = open(candlist,'r').read().split()[index]
+            if numdefaults != 14:
+                print ('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
+                raise
+        else:
+            candfile = open(candlist,'r').read().split()[index]
 
     if candfile is None:
-        print ('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
-        raise
+        if numdefaults != 14:
+            print ('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
+            raise
+    else:
+        ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
 
 
-
-    ra, dec, images, templates, psfs, weights, zpts = readCandFile(candfile)
-
-
-    obj = model(images=images,templates=templates,psfs=psfs,weights=weights,
-                ra=ra,dec=dec,zpts=zpts,stampsize=stampsize,
-                outdir=outdir,rootdir=rootdir,floatpos=floatpos,numiter=numiter)
+    obj = model(image=imagepath, template=templatepath,
+                imagepsf=imagepsf, templatepsf=templatepsf,
+                imageweight=imageweight, templateweight=templateweight,
+                imagezpt=imagezpt, templatezpt=templatezpt,
+                imagesky=imagesky, templatesky=templatesky,
+                imageskyerr=imageskyerr, templateskyerr=templateskyerr,
+                ix=ix, iy=iy, tx=tx, ty=ty, stampsize=stampsize, fermigrid=fermigrid,
+                outdir=outdir, rootdir=rootdir, floatpos=floatpos, numiter=numiter)
