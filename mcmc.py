@@ -807,7 +807,7 @@ class metropolis_hastings():
         pdf_pages = PdfPages('stamps.pdf')
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
-            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 * self.weights * self.mask) / len(
+            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i,:,:] * self.mask) / len(
                 self.mask[self.mask > 0.].ravel())
             if not tchi > -1.:
                 continue
