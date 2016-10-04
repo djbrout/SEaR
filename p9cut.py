@@ -414,14 +414,14 @@ if __name__ == "__main__":
 
     if not index is None:
         if candlist is None:
-            if numdefaults != 14:
-                print ('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
-                raise
+            if numdefaults != 16:
+                raise('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
+
         else:
             candfile = open(candlist,'r').read().split()[index]
 
     if candfile is None:
-        if numdefaults != 14:
+        if numdefaults != 16:
             print ('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
             raise
     else:
