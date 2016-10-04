@@ -313,8 +313,8 @@ if __name__ == "__main__":
     numiter = 5000
     stampsize=11
     fitrad=4
-    initialguess = 1000.
-    stepstd = 20.
+    initialguess = 10000.
+    stepstd = 100.
 
     numdefaults = 0
 
