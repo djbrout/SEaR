@@ -138,6 +138,7 @@ class metropolis_hastings():
                 else:
                     raise AttributeError('Model length is zero')
         '''
+        print 'inside mcmc'
         #useskyerr = True
         self.galmodel = galmodel
         self.modelvec = modelvec
