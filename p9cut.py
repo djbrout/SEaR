@@ -252,7 +252,6 @@ class model:
 
 
 if __name__ == "__main__":
-    print 'inside main'
     import sys, getopt
 
     # read in arguments and options
@@ -272,8 +271,8 @@ if __name__ == "__main__":
                       "imagezpt=","templatezpt="])
 
 
-        # print opt
-        # print arg
+        print opt
+        print arg
     except getopt.GetoptError as err:
         print
         str(err)
