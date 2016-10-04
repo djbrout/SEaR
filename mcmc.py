@@ -846,7 +846,7 @@ class metropolis_hastings():
             axdiff.xaxis.set_major_formatter(plt.NullFormatter())
             axdiff.yaxis.set_major_formatter(plt.NullFormatter())
             axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 *  self.weights[i,:,:] * self.mask, cmap='gray',
-                               interpolation='nearest', vmin=0, vmax=3.)
+                               interpolation='nearest', vmin=0, vmax=6.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')
             # plt.colorbar()
