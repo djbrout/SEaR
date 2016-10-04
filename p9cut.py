@@ -280,7 +280,7 @@ if __name__ == "__main__":
                       "templatexpix=","templateypix=",
                       "imagesky=","templatesky=",
                       "imageskyerr=","templateskyerr=",
-                      "image=","template=","initialguess=","stepstd="
+                      "image=","template=","initialguess=","stepstd=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
                       "imagezpt=","templatezpt=","fitrad="])
 

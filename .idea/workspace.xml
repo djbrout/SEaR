@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/p9cut.py" afterPath="$PROJECT_DIR$/p9cut.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -23,14 +22,14 @@
     <favorites_list name="p9cut" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38689548">
+    <splitter split-orientation="horizontal" split-proportion="0.7784711">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/p9cut.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="188" column="36" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
+                <state relative-caret-position="348">
+                  <caret line="282" column="70" selection-start-line="282" selection-start-column="70" selection-end-line="282" selection-end-column="70" />
                   <folding>
                     <element signature="e#550#568#0" expanded="true" />
                   </folding>
@@ -127,8 +126,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/example_defaults/default.config" />
         <option value="$PROJECT_DIR$/default.config" />
-        <option value="$PROJECT_DIR$/p9cut.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
+        <option value="$PROJECT_DIR$/p9cut.py" />
       </list>
     </option>
   </component>
@@ -518,8 +517,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p9cut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="188" column="36" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
+        <state relative-caret-position="348">
+          <caret line="282" column="70" selection-start-line="282" selection-start-column="70" selection-end-line="282" selection-end-column="70" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
           </folding>
