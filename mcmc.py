@@ -829,12 +829,12 @@ class metropolis_hastings():
             axgm.xaxis.set_major_formatter(plt.NullFormatter())
             axgm.yaxis.set_major_formatter(plt.NullFormatter())
             axs = axim.imshow(self.data[i, :, :] * self.mask, cmap='gray', interpolation='nearest',
-                              vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
+                              vmin=np.min(self.data[i, :, :]), vmax=np.max(self.data[i, :, :]))
             axim.xaxis.set_major_formatter(plt.NullFormatter())
             axim.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axim)
             axs = axpsf.imshow(self.sims[i] * self.mask, cmap='gray', interpolation='nearest',
-                               vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
+                               vmin=np.min(self.data[i, :, :]), vmax=np.max(self.data[i, :, :]))
             axpsf.xaxis.set_major_formatter(plt.NullFormatter())
             axpsf.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axpsf)
@@ -845,8 +845,8 @@ class metropolis_hastings():
             cbar = fig.colorbar(axs, ax=axdiff)
             axdiff.xaxis.set_major_formatter(plt.NullFormatter())
             axdiff.yaxis.set_major_formatter(plt.NullFormatter())
-            axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 / self.skyerr[i] ** 2 * self.mask, cmap='gray',
-                               interpolation='nearest', vmin=0, vmax=6.)
+            axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 *  self.weights[i,:,:] * self.mask, cmap='gray',
+                               interpolation='nearest', vmin=0, vmax=3.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')
             # plt.colorbar()
