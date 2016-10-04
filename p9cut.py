@@ -90,6 +90,8 @@ class model:
         self.data = np.zeros((2, self.stampsize, self.stampsize))
         self.weights = np.zeros((2, self.stampsize, self.stampsize))
 
+        print os.path.join(self.rootdir,self.imweight)
+
         imagedata = pf.getdata(os.path.join(self.rootdir,self.image))
         imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
@@ -236,12 +238,12 @@ class model:
         self.tmpwriter = dt.tmpwriter(useifdh=True)
         if not os.path.exists('./working/'):
             os.makedirs('./working/')
-        print os.popen('ifdh cp -D '+self.image+' working/').read()
-        print os.popen('ifdh cp -D '+self.template+' working/').read()
-        print os.popen('ifdh cp -D '+self.impsf+' working/').read()
-        print os.popen('ifdh cp -D '+self.templatepsf+' working/').read()
-        print os.popen('ifdh cp -D '+self.imweight+' working/').read()
-        print os.popen('ifdh cp -D '+self.templateweight+' working/').read()
+        os.popen('ifdh cp -D '+self.image+' working/').read()
+        os.popen('ifdh cp -D '+self.template+' working/').read()
+        os.popen('ifdh cp -D '+self.impsf+' working/').read()
+        os.popen('ifdh cp -D '+self.templatepsf+' working/').read()
+        os.popen('ifdh cp -D '+self.imweight+' working/').read()
+        os.popen('ifdh cp -D '+self.templateweight+' working/').read()
 
         self.rootdir = './working'
 
