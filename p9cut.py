@@ -266,7 +266,7 @@ if __name__ == "__main__":
             longopts=["outdir=", "rootdir=", "floatpos","numiter=","index=","candlist=",
                       "stampsize=","fermigrid","imagexpix=","imageypix=",
                       "templatexpix=","templateypix=",
-                      "imagesky=","templatesky",
+                      "imagesky=","templatesky=",
                       "imageskyerr=","templateskyerr=",
                       "image=","template=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
