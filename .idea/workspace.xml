@@ -55,16 +55,16 @@
                 <state relative-caret-position="3135">
                   <caret line="216" column="43" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="43" />
                   <folding>
-                    <marker date="1475602989000" expanded="true" signature="1425:52988" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="9400:9664" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="25633:27428" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="25817:27428" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="25857:26970" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="26118:26970" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="26149:26714" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="27013:27194" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="27237:27428" placeholder="..." />
-                    <marker date="1475602989000" expanded="true" signature="39117:39347" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="1425:53018" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="9400:9664" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="25685:27480" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="25869:27480" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="25909:27022" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="26170:27022" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="26201:26766" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="27065:27246" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="27289:27480" placeholder="..." />
+                    <marker date="1475603160000" expanded="true" signature="39147:39377" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -107,8 +107,8 @@
           <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="279" column="78" selection-start-line="279" selection-start-column="78" selection-end-line="279" selection-end-column="78" />
+                <state relative-caret-position="171">
+                  <caret line="803" column="79" selection-start-line="803" selection-start-column="79" selection-end-line="803" selection-end-column="79" />
                   <folding />
                 </state>
               </provider>
@@ -136,8 +136,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="width" value="1882" />
+    <option name="height" value="1157" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -398,10 +398,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="0" y="22" width="1882" height="1157" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10972222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08395324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,8 +504,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="279" column="78" selection-start-line="279" selection-start-column="78" selection-end-line="279" selection-end-column="78" />
+        <state relative-caret-position="171">
+          <caret line="803" column="79" selection-start-line="803" selection-start-column="79" selection-end-line="803" selection-end-column="79" />
           <folding />
         </state>
       </provider>

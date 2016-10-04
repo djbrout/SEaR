@@ -382,6 +382,7 @@ class metropolis_hastings():
                 print 'Reduced Chisq: ', np.nanmean(chsqs[chsqs != 0.])
                 print 'redchi',self.redchisq[-1]
                 print 'Chisq For Each Epoch: ',chsqs
+                print 'Total Chi Sq:',np.sum(chsqs)
                 print 'Time per step:',(time.time()-self.t1)/self.counter
                 #print 'mjdoff: ',self.mjdoff
                 self.plotchains()
@@ -800,7 +801,7 @@ class metropolis_hastings():
         pdf_pages = PdfPages('stamps.pdf')
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
-            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 / self.skyerr[i] ** 2 * self.mask) / len(
+            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 self.weights * self.mask) / len(
                 self.mask[self.mask > 0.].ravel())
             if not tchi > -1.:
                 continue
@@ -834,7 +835,7 @@ class metropolis_hastings():
             md = np.median((self.data[i, :, :] - self.sims[i]).ravel())
             std = np.std(((self.data[i, :, :] - self.sims[i]) * self.mask).ravel())
             axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest',
-                                vmin=md - 3 * std, vmax=md + 3 * std)
+                                vmin=-3*std, vmax=3*std)
             cbar = fig.colorbar(axs, ax=axdiff)
             axdiff.xaxis.set_major_formatter(plt.NullFormatter())
             axdiff.yaxis.set_major_formatter(plt.NullFormatter())
