@@ -819,6 +819,8 @@ class metropolis_hastings():
                 ax.set_title(title)
             axs = axgm.imshow(self.galaxy_model * self.mask, cmap='gray', interpolation='nearest')
             cbar = fig.colorbar(axs, ax=axgm)
+            axs.get_yaxis().set_visible(False)
+            axs.get_xaxis().set_visible(False)
             axs = axim.imshow(self.data[i, :, :] * self.mask, cmap='gray', interpolation='nearest',
                               vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
             cbar = fig.colorbar(axs, ax=axim)
