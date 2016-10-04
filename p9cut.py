@@ -331,7 +331,7 @@ if __name__ == "__main__":
         elif o in ["--floatpos"]:
             floatpos = True
         elif o in ["-n", "--numiter"]:
-            numiter = a
+            numiter = float(a)
         elif o in ["-cl", "--candlist"]:
             candlist = a
         elif o in ["-s", "--stampsize"]:
