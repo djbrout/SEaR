@@ -119,8 +119,8 @@ class model:
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
         if not self.imzpt is None:
-            self.data[0, :, :] *= 10 ** (.4(31.-self.imzpt))
-            self.weights[0, :, :] *= 10 ** (.4(31. - self.imzpt))
+            self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
+            self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
 
         #GRABBING TEMPLATE STAMPS
         templatedata = pf.getdata(os.path.join(self.rootdir,self.template))
