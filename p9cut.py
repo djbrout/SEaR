@@ -192,7 +192,7 @@ class model:
             , shft_std=     self.floatposstd
             , shftpsf=      self.floatpos
             , fitrad=       self.fitrad
-            , outpath=      os.path.join(self.outdir,self.candid+'_')
+            , outpath=      os.path.join(self.outdir,self.candid)
             , compress=     100
             , burnin=       .3
             , isfermigrid=  self.fermigrid
@@ -317,8 +317,8 @@ if __name__ == "__main__":
     numiter = 5000
     stampsize=11
     fitrad=4
-    initialguess = 1000.
-    stepstd = 10.
+    initialguess = 10000.
+    stepstd = 100.
 
     numdefaults = 0
 

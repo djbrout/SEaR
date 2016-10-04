@@ -830,7 +830,7 @@ class metropolis_hastings():
             plt.plot(np.arange(0,len(self.modelvec_nphistory[:,e])*self.compressionfactor,self.compressionfactor),self.modelvec_nphistory[::1,e])
             plt.xlabel('Step')
             plt.ylabel('SN Flux')
-        self.savefig(self.outpath+'chains.png')
+        self.savefig(self.outpath+'_chains.png')
         #self.tmpwriter.cp('SNchains.png',str(self.lcout)+'_SNchains.png')
         #os.popen('rm SNchains.png').read()
 
@@ -845,7 +845,7 @@ class metropolis_hastings():
             plt.plot(np.arange(0,len(self.yhistory)*self.compressionfactor,self.compressionfactor),np.array(self.yhistory)[::1])
             plt.xlabel('Step')
             plt.ylabel('Offset (arcsec)')
-            self.savefig(self.outpath+'pixoffset.png')
+            self.savefig(self.outpath+'_pixoffset.png')
             #self.tmpwriter.cp('SNoffset1.png',str(self.lcout)+'_SNoffset1.png')
             #os.popen('rm SNoffset1.png').read()
             #print str(self.lcout)+'_SNoffset1.png'
