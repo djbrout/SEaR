@@ -277,7 +277,7 @@ class metropolis_hastings():
         for i in np.arange(Nimage):
             for x in np.arange(substamp):
                 for y in np.arange(substamp):
-                    if np.sqrt(((substamp-1)/2. - x + 1)**2 + ((substamp-1)/2. - y + 1)**2) < self.fitrad:
+                    if np.sqrt(((substamp-1)/2. - x)**2 + ((substamp-1)/2. - y)**2) < self.fitrad:
                         #self.skyerr[i,int(x),int(y)] = skyerr[i]
                         tempgalmodel[int(x),int(y)] = copy(self.galaxy_model[int(x),int(y)])
                         self.mask[int(x),int(y)] = 1.
@@ -823,20 +823,28 @@ class metropolis_hastings():
             axgm.yaxis.set_major_formatter(plt.NullFormatter())
             axs = axim.imshow(self.data[i, :, :] * self.mask, cmap='gray', interpolation='nearest',
                               vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
+            axim.xaxis.set_major_formatter(plt.NullFormatter())
+            axim.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axim)
             axs = axpsf.imshow(self.sims[i] * self.mask, cmap='gray', interpolation='nearest',
                                vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
+            axpsf.xaxis.set_major_formatter(plt.NullFormatter())
+            axpsf.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axpsf)
             md = np.median((self.data[i, :, :] - self.sims[i]).ravel())
             std = np.std(((self.data[i, :, :] - self.sims[i]) * self.mask).ravel())
             axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest',
                                 vmin=md - 3 * std, vmax=md + 3 * std)
             cbar = fig.colorbar(axs, ax=axdiff)
+            axdiff.xaxis.set_major_formatter(plt.NullFormatter())
+            axdiff.yaxis.set_major_formatter(plt.NullFormatter())
             axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 / self.skyerr[i] ** 2 * self.mask, cmap='gray',
                                interpolation='nearest', vmin=0, vmax=6.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')
             # plt.colorbar()
+            axchi.xaxis.set_major_formatter(plt.NullFormatter())
+            axchi.yaxis.set_major_formatter(plt.NullFormatter())
             plt.title(title)
             pdf_pages.savefig(fig)
         pdf_pages.close()
