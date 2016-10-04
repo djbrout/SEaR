@@ -101,7 +101,7 @@ class model:
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
             raise('candidate is too close to edge of ccd')
         else:
-            yhi = np.ceil(self.iy) + (self.stampsize-1)/2 + 1
+            yhi = np.floor(self.iy) + (self.stampsize-1)/2 + 1
         if self.ix - (self.stampsize-1)/2 < 0:
             raise ('candidate is too close to edge of ccd')
         else:
@@ -109,7 +109,7 @@ class model:
         if self.ix + (self.stampsize-1)/2 > imagedata.shape[1]:
             raise ('candidate is too close to edge of ccd')
         else:
-            xhi = np.ceil(self.ix) + (self.stampsize-1)/2 + 1
+            xhi = np.floor(self.ix) + (self.stampsize-1)/2 + 1
 
         self.data[0,:,:] = imagedata[ylow:yhi,xlow:xhi]
         self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
@@ -132,7 +132,7 @@ class model:
         if self.ty + (self.stampsize - 1) / 2 > imagedata.shape[0]:
             raise ('candidate is too close to edge of ccd')
         else:
-            yhi = np.ceil(self.ty) + (self.stampsize - 1) / 2 + 1
+            yhi = np.floor(self.ty) + (self.stampsize - 1) / 2 + 1
         if self.tx - (self.stampsize - 1) / 2 < 0:
             raise ('candidate is too close to edge of ccd')
         else:
@@ -140,7 +140,7 @@ class model:
         if self.tx + (self.stampsize - 1) / 2 > imagedata.shape[1]:
             raise ('candidate is too close to edge of ccd')
         else:
-            xhi = np.ceil(self.tx) + (self.stampsize - 1) / 2 + 1
+            xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
         self.data[1,:,:] = templatedata[ylow:yhi,xlow:xhi]
         self.weights[1,:,:] = templateweightdata[ylow:yhi,xlow:xhi]
