@@ -28,8 +28,8 @@
           <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/p9cut.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
-                  <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+                <state relative-caret-position="441">
+                  <caret line="261" column="32" selection-start-line="261" selection-start-column="32" selection-end-line="261" selection-end-column="32" />
                   <folding>
                     <element signature="e#550#568#0" expanded="true" />
                   </folding>
@@ -489,8 +489,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p9cut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+        <state relative-caret-position="441">
+          <caret line="261" column="32" selection-start-line="261" selection-start-column="32" selection-end-line="261" selection-end-column="32" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
           </folding>

@@ -259,7 +259,7 @@ class model:
         if '.fits.fz' in self.template:
             os.popen('funpack ' + os.path.join(self.rootdir, self.template))
             self.template = self.template[:-3]
-        if '.fits.fz' in self.imageweight:
+        if '.fits.fz' in self.imweight:
             os.popen('funpack ' + os.path.join(self.rootdir, self.imweight))
             self.imweight = self.imweight[:-3]
         if '.fits.fz' in self.templateweight:
