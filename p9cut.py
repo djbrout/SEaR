@@ -119,7 +119,7 @@ class model:
 
         self.data[0,:,:] = imagedata[ylow:yhi,xlow:xhi]
         self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
-
+        print self.imagesky
         if not self.imagesky is None:
             print '0mean before', np.median(self.data[0, :, :].ravel())
             self.data[0,:,:] -= self.imagesky
