@@ -236,12 +236,12 @@ class model:
         self.tmpwriter = dt.tmpwriter(useifdh=True)
         if not os.path.exists('./working/'):
             os.makedirs('./working/')
-        print os.popen('ifdh cp -D '+self.image+' ./working/').read()
-        print os.popen('ifdh cp -D '+self.template+' ./working/').read()
-        print os.popen('ifdh cp -D '+self.impsf+' ./working/').read()
-        print os.popen('ifdh cp -D '+self.templatepsf+' ./working/').read()
-        print os.popen('ifdh cp -D '+self.imweight+' ./working/').read()
-        print os.popen('ifdh cp -D '+self.templateweight+' ./working/').read()
+        print os.popen('ifdh cp -D '+self.image+' working/').read()
+        print os.popen('ifdh cp -D '+self.template+' working/').read()
+        print os.popen('ifdh cp -D '+self.impsf+' working/').read()
+        print os.popen('ifdh cp -D '+self.templatepsf+' working/').read()
+        print os.popen('ifdh cp -D '+self.imweight+' working/').read()
+        print os.popen('ifdh cp -D '+self.templateweight+' working/').read()
 
         self.rootdir = './working'
 
