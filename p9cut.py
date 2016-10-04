@@ -34,7 +34,7 @@ import dilltools as dt
 
 
 class model:
-    def __init__(self,
+    def __init__(self, candid=None,
                  image=None, template=None,
                  imagepsf=None, templatepsf=None,
                  imageweight=None, templateweight=None,
@@ -42,8 +42,9 @@ class model:
                  imagesky=None,templatesky=None,
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
-                 outdir=None, rootdir=None, fermigrid=None,
-                 numiter=5000, floatpos=False, stampsize=11):
+                 outdir=None, rootdir=None, fermigrid=None, fitrad=None,
+                 numiter=5000, floatpos=False, floatposstd=.05,
+                 stampsize=11, initialguess=None, stepstd=None):
 
         self.tstart = time.time()
 
@@ -69,7 +70,12 @@ class model:
 
         self.numiter = numiter
         self.floatpos = floatpos
+        self.floatposstd = floatposstd
+        self.fitrad = fitrad
         self.stampsize= stampsize
+        self.initialguess = initialguess
+        self.stepstd = stepstd
+        self.candid = candid
 
         self.Nimage = 2 #This is hardcoded for one image and one template
 
@@ -169,39 +175,27 @@ class model:
 
     def runDMC(self):
         aaa = mcmc.metropolis_hastings(
-              galmodel= self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
-            , modelvec= np.array([1000,0])#setting initial guess to 1000 counts
-            , galstd=   np.sqrt(self.data[1,:,:])/2.
-            , modelstd= np.array([10,0])
-            , data=     self.data
-            , psfs=     self.psfs
-            , weights=  self.weights
-            , substamp= self.stampsize
-            , Nimage=   self.Nimage
-            , maxiter=  self.numiter
-            , sky=      np.array([self.imagesky, self.templatesky])
-            , mjd=      np.array([1,2])
-            , useskyerr=True
-            , usesimerr=False
-            , flags=    np.array([0,0])
-            , fitflags= np.array([0,1])
-            , shft_std=self.params.sn_shift_std
-            , shftpsf=False
-            , fileappend=''
-            , stop=False
-            , skyerr_radius=4
-            , outpath=outimages
-            , compressionfactor=100
-            , fix_gal_model=fixgal
-            , pixelate_model=1.
-            , burnin=.75
-            , lcout=os.path.join(self.lcfilepath, filename)
-            , chainsnpz=os.path.join(npoutdir, filename + '_withSn.npz')
-            , mjdoff=smp_dict['mjdoff']
-            , dontsavegalaxy=True
-            , log=self.fermilogfile
-            , isfermigrid=self.fermigrid
-            , isworker=self.worker
+              galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
+            , modelvec=     np.array([self.initialguess,0])
+            , galstd=       np.sqrt(self.data[1,:,:])/2.
+            , modelstd=     np.array([self.stepstd,0])
+            , data=         self.data
+            , psfs=         self.psfs
+            , weights=      self.weights
+            , substamp=     self.stampsize
+            , Nimage=       self.Nimage
+            , maxiter=      self.numiter
+            , sky=          np.array([self.imagesky, self.templatesky])
+            , mjd=          np.array([1,2])
+            , flags=        np.array([0,0])
+            , fitflags=     np.array([0,1])
+            , shft_std=     self.floatposstd
+            , shftpsf=      self.floatpos
+            , fitrad=       self.fitrad
+            , outpath=      os.path.join(self.outdir,self.candid+'_')
+            , compress=     100
+            , burnin=       .3
+            , isfermigrid=  self.fermigrid
         )
 
 
@@ -286,9 +280,9 @@ if __name__ == "__main__":
                       "templatexpix=","templateypix=",
                       "imagesky=","templatesky=",
                       "imageskyerr=","templateskyerr=",
-                      "image=","template=",
+                      "image=","template=","initialguess=","stepstd="
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
-                      "imagezpt=","templatezpt="])
+                      "imagezpt=","templatezpt=","fitrad="])
 
 
         #print opt
@@ -305,7 +299,8 @@ if __name__ == "__main__":
         opt_command, arg = getopt.getopt(
             args, "hs:cf:cl:o:r:n:i:s:fg",
             longopts=["help", "candfile=","candlist=", "outdir=", "rootdir=",
-                      "floatpos","numiter=","index=","stampsize=","fermigrid"])
+                      "floatpos","numiter=","index=","stampsize=",
+                      "fermigrid","fitrad=","initialguess=","stepstd="])
 
     except getopt.GetoptError as err:
         print
@@ -320,6 +315,9 @@ if __name__ == "__main__":
     fermigrid = False
     numiter = 5000
     stampsize=11
+    fitrad=4
+    initialguess = 1000.
+    stepstd = 10.
 
     numdefaults = 0
 
@@ -327,8 +325,7 @@ if __name__ == "__main__":
 
     for o, a in opt:
         if o in ["-h", "--help"]:
-            print
-            __doc__
+            print __doc__
             sys.exit(0)
         elif o in ["-o", "--outdir"]:
             outdir = a
@@ -392,15 +389,19 @@ if __name__ == "__main__":
         elif o in ["--templateskyerr"]:
             templateskyerr = float(a)
             numdefaults += 1
+        elif o in ["--fitrad"]:
+            fitrad = float(a)
+        elif o in ["--initialguess"]:
+            initialguess = float(a)
+        elif o in ["--stepstd"]:
+            stepstd = float(a)
         else:
-            print
-            "Warning: option", o, "with argument", a, "is not recognized"
+            print "Warning: option", o, "with argument", a, "is not recognized"
 
     # THESE WiLL OVERRIDE THE DEFAULTS
     for o, a in opt_command:
         if o in ["-h", "--help"]:
-            print
-            __doc__
+            print __doc__
             sys.exit(0)
         elif o in ["-o", "--outdir"]:
             outdir = a
@@ -418,9 +419,14 @@ if __name__ == "__main__":
             stampsize = int(a)
         elif o in ["-fg","--fermigrid"]:
             fermigrid = True
+        elif o in ["--fitrad"]:
+            fitrad = float(a)
+        elif o in ["--initialguess"]:
+            initialguess = float(a)
+        elif o in ["--stepstd"]:
+            stepstd = float(a)
         else:
-            print
-            "Warning: option", o, "with argument", a, "is not recognized"
+            print "Warning: option", o, "with argument", a, "is not recognized"
 
 
     if stampsize % 2 == 0:
@@ -432,7 +438,6 @@ if __name__ == "__main__":
         if candlist is None:
             if numdefaults != 16:
                 raise('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
-
         else:
             candfile = open(candlist,'r').read().split()[index]
 
@@ -444,11 +449,15 @@ if __name__ == "__main__":
     else:
         ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
 
-    obj = model(image=imagepath, template=templatepath,
+    candid = 'testcand001'
+
+    obj = model(candid=candid,
+                image=imagepath, template=templatepath,
                 imagepsf=imagepsf, templatepsf=templatepsf,
                 imageweight=imageweight, templateweight=templateweight,
                 imagezpt=imagezpt, templatezpt=templatezpt,
                 imagesky=imagesky, templatesky=templatesky,
-                imageskyerr=imageskyerr, templateskyerr=templateskyerr,
+                imageskyerr=imageskyerr, templateskyerr=templateskyerr, fitrad= fitrad,
                 ix=ix, iy=iy, tx=tx, ty=ty, stampsize=stampsize, fermigrid=fermigrid,
-                outdir=outdir, rootdir=rootdir, floatpos=floatpos, numiter=numiter)
+                outdir=outdir, rootdir=rootdir, floatpos=floatpos, numiter=numiter,
+                initialguess=initialguess,stepstd=stepstd)

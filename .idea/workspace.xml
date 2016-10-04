@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/p9cut.py" afterPath="$PROJECT_DIR$/p9cut.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -22,14 +23,14 @@
     <favorites_list name="p9cut" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63416535">
+    <splitter split-orientation="horizontal" split-proportion="0.1848674">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/p9cut.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="194" column="34" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
+                <state relative-caret-position="246">
+                  <caret line="195" column="18" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="18" />
                   <folding>
                     <element signature="e#550#568#0" expanded="true" />
                   </folding>
@@ -52,8 +53,8 @@
           <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3240">
-                  <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
+                <state relative-caret-position="3135">
+                  <caret line="213" column="43" selection-start-line="213" selection-start-column="12" selection-end-line="213" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -96,8 +97,8 @@
           <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="204" column="79" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="79" />
+                <state relative-caret-position="291">
+                  <caret line="216" column="47" selection-start-line="216" selection-start-column="47" selection-end-line="216" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
@@ -118,6 +119,7 @@
         <option value="$PROJECT_DIR$/example_defaults/default.config" />
         <option value="$PROJECT_DIR$/default.config" />
         <option value="$PROJECT_DIR$/p9cut.py" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
@@ -445,14 +447,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sumplots.py" />
     <entry file="file://$PROJECT_DIR$/smp.py" />
-    <entry file="file://$PROJECT_DIR$/mcmc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dilltools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2355">
@@ -489,11 +483,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p9cut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="194" column="34" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
+        <state relative-caret-position="246">
+          <caret line="195" column="18" selection-start-line="195" selection-start-column="14" selection-end-line="195" selection-end-column="18" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcmc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="216" column="47" selection-start-line="216" selection-start-column="47" selection-end-line="216" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

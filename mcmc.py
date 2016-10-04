@@ -27,9 +27,6 @@ check autocorr with galsim_iter.py and figure out when to stop mcmc
 figure out how to calculate mean and uncertainty properly
 calculate covariance
 
-Geweke is slow for lots of iter
-
-GEWEKE COVARIANCE
 
 """
 
@@ -62,10 +59,6 @@ import dilltools as dt
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-
-#import pyfftw
-
-
 class metropolis_hastings():
 
     def __init__(self
@@ -93,15 +86,15 @@ class metropolis_hastings():
                 , usesimerr = False
                 , flags = None
                 , fitflags = None
-                , psf_shift_std = None
+                , shft_std = None
                 , xoff = 0.
                 , yoff = 0.
-                , shiftpsf = False
+                , shftpsf = False
                 , fileappend = ''
                 , stop = False
                 , skyerr_radius = 16.
                 , outpath = './'
-                , compressionfactor = 1
+                , compress = 1
                 , fix_gal_model = False
                 , pixelate_model = None
                 , burnin = .5
@@ -121,6 +114,7 @@ class metropolis_hastings():
                 , isfermigrid = False
                 , isworker = False
                 , dontsavegalaxy = False
+                , fitrad = 4.
                 ):
         '''
         if model is None:
@@ -170,14 +164,14 @@ class metropolis_hastings():
         self.gewekenum = gewekenum
         self.fix_gal_model = fix_gal_model
         #self.skyerr = skyerr
-        self.psf_shift_std = psf_shift_std
+        self.psf_shift_std = shft_std
         self.current_x_offset = xoff
         self.current_y_offset = yoff
         self.compressioncounter = 0
-        self.shiftpsf = shiftpsf
+        self.shiftpsf = shftpsf
         self.stop = stop
         self.outpath = outpath
-        self.compressionfactor = compressionfactor
+        self.compressionfactor = compress
         self.pixelate_model = pixelate_model
         self.burnin = burnin
         self.dosave = dosave
@@ -195,16 +189,16 @@ class metropolis_hastings():
         self.usecustomweight = usecustomweight
         self.customweights = customweights
         self.comboerr = comboerr
-        self.comboerr = True
+        self.comboerr = False
         self.covarerr = False
         self.didtimeout = False
         self.isfermigrid = isfermigrid
         self.isworker = isworker
         self.dontsavegalaxy = dontsavegalaxy
-        if self.isfermigrid and self.isworker:
+        if self.isfermigrid:
             self.tmpwriter = dt.tmpwriter(tmp_subscript='snfit_', useifdh=True)
-
-        self.tmpwriter = dt.tmpwriter(tmp_subscript=self.chainsnpz.split('/')[-1].split('.')[0])
+        else:
+            self.tmpwriter = dt.tmpwriter(tmp_subscript=self.chainsnpz.split('/')[-1].split('.')[0])
 
         if Nimage == 1:
             self.psfs = np.zeros((1,substamp,substamp))
