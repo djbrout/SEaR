@@ -57,7 +57,7 @@ import matplotlib.pyplot as plt
 import scipy.interpolate as interpol
 import dilltools as dt
 from matplotlib.backends.backend_pdf import PdfPages
-
+import gc
 
 class metropolis_hastings():
 
