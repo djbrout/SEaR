@@ -880,7 +880,7 @@ class metropolis_hastings():
         plt.savefig(tempfile)
 
         if self.isfermigrid:
-            os.popen('ifdh cp -D '+tempfile+' '+fname)
+            os.popen('ifdh cp '+tempfile+' '+fname)
         else:
             if os.path.isfile(fname):
                 os.remove(fname)
