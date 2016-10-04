@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/p9cut.py" afterPath="$PROJECT_DIR$/p9cut.py" />
-    </list>
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="" />
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,7 +105,7 @@
           <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="700">
+                <state relative-caret-position="1180">
                   <caret line="885" column="26" selection-start-line="885" selection-start-column="26" selection-end-line="885" selection-end-column="26" />
                   <folding />
                 </state>
@@ -137,7 +135,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1882" />
-    <option name="height" value="1157" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -398,7 +396,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1882" height="1157" extended-state="0" />
+    <frame x="0" y="22" width="1882" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08395324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -504,7 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
+        <state relative-caret-position="1180">
           <caret line="885" column="26" selection-start-line="885" selection-start-column="26" selection-end-line="885" selection-end-column="26" />
           <folding />
         </state>
