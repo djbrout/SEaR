@@ -372,10 +372,7 @@ class metropolis_hastings():
             self.accepted_int += 1
             self.mcmc_func()
             
-            #Check Geweke Convergence Diagnostic every 5000 iterations
-            if (self.counter % self.gewekenum) == self.gewekenum-1: 
-                self.check_geweke()
-                self.last_geweke = self.counter
+
             if (self.counter % 1000) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
