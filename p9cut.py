@@ -121,7 +121,10 @@ class model:
         self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
 
         if not self.imagesky is None:
+            print '0mean before', np.mean(self.data[0, :, :].ravel())
             self.data[0,:,:] -= self.imagesky
+            print '0mean before', np.mean(self.data[0, :, :].ravel())
+
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
         if not self.imzpt is None:
