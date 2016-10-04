@@ -28,11 +28,10 @@
           <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/p9cut.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="274" column="8" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
+                <state relative-caret-position="420">
+                  <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
                   <folding>
                     <element signature="e#550#568#0" expanded="true" />
-                    <marker date="1475591036000" expanded="true" signature="10326:10353" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -412,7 +411,6 @@
           <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
-            <marker date="1475591036000" expanded="true" signature="10326:10353" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -431,7 +429,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
-            <marker date="1475591036000" expanded="true" signature="10326:10353" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -482,11 +479,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/p9cut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="274" column="8" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
+        <state relative-caret-position="420">
+          <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
-            <marker date="1475591036000" expanded="true" signature="10326:10353" placeholder="..." />
           </folding>
         </state>
       </provider>

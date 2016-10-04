@@ -274,12 +274,9 @@ if __name__ == "__main__":
         print opt
         print arg
     except getopt.GetoptError as err:
-        print
-        str(err)
-        print
-        "Error : incorrect option or missing argument."
-        print
-        __doc__
+        print str(err)
+        print "Error : incorrect option or missing argument."
+        print __doc__
         sys.exit(1)
 
     try:
