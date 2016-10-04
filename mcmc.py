@@ -375,7 +375,7 @@ class metropolis_hastings():
             self.mcmc_func()
             
 
-            if (self.counter % 100000) == 0:
+            if (self.counter % 1000) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
                 chsqs = self.csv/len(self.mask[self.mask>0.].ravel())
@@ -385,9 +385,9 @@ class metropolis_hastings():
                 print 'Total Chi Sq:',np.sum(chsqs)
                 print 'Time per step:',(time.time()-self.t1)/self.counter
                 #print 'mjdoff: ',self.mjdoff
-                self.plotchains()
-                self.savechains()
-                self.plotstamps()
+                #self.plotchains()
+                #self.savechains()
+                #self.plotstamps()
                 #print 'index','mjd','chisq','raoff','decoff','flux'
                 #for i in np.arange(52):
                 #    print i,self.mjd[i], self.chisqvec[i]/len(self.mask[self.mask>0.].ravel()),self.mjdoff[i][0],self.mjdoff[i][1],np.mean(self.modelvec_nphistory[:,i])
