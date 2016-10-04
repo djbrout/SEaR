@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/p9cut.py" afterPath="$PROJECT_DIR$/p9cut.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,13 +22,13 @@
     <favorites_list name="p9cut" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7605304">
+    <splitter split-orientation="horizontal" split-proportion="0.40015602">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/p9cut.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
+                <state relative-caret-position="-702">
                   <caret line="123" column="45" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
                   <folding>
                     <element signature="e#550#568#0" expanded="true" />
@@ -53,18 +53,18 @@
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="3135">
-                  <caret line="214" column="43" selection-start-line="214" selection-start-column="12" selection-end-line="214" selection-end-column="43" />
+                  <caret line="216" column="43" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="43" />
                   <folding>
-                    <marker date="1475596749000" expanded="true" signature="1425:52306" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="9366:9630" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="25599:27394" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="25783:27394" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="25823:26936" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="26084:26936" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="26115:26680" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="26979:27160" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="27203:27394" placeholder="..." />
-                    <marker date="1475596749000" expanded="true" signature="38435:38665" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="1425:52332" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="9392:9656" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="25625:27420" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="25809:27420" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="25849:26962" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="26110:26962" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="26141:26706" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="27005:27186" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="27229:27420" placeholder="..." />
+                    <marker date="1475602513000" expanded="true" signature="38461:38691" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -107,8 +107,8 @@
           <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/mcmc.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="426">
-                  <caret line="182" column="19" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="19" />
+                <state relative-caret-position="630">
+                  <caret line="198" column="26" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -129,8 +129,8 @@
         <option value="$PROJECT_DIR$/example_defaults/default.config" />
         <option value="$PROJECT_DIR$/default.config" />
         <option value="$PROJECT_DIR$/dilltools.py" />
-        <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/p9cut.py" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
@@ -442,18 +442,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
-          <folding>
-            <marker date="1475596749000" expanded="true" signature="1425:52306" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="9366:9630" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25599:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25783:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25823:26936" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26084:26936" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26115:26680" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26979:27160" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="27203:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="38435:38665" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -503,32 +492,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcmc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="214" column="43" selection-start-line="214" selection-start-column="12" selection-end-line="214" selection-end-column="43" />
-          <folding>
-            <marker date="1475596749000" expanded="true" signature="1425:52306" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="9366:9630" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25599:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25783:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="25823:26936" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26084:26936" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26115:26680" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="26979:27160" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="27203:27394" placeholder="..." />
-            <marker date="1475596749000" expanded="true" signature="38435:38665" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/p9cut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="-702">
           <caret line="123" column="45" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcmc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="198" column="26" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

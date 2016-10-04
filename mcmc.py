@@ -196,6 +196,8 @@ class metropolis_hastings():
         self.isfermigrid = isfermigrid
         self.isworker = isworker
         self.dontsavegalaxy = dontsavegalaxy
+        self.fitrad=fitrad
+
         if self.isfermigrid:
             self.tmpwriter = dt.tmpwriter(tmp_subscript='snfit_', useifdh=True)
         else:
@@ -275,7 +277,7 @@ class metropolis_hastings():
         for i in np.arange(Nimage):
             for x in np.arange(substamp):
                 for y in np.arange(substamp):
-                    if np.sqrt((substamp/2. - x)**2 + (substamp/2. - y)**2) < skyerr_radius:
+                    if np.sqrt((substamp/2. - x)**2 + (substamp/2. - y)**2) < self.fitrad:
                         #self.skyerr[i,int(x),int(y)] = skyerr[i]
                         tempgalmodel[int(x),int(y)] = copy(self.galaxy_model[int(x),int(y)])
                         self.mask[int(x),int(y)] = 1.
