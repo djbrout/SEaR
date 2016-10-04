@@ -122,8 +122,6 @@ class model:
 
         if not self.imagesky is None:
             self.data[0,:,:] -= self.imagesky
-        else:
-            self.imagesky = 0.
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
         if not self.imzpt is None:
@@ -155,8 +153,6 @@ class model:
 
         if not self.templatesky is None:
             self.data[1, :, :] -= self.templatesky
-        else:
-            self.templatesky = 0.
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
         if not self.imzpt is None:
@@ -185,7 +181,7 @@ class model:
             , substamp=     self.stampsize
             , Nimage=       self.Nimage
             , maxiter=      self.numiter
-            , sky=          np.array([self.imagesky, self.templatesky])
+            , sky=          np.array([0., 0.])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
             , fitflags=     np.array([0,0])
