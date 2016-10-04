@@ -234,7 +234,6 @@ class model:
 
 
     def setupFermi(self):
-        print 'inside setupFermi'
         self.tmpwriter = dt.tmpwriter(useifdh=True)
         if not os.path.exists('./working/'):
             os.makedirs('./working/')
@@ -245,6 +244,13 @@ class model:
         os.popen('ifdh cp -D '+self.imweight+' working/').read()
         os.popen('ifdh cp -D '+self.templateweight+' working/').read()
 
+        self.image = self.image.split('/')[-1]
+        self.template = self.template.split('/')[-1]
+        self.impsf = self.impsf.split('/')[-1]
+        self.templatepsf = self.templatepsf.split('/')[-1]
+        self.imweight = self.imweight.split('/')[-1]
+        self.templateweight = self.templateweight.split('/')[-1]
+        
         self.rootdir = './working'
 
 # def readCandFile(file):
