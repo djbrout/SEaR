@@ -172,6 +172,8 @@ class tmpwriter():
     # tmp_index = index for parallel computation to avoid over-writing files
     def __init__(self, tempdir='./tmp/',tmp_subscript=0,usedccp=False,useifdh=False):
         self.tmpdir = tempdir
+        if not os.path.exists(tempdir):
+            os.makedirs(tempdir)
         self.tmp_index = str(tmp_subscript)
         self.usedccp = usedccp
         self.useifdh = useifdh
