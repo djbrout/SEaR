@@ -80,6 +80,7 @@ class model:
         else:
             if not os.path.exists(self.outdir):
                 os.makedirs(self.outdir)
+        print 'check working'
         raw_input('check ./working')
         self.setupMCMC()
         self.runDMC()
@@ -427,7 +428,7 @@ if __name__ == "__main__":
     else:
         ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
 
-
+    print 'about to init'
     obj = model(image=imagepath, template=templatepath,
                 imagepsf=imagepsf, templatepsf=templatepsf,
                 imageweight=imageweight, templateweight=templateweight,
