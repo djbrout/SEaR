@@ -80,7 +80,7 @@ class model:
         else:
             if not os.path.exists(self.outdir):
                 os.makedirs(self.outdir)
-        raw_input('check ./working')
+
         self.setupMCMC()
         self.runDMC()
 
@@ -305,8 +305,6 @@ if __name__ == "__main__":
     numdefaults = 0
 
     ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt, imagesky, templatesky, imageskyerr, templateskyerr = None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None
-
-    print 'Default arguments from default.config', opt
 
     for o, a in opt:
         if o in ["-h", "--help"]:
