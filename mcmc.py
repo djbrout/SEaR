@@ -375,7 +375,7 @@ class metropolis_hastings():
             self.mcmc_func()
             
 
-            if (self.counter % 1000) == 0:
+            if (self.counter % 100000) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
                 chsqs = self.csv/len(self.mask[self.mask>0.].ravel())
@@ -412,6 +412,8 @@ class metropolis_hastings():
         chsqs = self.csv / len(self.mask[self.mask > 0.].ravel())
         print 'Final Reduced ChiSq: ' + str(np.nanmean(chsqs[chsqs != 0.]))
         print 'Chisq For Each Epoch: ',chsqs
+        print 'Total Chi Sq:', np.sum(chsqs)
+
         #np.savez(self.results_npz, pixel_history = self.pixel_history
         #                        , simulated_stamps = self.simulated_images
         #                        , data_stamps = self.real_data_stamps_trimmed
