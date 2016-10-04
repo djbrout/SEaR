@@ -98,7 +98,7 @@ class metropolis_hastings():
                 , fix_gal_model = False
                 , pixelate_model = None
                 , burnin = .5
-                , dosave = True
+                , dosave = False
                 , lcout = None
                 , chainsnpz = None
                 , mjdflag = None
@@ -817,7 +817,7 @@ class metropolis_hastings():
             plt.title(title)
             pdf_pages.savefig(fig)
         pdf_pages.close()
-        self.tmpwriter.cp('stamps.pdf',str(self.lcout)+'_stamps.pdf')
+        self.tmpwriter.cp('stamps.pdf',self.outpath+'_stamps.pdf')
 
     def plotchains( self ):
         self.model_params()
@@ -830,31 +830,30 @@ class metropolis_hastings():
             plt.plot(np.arange(0,len(self.modelvec_nphistory[:,e])*self.compressionfactor,self.compressionfactor),self.modelvec_nphistory[::1,e])
             plt.xlabel('Step')
             plt.ylabel('SN Flux')
-        self.savefig('SNchains.png')
-        self.tmpwriter.cp('SNchains.png',str(self.lcout)+'_SNchains.png')
-        os.popen('rm SNchains.png').read()
+        self.savefig(self.outpath+'chains.png')
+        #self.tmpwriter.cp('SNchains.png',str(self.lcout)+'_SNchains.png')
+        #os.popen('rm SNchains.png').read()
 
         #print str(self.lcout)+'_SNchains.png'
         plt.clf()
         plt.close(1)
 
-                                   
-        fig = plt.figure(1,figsize=(10,7))
-        #for e in np.arange(numepochs):
-        plt.plot(np.arange(0,len(self.xhistory)*self.compressionfactor,self.compressionfactor),np.array(self.xhistory)[::1])
-        plt.plot(np.arange(0,len(self.yhistory)*self.compressionfactor,self.compressionfactor),np.array(self.yhistory)[::1])
-        plt.xlabel('Step')
-        plt.ylabel('Offset (arcsec)')
-        if self.fitradec:
-            self.savefig('SNoffset1.png')
-            self.tmpwriter.cp('SNoffset1.png',str(self.lcout)+'_SNoffset1.png')
-            os.popen('rm SNoffset1.png').read()
+        if self.shiftpsf:
+            fig = plt.figure(1,figsize=(10,7))
+            #for e in np.arange(numepochs):
+            plt.plot(np.arange(0,len(self.xhistory)*self.compressionfactor,self.compressionfactor),np.array(self.xhistory)[::1])
+            plt.plot(np.arange(0,len(self.yhistory)*self.compressionfactor,self.compressionfactor),np.array(self.yhistory)[::1])
+            plt.xlabel('Step')
+            plt.ylabel('Offset (arcsec)')
+            self.savefig(self.outpath+'pixoffset.png')
+            #self.tmpwriter.cp('SNoffset1.png',str(self.lcout)+'_SNoffset1.png')
+            #os.popen('rm SNoffset1.png').read()
             #print str(self.lcout)+'_SNoffset1.png'
-        else:
-            self.savefig('SNoffset2.png')
-            self.tmpwriter.cp('SNoffset2.png',str(self.lcout)+'_SNoffset2.png')
-            os.popen('rm SNoffset2.png').read()
-            #print str(self.lcout)+'_SNoffset2.png'
+        # else:
+        #     self.savefig('SNoffset2.png')
+        #     self.tmpwriter.cp('SNoffset2.png',str(self.lcout)+'_SNoffset2.png')
+        #     os.popen('rm SNoffset2.png').read()
+        #     #print str(self.lcout)+'_SNoffset2.png'
 
         plt.close(1)
     def savechains( self ):
@@ -869,7 +868,7 @@ class metropolis_hastings():
         else:
             raoff = np.nan
             decoff = np.nan
-        self.tmpwriter.savez(self.chainsnpz,modelvec=self.modelvec, modelvec_uncertainty=self.modelvec_uncertainty,
+        self.tmpwriter.savez(self.outpath+'.npz',modelvec=self.modelvec, modelvec_uncertainty=self.modelvec_uncertainty,
                  galmodel_params=self.galmodel_params, galmodel_uncertainty=self.galmodel_uncertainty,
                  modelvec_nphistory=self.modelvec_nphistory, galmodel_nphistory=self.galmodel_nphistory,
                  sims=self.sims,data=self.data,accepted_history=self.accepted_history,chisqhist=self.chisq,
@@ -877,11 +876,15 @@ class metropolis_hastings():
                  chisqvec=self.csv,raoff=raoff,decoff=decoff)
 
     def savefig(self, fname):
-        tempfile = os.path.join(self.tmpwriter.tmpdir,'tmp_'+self.tmpwriter.tmp_index+'.png')
+        tempfile = 'tmp.png'
         plt.savefig(tempfile)
-        if os.path.isfile(fname):
-            os.remove(fname)
-        os.system('mv '+tempfile+' '+fname)
+
+        if self.isfermigrid:
+            os.popen('ifdh cp -D '+tempfile+' '+fname)
+        else:
+            if os.path.isfile(fname):
+                os.remove(fname)
+            os.system('mv '+tempfile+' '+fname)
         print 'saved',fname
 
     def get_params( self ):
