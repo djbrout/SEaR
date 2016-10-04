@@ -121,9 +121,9 @@ class model:
         self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
         print self.imagesky
         if not self.imagesky is None:
-            print '0mean before', np.median(self.data[0, :, :].ravel())
+            #print '0mean before', np.median(self.data[0, :, :].ravel())
             self.data[0,:,:] -= self.imagesky
-            print '0mean before', np.median(self.data[0, :, :].ravel())
+            #print '0mean before', np.median(self.data[0, :, :].ravel())
 
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
@@ -155,10 +155,10 @@ class model:
         self.weights[1,:,:] = templateweightdata[ylow:yhi,xlow:xhi]
 
         if not self.templatesky is None:
-            print 'mean before', np.median(self.data[1, :, :].ravel())
+            #print 'mean before', np.median(self.data[1, :, :].ravel())
             self.data[1, :, :] -= self.templatesky
-            print 'mean before', np.median(self.data[1, :, :].ravel())
-            raw_input()
+            #print 'mean before', np.median(self.data[1, :, :].ravel())
+            #raw_input()
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
         if not self.imzpt is None:
