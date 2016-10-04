@@ -152,7 +152,10 @@ class model:
         self.weights[1,:,:] = templateweightdata[ylow:yhi,xlow:xhi]
 
         if not self.templatesky is None:
+            print 'mean before', np.mean(self.data[1, :, :].ravel())
             self.data[1, :, :] -= self.templatesky
+            print 'mean before', np.mean(self.data[1, :, :].ravel())
+            raw_input()
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
         if not self.imzpt is None:
