@@ -256,11 +256,15 @@ class model:
         if '.fits.fz' in self.image:
             os.popen('funpack '+os.path.join(self.rootdir,self.image))
             self.image = self.image[:-3]
-            print self.image
-            raw_input()
         if '.fits.fz' in self.template:
             os.popen('funpack ' + os.path.join(self.rootdir, self.template))
             self.template = self.template[:-3]
+        if '.fits.fz' in self.imageweight:
+            os.popen('funpack ' + os.path.join(self.rootdir, self.imageweight))
+            self.imageweight = self.imageweight[:-3]
+        if '.fits.fz' in self.templateweight:
+            os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight))
+            self.templateweight = self.templateweight[:-3]
 
 
 # def readCandFile(file):
