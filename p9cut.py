@@ -116,6 +116,8 @@ class model:
 
         if not self.imagesky is None:
             self.data[0,:,:] -= self.imagesky
+        else:
+            self.imagesky = 0.
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
         if not self.imzpt is None:
@@ -147,6 +149,8 @@ class model:
 
         if not self.templatesky is None:
             self.data[1, :, :] -= self.templatesky
+        else:
+            self.templatesky = 0.
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
         if not self.imzpt is None:
@@ -162,53 +166,46 @@ class model:
         self.psfs[1,:,:] = self.build_psfex(os.path.join(self.rootdir,self.templatepsf)
                                             , self.tx, self.ty, self.stampsize)
 
-        print self.data.shape,self.weights.shape,self.psfs.shape
-        raw_input()
 
     def runDMC(self):
-        # aaa = mcmc.metropolis_hastings(
-        #     galmodel=galmodel
-        #     , modelvec=modelvec
-        #     , galstd=galstd
-        #     , modelstd=modelstd
-        #     , data=smp_im
-        #     , psfs=smp_psf
-        #     , weights=smp_noise
-        #     , substamp=params.substamp
-        #     , Nimage=len(smp_dict['sky'])
-        #     , maxiter=self.params.sn_plus_galmodel_steps
-        #     , mask=None
-        #     , sky=smp_dict['sky']
-        #     , mjd=smp_dict['mjd']
-        #     , gewekenum=9999999
-        #     , skyerr=smp_dict['skyerr']
-        #     , useskyerr=True
-        #     , usesimerr=False
-        #     , flags=smp_dict['flag']
-        #     , fitflags=smp_dict['fitflag'] * 0.
-        #     , psf_shift_std=self.params.sn_shift_std
-        #     , xoff=xoff
-        #     , yoff=yoff
-        #     , shiftpsf=False
-        #     , fileappend=''
-        #     , stop=False
-        #     , skyerr_radius=4
-        #     , outpath=outimages
-        #     , compressionfactor=100
-        #     , fix_gal_model=fixgal
-        #     , pixelate_model=1.
-        #     , burnin=.75
-        #     , lcout=os.path.join(self.lcfilepath, filename)
-        #     , chainsnpz=os.path.join(npoutdir, filename + '_withSn.npz')
-        #     , mjdoff=smp_dict['mjdoff']
-        #     , dontsavegalaxy=True
-        #     , log=self.fermilogfile
-        #     , isfermigrid=self.fermigrid
-        #     , isworker=self.worker
-        # )
-        #
-        #
-        # modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
+        aaa = mcmc.metropolis_hastings(
+              galmodel= self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
+            , modelvec= np.array([1000,0])#setting initial guess to 1000 counts
+            , galstd=   np.sqrt(self.data[1,:,:])/2.
+            , modelstd= np.array([10,0])
+            , data=     self.data
+            , psfs=     self.psfs
+            , weights=  self.weights
+            , substamp= self.stampsize
+            , Nimage=   self.Nimage
+            , maxiter=  self.numiter
+            , sky=      np.array([self.imagesky, self.templatesky])
+            , mjd=      np.array([1,2])
+            , useskyerr=True
+            , usesimerr=False
+            , flags=    np.array([0,0])
+            , fitflags= np.array([0,1])
+            , shft_std=self.params.sn_shift_std
+            , shftpsf=False
+            , fileappend=''
+            , stop=False
+            , skyerr_radius=4
+            , outpath=outimages
+            , compressionfactor=100
+            , fix_gal_model=fixgal
+            , pixelate_model=1.
+            , burnin=.75
+            , lcout=os.path.join(self.lcfilepath, filename)
+            , chainsnpz=os.path.join(npoutdir, filename + '_withSn.npz')
+            , mjdoff=smp_dict['mjdoff']
+            , dontsavegalaxy=True
+            , log=self.fermilogfile
+            , isfermigrid=self.fermigrid
+            , isworker=self.worker
+        )
+
+
+        modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
 
