@@ -384,16 +384,16 @@ if __name__ == "__main__":
             templatezpt = float(a)
             numdefaults += 1
         elif o in ["--imagesky"]:
-            imagepsky = a
+            imagepsky = float(a)
             numdefaults += 1
         elif o in ["--templatesky"]:
-            templatesky = a
+            templatesky = float(a)
             numdefaults += 1
         elif o in ["--imageskyerr"]:
-            imagepskyerr = a
+            imagepskyerr = float(a)
             numdefaults += 1
         elif o in ["--templateskyerr"]:
-            templateskyerr = a
+            templateskyerr = float(a)
             numdefaults += 1
         else:
             print
