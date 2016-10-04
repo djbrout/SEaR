@@ -446,7 +446,7 @@ class metropolis_hastings():
         #print np.median(1./(self.simsnosn[aa][self.simsnosn[aa] > 0.]/self.gain))
         #print np.median(1./(self.skyerr[aa][self.skyerr[aa] < 99999.])**2)
         #raw_input()
-        self.csv = np.array(map( self.mapchis, self.sims, self.data, self.flags, self.fitflags, self.skyerr,self.simsnosn,self.simsnosnnosky))
+        self.csv = np.array(map( self.mapchis, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky))
         #print self.csv
         #print csv
         #raw_input()
@@ -622,39 +622,42 @@ class metropolis_hastings():
                 self.sims[ epoch,:,:] =  (star_conv + galaxy_conv)*self.mask
     '''
 
-    def mapchis( self, sims, data, flags, fitflags, skyerr,simnosn,simnosnnosky):
+    def mapchis( self, sims, data, flags, fitflags, weight, skyerr,simnosn,simnosnnosky):
         chisq  = 0
 
         if flags == 0:
             if fitflags == 0:
-                if self.model_errors:
-                    chisq = np.sum( ( (sims - data)**2 / (sims/self.gain + (self.readnoise/self.gain)**2) ).ravel() )
-                else:
-                    if self.comboerr:
-                        v = ((sims - data) ** 2 / (skyerr ** 2 + simnosnnosky / self.gain) * self.mask).ravel()
-                        a = np.sum(v[(v > 0.) & (v < 9999999.)])
-                        chisq = a
-                        if self.covarerr:
-                            # following http://cs229.stanford.edu/section/gaussians.pdf
-                            # A Gaussian distribution is 1/sqrt(2pi det(Sigma))exp(-0.5 chi^2)
-                            # so -2log of the gaussian
-                            # distribution is 2log(2pi) + log(det(Sigma)) + chi^2.
-                            #obs = []
-                            #for r in (sims-data).ravel():
-                            #    obs.append([r])
-                            #cov = np.cov(obs, rowvar=1)#rowvar transposes the data so each column is a variable
-
-                            print 'det(cov)', np.linalg.det(cov)
-                            print 'log(det(cov))',np.log10(np.linalg.det(cov))
-                            chisq += 2*np.log10(2*np.pi) + np.log10(np.linalg.det(cov))
-                    elif self.useskyerr:
-                        v = ( (sims - data)**2 / skyerr**2 * self.mask).ravel()
-                        a = np.sum( v[(v>0.)&(v<9999999.)] )
-                        chisq = a
-                    elif self.usesimerr:
-                        v = ( (sims - data)**2 / (simnosn/self.gain) * self.mask).ravel()
-                        a = np.sum( v[(v>0.)&(v<9999999.)] )
-                        chisq = a
+                v = ((sims - data) ** 2 * weight * self.mask).ravel()
+                a = np.sum(v[(v > 0.) & (v < 9999999.)])
+                chisq = a
+                # if self.model_errors:
+                #     chisq = np.sum( ( (sims - data)**2 / (sims/self.gain + (self.readnoise/self.gain)**2) ).ravel() )
+                # else:
+                #     if self.comboerr:
+                #         v = ((sims - data) ** 2 / (skyerr ** 2 + simnosnnosky / self.gain) * self.mask).ravel()
+                #         a = np.sum(v[(v > 0.) & (v < 9999999.)])
+                #         chisq = a
+                #         if self.covarerr:
+                #             # following http://cs229.stanford.edu/section/gaussians.pdf
+                #             # A Gaussian distribution is 1/sqrt(2pi det(Sigma))exp(-0.5 chi^2)
+                #             # so -2log of the gaussian
+                #             # distribution is 2log(2pi) + log(det(Sigma)) + chi^2.
+                #             #obs = []
+                #             #for r in (sims-data).ravel():
+                #             #    obs.append([r])
+                #             #cov = np.cov(obs, rowvar=1)#rowvar transposes the data so each column is a variable
+                #
+                #             print 'det(cov)', np.linalg.det(cov)
+                #             print 'log(det(cov))',np.log10(np.linalg.det(cov))
+                #             chisq += 2*np.log10(2*np.pi) + np.log10(np.linalg.det(cov))
+                #     elif self.useskyerr:
+                #         v = ( (sims - data)**2 / skyerr**2 * self.mask).ravel()
+                #         a = np.sum( v[(v>0.)&(v<9999999.)] )
+                #         chisq = a
+                #     elif self.usesimerr:
+                #         v = ( (sims - data)**2 / (simnosn/self.gain) * self.mask).ravel()
+                #         a = np.sum( v[(v>0.)&(v<9999999.)] )
+                #         chisq = a
 
         return chisq
 

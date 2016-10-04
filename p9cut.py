@@ -178,7 +178,7 @@ class model:
               galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
             , galstd=       np.sqrt(self.data[1,:,:])/2.
-            , modelstd=     np.array([self.stepstd,0])
+            , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
             , weights=      self.weights
@@ -188,7 +188,7 @@ class model:
             , sky=          np.array([self.imagesky, self.templatesky])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
-            , fitflags=     np.array([0,1])
+            , fitflags=     np.array([0,0])
             , shft_std=     self.floatposstd
             , shftpsf=      self.floatpos
             , fitrad=       self.fitrad
