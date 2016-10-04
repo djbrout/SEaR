@@ -80,7 +80,7 @@ class model:
         else:
             if not os.path.exists(self.outdir):
                 os.makedirs(self.outdir)
-
+        raw_input('check ./working')
         self.setupMCMC()
         self.runDMC()
 
@@ -160,52 +160,53 @@ class model:
         self.psfs[1,:,:] = self.build_psfex(os.path.join(self.rootdir,self.templatepsf)
                                             , self.x, self.y, self.stampsize)
 
-
+        print self.data.shape,self.weights.shape,self.psfs.shape
+        raw_input()
 
     def runDMC(self):
-        aaa = mcmc.metropolis_hastings(
-            galmodel=galmodel
-            , modelvec=modelvec
-            , galstd=galstd
-            , modelstd=modelstd
-            , data=smp_im
-            , psfs=smp_psf
-            , weights=smp_noise
-            , substamp=params.substamp
-            , Nimage=len(smp_dict['sky'])
-            , maxiter=self.params.sn_plus_galmodel_steps
-            , mask=None
-            , sky=smp_dict['sky']
-            , mjd=smp_dict['mjd']
-            , gewekenum=9999999
-            , skyerr=smp_dict['skyerr']
-            , useskyerr=True
-            , usesimerr=False
-            , flags=smp_dict['flag']
-            , fitflags=smp_dict['fitflag'] * 0.
-            , psf_shift_std=self.params.sn_shift_std
-            , xoff=xoff
-            , yoff=yoff
-            , shiftpsf=False
-            , fileappend=''
-            , stop=False
-            , skyerr_radius=4
-            , outpath=outimages
-            , compressionfactor=100
-            , fix_gal_model=fixgal
-            , pixelate_model=1.
-            , burnin=.75
-            , lcout=os.path.join(self.lcfilepath, filename)
-            , chainsnpz=os.path.join(npoutdir, filename + '_withSn.npz')
-            , mjdoff=smp_dict['mjdoff']
-            , dontsavegalaxy=True
-            , log=self.fermilogfile
-            , isfermigrid=self.fermigrid
-            , isworker=self.worker
-        )
-
-
-        modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
+        # aaa = mcmc.metropolis_hastings(
+        #     galmodel=galmodel
+        #     , modelvec=modelvec
+        #     , galstd=galstd
+        #     , modelstd=modelstd
+        #     , data=smp_im
+        #     , psfs=smp_psf
+        #     , weights=smp_noise
+        #     , substamp=params.substamp
+        #     , Nimage=len(smp_dict['sky'])
+        #     , maxiter=self.params.sn_plus_galmodel_steps
+        #     , mask=None
+        #     , sky=smp_dict['sky']
+        #     , mjd=smp_dict['mjd']
+        #     , gewekenum=9999999
+        #     , skyerr=smp_dict['skyerr']
+        #     , useskyerr=True
+        #     , usesimerr=False
+        #     , flags=smp_dict['flag']
+        #     , fitflags=smp_dict['fitflag'] * 0.
+        #     , psf_shift_std=self.params.sn_shift_std
+        #     , xoff=xoff
+        #     , yoff=yoff
+        #     , shiftpsf=False
+        #     , fileappend=''
+        #     , stop=False
+        #     , skyerr_radius=4
+        #     , outpath=outimages
+        #     , compressionfactor=100
+        #     , fix_gal_model=fixgal
+        #     , pixelate_model=1.
+        #     , burnin=.75
+        #     , lcout=os.path.join(self.lcfilepath, filename)
+        #     , chainsnpz=os.path.join(npoutdir, filename + '_withSn.npz')
+        #     , mjdoff=smp_dict['mjdoff']
+        #     , dontsavegalaxy=True
+        #     , log=self.fermilogfile
+        #     , isfermigrid=self.fermigrid
+        #     , isworker=self.worker
+        # )
+        #
+        #
+        # modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
 
@@ -231,6 +232,7 @@ class model:
 
 
     def setupFermi(self):
+        print 'inside setupFermi'
         self.tmpwriter = dt.tmpwriter(useifdh=True)
         if not os.path.exists('./working/'):
             os.makedirs('./working/')
