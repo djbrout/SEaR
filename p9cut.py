@@ -250,8 +250,18 @@ class model:
         self.templatepsf = self.templatepsf.split('/')[-1]
         self.imweight = self.imweight.split('/')[-1]
         self.templateweight = self.templateweight.split('/')[-1]
-        
+
         self.rootdir = './working'
+
+        if '.fits.fz' in self.image:
+            os.popen('funpack '+os.path.join(self.rootdir,self.image))
+            self.image = self.image[:-3]
+            print self.image
+            raw_input()
+        if '.fits.fz' in self.template:
+            os.popen('funpack ' + os.path.join(self.rootdir, self.template))
+            self.template = self.template[:-3]
+
 
 # def readCandFile(file):
 #     #read in the file and grab the following data
