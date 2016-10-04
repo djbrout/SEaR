@@ -173,7 +173,7 @@ class model:
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(self.data[1,:,:])/10.
+            , galstd=       np.sqrt(self.data[1,:,:])/5.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
@@ -314,7 +314,7 @@ if __name__ == "__main__":
     stampsize=11
     fitrad=4
     initialguess = 1000.
-    stepstd = 10.
+    stepstd = 20.
 
     numdefaults = 0
 
