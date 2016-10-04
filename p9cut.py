@@ -150,8 +150,8 @@ class model:
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
         if not self.imzpt is None:
-            self.data[1, :, :] *= 10 ** (.4(31. - self.templatezpt))
-            self.weights[1, :, :] *= 10 ** (.4(31. - self.templatezpt))
+            self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
+            self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
 
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
