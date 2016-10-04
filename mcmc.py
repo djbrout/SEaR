@@ -796,27 +796,52 @@ class metropolis_hastings():
 
     def plotstamps(self):
         pdf_pages = PdfPages('stamps.pdf')
+        fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
-            fig = plt.figure(figsize=(20, 10))
-            axim = plt.subplot(141)
-            axpsf = plt.subplot(142)
-            axdiff = plt.subplot(143)
-            axchi = plt.subplot(144)
-            for ax, title in zip([axim, axpsf, axdiff, axchi], ['image', 'model', 'resid', 'chisq']):
+            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 / self.skyerr[i] ** 2 * self.mask) / len(
+                self.mask[self.mask > 0.].ravel())
+            if not tchi > -1.:
+                continue
+            if self.flags[i] == 1:
+                continue
+            # fig = plt.figure(figsize=(20, 10))
+            plt.clf()
+            axgm = plt.subplot(151)
+            axim = plt.subplot(152)
+            axpsf = plt.subplot(153)
+            axdiff = plt.subplot(154)
+            axchi = plt.subplot(155)
+            for ax, title in zip([axgm, axim, axpsf, axdiff, axchi],
+                                 ['pgalmodel', 'image MJD ' + str(round(self.mjd[i])), 'model', 'resid',
+                                  'chisq: ' + str(round(tchi, 2))]):
                 ax.set_title(title)
-            axs = axim.imshow(self.data[i,:,:] * self.mask, cmap='gray', interpolation='nearest')
+            axs = axgm.imshow(self.galaxy_model * self.mask, cmap='gray', interpolation='nearest')
+            cbar = fig.colorbar(axs, ax=axgm)
+            axs = axim.imshow(self.data[i, :, :] * self.mask, cmap='gray', interpolation='nearest',
+                              vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
             cbar = fig.colorbar(axs, ax=axim)
-            axs = axpsf.imshow(self.sims[i] * self.mask, cmap='gray', interpolation='nearest')
+            axs = axpsf.imshow(self.sims[i] * self.mask, cmap='gray', interpolation='nearest',
+                               vmin=np.min(self.sky[i] - self.sky[i] / 3.), vmax=np.max(self.data[i, :, :]))
             cbar = fig.colorbar(axs, ax=axpsf)
-            axs = axdiff.imshow((self.data[i,:,:] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest')
+            md = np.median((self.data[i, :, :] - self.sims[i]).ravel())
+            std = np.std(((self.data[i, :, :] - self.sims[i]) * self.mask).ravel())
+            axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest',
+                                vmin=md - 3 * std, vmax=md + 3 * std)
             cbar = fig.colorbar(axs, ax=axdiff)
-            axs = axchi.imshow((self.data[i,:,:] - self.sims[i]) ** 2 / self.skyerr[i]**2 * self.mask, cmap='gray', interpolation='nearest', vmin=0, vmax=10.)
+            axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 / self.skyerr[i] ** 2 * self.mask, cmap='gray',
+                               interpolation='nearest', vmin=0, vmax=6.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')
             # plt.colorbar()
             plt.title(title)
             pdf_pages.savefig(fig)
         pdf_pages.close()
+        plt.close()
+        gc.collect()
+        #if self.isfermigrid and self.isworker:
+        #    print os.popen('ifdh cp stamps.pdf ' + self.lcout + '_stamps.pdf').read()
+        #else:
+        #    print os.popen('mv stamps.pdf ' + self.lcout + '_stamps.pdf').read()
         self.tmpwriter.cp('stamps.pdf',self.outpath+'_stamps.pdf')
 
     def plotchains( self ):
