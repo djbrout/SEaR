@@ -266,6 +266,8 @@ if __name__ == "__main__":
             longopts=["outdir=", "rootdir=", "floatpos","numiter=","index=","candlist=",
                       "stampsize=","fermigrid","imagexpix=","imageypix=",
                       "templatexpix=","templateypix=",
+                      "imagesky=","templatesky",
+                      "imageskyerr=","templateskyerr=",
                       "image=","template=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
                       "imagezpt=","templatezpt="])
@@ -276,7 +278,7 @@ if __name__ == "__main__":
     except getopt.GetoptError as err:
         print str(err)
         print "Error : incorrect option or missing argument."
-        print __doc__
+        #print __doc__
         sys.exit(1)
 
     try:
