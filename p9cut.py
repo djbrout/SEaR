@@ -157,10 +157,10 @@ class model:
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
 
         self.psfs[0,:,:] = self.build_psfex(os.path.join(self.rootdir,self.impsf)
-                                            , self.x, self.y, self.stampsize)
+                                            , self.ix, self.iy, self.stampsize)
 
         self.psfs[1,:,:] = self.build_psfex(os.path.join(self.rootdir,self.templatepsf)
-                                            , self.x, self.y, self.stampsize)
+                                            , self.tx, self.ty, self.stampsize)
 
         print self.data.shape,self.weights.shape,self.psfs.shape
         raw_input()
