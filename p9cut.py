@@ -246,12 +246,13 @@ class model:
 
         self.rootdir = './working'
 
-def readCandFile(file):
-    #read in the file and grab the following data
-    return xpixfloat, ypixfloat, imagepath, templatepath, imagepsfpath, templatepsfpath, imageweightpath, templateweightpath, imagezptfloat, templatezptfloat
+# def readCandFile(file):
+#     #read in the file and grab the following data
+#     return xpixfloat, ypixfloat, imagepath, templatepath, imagepsfpath, templatepsfpath, imageweightpath, templateweightpath, imagezptfloat, templatezptfloat
 
 
 if __name__ == "__main__":
+    print 'inside main'
     import sys, getopt
 
     # read in arguments and options
