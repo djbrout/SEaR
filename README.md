@@ -1,5 +1,5 @@
 # SEaR (Source Extraction and Rejection)
 
-For difference imaging results classifcation based on scene modeling aproach.
+Forward modeling aproach to source fitting and point source probability estimation.
 
 ![alt tag](imgs/ex.png)
