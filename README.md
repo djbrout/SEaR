@@ -1,4 +1,4 @@
-# p9CUT
+# SEaR (Source Extraction and Rejection)
 
 For difference imaging results classifcation based on scene modeling aproach.
 
