@@ -58,6 +58,7 @@ import scipy.interpolate as interpol
 import dilltools as dt
 from matplotlib.backends.backend_pdf import PdfPages
 import gc
+import buildPSFex
 
 class metropolis_hastings():
 
@@ -115,6 +116,8 @@ class metropolis_hastings():
                 , isworker = False
                 , dontsavegalaxy = False
                 , fitrad = 4.
+                , psffile = None
+                , psfcenter = None
                 ):
         '''
         if model is None:
@@ -197,6 +200,9 @@ class metropolis_hastings():
         self.isworker = isworker
         self.dontsavegalaxy = dontsavegalaxy
         self.fitrad=fitrad
+        self.psffile = psffile
+        self.psfcenter = psfcenter
+
 
         if self.isfermigrid:
             self.tmpwriter = dt.tmpwriter(tmp_subscript='snfit_', useifdh=True)
@@ -1134,27 +1140,57 @@ class metropolis_hastings():
 
     def shiftPSF(self,y_off=0.0,x_off=0.0):
 
+        thispsf, thispsfcenter = buildPSFex.build(os.path.join(self.rootdir, self.impsf)
+                                                                , self.ix, self.iy, self.stampsize)
+
+        if thispsfcenter[0] != self.psfcenter[0] or thispsfcenter[1] != self.psfcenter[1]:
+            newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[0] == self.psfcenter[0] - 1:
+                newpsf[:-1,:] = thispsf[1:,:]
+            elif thispsfcenter[0] == self.psfcenter[0] +1:
+                newpsf[1:,:] = thispsf[:-1,:]
+            else:
+                print 'MCMC is attempting to offset the psf by more than one pixel!'
+                raise ('MCMC is attempting to offset the psf by more than one pixel!')
+            thispsf = newpsf
+
+            newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[1] == self.psfcenter[1] - 1:
+                newpsf[:, :-1] = thispsf[:, 1:]
+            elif thispsfcenter[0] == self.psfcenter[0] + 1:
+                newpsf[:, 1:] = thispsf[:, :-1]
+            else:
+                print 'MCMC is attempting to offset the psf by more than one pixel!'
+                raise ('MCMC is attempting to offset the psf by more than one pixel!')
+
+            thispsf = newpsf
+        self.kicked_psfs[0, :, :] = thispsf
+
+
+        # self.psfs[0, :, :], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir, self.impsf)
+        #                                                         , self.ix, self.iy, self.stampsize)
+
         #psf_shape = self.psfs[0,:,:].shape
         #xvals = np.arange(psf_shape[0])
         #yvals = np.arange(psf_shape[1])
 
-        for epoch in np.arange(self.Nimage):
-            #self.kicked_psfs[epoch,:,:] = self.psfs[epoch,:,:]
-            #spline = scipy.interpolate.RectBivariateSpline(xvals, yvals, self.psfs[epoch,:,:])
-            int_spline = np.zeros(self.psf_shape)
-
-            ##For some reason things are flipped
-            #x_off = y_offset
-            #y_off = x_offset
-            #################################
-
-            #Interpolate spline at offset
-            #for x,val in enumerate(self.xvals):
-            #    #use_spline[x] = spline.ev(xvals*0 + x,yvals*0 + y)
-            #    self.psf_splines
-            #    int_spline[x] = self.splines[epoch].ev(self.xvals*0 + x + x_off,self.yvals+y_off)
-            self.kicked_psfs[epoch,:,:] = self.psfsplines[epoch](self.psfxs + x_off, self.psfys + y_off, grid=True)
-            #self.kicked_psfs[epoch,:,:] = int_spline
+        # for epoch in np.arange(self.Nimage):
+        #     #self.kicked_psfs[epoch,:,:] = self.psfs[epoch,:,:]
+        #     #spline = scipy.interpolate.RectBivariateSpline(xvals, yvals, self.psfs[epoch,:,:])
+        #     int_spline = np.zeros(self.psf_shape)
+        #
+        #     ##For some reason things are flipped
+        #     #x_off = y_offset
+        #     #y_off = x_offset
+        #     #################################
+        #
+        #     #Interpolate spline at offset
+        #     #for x,val in enumerate(self.xvals):
+        #     #    #use_spline[x] = spline.ev(xvals*0 + x,yvals*0 + y)
+        #     #    self.psf_splines
+        #     #    int_spline[x] = self.splines[epoch].ev(self.xvals*0 + x + x_off,self.yvals+y_off)
+        #     self.kicked_psfs[epoch,:,:] = self.psfsplines[epoch](self.psfxs + x_off, self.psfys + y_off, grid=True)
+        #     #self.kicked_psfs[epoch,:,:] = int_spline
         return
 
     def plot_covar( self, data ):

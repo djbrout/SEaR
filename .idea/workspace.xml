@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="" />
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buildPSFex.py" afterPath="$PROJECT_DIR$/buildPSFex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
+    </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,101 +25,89 @@
     <favorites_list name="p9cut" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40015602">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="p9cut.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/p9cut.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="751">
-                  <caret line="181" column="64" selection-start-line="181" selection-start-column="64" selection-end-line="181" selection-end-column="64" />
-                  <folding>
-                    <element signature="e#550#568#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dilltools.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dilltools.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mcmc.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3135">
-                  <caret line="216" column="43" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="43" />
-                  <folding>
-                    <marker date="1475606001000" expanded="true" signature="1425:53137" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="9400:9664" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="25818:27613" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="26002:27613" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="26042:27155" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="26303:27155" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="26334:26899" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="27198:27379" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="27422:27613" placeholder="..." />
-                    <marker date="1475606001000" expanded="true" signature="39266:39496" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="default.config" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/example_defaults/default.config">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="default.config" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/default.config">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mcmc.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1180">
-                  <caret line="885" column="26" selection-start-line="885" selection-start-column="26" selection-end-line="885" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcmc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="1362" column="33" selection-start-line="1362" selection-start-column="33" selection-end-line="1362" selection-end-column="33" />
+              <folding>
+                <marker date="1475876239000" expanded="true" signature="25971:27766" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="26155:27766" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="26195:27308" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="26456:27308" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="26487:27052" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="27351:27532" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="27575:27766" placeholder="..." />
+                <marker date="1475876239000" expanded="true" signature="39419:39649" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dilltools.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dilltools.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="149" column="16" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="buildPSFex.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buildPSFex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SEaR.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4227">
+              <caret line="99" column="79" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example_defaults/default.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -127,15 +120,17 @@
         <option value="$PROJECT_DIR$/example_defaults/default.config" />
         <option value="$PROJECT_DIR$/default.config" />
         <option value="$PROJECT_DIR$/dilltools.py" />
-        <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/p9cut.py" />
+        <option value="$PROJECT_DIR$/buildPSFex.py" />
+        <option value="$PROJECT_DIR$/SEaR.py" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1882" />
-    <option name="height" value="878" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -385,6 +380,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="" />
@@ -396,7 +394,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1882" height="878" extended-state="0" />
+    <frame x="0" y="22" width="1882" height="874" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08395324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -418,11 +416,21 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -430,9 +438,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2145">
           <caret line="148" column="39" selection-start-line="148" selection-start-column="39" selection-end-line="148" selection-end-column="39" />
-          <folding>
-            <element signature="e#550#568#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -440,7 +446,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1475876239000" expanded="true" signature="25971:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26155:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26195:27308" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26456:27308" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26487:27052" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="27351:27532" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="27575:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="39419:39649" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -448,9 +463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#550#568#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -480,30 +493,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/p9cut.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="751">
+          <caret line="181" column="64" selection-start-line="181" selection-start-column="64" selection-end-line="181" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dilltools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+        <state relative-caret-position="525">
+          <caret line="149" column="16" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/p9cut.py">
+    <entry file="file://$PROJECT_DIR$/buildPSFex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="181" column="64" selection-start-line="181" selection-start-column="64" selection-end-line="181" selection-end-column="64" />
-          <folding>
-            <element signature="e#550#568#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="885" column="26" selection-start-line="885" selection-start-column="26" selection-end-line="885" selection-end-column="26" />
+        <state relative-caret-position="783">
+          <caret line="1362" column="33" selection-start-line="1362" selection-start-column="33" selection-end-line="1362" selection-end-column="33" />
+          <folding>
+            <marker date="1475876239000" expanded="true" signature="25971:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26155:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26195:27308" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26456:27308" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="26487:27052" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="27351:27532" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="27575:27766" placeholder="..." />
+            <marker date="1475876239000" expanded="true" signature="39419:39649" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4227">
+          <caret line="99" column="79" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="79" />
           <folding />
         </state>
       </provider>

@@ -31,6 +31,7 @@ import pyfits as pf
 from copy import copy
 import time
 import dilltools as dt
+import buildPSFex
 
 
 class model:
@@ -92,6 +93,16 @@ class model:
 
     def setupMCMC(self):
 
+        #GRABBING PSFS
+        self.psfs = np.zeros((2, self.stampsize, self.stampsize))
+
+        self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.impsf)
+                                            , self.ix, self.iy, self.stampsize)
+
+        self.psfs[1,:,:], self.templatepsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.templatepsf)
+                                            , self.tx, self.ty, self.stampsize)
+
+
         #GRABBING IMAGE STAMPS
         self.data = np.zeros((2, self.stampsize, self.stampsize))
         self.weights = np.zeros((2, self.stampsize, self.stampsize))
@@ -102,23 +113,19 @@ class model:
         imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
             raise('candidate is too close to edge of ccd')
-        else:
-            ylow = np.floor(self.iy) - (self.stampsize-1)/2 + 1
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
             raise('candidate is too close to edge of ccd')
-        else:
-            yhi = np.floor(self.iy) + (self.stampsize-1)/2 + 2
         if self.ix - (self.stampsize-1)/2 < 0:
             raise ('candidate is too close to edge of ccd')
-        else:
-            xlow = np.floor(self.ix) - (self.stampsize-1)/2 + 1
         if self.ix + (self.stampsize-1)/2 > imagedata.shape[1]:
             raise ('candidate is too close to edge of ccd')
-        else:
-            xhi = np.floor(self.ix) + (self.stampsize-1)/2 + 2
 
-        self.data[0,:,:] = imagedata[ylow:yhi,xlow:xhi]
-        self.weights[0,:,:] = imweightdata[ylow:yhi,xlow:xhi]
+        self.data[0,:,:] = imagedata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+        self.weights[0,:,:] = imweightdata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+
+
         print self.imagesky
         if not self.imagesky is None:
             #print '0mean before', np.median(self.data[0, :, :].ravel())
@@ -151,8 +158,10 @@ class model:
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
-        self.data[1,:,:] = templatedata[ylow:yhi,xlow:xhi]
-        self.weights[1,:,:] = templateweightdata[ylow:yhi,xlow:xhi]
+        self.data[1,:,:] = templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+        self.weights[1,:,:] = templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
 
         if not self.templatesky is None:
             #print 'mean before', np.median(self.data[1, :, :].ravel())
@@ -164,15 +173,6 @@ class model:
         if not self.imzpt is None:
             self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
             self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
-
-        #GRABBING PSFS
-        self.psfs = np.zeros((2, self.stampsize, self.stampsize))
-
-        self.psfs[0,:,:] = self.build_psfex(os.path.join(self.rootdir,self.impsf)
-                                            , self.ix, self.iy, self.stampsize)
-
-        self.psfs[1,:,:] = self.build_psfex(os.path.join(self.rootdir,self.templatepsf)
-                                            , self.tx, self.ty, self.stampsize)
 
 
     def runDMC(self):
@@ -203,27 +203,6 @@ class model:
 
         modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
-
-
-    def build_psfex(self, psffile, x, y, stampsize):
-
-        psf = os.popen("dump_psfex -inFile_psf %s -xpix %s -ypix %s -gridSize %s" % (psffile, x, y,
-                                                                                     stampsize)).readlines()
-        ix, iy, psfval = [], [], []
-        for line in psf:
-            line = line.replace('\n', '')
-            if line.startswith('PSF:'):
-                linelist = line.split()
-                ix += [int(linelist[1])];
-                iy += [int(linelist[2])];
-                psfval += [float(linelist[5])]
-
-        ix, iy, psfval = np.array(ix), np.array(iy), np.array(psfval)
-        psfout = np.zeros((self.stampsize, self.stampsize))
-        for x, y, p in zip(ix, iy, psfval):
-            psfout[y, x] = p
-
-        return psfout
 
 
     def setupFermi(self):
@@ -317,7 +296,7 @@ if __name__ == "__main__":
     floatpos = False
     fermigrid = False
     numiter = 5000
-    stampsize=11
+    stampsize=10
     fitrad=4
     initialguess = 10000.
     stepstd = 200.
@@ -432,8 +411,8 @@ if __name__ == "__main__":
             print "Warning: option", o, "with argument", a, "is not recognized"
 
 
-    if stampsize % 2 == 0:
-        print '--stampsize must be an odd number!'
+    if stampsize % 2 == 1:
+        print '--stampsize must be an even number!'
         raise
 
 
