@@ -1,6 +1,7 @@
 import os
+import numpy as np
 
-def build(self, psffile, x, y, stampsize):
+def build(psffile, x, y, stampsize):
     psf = os.popen("dump_psfex -inFile_psf %s -xpix %s -ypix %s -gridSize %s" % (psffile, x, y,
                                                                                  stampsize)).readlines()
     ix, iy, psfval = [], [], []
@@ -17,7 +18,7 @@ def build(self, psffile, x, y, stampsize):
             IMAGE_CENTERY = float(linelist[2])
 
     ix, iy, psfval = np.array(ix), np.array(iy), np.array(psfval)
-    psfout = np.zeros((self.stampsize, self.stampsize))
+    psfout = np.zeros((stampsize, stampsize))
     for x, y, p in zip(ix, iy, psfval):
         psfout[y, x] = p
 
