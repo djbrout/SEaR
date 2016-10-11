@@ -207,7 +207,7 @@ class metropolis_hastings():
         self.x = x
         self.y = y
 
-        self.x[0] = self.x[0] - 1.
+        self.x[0] = self.x[0] - 3.
 
         if self.psfcenter is None:
             p1,pc1 = buildPSFex.build(self.psffile[0],self.x[0],self.y[0],self.substamp)
