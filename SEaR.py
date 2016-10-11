@@ -176,7 +176,7 @@ class model:
 
 
 
-        self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*10000.
+        self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
 
     def runDMC(self):
         ts = time.time()
