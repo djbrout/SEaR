@@ -198,6 +198,10 @@ class model:
             , compress=     100
             , burnin=       .3
             , isfermigrid=  self.fermigrid
+            , psffile=      np.array([os.path.join(self.rootdir,self.impsf),
+                                      os.path.join(self.rootdir,self.templatepsf)],dtype='str')
+            ,x=             np.array([self.ix,self.tx])
+            ,y=             np.array([self.iy,self.ty])
         )
 
 

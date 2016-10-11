@@ -118,6 +118,8 @@ class metropolis_hastings():
                 , fitrad = 4.
                 , psffile = None
                 , psfcenter = None
+                , x=None
+                , y=None
                 ):
         '''
         if model is None:
@@ -202,6 +204,8 @@ class metropolis_hastings():
         self.fitrad=fitrad
         self.psffile = psffile
         self.psfcenter = psfcenter
+        self.x = x
+        self.y = y
 
 
         if self.isfermigrid:
@@ -1140,8 +1144,7 @@ class metropolis_hastings():
 
     def shiftPSF(self,y_off=0.0,x_off=0.0):
 
-        thispsf, thispsfcenter = buildPSFex.build(os.path.join(self.rootdir, self.impsf)
-                                                                , self.ix, self.iy, self.stampsize)
+        thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0], self.y[0], self.substamp)
 
         if thispsfcenter[0] != self.psfcenter[0] or thispsfcenter[1] != self.psfcenter[1]:
             newpsf = np.zeros(thispsf.shape)
@@ -1165,6 +1168,31 @@ class metropolis_hastings():
 
             thispsf = newpsf
         self.kicked_psfs[0, :, :] = thispsf
+
+        thispsf, thispsfcenter = buildPSFex.build(self.psffile[1], self.x[1], self.y[1], self.substamp)
+
+        if thispsfcenter[0] != self.psfcenter[0] or thispsfcenter[1] != self.psfcenter[1]:
+            newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[0] == self.psfcenter[0] - 1:
+                newpsf[:-1,:] = thispsf[1:,:]
+            elif thispsfcenter[0] == self.psfcenter[0] +1:
+                newpsf[1:,:] = thispsf[:-1,:]
+            else:
+                print 'MCMC is attempting to offset the psf by more than one pixel!'
+                raise ('MCMC is attempting to offset the psf by more than one pixel!')
+            thispsf = newpsf
+
+            newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[1] == self.psfcenter[1] - 1:
+                newpsf[:, :-1] = thispsf[:, 1:]
+            elif thispsfcenter[0] == self.psfcenter[0] + 1:
+                newpsf[:, 1:] = thispsf[:, :-1]
+            else:
+                print 'MCMC is attempting to offset the psf by more than one pixel!'
+                raise ('MCMC is attempting to offset the psf by more than one pixel!')
+
+            thispsf = newpsf
+        self.kicked_psfs[1, :, :] = thispsf
 
 
         # self.psfs[0, :, :], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir, self.impsf)
