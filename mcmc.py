@@ -1156,6 +1156,7 @@ class metropolis_hastings():
         #print thispsfcenter
         if thispsfcenter[0] != self.psfcenter[0][0] or thispsfcenter[1] != self.psfcenter[0][1]:
             newpsf = np.zeros(thispsf.shape)
+            print thispsfcenter[0] ,self.psfcenter[0][0]
             if thispsfcenter[0] == self.psfcenter[0][0]:
                 newpsf = thispsf
             if thispsfcenter[0] == self.psfcenter[0][0] - 1:
