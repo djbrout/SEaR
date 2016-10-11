@@ -1154,6 +1154,8 @@ class metropolis_hastings():
         #print thispsfcenter
         if thispsfcenter[0] != self.psfcenter[0][0] or thispsfcenter[1] != self.psfcenter[0][1]:
             newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[0] == self.psfcenter[0][0]:
+                newpsf = thispsf
             if thispsfcenter[0] == self.psfcenter[0][0] - 1:
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[0][0] +1:
@@ -1164,6 +1166,8 @@ class metropolis_hastings():
             thispsf = newpsf
 
             newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[1] == self.psfcenter[0][1]:
+                newpsf = thispsf
             if thispsfcenter[1] == self.psfcenter[0][1] - 1:
                 newpsf[:, :-1] = thispsf[:, 1:]
             elif thispsfcenter[0] == self.psfcenter[0][1] + 1:
@@ -1181,7 +1185,9 @@ class metropolis_hastings():
         if thispsfcenter[0] != self.psfcenter[1][0] or thispsfcenter[1] != self.psfcenter[1][1]:
             newpsf = np.zeros(thispsf.shape)
             print thispsfcenter[0],self.psfcenter[1][0]
-            if thispsfcenter[0] == self.psfcenter[1][0] - 1:
+            if thispsfcenter[0] == self.psfcenter[1][0]:
+                newpsf = thispsf
+            elif thispsfcenter[0] == self.psfcenter[1][0] - 1:
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[1][0] +1:
                 newpsf[1:,:] = thispsf[:-1,:]
@@ -1191,6 +1197,8 @@ class metropolis_hastings():
             thispsf = newpsf
             print thispsfcenter[1],self.psfcenter[1][1]
             newpsf = np.zeros(thispsf.shape)
+            if thispsfcenter[1] == self.psfcenter[1][1]:
+                newpsf = thispsf
             if thispsfcenter[1] == self.psfcenter[1][1] - 1:
                 newpsf[:, :-1] = thispsf[:, 1:]
             elif thispsfcenter[1] == self.psfcenter[1][1] + 1:
