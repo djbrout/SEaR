@@ -1180,6 +1180,7 @@ class metropolis_hastings():
 
         if thispsfcenter[0] != self.psfcenter[1][0] or thispsfcenter[1] != self.psfcenter[1][1]:
             newpsf = np.zeros(thispsf.shape)
+            print thispsfcenter[0],self.psfcenter[1][0]
             if thispsfcenter[0] == self.psfcenter[1][0] - 1:
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[1][0] +1:
@@ -1188,7 +1189,7 @@ class metropolis_hastings():
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
                 raise Exception('MCMC is attempting to offset the psf by more than one pixel!2')
             thispsf = newpsf
-
+            print thispsfcenter[1],self.psfcenter[1][1]
             newpsf = np.zeros(thispsf.shape)
             if thispsfcenter[1] == self.psfcenter[1][1] - 1:
                 newpsf[:, :-1] = thispsf[:, 1:]
