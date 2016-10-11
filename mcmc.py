@@ -204,7 +204,7 @@ class metropolis_hastings():
         self.fitrad=fitrad
         self.psffile = psffile
         self.psfcenter = psfcenter
-        self.x = x
+        self.x = x+.3
         self.y = y
 
         if self.psfcenter is None:
@@ -1159,7 +1159,7 @@ class metropolis_hastings():
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!'
-                raise
+                raise Exception('MCMC is attempting to offset the psf by more than one pixel!')
             thispsf = newpsf
 
             newpsf = np.zeros(thispsf.shape)
@@ -1169,7 +1169,7 @@ class metropolis_hastings():
                 newpsf[:, 1:] = thispsf[:, :-1]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!'
-                raise
+                raise Exception('MCMC is attempting to offset the psf by more than one pixel!')
 
             thispsf = newpsf
         self.kicked_psfs[0, :, :] = thispsf
@@ -1184,7 +1184,7 @@ class metropolis_hastings():
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!'
-                raise
+                raise Exception('MCMC is attempting to offset the psf by more than one pixel!')
             thispsf = newpsf
 
             newpsf = np.zeros(thispsf.shape)
@@ -1194,7 +1194,7 @@ class metropolis_hastings():
                 newpsf[:, 1:] = thispsf[:, :-1]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!'
-                raise
+                raise Exception('MCMC is attempting to offset the psf by more than one pixel!')
 
             thispsf = newpsf
         self.kicked_psfs[1, :, :] = thispsf

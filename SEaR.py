@@ -176,6 +176,7 @@ class model:
 
 
     def runDMC(self):
+        ts = time.time()
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
@@ -203,7 +204,7 @@ class model:
             ,x=             np.array([self.ix,self.tx])
             ,y=             np.array([self.iy,self.ty])
         )
-
+        print 'MCMC FIT TIME',time.time()-ts
 
         modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
