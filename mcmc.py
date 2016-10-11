@@ -204,7 +204,7 @@ class metropolis_hastings():
         self.fitrad=fitrad
         self.psffile = psffile
         self.psfcenter = psfcenter
-        self.x = x+.3
+        self.x = x+.6
         self.y = y
 
         if self.psfcenter is None:

@@ -44,7 +44,7 @@ class model:
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
-                 numiter=5000, floatpos=False, floatposstd=.005,
+                 numiter=5000, floatpos=False, floatposstd=.02,
                  stampsize=11, initialguess=None, stepstd=None):
 
         self.tstart = time.time()
