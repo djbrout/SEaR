@@ -1152,8 +1152,8 @@ class metropolis_hastings():
 
 
     def shiftPSF(self,y_off=0.0,x_off=0.0):
-        print 'xxxx', self.x[0]+x_off+.6,self.y[0]+y_off+.6,x_off,y_off
-        thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off+.6, self.y[0]+y_off+.6, self.substamp)
+        print 'xxxx', self.x[0]+x_off,self.y[0]+y_off
+        thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off, self.y[0]+y_off, self.substamp)
         #print thispsfcenter[0],thispsfcenter[1],round(self.x[0]+x_off+.),round(self.y[0]+y_off)
         #print thispsfcenter,self.psfcenter[0]
         #print thispsfcenter
@@ -1163,10 +1163,10 @@ class metropolis_hastings():
             if thispsfcenter[1] == self.psfcenter[0][1]:
                 pass
             elif thispsfcenter[1] == self.psfcenter[0][1] - 1:
-                print 'shifting1'
+                #print 'shifting1'
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[1] == self.psfcenter[0][1] + 1:
-                print 'shifting2'
+                #print 'shifting2'
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!1'
@@ -1177,10 +1177,10 @@ class metropolis_hastings():
             if thispsfcenter[0] == self.psfcenter[0][0]:
                 pass
             elif thispsfcenter[0] == self.psfcenter[0][0] - 1:
-                print 'shifting3'
+                #print 'shifting3'
                 newpsf[:,:-1] = copy(thispsf[:, 1:])
             elif thispsfcenter[0] == self.psfcenter[0][0] + 1:
-                print 'shifting4'
+                #print 'shifting4'
                 newpsf[:, 1:] = copy(thispsf[:, :-1])
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!1'
@@ -1198,10 +1198,10 @@ class metropolis_hastings():
             if thispsfcenter[0] == self.psfcenter[1][0]:
                 pass
             elif thispsfcenter[0] == self.psfcenter[1][0] - 1:
-                print 'shifting5'
+                #print 'shifting5'
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[1][0] +1:
-                print 'shifting6'
+                #print 'shifting6'
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
@@ -1212,10 +1212,10 @@ class metropolis_hastings():
             if thispsfcenter[1] == self.psfcenter[1][1]:
                 pass
             elif thispsfcenter[1] == self.psfcenter[1][1] - 1:
-                print 'shifting7'
+                #print 'shifting7'
                 newpsf[:, :-1] = thispsf[:, 1:]
             elif thispsfcenter[1] == self.psfcenter[1][1] + 1:
-                print 'shifting8'
+                #print 'shifting8'
                 newpsf[:, 1:] = thispsf[:, :-1]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
