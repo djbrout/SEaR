@@ -1154,28 +1154,32 @@ class metropolis_hastings():
     def shiftPSF(self,y_off=0.0,x_off=0.0):
         print x_off,y_off
         thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off+.9, self.y[0]+y_off, self.substamp)
-        print thispsfcenter,self.psfcenter[0]
+        #print thispsfcenter,self.psfcenter[0]
         #print thispsfcenter
         if thispsfcenter[0] != self.psfcenter[0][0] or thispsfcenter[1] != self.psfcenter[0][1]:
-            newpsf = np.zeros(thispsf.shape)
+            newpsf = thispsf
             print thispsfcenter[0] ,self.psfcenter[0][0]
             if thispsfcenter[0] == self.psfcenter[0][0]:
-                newpsf = thispsf
+                pass
             elif thispsfcenter[0] == self.psfcenter[0][0] - 1:
+                print 'shifting1'
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[0][0] +1:
+                print 'shifting2'
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!1'
                 raise Exception('MCMC is attempting to offset the psf by more than one pixel!1')
             thispsf = newpsf
 
-            newpsf = np.zeros(thispsf.shape)
+            newpsf = thispsf
             if thispsfcenter[1] == self.psfcenter[0][1]:
-                newpsf = thispsf
+                pass
             elif thispsfcenter[1] == self.psfcenter[0][1] - 1:
+                print 'shifting3'
                 newpsf[:, :-1] = thispsf[:, 1:]
             elif thispsfcenter[0] == self.psfcenter[0][1] + 1:
+                print 'shifting4'
                 newpsf[:, 1:] = thispsf[:, :-1]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!1'
@@ -1185,28 +1189,32 @@ class metropolis_hastings():
         self.kicked_psfs[0, :, :] = thispsf
 
         thispsf, thispsfcenter = buildPSFex.build(self.psffile[1], self.x[1]+x_off, self.y[1]+y_off, self.substamp)
-        print thispsfcenter,self.psfcenter[1]
+        # print thispsfcenter,self.psfcenter[1]
 
         if thispsfcenter[0] != self.psfcenter[1][0] or thispsfcenter[1] != self.psfcenter[1][1]:
-            newpsf = np.zeros(thispsf.shape)
+            newpsf = thispsf
             print thispsfcenter[0],self.psfcenter[1][0]
             if thispsfcenter[0] == self.psfcenter[1][0]:
-                newpsf = thispsf
+                pass
             elif thispsfcenter[0] == self.psfcenter[1][0] - 1:
+                print 'shifting5'
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[0] == self.psfcenter[1][0] +1:
+                print 'shifting6'
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
                 raise Exception('MCMC is attempting to offset the psf by more than one pixel!2')
             thispsf = newpsf
             print thispsfcenter[1],self.psfcenter[1][1]
-            newpsf = np.zeros(thispsf.shape)
+            newpsf = thispsf
             if thispsfcenter[1] == self.psfcenter[1][1]:
-                newpsf = thispsf
+                pass
             elif thispsfcenter[1] == self.psfcenter[1][1] - 1:
+                print 'shifting7'
                 newpsf[:, :-1] = thispsf[:, 1:]
             elif thispsfcenter[1] == self.psfcenter[1][1] + 1:
+                print 'shifting8'
                 newpsf[:, 1:] = thispsf[:, :-1]
             else:
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
