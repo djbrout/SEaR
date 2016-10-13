@@ -1152,9 +1152,9 @@ class metropolis_hastings():
 
 
     def shiftPSF(self,y_off=0.0,x_off=0.0):
-        print 'xxxx', self.x[0]+x_off+.9,self.y[0]+y_off,x_off,y_off
-        thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off+.9, self.y[0]+y_off, self.substamp)
-        print thispsfcenter[0],thispsfcenter[1],round(self.x[0]+x_off+.9),round(self.y[0]+y_off)
+        #print 'xxxx', self.x[0]+x_off+.9,self.y[0]+y_off,x_off,y_off
+        thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off+.6, self.y[0]+y_off+.6, self.substamp)
+        #print thispsfcenter[0],thispsfcenter[1],round(self.x[0]+x_off+.),round(self.y[0]+y_off)
         #print thispsfcenter,self.psfcenter[0]
         #print thispsfcenter
         if thispsfcenter[0] != self.psfcenter[0][0] or thispsfcenter[1] != self.psfcenter[0][1]:
