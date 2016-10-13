@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="" />
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
+    </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,17 +26,17 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="1157" column="8" selection-start-line="1157" selection-start-column="8" selection-end-line="1157" selection-end-column="8" />
+            <state relative-caret-position="312">
+              <caret line="1154" column="21" selection-start-line="1154" selection-start-column="21" selection-end-line="1154" selection-end-column="21" />
               <folding>
-                <marker date="1476366234000" expanded="true" signature="26348:28143" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="26532:28143" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="26572:27685" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="26833:27685" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="26864:27429" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="27728:27909" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="27952:28143" placeholder="..." />
-                <marker date="1476366234000" expanded="true" signature="39815:40045" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="26348:28143" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="26532:28143" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="26572:27685" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="26833:27685" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="26864:27429" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="27728:27909" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="27952:28143" placeholder="..." />
+                <marker date="1476378216000" expanded="true" signature="39815:40045" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -125,9 +127,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="332" />
     <option name="y" value="22" />
-    <option name="width" value="1811" />
-    <option name="height" value="874" />
+    <option name="width" value="1588" />
+    <option name="height" value="1174" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -391,10 +394,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1811" height="874" extended-state="0" />
+    <frame x="332" y="22" width="1588" height="1174" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.087244615" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09949622" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -444,14 +447,14 @@
         <state relative-caret-position="3240">
           <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
           <folding>
-            <marker date="1476366234000" expanded="true" signature="26348:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26532:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26572:27685" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26833:27685" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26864:27429" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="27728:27909" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="27952:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="39815:40045" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26348:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26532:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26572:27685" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26833:27685" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26864:27429" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="27728:27909" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="27952:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="39815:40045" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -528,17 +531,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1157" column="8" selection-start-line="1157" selection-start-column="8" selection-end-line="1157" selection-end-column="8" />
+        <state relative-caret-position="312">
+          <caret line="1154" column="21" selection-start-line="1154" selection-start-column="21" selection-end-line="1154" selection-end-column="21" />
           <folding>
-            <marker date="1476366234000" expanded="true" signature="26348:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26532:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26572:27685" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26833:27685" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="26864:27429" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="27728:27909" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="27952:28143" placeholder="..." />
-            <marker date="1476366234000" expanded="true" signature="39815:40045" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26348:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26532:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26572:27685" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26833:27685" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="26864:27429" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="27728:27909" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="27952:28143" placeholder="..." />
+            <marker date="1476378216000" expanded="true" signature="39815:40045" placeholder="..." />
           </folding>
         </state>
       </provider>
