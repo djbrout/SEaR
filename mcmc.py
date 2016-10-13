@@ -1159,13 +1159,13 @@ class metropolis_hastings():
         #print thispsfcenter
         if thispsfcenter[0] != self.psfcenter[0][0] or thispsfcenter[1] != self.psfcenter[0][1]:
             newpsf = thispsf
-            print thispsfcenter[0] ,self.psfcenter[0][0]
-            if thispsfcenter[0] == self.psfcenter[0][0]:
+            #print thispsfcenter[0] ,self.psfcenter[0][0]
+            if thispsfcenter[1] == self.psfcenter[0][1]:
                 pass
-            elif thispsfcenter[0] == self.psfcenter[0][0] - 1:
+            elif thispsfcenter[1] == self.psfcenter[0][1] - 1:
                 print 'shifting1'
                 newpsf[:-1,:] = thispsf[1:,:]
-            elif thispsfcenter[0] == self.psfcenter[0][0] + 1:
+            elif thispsfcenter[1] == self.psfcenter[0][1] + 1:
                 print 'shifting2'
                 newpsf[1:,:] = thispsf[:-1,:]
             else:
@@ -1174,12 +1174,12 @@ class metropolis_hastings():
             thispsf = copy(newpsf)
 
             newpsf = copy(thispsf)
-            if thispsfcenter[1] == self.psfcenter[0][1]:
+            if thispsfcenter[0] == self.psfcenter[0][0]:
                 pass
-            elif thispsfcenter[1] == self.psfcenter[0][1] - 1:
+            elif thispsfcenter[0] == self.psfcenter[0][0] - 1:
                 print 'shifting3'
                 newpsf[:,:-1] = copy(thispsf[:, 1:])
-            elif thispsfcenter[0] == self.psfcenter[0][1] + 1:
+            elif thispsfcenter[0] == self.psfcenter[0][0] + 1:
                 print 'shifting4'
                 newpsf[:, 1:] = copy(thispsf[:, :-1])
             else:
