@@ -106,6 +106,8 @@ class fit:
 
         imhdr = pf.getheader(self.image)
         tmphdr = pf.getheader(self.template)
+        print imhdr.keys()
+        raw_input()
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         self.templatezpt = tmphdr['SEXMGZPT']
