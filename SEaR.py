@@ -88,6 +88,7 @@ class fit:
             self.readDefaults()
 
         if self.fermigrid:
+            print 'setting up fermi'
             self.setupFermi()
         else:
             if not os.path.exists(self.outdir):
