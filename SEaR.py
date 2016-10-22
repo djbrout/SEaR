@@ -121,13 +121,13 @@ class fit:
             from astropy import wcs
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
-            imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip(self.ix, self.iy)), 0))
+            imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
             self.tx, self.ty = zip(*tmpwcs.wcs_world2pix(np.array(zip(imra, imdec)), 0))
         elif self.ix is None or self.iy is None:
             from astropy import wcs
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
-            tmpra, tmpdec = zip(*imwcs.wcs_pix2world(np.array(zip(self.tx, self.ty)), 0))
+            tmpra, tmpdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.tx, [self.ty])), 0))
             self.ix, self.iy = zip(*tmpwcs.wcs_world2pix(np.array(zip(tmpra, tmpdec)), 0))
 
         print self.ix,self.iy
