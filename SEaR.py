@@ -608,17 +608,17 @@ if __name__ == "__main__":
         raise Exception('--stampsize must be an even number!')
 
 
-    if not index is None:
-        if candlist is None:
-            if numdefaults != 16:
-                raise Exception('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
-        else:
-            candfile = open(candlist,'r').read().split()[index]
-
-    if candfile is None:
-        if numdefaults != 16:
-            print numdefaults
-            raise Exception('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
+    # if not index is None:
+    #     if candlist is None:
+    #         if numdefaults != 16:
+    #             raise Exception('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
+    #     else:
+    #         candfile = open(candlist,'r').read().split()[index]
+    #
+    # if candfile is None:
+    #     if numdefaults != 16:
+    #         print numdefaults
+    #         raise Exception('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
 
     else:
         ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
