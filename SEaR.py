@@ -620,8 +620,8 @@ if __name__ == "__main__":
     #         print numdefaults
     #         raise Exception('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
 
-    else:
-        ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
+    # else:
+    #     ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
 
     candid = 'testcand001'
 
