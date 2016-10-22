@@ -104,14 +104,8 @@ class fit:
 
     def grabfromheader(self):
 
-        print pf.getheader(self.template,0).keys()
-        print pf.getheader(self.template,1).keys()
-        print pf.getheader(self.template,2).keys()
-
         imhdr = pf.getheader(self.image,1)
         tmphdr = pf.getheader(self.template)
-        #print imhdr.keys()
-        raw_input()
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         self.templatezpt = tmphdr['SEXMGZPT']
