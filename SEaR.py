@@ -104,11 +104,11 @@ class fit:
 
     def grabfromheader(self):
 
-        print pf.getheader(self.image,0).keys()
-        print pf.getheader(self.image,1).keys()
-        print pf.getheader(self.image,2).keys()
+        print pf.getheader(self.template,0).keys()
+        print pf.getheader(self.template,1).keys()
+        print pf.getheader(self.template,2).keys()
 
-        imhdr = pf.getheader(self.image)
+        imhdr = pf.getheader(self.image,1)
         tmphdr = pf.getheader(self.template)
         #print imhdr.keys()
         raw_input()
