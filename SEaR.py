@@ -34,7 +34,7 @@ import dilltools as dt
 import buildPSFex
 
 
-class model:
+class fit:
     def __init__(self, candid=None,
                  image=None, template=None,
                  imagepsf=None, templatepsf=None,
@@ -44,17 +44,12 @@ class model:
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
-                 numiter=5000, floatpos=False, floatposstd=.004,
-                 stampsize=11, initialguess=None, stepstd=None):
+                 numiter=None, floatpos=False, floatposstd=.004,
+                 stampsize=None, initialguess=None, stepstd=None,commandline=False):
 
         self.tstart = time.time()
 
-        self.image = image
-        self.template = template
-        self.impsf = imagepsf
-        self.templatepsf = templatepsf
-        self.imweight = imageweight
-        self.templateweight = templateweight
+
         self.imzpt = imagezpt
         self.templatezpt = templatezpt
         self.imagesky=imagesky
@@ -63,6 +58,13 @@ class model:
         self.templateskyerr = templateskyerr
         self.outdir = outdir
         self.rootdir = rootdir
+
+        self.image = os.path.join(self.rootdir,image)
+        self.template = os.path.join(self.rootdir,template)
+        self.impsf = os.path.join(self.rootdir,imagepsf)
+        self.templatepsf = os.path.join(self.rootdir,templatepsf)
+        self.imweight = os.path.join(self.rootdir,imageweight)
+        self.templateweight = os.path.join(self.rootdir,templateweight)
 
         self.ix = ix
         self.iy = iy
@@ -82,16 +84,54 @@ class model:
 
         self.fermigrid = fermigrid
 
+        if not commandline:
+            self.readDefaults()
+
         if self.fermigrid:
             self.setupFermi()
         else:
             if not os.path.exists(self.outdir):
                 os.makedirs(self.outdir)
 
+        grabfromheader = True
+        if grabfromheader:
+            self.grabfromheader()
+
         self.setupMCMC()
         self.runDMC()
 
+
+    def grabfromheader(self):
+
+        imhdr = pf.getheader(self.image)
+        tmphdr = pf.getheader(self.template)
+
+        self.imzpt = tmphdr['SEXMGZPT']
+        self.templatezpt = tmphdr['SEXMGZPT']
+        self.imagesky = imhdr['SKYBRITE']
+        self.imageskyerr = imhdr['SKYSIGMA']
+        self.templatesky = tmphdr['SKYBRITE']
+        self.templateskyerr = tmphdr['SKYSIGMA']
+
     def setupMCMC(self):
+
+        if self.tx is None or self.ty is None:
+            from astropy import wcs
+            imwcs = wcs.WCS(self.image)
+            tmpwcs = wcs.WCS(self.template)
+            imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip(self.ix, self.iy)), 0))
+            self.tx, self.ty = zip(*tmpwcs.wcs_world2pix(np.array(zip(imra, imdec)), 0))
+        elif self.ix is None or self.iy is None:
+            from astropy import wcs
+            imwcs = wcs.WCS(self.image)
+            tmpwcs = wcs.WCS(self.template)
+            tmpra, tmpdec = zip(*imwcs.wcs_pix2world(np.array(zip(self.tx, self.ty)), 0))
+            self.ix, self.iy = zip(*tmpwcs.wcs_world2pix(np.array(zip(tmpra, tmpdec)), 0))
+
+        print self.ix,self.iy
+        print self.tx,self.ty
+        print 'these are the candidate pixels'
+        raw_input()
 
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
@@ -247,6 +287,150 @@ class model:
             os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight))
             self.templateweight = self.templateweight[:-3]
 
+    def readDefaults(self):
+        try:
+            if os.path.exists("default.config"):
+                args = open("default.config", 'r').read().split()
+
+            opt, arg = getopt.getopt(
+                args, "hs:o:r:n:i:cl:s:fg",
+                longopts=["outdir=", "rootdir=", "floatpos", "numiter=", "index=", "candlist=",
+                          "stampsize=", "fermigrid", "imagexpix=", "imageypix=",
+                          "templatexpix=", "templateypix=",
+                          "imagesky=", "templatesky=",
+                          "imageskyerr=", "templateskyerr=",
+                          "image=", "template=", "initialguess=", "stepstd=",
+                          "imagepsf=", "templatepsf=", "imageweight=", "templateweight=",
+                          "imagezpt=", "templatezpt=", "fitrad="])
+            # print opt
+            # print arg
+        except getopt.GetoptError as err:
+            print str(err)
+            print "Error : incorrect option or missing argument."
+            # print __doc__
+            sys.exit(1)
+
+        if self.outdir is None:
+            self.outdir = 'p9out'
+        if self.rootdir is None:
+            self.rootdir = '.'
+        if self.floatpos is None:
+            self.floatpos = False
+        if self.fermigrid is None:
+            self.fermigrid = False
+        if self.numiter is None:
+            self.numiter = 5000
+        if self.stampsize is None:
+            self.stampsize = 10
+        if self.fitrad is None:
+            self.fitrad = 4
+        if self.initialguess is None:
+            self.initialguess = 10000.
+        if self.stepstd is None:
+            self.stepstd = 200.
+
+        numdefaults = 0
+
+        ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt, imagesky, templatesky, imageskyerr, templateskyerr = None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None
+
+        for o, a in opt:
+            if o in ["-h", "--help"]:
+                print __doc__
+                sys.exit(0)
+            elif o in ["-o", "--outdir"]:
+                if self.outdir is None:
+                    self.outdir = a
+            elif o in ["-r", "--rootdir"]:
+                if self.rootdir is None:
+                    self.rootdir = a
+            elif o in ["--floatpos"]:
+                if self.floatpos is None:
+                    self.floatpos = True
+            elif o in ["-n", "--numiter"]:
+                if self.numiter is None:
+                    self.numiter = float(a)
+            elif o in ["-cl", "--candlist"]:
+                candlist = a
+            elif o in ["-s", "--stampsize"]:
+                if self.stampsize is None:
+                    self.stampsize = int(a)
+            elif o in ["-fg", "--fermigrid"]:
+                fermigrid = True
+            elif o in ["--imagexpix"]:
+                if self.ix is None:
+                    self.ix = float(a)
+                numdefaults += 1
+            elif o in ["--imageypix"]:
+                if self.iy is None:
+                    iy = float(a)
+                numdefaults += 1
+            elif o in ["--templatexpix"]:
+                if self.tx is None:
+                    tx = float(a)
+                numdefaults += 1
+            elif o in ["--templateypix"]:
+                if self.ty is None:
+                    ty = float(a)
+                numdefaults += 1
+            elif o in ["--image"]:
+                if self.image is None:
+                    self.image = a
+                numdefaults += 1
+            elif o in ["--template"]:
+                if self.template is None:
+                    self.template = a
+                numdefaults += 1
+            elif o in ["--imagepsf"]:
+                if self.impsf is None:
+                    self.impsf = a
+                numdefaults += 1
+            elif o in ["--templatepsf"]:
+                if self.templatepsf is None:
+                    self.templatepsf = a
+                numdefaults += 1
+            elif o in ["--imageweight"]:
+                if self.imweight is None:
+                    self.imweight = a
+                numdefaults += 1
+            elif o in ["--templateweight"]:
+                if self.templateweight is None:
+                    self.templateweight = a
+                numdefaults += 1
+            elif o in ["--imagezpt"]:
+                if self.imzpt is None:
+                    self.imzpt = float(a)
+                numdefaults += 1
+            elif o in ["--templatezpt"]:
+                if self.templatezpt is None:
+                    self.templatezpt = float(a)
+                numdefaults += 1
+            elif o in ["--imagesky"]:
+                if self.imagesky is None:
+                    self.imagesky = float(a)
+                numdefaults += 1
+            elif o in ["--templatesky"]:
+                if self.templatesky is None:
+                    self.templatesky = float(a)
+                numdefaults += 1
+            elif o in ["--imageskyerr"]:
+                if self.imageskyerr is None:
+                    self.imageskyerr = float(a)
+                numdefaults += 1
+            elif o in ["--templateskyerr"]:
+                if self.templateskyerr is None:
+                    self.templateskyerr = float(a)
+                numdefaults += 1
+            elif o in ["--fitrad"]:
+                if self.fitrad is None:
+                    self.fitrad = float(a)
+            elif o in ["--initialguess"]:
+                if self.initialguess is None:
+                    self.initialguess = float(a)
+            elif o in ["--stepstd"]:
+                if self.stepstd is None:
+                    self.stepstd = float(a)
+            else:
+                print "Warning: option", o, "with argument", a, "is not recognized"
 
 # def readCandFile(file):
 #     #read in the file and grab the following data
@@ -374,7 +558,7 @@ if __name__ == "__main__":
             templatesky = float(a)
             numdefaults += 1
         elif o in ["--imageskyerr"]:
-            imagepskyerr = float(a)
+            imageskyerr = float(a)
             numdefaults += 1
         elif o in ["--templateskyerr"]:
             templateskyerr = float(a)
@@ -441,7 +625,7 @@ if __name__ == "__main__":
 
     candid = 'testcand001'
 
-    obj = model(candid=candid,
+    obj = fit(  candid=candid,
                 image=imagepath, template=templatepath,
                 imagepsf=imagepsf, templatepsf=templatepsf,
                 imageweight=imageweight, templateweight=templateweight,
@@ -450,4 +634,4 @@ if __name__ == "__main__":
                 imageskyerr=imageskyerr, templateskyerr=templateskyerr, fitrad= fitrad,
                 ix=ix, iy=iy, tx=tx, ty=ty, stampsize=stampsize, fermigrid=fermigrid,
                 outdir=outdir, rootdir=rootdir, floatpos=floatpos, numiter=numiter,
-                initialguess=initialguess,stepstd=stepstd)
+                initialguess=initialguess,stepstd=stepstd,commandline=True)
