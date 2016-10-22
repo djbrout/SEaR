@@ -108,6 +108,7 @@ class fit:
         tmphdr = pf.getheader(self.template)
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
+        print tmphdr.keys()
         self.templatezpt = tmphdr['SEXMGZPT']
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
