@@ -107,7 +107,7 @@ class fit:
         imhdr = pf.getheader(self.image)
         tmphdr = pf.getheader(self.template)
 
-        self.imzpt = tmphdr['SEXMGZPT']
+        self.imzpt = tmphdr['HIERARCH DOFAKE_ZP']
         self.templatezpt = tmphdr['SEXMGZPT']
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
