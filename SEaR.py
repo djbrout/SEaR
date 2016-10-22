@@ -108,12 +108,12 @@ class fit:
         tmphdr = pf.getheader(self.template)
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
-        print tmphdr
-        self.templatezpt = tmphdr['SEXMGZPT']
+        #print tmphdr
+        self.templatezpt = tmphdr['ZP']
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
-        self.templatesky = tmphdr['SKYBRITE']
-        self.templateskyerr = tmphdr['SKYSIGMA']
+        self.templatesky = 0.
+        self.templateskyerr = 1.
 
     def setupMCMC(self):
 
