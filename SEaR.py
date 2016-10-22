@@ -152,13 +152,13 @@ class fit:
         imagedata = pf.getdata(os.path.join(self.rootdir,self.image))
         imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
-            raise('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
-            raise('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         if self.ix - (self.stampsize-1)/2 < 0:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         if self.ix + (self.stampsize-1)/2 > imagedata.shape[1]:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
 
         self.data[0,:,:] = imagedata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
@@ -182,19 +182,19 @@ class fit:
         templatedata = pf.getdata(os.path.join(self.rootdir,self.template))
         templateweightdata = pf.getdata(os.path.join(self.rootdir,self.templateweight))
         if self.ty - (self.stampsize - 1) / 2 < 0:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         else:
             ylow = np.floor(self.ty) - (self.stampsize - 1) / 2
         if self.ty + (self.stampsize - 1) / 2 > imagedata.shape[0]:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         else:
             yhi = np.floor(self.ty) + (self.stampsize - 1) / 2 + 1
         if self.tx - (self.stampsize - 1) / 2 < 0:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         else:
             xlow = np.floor(self.tx) - (self.stampsize - 1) / 2
         if self.tx + (self.stampsize - 1) / 2 > imagedata.shape[1]:
-            raise ('candidate is too close to edge of ccd')
+            raise Exception('candidate is too close to edge of ccd')
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
@@ -605,20 +605,20 @@ if __name__ == "__main__":
 
     if stampsize % 2 == 1:
         print '--stampsize must be an even number!'
-        raise
+        raise Exception('--stampsize must be an even number!')
 
 
     if not index is None:
         if candlist is None:
             if numdefaults != 16:
-                raise('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
+                raise Exception('please supply candidate list file with full path --candlist=/path/to/your/candlistfile.txt')
         else:
             candfile = open(candlist,'r').read().split()[index]
 
     if candfile is None:
         if numdefaults != 16:
             print numdefaults
-            raise('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
+            raise Exception('please supply candidate file with full path --candfile=/path/to/your/candfile.txt')
 
     else:
         ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt = readCandFile(candfile)
