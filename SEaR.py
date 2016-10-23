@@ -118,25 +118,26 @@ class fit:
     def setupMCMC(self):
 
         if self.tx is None or self.ty is None:
-            from astropy import wcs
-            imwcs = wcs.WCS(self.image)
-            tmpwcs = wcs.WCS(self.template)
-            imhdr = pf.getheader(self.image,1)
-            #print pf.getheader(self.image,0).keys()
-            w = wcs.WCS(naxis=2)
-            print imhdr
-
-            hl = pf.open(self.image)
+            ihl = pf.open(self.image)
+            thl = pf.open(self.template)
             import starlink.Ast as Ast
             import starlink.Atl as Atl
-            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(hl[1]))
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
             encoding = fitschan.Encoding
-            wcsinfo = fitschan.read()
+            iwcsinfo = fitschan.read()
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(thl[0]))
+            encoding = fitschan.Encoding
+            twcsinfo = fitschan.read()
+
+
             radtodeg = 360 / (2 * 3.14159)
-            results = wcsinfo.tran([[self.ix], [self.iy]])
+            results = iwcsinfo.tran([[self.ix], [self.iy]])
+            self.tx,self.ty = twcsinfo.tran([[results[0]],[results[1]]],False)
+
             ra1, dec1 = results[0] * radtodeg, results[1] * radtodeg
-            print ra1,dec1
-            raw_input()
+
+            #print ra1,dec1
+            #raw_input()
 
             #w.wcs.set_pv([(2, 1, 45.0)])
 
@@ -158,6 +159,7 @@ class fit:
             self.ix, self.iy = zip(*tmpwcs.wcs_world2pix(np.array(zip(tmpra, tmpdec)), 0))
 
         print self.ix,self.iy
+        print ra1,dec1
         print self.tx,self.ty
         print 'these are the candidate pixels'
         raw_input()
