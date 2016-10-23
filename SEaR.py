@@ -130,10 +130,10 @@ class fit:
             # Set up an "Airy's zenithal" projection
             # Vector properties may be set with Python lists, or Numpy arrays
             #print imhdr
-            print imhdr['CRPIX1'],imhdr['CRPIX2']
-            print imhdr['PIXSCAL1']
-            print imhdr['CRVAL1']
-            print imhdr['CTYPE']
+            # print imhdr['CRPIX1'],imhdr['CRPIX2']
+            # print imhdr['PIXSCAL1']
+            # print imhdr['CRVAL1']
+            # print imhdr['CTYPE']
 
             w.wcs.crpix = [imhdr['CRPIX1'],imhdr['CRPIX2']]
             w.wcs.cdelt = np.array([imhdr['PIXSCAL1'], imhdr['PIXSCAL1']])
