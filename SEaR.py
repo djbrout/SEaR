@@ -132,14 +132,14 @@ class fit:
             #print imhdr
             print imhdr['CRPIX1'],imhdr['CRPIX2']
             print imhdr['PIXSCAL1']
-            print imhdr['CRVAL']
+            print imhdr['CRVAL1']
             print imhdr['CTYPE']
 
             w.wcs.crpix = [imhdr['CRPIX1'],imhdr['CRPIX2']]
-            w.wcs.cdelt = numpy.array([imhdr['PIXSCAL1'], imhdr['PIXSCAL1']])
-            w.wcs.crval = [0, -90]
-            w.wcs.ctype = ["RA---AIR", "DEC--AIR"]
-            w.wcs.set_pv([(2, 1, 45.0)])
+            w.wcs.cdelt = np.array([imhdr['PIXSCAL1'], imhdr['PIXSCAL1']])
+            w.wcs.crval = [imhdr['CRVAL1'], imhdr['CRVAL2']]
+            w.wcs.ctype = [imhdr['CTYPE1'], imhdr['CTYPE2']]
+            #w.wcs.set_pv([(2, 1, 45.0)])
 
             #hdulist = pf.open(self.image)
             #imwcs = wcs.WCS(imhdr)
