@@ -122,11 +122,12 @@ class fit:
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,1)
+            imwcs = wcs.WCS(imhdr)
             imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
-            from kapteyn import wcs as kwcs
-            proj = kwcs.Projection(imhdr)
-            world = proj.toworld((self.ix,self.iy))
-            print world
+            #hdulist = pf.open(self.image)
+
+            #world = proj.toworld((self.ix,self.iy))
+            #print world
             print imra,imdec
             raw_input('compare')
             self.tx, self.ty = zip(*tmpwcs.wcs_world2pix(np.array(zip(imra, imdec)), 0))
