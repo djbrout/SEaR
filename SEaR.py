@@ -143,14 +143,16 @@ class fit:
 
             #hdulist = pf.open(self.image)
             #imwcs = wcs.WCS(imhdr)
-            imra, imdec = zip(*w.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
+
+
+            #imra, imdec = zip(*w.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
             #hdulist = pf.open(self.image)
 
             #world = proj.toworld((self.ix,self.iy))
             #print world
-            print imra,imdec
-            raw_input('compare')
-            self.tx, self.ty = zip(*tmpwcs.wcs_world2pix(np.array(zip(imra, imdec)), 0))
+            #print imra,imdec
+            #raw_input('compare')
+            #self.tx, self.ty = zip(*tmpwcs.wcs_world2pix(np.array(zip(imra, imdec)), 0))
         elif self.ix is None or self.iy is None:
             from astropy import wcs
             imwcs = wcs.WCS(self.image)
