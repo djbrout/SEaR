@@ -123,8 +123,11 @@ class fit:
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,1)
             print imhdr.keys()
-            hdulist = pf.open(self.image)
-            imwcs = wcs.WCS(hdulist[0].header)
+            for i in range(20):
+                if 'COMMENT' in imhdr: del imhdr['COMMENT']
+            print imhdr.keys()
+            #hdulist = pf.open(self.image)
+            imwcs = wcs.WCS(imhdr)
             imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
             #hdulist = pf.open(self.image)
 
