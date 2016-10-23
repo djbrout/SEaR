@@ -122,9 +122,11 @@ class fit:
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,1)
-            print pf.getheader(self.image,0).keys()
+            #print pf.getheader(self.image,0).keys()
             w = wcs.WCS(naxis=2)
+            print imhdr
             raw_input()
+
             # Set up an "Airy's zenithal" projection
             # Vector properties may be set with Python lists, or Numpy arrays
             #print imhdr
