@@ -125,20 +125,19 @@ class fit:
             #print pf.getheader(self.image,0).keys()
             w = wcs.WCS(naxis=2)
             print imhdr
+
+            hl = pf.open(self.image)
+            import starlink.Ast as Ast
+            import starlink.Atl as Atl
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(hl[0]))
+            encoding = fitschan.Encoding
+            wcsinfo = fitschan.read()
+            radtodeg = 360 / (2 * 3.14159)
+            results = wcsinfo.tran([[self.ix], [self.iy]])
+            ra1, dec1 = results[0] * radtodeg, results[1] * radtodeg
+            print ra1,dec1
             raw_input()
 
-            # Set up an "Airy's zenithal" projection
-            # Vector properties may be set with Python lists, or Numpy arrays
-            #print imhdr
-            # print imhdr['CRPIX1'],imhdr['CRPIX2']
-            # print imhdr['PIXSCAL1']
-            # print imhdr['CRVAL1']
-            # print imhdr['CTYPE']
-
-            w.wcs.crpix = [imhdr['CRPIX1'],imhdr['CRPIX2']]
-            w.wcs.cdelt = np.array([imhdr['PIXSCAL1'], imhdr['PIXSCAL1']])
-            w.wcs.crval = [imhdr['CRVAL1'], imhdr['CRVAL2']]
-            w.wcs.ctype = [imhdr['CTYPE1'], imhdr['CTYPE2']]
             #w.wcs.set_pv([(2, 1, 45.0)])
 
             #hdulist = pf.open(self.image)
