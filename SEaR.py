@@ -122,13 +122,25 @@ class fit:
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,1)
-            print imhdr.keys()
-            for i in range(20):
-                if 'COMMENT' in imhdr: del imhdr['COMMENT']
-            print imhdr.keys()
+            w = wcs.WCS(naxis=2)
+
+            # Set up an "Airy's zenithal" projection
+            # Vector properties may be set with Python lists, or Numpy arrays
+            print imhdr
+            print imhdr['CRPIX']
+            print imhdr['CDELT']
+            print imhdr['CRVAL']
+            print imhdr['CTYPE']
+
+            w.wcs.crpix = [-234.75, 8.3393]
+            w.wcs.cdelt = numpy.array([-0.066667, 0.066667])
+            w.wcs.crval = [0, -90]
+            w.wcs.ctype = ["RA---AIR", "DEC--AIR"]
+            w.wcs.set_pv([(2, 1, 45.0)])
+
             #hdulist = pf.open(self.image)
-            imwcs = wcs.WCS(imhdr)
-            imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
+            #imwcs = wcs.WCS(imhdr)
+            imra, imdec = zip(*w.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
             #hdulist = pf.open(self.image)
 
             #world = proj.toworld((self.ix,self.iy))

@@ -60,8 +60,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+            <state relative-caret-position="419">
+              <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
               <folding>
                 <element signature="e#550#568#0" expanded="true" />
               </folding>
@@ -492,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477189527093</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="getting ready to run on edison&#10;">
+      <created>1477189745030</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1477189745031</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -694,8 +701,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+        <state relative-caret-position="419">
+          <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
           <folding>
             <element signature="e#550#568#0" expanded="true" />
           </folding>
