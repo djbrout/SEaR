@@ -129,7 +129,7 @@ class fit:
             hl = pf.open(self.image,1)
             import starlink.Ast as Ast
             import starlink.Atl as Atl
-            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(hl)
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(hl))
             encoding = fitschan.Encoding
             wcsinfo = fitschan.read()
             radtodeg = 360 / (2 * 3.14159)
