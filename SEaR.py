@@ -122,7 +122,8 @@ class fit:
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,0)
-            imwcs = wcs.WCS(imhdr)
+            hdulist = pf.open(self.image)
+            imwcs = wcs.WCS(hdulist[0].header)
             imra, imdec = zip(*imwcs.wcs_pix2world(np.array(zip([self.ix], [self.iy])), 0))
             #hdulist = pf.open(self.image)
 
