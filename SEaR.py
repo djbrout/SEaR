@@ -122,18 +122,19 @@ class fit:
             imwcs = wcs.WCS(self.image)
             tmpwcs = wcs.WCS(self.template)
             imhdr = pf.getheader(self.image,1)
+            print pf.getheader(self.image,0).keys()
             w = wcs.WCS(naxis=2)
-
+            raw_input()
             # Set up an "Airy's zenithal" projection
             # Vector properties may be set with Python lists, or Numpy arrays
-            print imhdr
-            print imhdr['CRPIX']
-            print imhdr['CDELT']
+            #print imhdr
+            print imhdr['CRPIX1'],imhdr['CRPIX2']
+            print imhdr['PIXSCAL1']
             print imhdr['CRVAL']
             print imhdr['CTYPE']
 
-            w.wcs.crpix = [-234.75, 8.3393]
-            w.wcs.cdelt = numpy.array([-0.066667, 0.066667])
+            w.wcs.crpix = [imhdr['CRPIX1'],imhdr['CRPIX2']]
+            w.wcs.cdelt = numpy.array([imhdr['PIXSCAL1'], imhdr['PIXSCAL1']])
             w.wcs.crval = [0, -90]
             w.wcs.ctype = ["RA---AIR", "DEC--AIR"]
             w.wcs.set_pv([(2, 1, 45.0)])
