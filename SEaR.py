@@ -164,6 +164,8 @@ class fit:
         print ra1,dec1
         print self.tx,self.ty
         print 'these are the candidate pixels'
+        print self.image
+        print self.template
         raw_input()
 
         #GRABBING PSFS
