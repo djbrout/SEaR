@@ -48,7 +48,7 @@ from numpy.random import rand
 #from pylab import pcolor, show, colorbar, xticks, yticks
 #import pylab as plt
 import time
-import pyfits as pf
+#import pyfits as pf
 import os
 import math
 import matplotlib as m
