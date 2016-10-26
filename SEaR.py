@@ -133,7 +133,7 @@ class fit:
                 import starlink.Ast as Ast
                 import starlink.Atl as Atl
             except:
-                'starlink.Ast not installed\n please install: pip install starlink-pyast'
+                raise Exception('starlink.Ast not installed\n please install: pip install starlink-pyast')
             fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
             encoding = fitschan.Encoding
             iwcsinfo = fitschan.read()
