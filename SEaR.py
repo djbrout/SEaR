@@ -133,7 +133,7 @@ class fit:
             radtodeg = 360 / (2 * 3.14159)
             results = iwcsinfo.tran([[self.ix], [self.iy]])
             self.tx,self.ty = twcsinfo.tran([[results[0]],[results[1]]],False)
-
+            self.tx = self.tx[0], self.ty = self.ty[0]
             ra1, dec1 = results[0] * radtodeg, results[1] * radtodeg
 
             #print ra1,dec1
