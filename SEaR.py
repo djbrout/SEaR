@@ -37,6 +37,7 @@ from copy import copy
 import time
 import dilltools as dt
 import buildPSFex
+sys.path.insert(0, "")
 import astropy
 from astropy.io.fits import getheader
 from astropy.io.fits import getdata

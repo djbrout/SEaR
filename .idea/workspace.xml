@@ -4,7 +4,6 @@
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +62,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+            <state relative-caret-position="349">
+              <caret line="126" column="13" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="13" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -340,13 +339,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00001" summary="getting ready to run on edison&#10;">
-      <created>1477178350488</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1477178350488</updated>
     </task>
     <task id="LOCAL-00002" summary="getting ready to run on edison&#10;">
       <created>1477178728711</created>
@@ -684,7 +676,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477493701654</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="getting ready to run on edison&#10;">
+      <created>1477493990387</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1477493990389</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -954,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+        <state relative-caret-position="349">
+          <caret line="126" column="13" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="13" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
