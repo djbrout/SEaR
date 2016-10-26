@@ -8,6 +8,11 @@ Dillon Brout
 9/26/2016
 dbrout@physics.upenn.edu
 
+
+bash
+source /global/project/projectdirs/dessn/diffim/setup.sh
+diffimg
+
 POSSIBLE RUN COMMANDS:
 python p9cut.py --outdir=/path/to/output --rootdir=/path/to/inputs --candfile=/fullpath/to/candidate/text/file.txt
 
@@ -27,7 +32,7 @@ import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-import pyfits as pf
+#import pyfits as pf
 from copy import copy
 import time
 import dilltools as dt
@@ -121,8 +126,8 @@ class fit:
     def setupMCMC(self):
 
         if self.tx is None or self.ty is None:
-            ihl = pf.open(self.image)
-            thl = pf.open(self.template)
+            ihl = fits.open(self.image)
+            thl = fits.open(self.template)
             try:
                 import starlink.Ast as Ast
                 import starlink.Atl as Atl

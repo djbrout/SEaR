@@ -48,7 +48,8 @@ from numpy.random import rand
 #from pylab import pcolor, show, colorbar, xticks, yticks
 #import pylab as plt
 import time
-import pyfits as pf
+#import pyfits as pf
+#import pyfits as pf
 import os
 import math
 import matplotlib as m
@@ -59,6 +60,7 @@ import dilltools as dt
 from matplotlib.backends.backend_pdf import PdfPages
 import gc
 import buildPSFex
+from astropy.io import fits
 
 class metropolis_hastings():
 
@@ -1337,7 +1339,7 @@ class CustomFFTConvolution(object):
 
 
 def save_fits_image(image,filename):
-    hdu = pf.PrimaryHDU(image)
+    hdu = fits.PrimaryHDU(image)
     if os.path.exists(filename):
         os.remove(filename)
     hdu.writeto(filename)
