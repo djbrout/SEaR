@@ -35,6 +35,7 @@ import buildPSFex
 import astropy
 from astropy.io.fits import getheader
 from astropy.io.fits import getdata
+from astropy.io import fits
 
 class fit:
     def __init__(self, candid=None,
@@ -120,8 +121,8 @@ class fit:
     def setupMCMC(self):
 
         if self.tx is None or self.ty is None:
-            ihl = astropy.open(self.image)
-            thl = astropy.open(self.template)
+            ihl = fits.open(self.image)
+            thl = fits.open(self.template)
             import starlink.Ast as Ast
             import starlink.Atl as Atl
             fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
