@@ -220,7 +220,7 @@ class metropolis_hastings():
         if self.isfermigrid:
             self.tmpwriter = dt.tmpwriter(tmp_subscript='snfit_', useifdh=True)
         else:
-            self.tmpwriter = dt.tmpwriter(tmp_subscript=self.chainsnpz.split('/')[-1].split('.')[0])
+            self.tmpwriter = dt.tmpwriter(tmp_subscript='fit_')
 
         if Nimage == 1:
             self.psfs = np.zeros((1,substamp,substamp))
