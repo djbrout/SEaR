@@ -231,8 +231,8 @@ class fit:
             self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
 
         #GRABBING TEMPLATE STAMPS
-        templatedata = pf.getdata(os.path.join(self.rootdir,self.template))
-        templateweightdata = pf.getdata(os.path.join(self.rootdir,self.templateweight))
+        templatedata = getdata(os.path.join(self.rootdir,self.template))
+        templateweightdata = getdata(os.path.join(self.rootdir,self.templateweight))
         if self.ty - (self.stampsize - 1) / 2 < 0:
             raise Exception('candidate is too close to edge of ccd')
         else:
