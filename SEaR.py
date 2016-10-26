@@ -184,7 +184,7 @@ class fit:
         self.weights = np.zeros((2, self.stampsize, self.stampsize))
 
         print os.path.join(self.rootdir,self.imweight)
-
+        print os.path.join(self.rootdir, self.image)
         imagedata = pf.getdata(os.path.join(self.rootdir,self.image))
         imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
