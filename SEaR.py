@@ -120,8 +120,8 @@ class fit:
     def setupMCMC(self):
 
         if self.tx is None or self.ty is None:
-            ihl = pf.open(self.image)
-            thl = pf.open(self.template)
+            ihl = astropy.open(self.image)
+            thl = astropy.open(self.template)
             import starlink.Ast as Ast
             import starlink.Atl as Atl
             fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
