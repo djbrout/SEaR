@@ -2,6 +2,8 @@ import os
 import numpy as np
 
 def build(psffile, x, y, stampsize):
+    print "./dump_psfex_edison -inFile_psf %s -xpix %s -ypix %s -gridSize %s" % (psffile, x, y,
+                                                                                 stampsize)
     psf = os.popen("./dump_psfex_edison -inFile_psf %s -xpix %s -ypix %s -gridSize %s" % (psffile, x, y,
                                                                                  stampsize)).readlines()
     ix, iy, psfval = [], [], []
