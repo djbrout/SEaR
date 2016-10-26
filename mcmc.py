@@ -370,6 +370,10 @@ class metropolis_hastings():
         self.chisq.append(self.lastchisq/len(self.mask[self.mask>0.].ravel())/len(self.modelvec[self.flags==0]))
         self.redchisq = []
 
+        self.total_time_convolving = 0.
+        self.total_time_shifting = 0.
+        self.total_time_adjusting = 0.
+        self.total_time_chisq = 0.
 
         #self.gal_conv =copy(self.kicked_modelvec)
 
@@ -389,12 +393,12 @@ class metropolis_hastings():
         while self.z_scores_say_keep_going:
             #self.t2 = time.time()
             self.counter += 1
-            #print self.counter
+            print self.counter
             self.accepted_int += 1
             self.mcmc_func()
             
 
-            if (self.counter % 1000) == 0:
+            if (self.counter % 500) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
                 chsqs = self.csv/len(self.mask[self.mask>0.].ravel())
@@ -403,6 +407,10 @@ class metropolis_hastings():
                 print 'Chisq For Each Epoch: ',chsqs
                 #print 'Total Chi Sq:',np.mean(chsqs)
                 print 'Time per step:',(time.time()-self.t1)/self.counter
+                print 'total_time_convolving',self.total_time_convolving
+                print 'total_time_shifting',self.total_time_shifting
+                print 'total_time_adjusting',self.total_time_adjusting
+                print 'total_time_chisq',self.total_time_chisq
                 #print 'mjdoff: ',self.mjdoff
                 #self.plotchains()
                 #self.savechains()
@@ -446,12 +454,16 @@ class metropolis_hastings():
 
     def mcmc_func( self ):
 
-        #t1 = time.time()
+        t1 = time.time()
         self.adjust_model()
-        #t2 = time.time()
+        t2 = time.time()
+        self.total_time_adjusting += t2-t1
 
         if self.shiftpsf:
+            t3 = time.time()
             self.float_sn_pos()
+            t4 = time.time()
+            self.total_time_shifting += t4-t3
 
         # Contains the convolution
         #print self.kicked_galaxy_model.shape
@@ -459,7 +471,10 @@ class metropolis_hastings():
         #raw_input('testingshape')
         #self.kernel()
         #self.gal_conv = copy(self.kicked_modelvec)
+        t2 = time.time()
         self.sims = map(self.mapkernel,self.kicked_modelvec,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
+        t3 = time.time()
+        self.total_time_convolving += t3-t2
         #print self.sims.shape
         #print len(self.sims)
         #print self.sims[0].shape
@@ -472,11 +487,15 @@ class metropolis_hastings():
         #print np.median(1./(self.simsnosn[aa][self.simsnosn[aa] > 0.]/self.gain))
         #print np.median(1./(self.skyerr[aa][self.skyerr[aa] < 99999.])**2)
         #raw_input()
+        t2 = time.time()
         self.csv = np.array(map( self.mapchis, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky))
         #print self.csv
         #print csv
         #raw_input()
         self.thischisq = np.sum(self.csv)
+        t3 = time.time()
+        self.total_time_chisq += t3-t2
+
         #print self.thischisq
 
         #print self.thischisq
@@ -1196,7 +1215,7 @@ class metropolis_hastings():
 
         if thispsfcenter[0] != self.psfcenter[1][0] or thispsfcenter[1] != self.psfcenter[1][1]:
             newpsf = thispsf
-            print thispsfcenter[0],self.psfcenter[1][0]
+            # thispsfcenter[0],self.psfcenter[1][0]
             if thispsfcenter[0] == self.psfcenter[1][0]:
                 pass
             elif thispsfcenter[0] == self.psfcenter[1][0] - 1:
@@ -1209,7 +1228,7 @@ class metropolis_hastings():
                 print 'MCMC is attempting to offset the psf by more than one pixel!2'
                 raise Exception('MCMC is attempting to offset the psf by more than one pixel!2')
             thispsf = newpsf
-            print thispsfcenter[1],self.psfcenter[1][1]
+            #print thispsfcenter[1],self.psfcenter[1][1]
             newpsf = thispsf
             if thispsfcenter[1] == self.psfcenter[1][1]:
                 pass
