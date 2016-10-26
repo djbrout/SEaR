@@ -237,7 +237,7 @@ class fit:
             raise Exception('candidate is too close to edge of ccd')
         else:
             ylow = np.floor(self.ty) - (self.stampsize - 1) / 2
-        if self.ty + (self.stampsize - 1) / 2 > imagedata.shape[0]:
+        if self.ty + (self.stampsize - 1) / 2 > templatedata.shape[0]:
             raise Exception('candidate is too close to edge of ccd')
         else:
             yhi = np.floor(self.ty) + (self.stampsize - 1) / 2 + 1
@@ -245,7 +245,7 @@ class fit:
             raise Exception('candidate is too close to edge of ccd')
         else:
             xlow = np.floor(self.tx) - (self.stampsize - 1) / 2
-        if self.tx + (self.stampsize - 1) / 2 > imagedata.shape[1]:
+        if self.tx + (self.stampsize - 1) / 2 > templatedata.shape[1]:
             raise Exception('candidate is too close to edge of ccd')
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
