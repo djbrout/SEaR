@@ -32,7 +32,9 @@ from copy import copy
 import time
 import dilltools as dt
 import buildPSFex
-
+import astropy
+from astropy.io.fits import getheader
+from astropy.io.fits import getdata
 
 class fit:
     def __init__(self, candid=None,
@@ -104,8 +106,8 @@ class fit:
 
     def grabfromheader(self):
 
-        imhdr = pf.getheader(self.image,1)
-        tmphdr = pf.getheader(self.template)
+        imhdr = getheader(self.image,1)
+        tmphdr = getheader(self.template)
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         #print tmphdr
@@ -186,11 +188,11 @@ class fit:
         print os.path.join(self.rootdir,self.imweight)
         print os.path.join(self.rootdir, self.image)
 
-        hdulist = pf.open(os.path.join(self.rootdir,self.image))
-        print
+        #hdulist = pf.open(os.path.join(self.rootdir,self.image))
+        #print
 
-        imagedata = pf.getdata(os.path.join(self.rootdir,self.image))
-        imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
+        imagedata = getdata(os.path.join(self.rootdir,self.image))
+        imweightdata = getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
             raise Exception('candidate is too close to edge of ccd')
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
