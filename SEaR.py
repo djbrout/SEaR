@@ -27,7 +27,7 @@ import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-#import pyfits as pf
+import pyfits as pf
 from copy import copy
 import time
 import dilltools as dt
@@ -121,10 +121,13 @@ class fit:
     def setupMCMC(self):
 
         if self.tx is None or self.ty is None:
-            ihl = fits.open(self.image)
-            thl = fits.open(self.template)
-            import starlink.Ast as Ast
-            import starlink.Atl as Atl
+            ihl = pf.open(self.image)
+            thl = pf.open(self.template)
+            try:
+                import starlink.Ast as Ast
+                import starlink.Atl as Atl
+            except:
+                'starlink.Ast not installed\n please install: pip install starlink-pyast'
             fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
             encoding = fitschan.Encoding
             iwcsinfo = fitschan.read()
