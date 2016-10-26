@@ -27,7 +27,7 @@ import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
-import pyfits as pf
+#import pyfits as pf
 from copy import copy
 import time
 import dilltools as dt
@@ -185,6 +185,10 @@ class fit:
 
         print os.path.join(self.rootdir,self.imweight)
         print os.path.join(self.rootdir, self.image)
+
+        hdulist = pf.open(os.path.join(self.rootdir,self.image))
+        print
+
         imagedata = pf.getdata(os.path.join(self.rootdir,self.image))
         imweightdata = pf.getdata(os.path.join(self.rootdir,self.imweight))
         if self.iy - (self.stampsize-1)/2 < 0:
