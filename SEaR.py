@@ -304,14 +304,14 @@ class fit:
         aaa = mcmc.metropolis_hastings(
               galmodel=     np.zeros(self.data[1,:,:].shape)#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/40.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/50.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
             , weights=      self.weights
             , substamp=     self.stampsize
             , Nimage=       self.Nimage
-            , maxiter=      self.numiter
+            , maxiter=      50000#self.numiter
             , sky=          np.array([self.imagesky, self.templatesky])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
