@@ -63,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
-              <caret line="306" column="64" selection-start-line="306" selection-start-column="64" selection-end-line="306" selection-end-column="64" />
+              <caret line="306" column="65" selection-start-line="306" selection-start-column="65" selection-end-line="306" selection-end-column="65" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -368,13 +368,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00031" summary="getting ready to run on edison&#10;">
-      <created>1477193476630</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1477193476630</updated>
     </task>
     <task id="LOCAL-00032" summary="getting ready to run on edison&#10;">
       <created>1477193509328</created>
@@ -712,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477572099998</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="getting ready to run on edison&#10;">
+      <created>1477572176647</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1477572176647</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1052,7 +1052,7 @@
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
-          <caret line="306" column="64" selection-start-line="306" selection-start-column="64" selection-end-line="306" selection-end-column="64" />
+          <caret line="306" column="65" selection-start-line="306" selection-start-column="65" selection-end-line="306" selection-end-column="65" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
