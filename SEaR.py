@@ -296,6 +296,7 @@ class fit:
 
 
         print 'skyyyyy',self.templatesky,self.imagesky
+        print 'skyyyyyerrrrr',self.templateskyerr,self.imageskyerr
         #self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
 
     def runDMC(self):
@@ -303,7 +304,7 @@ class fit:
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.zeros(self.data[1,:,:].shape) + 20.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/2. + 20.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
