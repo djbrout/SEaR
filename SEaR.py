@@ -219,10 +219,8 @@ class fit:
         self.weights[0,:,:] = imweightdata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
-        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-50.,0]):min([self.impsfcenter[1]-50,
-                                                                                             imagedata.shape[1]-1]),
-                                             max([self.impsfcenter[0] - 50., 0]):min([self.impsfcenter[0] - 50,
-                                                                                      imagedata.shape[0] - 1])],
+        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-50.,0]):min([self.impsfcenter[1]-50,imagedata.shape[1]-1]),
+                                             max([self.impsfcenter[0] - 50., 0]):min([self.impsfcenter[0] - 50,imagedata.shape[0] - 1])],
                                              clipsig=4, maxiter=8)
         #self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.imagesky = np.median(vals)
@@ -267,11 +265,10 @@ class fit:
         self.weights[1,:,:] = templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
 
-
-        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]-50,
-                                                                                                   templatedata.shape[1]-1]),
-                                             max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] - 50,
-                                                                                      templatedata.shape[0] - 1])],
+        print 'mmmm',np.mean(imagedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]-50, templatedata.shape[1]-1]),
+                                             max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] - 50, templatedata.shape[0] - 1])])
+        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]-50, templatedata.shape[1]-1]),
+                                             max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] - 50, templatedata.shape[0] - 1])],
                                              clipsig=4, maxiter=8)
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.templatesky = np.median(vals)
