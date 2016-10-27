@@ -855,13 +855,14 @@ class metropolis_hastings():
                 continue
             # fig = plt.figure(figsize=(20, 10))
             plt.clf()
-            axgm = plt.subplot(151)
-            axim = plt.subplot(152)
-            axpsf = plt.subplot(153)
-            axdiff = plt.subplot(154)
-            axchi = plt.subplot(155)
-            for ax, title in zip([axgm, axim, axpsf, axdiff, axchi],
-                                 ['pgalmodel', 'image MJD ' + str(round(self.mjd[i])), 'model', 'resid',
+            axgm = plt.subplot(161)
+            axim = plt.subplot(162)
+            axpsf = plt.subplot(163)
+            axppsf = plt.subplot(164)
+            axdiff = plt.subplot(165)
+            axchi = plt.subplot(166)
+            for ax, title in zip([axgm, axim, axpsf,axppsf, axdiff, axchi],
+                                 ['pgalmodel', 'image MJD ' + str(round(self.mjd[i])), 'model', 'psf','resid',
                                   'chisq: ' + str(round(tchi, 2))]):
                 ax.set_title(title)
             axs = axgm.imshow(self.galaxy_model * self.mask, cmap='gray', interpolation='nearest')
@@ -878,6 +879,10 @@ class metropolis_hastings():
             axpsf.xaxis.set_major_formatter(plt.NullFormatter())
             axpsf.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axpsf)
+            axs = axppsf.imshow(self.psfs[i] * self.mask, cmap='gray', interpolation='nearest')
+            axppsf.xaxis.set_major_formatter(plt.NullFormatter())
+            axppsf.yaxis.set_major_formatter(plt.NullFormatter())
+            cbar = fig.colorbar(axs, ax=axppsf)
             md = np.median((self.data[i, :, :] - self.sims[i]).ravel())
             std = np.std(((self.data[i, :, :] - self.sims[i]) * self.mask).ravel())
             axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest',
