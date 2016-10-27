@@ -224,7 +224,7 @@ class fit:
                                              max([self.impsfcenter[0] - 50., 0]):min([self.impsfcenter[0] - 50,
                                                                                       imagedata.shape[0] - 1])],
                                              clipsig=4, maxiter=8)
-        self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
+        #self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.imagesky = np.median(vals)
 
 
@@ -273,7 +273,7 @@ class fit:
                                              max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] - 50,
                                                                                       templatedata.shape[0] - 1])],
                                              clipsig=4, maxiter=8)
-        self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
+        #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.templatesky = np.median(vals)
 
 
@@ -289,7 +289,7 @@ class fit:
             self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
 
 
-
+        print 'skyyyyy',self.templatesky,self.imagesky
         #self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
 
     def runDMC(self):
