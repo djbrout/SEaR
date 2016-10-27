@@ -219,6 +219,8 @@ class fit:
         self.weights[0,:,:] = imweightdata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
+
+        print ';sfcenter',self.impsfcenter
         mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-50.,0]):min([self.impsfcenter[1]+50,imagedata.shape[1]-1]),
                                              max([self.impsfcenter[0] - 50., 0]):min([self.impsfcenter[0] + 50,imagedata.shape[0] - 1])],
                                              clipsig=4, maxiter=8)
