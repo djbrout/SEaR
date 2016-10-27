@@ -124,7 +124,7 @@ class fit:
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
         self.templatesky = 0.
-        self.templateskyerr = imhdr['SKYSIGMA']/5.
+        self.templateskyerr = imhdr['SKYSIGMA']
 
     def setupMCMC(self):
 
