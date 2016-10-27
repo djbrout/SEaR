@@ -315,7 +315,7 @@ class fit:
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #raw_input()
         if not self.templateskyerr is None:
-            self.weights[1, :, :] = np.zeros(self.weights[1,:,:].shape) + 1. / self.templateskyerr ** 2
+            self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
         if not self.imzpt is None:
             self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
             self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
@@ -430,7 +430,7 @@ class fit:
         if self.stampsize is None:
             self.stampsize = 10
         if self.fitrad is None:
-            self.fitrad = 4
+            self.fitrad = 10
         if self.initialguess is None:
             self.initialguess = 10000.
         if self.stepstd is None:

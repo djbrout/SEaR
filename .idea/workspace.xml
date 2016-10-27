@@ -23,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="474">
+              <caret line="432" column="28" selection-start-line="432" selection-start-column="28" selection-end-line="432" selection-end-column="28" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -124,8 +124,8 @@
         <option value="$PROJECT_DIR$/dilltools.py" />
         <option value="$PROJECT_DIR$/buildPSFex.py" />
         <option value="$USER_HOME$/Downloads/pysmp_downloads/dump_psfex_wrap.h" />
-        <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
+        <option value="$PROJECT_DIR$/SEaR.py" />
       </list>
     </option>
   </component>
@@ -368,13 +368,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00036" summary="getting ready to run on edison&#10;">
-      <created>1477313497877</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1477313497877</updated>
     </task>
     <task id="LOCAL-00037" summary="getting ready to run on edison&#10;">
       <created>1477486750192</created>
@@ -712,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477572540366</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="getting ready to run on edison&#10;">
+      <created>1477573181052</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1477573181052</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1039,22 +1039,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="432" column="28" selection-start-line="432" selection-start-column="28" selection-end-line="432" selection-end-column="28" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
           </folding>
         </state>
       </provider>
