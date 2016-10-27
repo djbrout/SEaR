@@ -280,6 +280,7 @@ class fit:
         self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         self.templatesky =np.median(vals)
+        print 'self.templateskyerr',self.templateskyerr
 
 
         if not self.templatesky is None:
