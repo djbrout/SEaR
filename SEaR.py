@@ -597,7 +597,7 @@ if __name__ == "__main__":
     fermigrid = False
     numiter = 5000
     stampsize=10
-    fitrad=4
+    fitrad=10
     initialguess = 10000.
     stepstd = 200.
 
