@@ -62,8 +62,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="269" column="220" selection-start-line="269" selection-start-column="220" selection-end-line="269" selection-end-column="220" />
+            <state relative-caret-position="315">
+              <caret line="274" column="41" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -368,13 +368,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00018" summary="getting ready to run on edison&#10;">
-      <created>1477188857726</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1477188857726</updated>
     </task>
     <task id="LOCAL-00019" summary="getting ready to run on edison&#10;">
       <created>1477189351165</created>
@@ -712,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477538226006</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="getting ready to run on edison&#10;">
+      <created>1477538270934</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1477538270934</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1051,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="269" column="220" selection-start-line="269" selection-start-column="220" selection-end-line="269" selection-end-column="220" />
+        <state relative-caret-position="315">
+          <caret line="274" column="41" selection-start-line="274" selection-start-column="41" selection-end-line="274" selection-end-column="41" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
