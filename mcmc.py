@@ -393,12 +393,12 @@ class metropolis_hastings():
         while self.z_scores_say_keep_going:
             #self.t2 = time.time()
             self.counter += 1
-            print self.counter
+            #print self.counter
             self.accepted_int += 1
             self.mcmc_func()
             
 
-            if (self.counter % 500) == 0:
+            if (self.counter % 2000) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
                 chsqs = self.csv/len(self.mask[self.mask>0.].ravel())
