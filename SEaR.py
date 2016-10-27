@@ -184,30 +184,10 @@ class fit:
         print self.template
         raw_input()
 
-        #GRABBING PSFS
-        self.psfs = np.zeros((2, self.stampsize, self.stampsize))
+        imagedata = getdata(os.path.join(self.rootdir, self.image))
+        imweightdata = getdata(os.path.join(self.rootdir, self.imweight))
 
-        self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.impsf)
-                                            , self.ix, self.iy, self.stampsize)
-
-        self.psfs[1,:,:], self.templatepsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.templatepsf)
-                                            , self.tx, self.ty, self.stampsize)
-
-
-        #GRABBING IMAGE STAMPS
-        self.data = np.zeros((2, self.stampsize, self.stampsize))
-        self.weights = np.zeros((2, self.stampsize, self.stampsize))
-
-        print os.path.join(self.rootdir,self.imweight)
-        print os.path.join(self.rootdir, self.image)
-
-        #hdulist = pf.open(os.path.join(self.rootdir,self.image))
-        #print
-
-        imagedata = getdata(os.path.join(self.rootdir,self.image))
-        imweightdata = getdata(os.path.join(self.rootdir,self.imweight))
-
-        docntrd=True
+        docntrd = True
         if docntrd:
             self.ix, self.iy = cntrd.cntrd(imagedata, self.ix, self.iy, 5.)
             ihl = fits.open(self.image)
@@ -229,6 +209,27 @@ class fit:
             self.tx, self.ty = twcsinfo.tran([[results[0]], [results[1]]], False)
             self.tx = float(self.tx)
             self.ty = float(self.ty)
+
+        #GRABBING PSFS
+        self.psfs = np.zeros((2, self.stampsize, self.stampsize))
+
+        self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.impsf)
+                                            , self.ix, self.iy, self.stampsize)
+
+        self.psfs[1,:,:], self.templatepsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.templatepsf)
+                                            , self.tx, self.ty, self.stampsize)
+
+
+        #GRABBING IMAGE STAMPS
+        self.data = np.zeros((2, self.stampsize, self.stampsize))
+        self.weights = np.zeros((2, self.stampsize, self.stampsize))
+
+        print os.path.join(self.rootdir,self.imweight)
+        print os.path.join(self.rootdir, self.image)
+
+        #hdulist = pf.open(os.path.join(self.rootdir,self.image))
+        #print
+
 
 
         if self.iy - (self.stampsize-1)/2 < 0:
