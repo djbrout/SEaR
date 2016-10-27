@@ -268,6 +268,9 @@ class fit:
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
 
         # print max([self.templatepsfcenter[1]-50.,0]),min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),max([self.templatepsfcenter[0] - 50., 0]),min([self.templatepsfcenter[0] + 50, templatedata.shape[0] - 1])
+        print 'templatemean',np.mean(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),
+                                              max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[0] - 1])])
+
         # mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),
         #                                      max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[0] - 1])],
         #                                      clipsig=4, maxiter=8)
