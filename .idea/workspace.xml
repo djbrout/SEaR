@@ -369,13 +369,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00030" summary="getting ready to run on edison&#10;">
-      <created>1477193457980</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1477193457980</updated>
-    </task>
     <task id="LOCAL-00031" summary="getting ready to run on edison&#10;">
       <created>1477193476630</created>
       <option name="number" value="00031" />
@@ -712,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477571978883</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="getting ready to run on edison&#10;">
+      <created>1477572099998</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1477572099998</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="ToolWindowManager">

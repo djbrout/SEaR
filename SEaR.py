@@ -302,9 +302,9 @@ class fit:
     def runDMC(self):
         ts = time.time()
         aaa = mcmc.metropolis_hastings(
-              galmodel=     self.data[1,:,:]#setting the initial guess of the galaxy/background model to the template image
+              galmodel=     self.data[1,:,:]/10.#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/2. + 20.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/20. + 20.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
