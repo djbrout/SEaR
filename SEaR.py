@@ -231,10 +231,10 @@ class fit:
 
 
         print self.imagesky
-        if not self.imagesky is None:
-            #print '0mean before', np.median(self.data[0, :, :].ravel())
-            self.data[0,:,:] -= self.imagesky
-            #print '0mean before', np.median(self.data[0, :, :].ravel())
+        #if not self.imagesky is None:
+        #    #print '0mean before', np.median(self.data[0, :, :].ravel())
+        #    self.data[0,:,:] -= self.imagesky
+        #    #print '0mean before', np.median(self.data[0, :, :].ravel())
 
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
@@ -304,7 +304,7 @@ class fit:
             , substamp=     self.stampsize
             , Nimage=       self.Nimage
             , maxiter=      self.numiter
-            , sky=          np.array([0., 0.])
+            , sky=          np.array([self.imagesky, self.templatesky])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
             , fitflags=     np.array([0,0])
