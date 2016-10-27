@@ -43,6 +43,7 @@ from astropy.io.fits import getheader
 from astropy.io.fits import getdata
 from astropy.io import fits
 import sigma_clip
+import cntrd
 
 
 class fit:
@@ -205,6 +206,31 @@ class fit:
 
         imagedata = getdata(os.path.join(self.rootdir,self.image))
         imweightdata = getdata(os.path.join(self.rootdir,self.imweight))
+
+        docntrd=True
+        if docntrd:
+            self.ix, self.iy = cntrd.cntrd(imagedata, self.ix, self.iy, 5.)
+            ihl = fits.open(self.image)
+            thl = fits.open(self.template)
+            try:
+                import starlink.Ast as Ast
+                import starlink.Atl as Atl
+            except:
+                raise Exception('starlink.Ast not installed\n please install: pip install starlink-pyast')
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(ihl[1]))
+            encoding = fitschan.Encoding
+            iwcsinfo = fitschan.read()
+            fitschan = Ast.FitsChan(Atl.PyFITSAdapter(thl[0]))
+            encoding = fitschan.Encoding
+            twcsinfo = fitschan.read()
+
+            radtodeg = 360 / (2 * 3.14159)
+            results = iwcsinfo.tran([[self.ix], [self.iy]])
+            self.tx, self.ty = twcsinfo.tran([[results[0]], [results[1]]], False)
+            self.tx = float(self.tx)
+            self.ty = float(self.ty)
+
+
         if self.iy - (self.stampsize-1)/2 < 0:
             raise Exception('candidate is too close to edge of ccd')
         if self.iy + (self.stampsize-1)/2 > imagedata.shape[0]:
