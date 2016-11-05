@@ -317,7 +317,7 @@ class fit:
             #raw_input()
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
-        print self.templatezpt, self.imgzpt
+        print self.templatezpt, self.imzpt
         raw_input('template zpt')
         #if not self.templatezpt is None:
         #    self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
