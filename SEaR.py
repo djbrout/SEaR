@@ -447,7 +447,8 @@ class fit:
         numdefaults = 0
 
         ix, iy, tx, ty, imagepath, templatepath, imagepsf, templatepsf, imageweight, templateweight, imagezpt, templatezpt, imagesky, templatesky, imageskyerr, templateskyerr = None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None
-
+        print self.rootdir
+        raw_input()
         for o, a in opt:
             if o in ["-h", "--help"]:
                 print __doc__
