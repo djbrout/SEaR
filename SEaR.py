@@ -236,6 +236,7 @@ class fit:
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
 
+        print os.path.join(self.rootdir,self.imagepsf),self.ix,self.iy, self.stampsize
         self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.imagepsf)
                                             , self.ix, self.iy, self.stampsize)
 
@@ -359,7 +360,7 @@ class fit:
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/10.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/2.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
