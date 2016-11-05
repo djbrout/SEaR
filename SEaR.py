@@ -208,9 +208,12 @@ class fit:
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
             try:
-                self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
+                self.cix, self.ciy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
             except:
                 print 'CENTROID OUT OF RANGE'
+            if self.cix > 2.:
+                if self.ciy > 2.:
+                    self.ix, self.iy = self.cix,self.ciy
             print 'Centroid Results',self.ix,self.iy
             #raw_input()
             ihl = fits.open(self.image)
