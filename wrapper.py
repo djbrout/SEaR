@@ -7,7 +7,7 @@ detections = dt.readcol('cleandetections.txt',delim=',')
 ccdlist = ['01']
 bandlist = ['i']
 
-sd = 'seardetections'
+sd = 'seardetections.txt'
 searout = open(sd, 'w')
 searout.write('band_ccd, x, y, sn, mag, searmag, schi, tchi\n')
 searout.close()
