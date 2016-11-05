@@ -209,7 +209,7 @@ class fit:
             print 'Integer Pix',self.ix, self.iy
             try:
                 self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
-            except UnboundLocalError:
+            except:
                 print 'CENTROID OUT OF RANGE'
             print 'Centroid Results',self.ix,self.iy
             #raw_input()
