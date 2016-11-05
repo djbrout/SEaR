@@ -121,7 +121,7 @@ class fit:
 
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         #print tmphdr
-        self.templatezpt = tmphdr['ZP']
+        #self.templatezpt = tmphdr['ZP']
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
         self.templatesky = 0.
