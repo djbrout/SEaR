@@ -443,24 +443,6 @@ class fit:
             # print __doc__
             sys.exit(1)
 
-        if self.outdir is None:
-            self.outdir = 'p9out'
-        if self.rootdir is None:
-            self.rootdir = '.'
-        if self.floatpos is None:
-            self.floatpos = False
-        if self.fermigrid is None:
-            self.fermigrid = False
-        if self.numiter is None:
-            self.numiter = 5000
-        if self.stampsize is None:
-            self.stampsize = 10
-        if self.fitrad is None:
-            self.fitrad = 10
-        if self.initialguess is None:
-            self.initialguess = 10000.
-        if self.stepstd is None:
-            self.stepstd = 200.
 
         numdefaults = 0
 
@@ -564,6 +546,26 @@ class fit:
                     self.stepstd = float(a)
             else:
                 print "Warning: option", o, "with argument", a, "is not recognized"
+
+            if self.outdir is None:
+                self.outdir = 'p9out'
+            if self.rootdir is None:
+                self.rootdir = '.'
+            if self.floatpos is None:
+                self.floatpos = False
+            if self.fermigrid is None:
+                self.fermigrid = False
+            if self.numiter is None:
+                self.numiter = 5000
+            if self.stampsize is None:
+                self.stampsize = 10
+            if self.fitrad is None:
+                self.fitrad = 10
+            if self.initialguess is None:
+                self.initialguess = 10000.
+            if self.stepstd is None:
+                self.stepstd = 200.
+
 
 # def readCandFile(file):
 #     #read in the file and grab the following data
