@@ -512,16 +512,16 @@ class fit:
                     self.template = a
                 numdefaults += 1
             elif o in ["--imagepsf"]:
-                if self.impsf is None:
-                    self.impsf = a
+                if self.imagepsf is None:
+                    self.imagepsf = a
                 numdefaults += 1
             elif o in ["--templatepsf"]:
                 if self.templatepsf is None:
                     self.templatepsf = a
                 numdefaults += 1
             elif o in ["--imageweight"]:
-                if self.imweight is None:
-                    self.imweight = a
+                if self.imageweight is None:
+                    self.imageweight = a
                 numdefaults += 1
             elif o in ["--templateweight"]:
                 if self.templateweight is None:
