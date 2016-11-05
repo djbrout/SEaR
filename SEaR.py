@@ -456,6 +456,8 @@ class fit:
                 if self.outdir is None:
                     self.outdir = a
             elif o in ["-r", "--rootdir"]:
+                print 'here'
+                raw_input()
                 if self.rootdir is None:
                     self.rootdir = a
                     print self.rootdir
