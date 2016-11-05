@@ -17,7 +17,8 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     ccd = bc.split('_')[1]
     if not band in bandlist: continue
     if not ccd in ccdlist: continue
-    chisqs = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
+    classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
+    chisqs = classifier.go()
     print chisqs
     searout = open(sd,'a')
     searout.write(bc+','+str(x)+','+str(y)+','+str(sn)+','+str(m)+','+str(round(chisqs[0],3))+','+str(round(chisqs[1],3))+'\n')

@@ -125,6 +125,8 @@ class fit:
             self.grabfromheader()
 
         self.setupMCMC()
+
+    def go(self):
         self.runDMC()
         return self.chisqs
 
@@ -204,7 +206,7 @@ class fit:
         docntrd = True
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
-            self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
+            self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 4.)
             print 'Centroid Results',self.ix,self.iy
             #raw_input()
             ihl = fits.open(self.image)
