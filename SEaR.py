@@ -112,7 +112,7 @@ class fit:
 
         self.setupMCMC()
         self.runDMC()
-
+        return
 
     def grabfromheader(self):
 
@@ -363,6 +363,7 @@ class fit:
         print 'MCMC FIT TIME',time.time()-ts
 
         modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, chisqs = aaa.get_params()
+        return chisqs
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
 
