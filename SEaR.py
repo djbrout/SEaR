@@ -99,7 +99,9 @@ class fit:
 
         if not commandline:
             self.readDefaults()
-
+            print self.rootdir
+            print self.image
+            raw_input()
             self.image = os.path.join(self.rootdir, self.image)
             self.template = os.path.join(self.rootdir, self.template)
             self.imagepsf = os.path.join(self.rootdir, self.imagepsf)
