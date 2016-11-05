@@ -411,6 +411,8 @@ class fit:
             self.templateweight = self.templateweight[:-3]
 
     def readDefaults(self):
+        import sys, getopt
+
         try:
             if os.path.exists("default.config"):
                 args = open("default.config", 'r').read().split()
