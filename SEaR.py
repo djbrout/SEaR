@@ -73,9 +73,9 @@ class fit:
 
         self.image = image
         self.template = template
-        self.impsf = imagepsf
+        self.imagepsf = imagepsf
         self.templatepsf = templatepsf
-        self.imweight = imageweight
+        self.imageweight = imageweight
         self.templateweight = templateweight
 
 
@@ -102,16 +102,16 @@ class fit:
 
             self.image = os.path.join(self.rootdir, self.image)
             self.template = os.path.join(self.rootdir, self.template)
-            self.impsf = os.path.join(self.rootdir, self.imagepsf)
+            self.imagepsf = os.path.join(self.rootdir, self.imagepsf)
             self.templatepsf = os.path.join(self.rootdir, self.templatepsf)
-            self.imweight = os.path.join(self.rootdir, self.imageweight)
+            self.imageweight = os.path.join(self.rootdir, self.imageweight)
             self.templateweight = os.path.join(self.rootdir, self.templateweight)
         else:
             self.image = os.path.join(self.rootdir, image)
             self.template = os.path.join(self.rootdir, template)
-            self.impsf = os.path.join(self.rootdir, imagepsf)
+            self.imagepsf = os.path.join(self.rootdir, imagepsf)
             self.templatepsf = os.path.join(self.rootdir, templatepsf)
-            self.imweight = os.path.join(self.rootdir, imageweight)
+            self.imageweight = os.path.join(self.rootdir, imageweight)
             self.templateweight = os.path.join(self.rootdir, templateweight)
 
         if self.fermigrid:
@@ -200,7 +200,7 @@ class fit:
         raw_input()
 
         imagedata = getdata(os.path.join(self.rootdir, self.image))
-        imweightdata = getdata(os.path.join(self.rootdir, self.imweight))
+        imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
 
         docntrd = True
         if docntrd:
@@ -228,7 +228,7 @@ class fit:
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
 
-        self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.impsf)
+        self.psfs[0,:,:], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.imagepsf)
                                             , self.ix, self.iy, self.stampsize)
 
         self.psfs[1,:,:], self.templatepsfcenter = buildPSFex.build(os.path.join(self.rootdir,self.templatepsf)
@@ -239,7 +239,7 @@ class fit:
         self.data = np.zeros((2, self.stampsize, self.stampsize))
         self.weights = np.zeros((2, self.stampsize, self.stampsize))
 
-        print os.path.join(self.rootdir,self.imweight)
+        print os.path.join(self.rootdir,self.imageweight)
         print os.path.join(self.rootdir, self.image)
 
         #hdulist = pf.open(os.path.join(self.rootdir,self.image))
@@ -370,7 +370,7 @@ class fit:
             , compress=     100
             , burnin=       .3
             , isfermigrid=  self.fermigrid
-            , psffile=      np.array([os.path.join(self.rootdir,self.impsf),
+            , psffile=      np.array([os.path.join(self.rootdir,self.imagepsf),
                                       os.path.join(self.rootdir,self.templatepsf)],dtype='str')
             , x=            np.array([self.ix,self.tx])
              ,y=            np.array([self.iy,self.ty])
@@ -389,16 +389,16 @@ class fit:
         os.popen('ifdh mkdir '+self.outdir)
         os.popen('ifdh cp -D '+self.image+' working/').read()
         os.popen('ifdh cp -D '+self.template+' working/').read()
-        os.popen('ifdh cp -D '+self.impsf+' working/').read()
+        os.popen('ifdh cp -D '+self.imagepsf+' working/').read()
         os.popen('ifdh cp -D '+self.templatepsf+' working/').read()
-        os.popen('ifdh cp -D '+self.imweight+' working/').read()
+        os.popen('ifdh cp -D '+self.imageweight+' working/').read()
         os.popen('ifdh cp -D '+self.templateweight+' working/').read()
 
         self.image = self.image.split('/')[-1]
         self.template = self.template.split('/')[-1]
-        self.impsf = self.impsf.split('/')[-1]
+        self.imagepsf = self.imagepsf.split('/')[-1]
         self.templatepsf = self.templatepsf.split('/')[-1]
-        self.imweight = self.imweight.split('/')[-1]
+        self.imageweight = self.imageweight.split('/')[-1]
         self.templateweight = self.templateweight.split('/')[-1]
 
         self.rootdir = './working'
@@ -409,9 +409,9 @@ class fit:
         if '.fits.fz' in self.template:
             os.popen('funpack ' + os.path.join(self.rootdir, self.template))
             self.template = self.template[:-3]
-        if '.fits.fz' in self.imweight:
-            os.popen('funpack ' + os.path.join(self.rootdir, self.imweight))
-            self.imweight = self.imweight[:-3]
+        if '.fits.fz' in self.imageweight:
+            os.popen('funpack ' + os.path.join(self.rootdir, self.imageweight))
+            self.imageweight = self.imageweight[:-3]
         if '.fits.fz' in self.templateweight:
             os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight))
             self.templateweight = self.templateweight[:-3]
