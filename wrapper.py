@@ -9,7 +9,7 @@ bandlist = ['i']
 
 sd = 'seardetections'
 searout = open(sd, 'w')
-searout.write('band_ccd, x, y, sn, mag, schi, tchi\n')
+searout.write('band_ccd, x, y, sn, mag, searmag, schi, tchi\n')
 searout.close()
 for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
                          detections['sn'],detections['mag']):
@@ -18,9 +18,10 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     if not band in bandlist: continue
     if not ccd in ccdlist: continue
     classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
-    chisqs = classifier.go()
+    chisqs, fitmag = classifier.go()
     print chisqs
     searout = open(sd,'a')
-    searout.write(bc+','+str(x)+','+str(y)+','+str(sn)+','+str(m)+','+str(round(chisqs[0],3))+','+str(round(chisqs[1],3))+'\n')
+    searout.write(bc+','+str(x)+','+str(y)+','+str(sn)+','+str(m)+','+
+                  str(round(fitmag,3))+','+str(round(chisqs[0],3))+','+str(round(chisqs[1],3))+'\n')
     searout.close()
     print 'done fitting, now next candidate'

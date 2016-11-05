@@ -124,11 +124,12 @@ class fit:
         if grabfromheader:
             self.grabfromheader()
 
-        self.setupMCMC()
+        self.okaytogo = self.setupMCMC()
 
     def go(self):
         self.runDMC()
-        return self.chisqs
+        fitmag = 31 - 2.5*np.log10(self.modelvec[0])
+        return self.chisqs, fitmag
 
     def grabfromheader(self):
 
@@ -381,7 +382,7 @@ class fit:
         )
         print 'MCMC FIT TIME',time.time()-ts
 
-        modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs = aaa.get_params()
+        self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs = aaa.get_params()
         return self.chisqs
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
