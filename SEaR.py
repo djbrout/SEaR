@@ -266,9 +266,9 @@ class fit:
 
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
-        if not self.imzpt is None:
-            self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
-            self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
+        # if not self.imzpt is None:
+        #     self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
+        #     self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
 
         #GRABBING TEMPLATE STAMPS
         templatedata = getdata(os.path.join(self.rootdir,self.template))
@@ -317,7 +317,7 @@ class fit:
             #raw_input()
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
-        print self.templatezpt
+        print self.templatezpt, self.imgzpt
         raw_input('template zpt')
         #if not self.templatezpt is None:
         #    self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
