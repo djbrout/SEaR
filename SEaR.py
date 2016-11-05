@@ -99,9 +99,6 @@ class fit:
 
         if not commandline:
             self.readDefaults()
-            print self.rootdir
-            print self.image
-            raw_input()
             self.image = os.path.join(self.rootdir, self.image)
             self.template = os.path.join(self.rootdir, self.template)
             self.imagepsf = os.path.join(self.rootdir, self.imagepsf)
@@ -199,7 +196,7 @@ class fit:
         print 'these are the candidate pixels'
         print self.image
         print self.template
-        raw_input()
+        #raw_input()
 
         imagedata = getdata(os.path.join(self.rootdir, self.image))
         imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
