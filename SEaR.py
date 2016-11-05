@@ -317,9 +317,9 @@ class fit:
             #raw_input()
         if not self.templateskyerr is None:
             self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
-        if not self.imzpt is None:
-            self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
-            self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
+        #if not self.imzpt is None:
+        #    self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
+        #    self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
 
 
         print 'skyyyyy',self.templatesky,self.imagesky
@@ -338,7 +338,7 @@ class fit:
             , weights=      self.weights
             , substamp=     self.stampsize
             , Nimage=       self.Nimage
-            , maxiter=      50000#self.numiter
+            , maxiter=      100#self.numiter
             , sky=          np.array([self.imagesky, self.templatesky])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
