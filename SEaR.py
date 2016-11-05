@@ -207,7 +207,10 @@ class fit:
         docntrd = True
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
-            self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
+            try:
+                self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
+            except UnboundLocalError:
+                print 'CENTROID OUT OF RANGE'
             print 'Centroid Results',self.ix,self.iy
             #raw_input()
             ihl = fits.open(self.image)
@@ -356,7 +359,7 @@ class fit:
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/50.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/10.
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
