@@ -128,7 +128,7 @@ class fit:
 
     def go(self):
         self.runDMC()
-        fitmag = 31 - 2.5*np.log10(self.modelvec[0])
+        fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
         return self.chisqs, fitmag
 
     def grabfromheader(self):
@@ -293,11 +293,11 @@ class fit:
 
         if not self.imageskyerr is None:
             self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
-        if not self.imzpt is None:
-            self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
-            self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
-            self.imagesky *= 10 ** (.4*(31. - self.imzpt))
-            self.imageskyerr *= 10 ** (.4*(31. - self.imzpt))
+        # if not self.imzpt is None:
+        #     self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
+        #     self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
+        #     self.imagesky *= 10 ** (.4*(31. - self.imzpt))
+        #     self.imageskyerr *= 10 ** (.4*(31. - self.imzpt))
 
         #GRABBING TEMPLATE STAMPS
         templatedata = getdata(os.path.join(self.rootdir,self.template))
@@ -349,10 +349,10 @@ class fit:
         #print self.templatezpt, self.imzpt
         #raw_input('template zpt')
         if not self.templatezpt is None:
-            self.data[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
-            self.weights[1, :, :] *= 10 ** (.4*(31. - self.templatezpt))
-            self.templatesky *= 10 ** (.4*(31. - self.templatezpt))
-            self.templateskyerr *= 10 ** (.4*(31. - self.templatezpt))
+            self.data[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
+            self.weights[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
+            self.templatesky *= 10 ** (.4*(self.imzpt - self.templatezpt))
+            self.templateskyerr *= 10 ** (.4*(self.imzpt - self.templatezpt))
 
         print 'skyyyyy',self.templatesky,self.imagesky
         print 'skyyyyyerrrrr',self.templateskyerr,self.imageskyerr
