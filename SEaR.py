@@ -71,6 +71,12 @@ class fit:
         self.outdir = outdir
         self.rootdir = rootdir
 
+        self.image = image
+        self.template = template
+        self.impsf = imagepsf
+        self.templatepsf = templatepsf
+        self.imweight = imageweight
+        self.templateweight = templateweight
 
 
         self.ix = ix
