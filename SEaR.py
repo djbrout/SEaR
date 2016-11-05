@@ -203,10 +203,10 @@ class fit:
 
         docntrd = True
         if docntrd:
-            print self.ix, self.iy
+            print 'Integer Pix',self.ix, self.iy
             self.ix, self.iy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 5.)
-            print 'just centroided',self.ix,self.iy
-            raw_input()
+            print 'Centroid Results',self.ix,self.iy
+            #raw_input()
             ihl = fits.open(self.image)
             thl = fits.open(self.template)
             try:
