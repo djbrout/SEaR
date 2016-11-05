@@ -129,7 +129,7 @@ class fit:
     def go(self):
         self.runDMC()
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
-        return self.chisqs, fitmag
+        return self.chisqs, fitmag, self.ix, self.iy
 
     def grabfromheader(self):
 
