@@ -456,12 +456,8 @@ class fit:
                 if self.outdir is None:
                     self.outdir = a
             elif o in ["-r", "--rootdir"]:
-                print 'here',self.rootdir
-                raw_input()
                 if self.rootdir is None:
                     self.rootdir = a
-                    print self.rootdir
-                    raw_input('rootdir')
             elif o in ["--floatpos"]:
                 if self.floatpos is None:
                     self.floatpos = True
@@ -551,24 +547,24 @@ class fit:
             else:
                 print "Warning: option", o, "with argument", a, "is not recognized"
 
-            if self.outdir is None:
-                self.outdir = 'p9out'
-            if self.rootdir is None:
-                self.rootdir = '.'
-            if self.floatpos is None:
-                self.floatpos = False
-            if self.fermigrid is None:
-                self.fermigrid = False
-            if self.numiter is None:
-                self.numiter = 5000
-            if self.stampsize is None:
-                self.stampsize = 10
-            if self.fitrad is None:
-                self.fitrad = 10
-            if self.initialguess is None:
-                self.initialguess = 10000.
-            if self.stepstd is None:
-                self.stepstd = 200.
+        if self.outdir is None:
+            self.outdir = 'p9out'
+        if self.rootdir is None:
+            self.rootdir = '.'
+        if self.floatpos is None:
+            self.floatpos = False
+        if self.fermigrid is None:
+            self.fermigrid = False
+        if self.numiter is None:
+            self.numiter = 5000
+        if self.stampsize is None:
+            self.stampsize = 10
+        if self.fitrad is None:
+            self.fitrad = 10
+        if self.initialguess is None:
+            self.initialguess = 10000.
+        if self.stepstd is None:
+            self.stepstd = 200.
 
 
 # def readCandFile(file):
