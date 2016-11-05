@@ -71,12 +71,7 @@ class fit:
         self.outdir = outdir
         self.rootdir = rootdir
 
-        self.image = os.path.join(self.rootdir,image)
-        self.template = os.path.join(self.rootdir,template)
-        self.impsf = os.path.join(self.rootdir,imagepsf)
-        self.templatepsf = os.path.join(self.rootdir,templatepsf)
-        self.imweight = os.path.join(self.rootdir,imageweight)
-        self.templateweight = os.path.join(self.rootdir,templateweight)
+
 
         self.ix = ix
         self.iy = iy
@@ -98,6 +93,20 @@ class fit:
 
         if not commandline:
             self.readDefaults()
+
+            self.image = os.path.join(self.rootdir, self.image)
+            self.template = os.path.join(self.rootdir, self.template)
+            self.impsf = os.path.join(self.rootdir, self.imagepsf)
+            self.templatepsf = os.path.join(self.rootdir, self.templatepsf)
+            self.imweight = os.path.join(self.rootdir, self.imageweight)
+            self.templateweight = os.path.join(self.rootdir, self.templateweight)
+        else:
+            self.image = os.path.join(self.rootdir, image)
+            self.template = os.path.join(self.rootdir, template)
+            self.impsf = os.path.join(self.rootdir, imagepsf)
+            self.templatepsf = os.path.join(self.rootdir, templatepsf)
+            self.imweight = os.path.join(self.rootdir, imageweight)
+            self.templateweight = os.path.join(self.rootdir, templateweight)
 
         if self.fermigrid:
             print 'setting up fermi'
