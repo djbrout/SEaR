@@ -85,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
+              <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -408,13 +408,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00096" summary="getting ready to run on edison&#10;">
-      <created>1478315484404</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1478315484404</updated>
     </task>
     <task id="LOCAL-00097" summary="getting ready to run on edison&#10;">
       <created>1478383622886</created>
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478393970756</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Switchin nominal zpt to the image (searhc) zpt">
+      <created>1478394078199</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1478394078199</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1186,7 +1186,7 @@
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
+          <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
