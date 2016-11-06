@@ -321,6 +321,10 @@ class fit:
 
         self.data[1,:,:] = np.transpose(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2])
+
+        print np.transpose(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]) - templatedata[self.templatepsfcenter[1] - self.stampsize / 2:self.templatepsfcenter[1] + self.stampsize / 2, self.templatepsfcenter[0] - self.stampsize / 2:self.templatepsfcenter[0] + self.stampsize / 2]
+        raw_input()
         self.weights[1,:,:] = np.transpose(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2])
 
