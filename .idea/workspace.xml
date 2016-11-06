@@ -409,13 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00101" summary="WORKS NOW! getting ready to run wrapper">
-      <created>1478385936332</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1478385936332</updated>
-    </task>
     <task id="LOCAL-00102" summary="WORKS NOW! getting ready to run wrapper">
       <created>1478386021594</created>
       <option name="number" value="00102" />
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478394408683</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Switchin nominal zpt to the image (searhc) zpt">
+      <created>1478394531567</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1478394531567</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="ToolWindowManager">
