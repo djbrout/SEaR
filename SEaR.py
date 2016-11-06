@@ -355,8 +355,8 @@ class fit:
             self.templatesky *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.templateskyerr *= 10 ** (.4*(self.imzpt - self.templatezpt))
 
-        #self.data = np.swapaxes(self.data,1,2)
-        #self.weights = np.swapaxes(self.weights,1,2)
+        self.data = np.swapaxes(self.data,1,2)
+        self.weights = np.swapaxes(self.weights,1,2)
         print 'skyyyyy',self.templatesky,self.imagesky
         print 'skyyyyyerrrrr',self.templateskyerr,self.imageskyerr
         #self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
