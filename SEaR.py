@@ -319,8 +319,8 @@ class fit:
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
-        self.data[1,:,:] = np.swapaxes(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
+        self.data[1,:,:] = templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
 
         self.weights[1,:,:] = np.swapaxes(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
