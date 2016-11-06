@@ -9,7 +9,7 @@ bandlist = ['i']
 
 sd = 'seardetections.txt'
 searout = open(sd, 'w')
-searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_search_chi,\tsm_templ_chi\n')
+searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\t\tsm_search_chi,\tsm_templ_chi\n')
 searout.close()
 cntr = 0
 for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
