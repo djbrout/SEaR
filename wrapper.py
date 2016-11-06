@@ -24,7 +24,7 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     chisqs, fitmag, cx, cy = classifier.go()
     print chisqs
     searout = open(sd,'a')
-    searout.write(bc+','+str(x)+','+str(y)+','+str(sn)+','+str(m)+','+str(round(cx,3))+','+str(round(cy,3))+','+
-                  str(round(fitmag,3))+','+str(round(chisqs[0],3))+','+str(round(chisqs[1],3))+'\n')
+    searout.write(bc+',\t'+str(x)+',\t'+str(y)+',\t'+str(sn)+',\t'+str(m)+',\t\t'+str(round(cx,3))+',\t\t'+str(round(cy,3))+',\t'+
+                  str(round(fitmag,3))+',\t'+str(round(chisqs[0],3))+',\t'+str(round(chisqs[1],3))+'\n')
     searout.close()
     print 'done fitting, now next candidate'
