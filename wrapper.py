@@ -9,7 +9,7 @@ bandlist = ['i']
 
 sd = 'seardetections.txt'
 searout = open(sd, 'w')
-searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsearx,\t\tseary,\t\tsearmag,\t\tschi,\ttchi\n')
+searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsearx,\t\tseary,\t\tsearmag,\tschi,\ttchi\n')
 searout.close()
 cntr = 0
 for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
@@ -24,7 +24,7 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     chisqs, fitmag, cx, cy = classifier.go()
     print chisqs
     searout = open(sd,'a')
-    searout.write(bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2},\t{1:2.2},\t{2:4.2f},\t{3:4.2f},\t{4:2.2f},\t{5:.2f},\t{6:.2f}\n'.format(
+    searout.write(bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2},\t{1:2.2},\t{2:4.2f},\t{3:4.2f},\t{4:2.2f},\t\t{5:.2f},\t{6:.2f}\n'.format(
         float(sn),float(m),float(cx),float(cy),float(fitmag),float(chisqs[0]),float(chisqs[1])))
     searout.close()
     print 'done fitting, now next candidate'
