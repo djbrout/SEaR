@@ -9,7 +9,7 @@ bandlist = ['i']
 
 sd = 'seardetections.txt'
 searout = open(sd, 'w')
-searout.write('band_ccd,\t x,\t y,\t sn,\t mag,\t searx,\t\t seary,\t\t searmag,\t schi,\t tchi\n')
+searout.write('band_ccd,\t x,\t y,\t sn,\t mag,\t searx,\t seary,\t searmag,\t schi,\t tchi\n')
 searout.close()
 cntr = 0
 for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
@@ -24,7 +24,7 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     chisqs, fitmag, cx, cy = classifier.go()
     print chisqs
     searout = open(sd,'a')
-    searout.write(bc+',\t'+str(x)+',\t'+str(y)+',\t'+str(sn)+',\t'+str(m)+',\t\t'+str(round(cx,3))+',\t\t'+str(round(cy,3))+',\t'+
+    searout.write(bc+',\t'+str(x)+',\t'+str(y)+',\t'+str(sn)+',\t'+str(m)+',\t'+str(round(cx,2))+',\t'+str(round(cy,2))+',\t'+
                   str(round(fitmag,3))+',\t'+str(round(chisqs[0],3))+',\t'+str(round(chisqs[1],3))+'\n')
     searout.close()
     print 'done fitting, now next candidate'
