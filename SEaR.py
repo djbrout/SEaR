@@ -319,14 +319,11 @@ class fit:
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
-        self.data[1,:,:] = np.transpose(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2])
+        self.data[1,:,:] = np.swapaxes(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
 
-        print np.transpose(templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]) - templatedata[self.templatepsfcenter[1] - self.stampsize / 2:self.templatepsfcenter[1] + self.stampsize / 2, self.templatepsfcenter[0] - self.stampsize / 2:self.templatepsfcenter[0] + self.stampsize / 2]
-        raw_input()
-        self.weights[1,:,:] = np.transpose(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2])
+        self.weights[1,:,:] = np.swapaxes(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
 
         print self.templatepsfcenter
         print templatedata.shape
