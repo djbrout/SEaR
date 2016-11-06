@@ -406,11 +406,11 @@ class metropolis_hastings():
                 #print 'redchi',self.redchisq[-1]
                 print 'Chisq For Each Epoch: ',chsqs
                 #print 'Total Chi Sq:',np.mean(chsqs)
-                print 'Time per step:',(time.time()-self.t1)/self.counter
-                print 'total_time_convolving',self.total_time_convolving
-                print 'total_time_shifting',self.total_time_shifting
-                print 'total_time_adjusting',self.total_time_adjusting
-                print 'total_time_chisq',self.total_time_chisq
+                # print 'Time per step:',(time.time()-self.t1)/self.counter
+                # print 'total_time_convolving',self.total_time_convolving
+                # print 'total_time_shifting',self.total_time_shifting
+                # print 'total_time_adjusting',self.total_time_adjusting
+                # print 'total_time_chisq',self.total_time_chisq
                 #print 'mjdoff: ',self.mjdoff
                 #self.plotchains()
                 #self.savechains()
