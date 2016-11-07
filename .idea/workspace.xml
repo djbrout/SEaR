@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="451" column="9" selection-start-line="451" selection-start-column="9" selection-end-line="451" selection-end-column="9" />
+            <state relative-caret-position="174">
+              <caret line="182" column="44" selection-start-line="182" selection-start-column="44" selection-end-line="182" selection-end-column="44" />
               <folding>
                 <element signature="e#810#828#0" expanded="true" />
               </folding>
@@ -409,13 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00150" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478394531567</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1478394531567</updated>
-    </task>
     <task id="LOCAL-00151" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478394784743</created>
       <option name="number" value="00151" />
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478531978262</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="doing multiple chisq at 3 fwhm&#10;">
+      <created>1478532107308</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1478532107308</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1187,8 +1187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="451" column="9" selection-start-line="451" selection-start-column="9" selection-end-line="451" selection-end-column="9" />
+        <state relative-caret-position="174">
+          <caret line="182" column="44" selection-start-line="182" selection-start-column="44" selection-end-line="182" selection-end-column="44" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
           </folding>
