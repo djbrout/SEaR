@@ -21,7 +21,7 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     if not band in bandlist: continue
     if not ccd in ccdlist: continue
     classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
-    chisqs, fitmag, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm, bad = classifier.go()
+    chisqs, fitmag, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
     print chisqs
     searout = open(sd,'a')
     searout.write(bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t\t{5:>7.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f}\n'.format(
