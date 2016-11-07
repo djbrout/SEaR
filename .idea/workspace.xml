@@ -84,8 +84,8 @@
       <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="159" selection-start-line="26" selection-start-column="159" selection-end-line="26" selection-end-column="159" />
+            <state relative-caret-position="435">
+              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -408,13 +408,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00171" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478398948079</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1478398948079</updated>
     </task>
     <task id="LOCAL-00172" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478399443568</created>
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478541938542</updated>
     </task>
-    <option name="localTasksCounter" value="220" />
+    <task id="LOCAL-00220" summary="BIG RUN - with fitmager&#10;">
+      <created>1478541965002</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1478541965002</updated>
+    </task>
+    <option name="localTasksCounter" value="221" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -801,7 +801,8 @@
     <MESSAGE value="Shifting PSF" />
     <MESSAGE value="Shifting PSF compressing 10 and tricking around with mcmc maxiter" />
     <MESSAGE value="BIG RUN&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="BIG RUN&#10;" />
+    <MESSAGE value="BIG RUN - with fitmager&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="BIG RUN - with fitmager&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1247,8 +1248,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="159" selection-start-line="26" selection-start-column="159" selection-end-line="26" selection-end-column="159" />
+        <state relative-caret-position="435">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
