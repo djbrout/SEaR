@@ -390,8 +390,8 @@ class fit:
             , shftpsf=      self.floatpos
             , fitrad=       self.fitrad
             , outpath=      os.path.join(self.outdir,self.candid)
-            , compress=     100
-            , burnin=       .3
+            , compress=     1
+            , burnin=       .5
             , isfermigrid=  self.fermigrid
             , psffile=      np.array([os.path.join(self.rootdir,self.imagepsf),
                                       os.path.join(self.rootdir,self.templatepsf)],dtype='str')
