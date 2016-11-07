@@ -442,7 +442,7 @@ class fit:
         for i in [1.,2.,3.]:
             print self.fwhm
             chisqrad = float(i)*self.fwhm
-            print self.chisqrad
+            print chisqrad
             raw_input('sss')
             mask = np.zeros([self.stampsize, self.stampsize])
             for x in np.arange(self.stampsize):
