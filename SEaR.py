@@ -132,7 +132,7 @@ class fit:
     def go(self):
         self.runDMC()
         if self.bad:
-            return [np.nan,np.nan], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan
+            return [np.nan,np.nan], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
         fitmagerr = - 2.5*np.log10(self.modelvec[0]) + 2.5*np.log10(self.modelvec[0]+self.modelvec_uncertainty[0])
         return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
