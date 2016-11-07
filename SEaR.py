@@ -454,7 +454,7 @@ class fit:
                 print self.chisq1fwhm
             if i == 2:
                 self.chisq2fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
-                print self.chisq3fwhm
+                print self.chisq2fwhm
             if i == 3:
                 self.chisq3fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
                 print self.chisq3fwhm

@@ -62,8 +62,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="460" column="12" selection-start-line="460" selection-start-column="12" selection-end-line="460" selection-end-column="12" />
+            <state relative-caret-position="489">
+              <caret line="456" column="33" selection-start-line="456" selection-start-column="33" selection-end-line="456" selection-end-column="33" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -409,13 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00140" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478393541837</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1478393541837</updated>
-    </task>
     <task id="LOCAL-00141" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478393668124</created>
       <option name="number" value="00141" />
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478529179834</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="doing multiple chisq at 3 fwhm&#10;">
+      <created>1478529542517</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1478529542517</updated>
+    </task>
+    <option name="localTasksCounter" value="190" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1187,8 +1187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="460" column="12" selection-start-line="460" selection-start-column="12" selection-end-line="460" selection-end-column="12" />
+        <state relative-caret-position="489">
+          <caret line="456" column="33" selection-start-line="456" selection-start-column="33" selection-end-line="456" selection-end-column="33" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
