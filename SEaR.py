@@ -27,7 +27,10 @@ and you can place outdir and rootdir inside a default.config in your p9cut.py di
 import numpy as np
 import os
 import sys
-import matplotlib as m
+try:
+    import matplotlib as m
+except:
+    raise Exception('Run the following commands:\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
 import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
