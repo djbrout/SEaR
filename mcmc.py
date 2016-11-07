@@ -829,8 +829,8 @@ class metropolis_hastings():
             self.galhistory.append( self.galaxy_model )
             self.modelvechistory.append( self.modelvec )
             if self.shiftpsf:
-                self.xhistory.append(self.current_x_offset*self.platescale)
-                self.yhistory.append(self.current_y_offset*self.platescale)
+                self.xhistory.append(self.current_x_offset)
+                self.yhistory.append(self.current_y_offset)
         return
 
     def model_params( self ):
@@ -843,16 +843,24 @@ class metropolis_hastings():
         #self.model_params = copy( self.model )
         #self.model_uncertainty = copy( self.model )
         for i in np.arange( len( self.modelvec ) ):
-            self.modelvec_params[ i ] = np.median( self.modelvec_nphistory[ burn_in : , i ] )
+            self.modelvec_params[ i ] = np.mean( self.modelvec_nphistory[ burn_in : , i ] )
             self.modelvec_uncertainty[ i ] = np.std( self.modelvec_nphistory[ burn_in : , i ] )
         if not self.dontsavegalaxy:
             for i in np.arange(self.galaxy_model.shape[0]):
                 for j in np.arange(self.galaxy_model.shape[1]):
-                    self.galmodel_params[ i, j ] = np.median( self.galmodel_nphistory[ burn_in : , i, j ] )
+                    self.galmodel_params[ i, j ] = np.mean( self.galmodel_nphistory[ burn_in : , i, j ] )
                     self.galmodel_uncertainty[ i, j ] = np.std( self.galmodel_nphistory[ burn_in : , i, j ] )
         else:
             self.galmodel_params = self.kicked_galmodel
             self.galmodel_uncertainty = self.kicked_galmodel*0. + 1.
+        if self.shiftpsf:
+            self.xo = np.mean(self.xhistory[burn_in:])
+            self.yo = np.mean(self.yhistory[burn_in:])
+            self.shiftPSF(x_off=self.xo, y_off=self.yo)
+            self.kicked_galaxy_model = self.galmodel_params
+
+        self.sims = map(self.mapkernel, self.modelvec_params, self.kicked_psfs, self.centered_psfs, self.sky,
+                        self.flags, self.fitflags, self.sims, self.gal_conv)
 
     def autocorr( self, x ):
         result = np.correlate( x, x, mode='full' )
@@ -1038,7 +1046,7 @@ class metropolis_hastings():
         chsqs = self.csv / len(self.mask[self.mask > 0.].ravel())
         for i in np.arange(self.Nimage):
             chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
-        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp # size: self.history[num_iter,len(self.model_params)]
+        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp,self.x[0] + self.xo, self.y[0]+self.yo # size: self.history[num_iter,len(self.model_params)]
 
     def get_params_analytical_weighted( self ):
         burn_in = int(self.nphistory.shape[0]*.5)
