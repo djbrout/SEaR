@@ -134,7 +134,8 @@ class fit:
         if self.bad:
             return [np.nan,np.nan], np.nan, np.nan, np.nan, np.nan, np.nan, np.nan
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
-        return self.chisqs, fitmag, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
+        fitmagerr = - 2.5*np.log10(self.modelvec[0]) + 2.5*np.log10(self.modelvec[0]+self.modelvec_uncertainty[0])
+        return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
 
     def grabfromheader(self):
 
@@ -402,7 +403,7 @@ class fit:
 
         self.bad = False
         try:
-            self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo = aaa.get_params()
+            self.modelvec, self.modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo = aaa.get_params()
             self.chisqvsfwhm()
         except ValueError:
             self.bad = True

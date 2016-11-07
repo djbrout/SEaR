@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="BIG RUN&#10;">
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="435" column="36" selection-start-line="435" selection-start-column="36" selection-end-line="435" selection-end-column="36" />
+            <state relative-caret-position="204">
+              <caret line="410" column="59" selection-start-line="410" selection-start-column="59" selection-end-line="410" selection-end-column="59" />
               <folding>
                 <element signature="e#810#828#0" expanded="true" />
               </folding>
@@ -62,8 +63,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="399" column="9" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
+            <state relative-caret-position="339">
+              <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -81,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="435">
+              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -153,9 +154,9 @@
         <option value="$PROJECT_DIR$/dilltools.py" />
         <option value="$PROJECT_DIR$/buildPSFex.py" />
         <option value="$USER_HOME$/Downloads/pysmp_downloads/dump_psfex_wrap.h" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
-        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
@@ -408,13 +409,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00169" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478398351505</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1478398351505</updated>
     </task>
     <task id="LOCAL-00170" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478398614825</created>
@@ -752,7 +746,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478540628941</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="BIG RUN&#10;">
+      <created>1478541089530</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1478541089530</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1225,32 +1226,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper.py">
+    <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="410" column="59" selection-start-line="410" selection-start-column="59" selection-end-line="410" selection-end-column="59" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#810#828#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="399" column="9" selection-start-line="399" selection-start-column="9" selection-end-line="399" selection-end-column="9" />
+        <state relative-caret-position="339">
+          <caret line="137" column="47" selection-start-line="137" selection-start-column="47" selection-end-line="137" selection-end-column="47" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcmc.py">
+    <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="435" column="36" selection-start-line="435" selection-start-column="36" selection-end-line="435" selection-end-column="36" />
+        <state relative-caret-position="435">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
           <folding>
-            <element signature="e#810#828#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
