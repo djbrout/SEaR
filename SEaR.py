@@ -30,7 +30,7 @@ import sys
 try:
     import matplotlib as m
 except:
-    raise Exception('Run the following commands:\n\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
+    raise Exception('Run the following commands:\n\nmodule load python\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
 import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
