@@ -372,7 +372,7 @@ class fit:
         aaa = mcmc.metropolis_hastings(
               galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
             , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/1.
+            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))
             , modelstd=     np.array([self.stepstd,0.])
             , data=         self.data
             , psfs=         self.psfs
@@ -606,7 +606,7 @@ class fit:
         if self.initialguess is None:
             self.initialguess = 10000.
         if self.stepstd is None:
-            self.stepstd = 200.
+            self.stepstd = 400.
 
 
 # def readCandFile(file):
