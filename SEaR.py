@@ -132,8 +132,6 @@ class fit:
     def go(self):
         self.runDMC()
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
-        print self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
-        raw_input('aaa')
         return self.chisqs, fitmag, self.ix, self.iy, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
 
     def grabfromheader(self):
@@ -442,10 +440,9 @@ class fit:
 
     def chisqvsfwhm(self):
         for i in [1.,2.,3.]:
-            print self.fwhm
+            #print self.fwhm
             chisqrad = float(i)*self.fwhm
-            print chisqrad
-            #raw_input('sss')
+
             mask = np.zeros([self.stampsize, self.stampsize])
             for x in np.arange(self.stampsize):
                 for y in np.arange(self.stampsize):
@@ -453,14 +450,14 @@ class fit:
                             mask[int(x), int(y)] = 1.
             if i == 1:
                 self.chisq1fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
-                print self.chisq1fwhm
+                #print self.chisq1fwhm
             if i == 2:
                 self.chisq2fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
-                print self.chisq2fwhm
+                #print self.chisq2fwhm
             if i == 3:
                 self.chisq3fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
-                print self.chisq3fwhm
-            raw_input('sss')
+                #print self.chisq3fwhm
+            #raw_input('sss')
 
 
     def readDefaults(self):

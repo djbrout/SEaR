@@ -22,11 +22,9 @@ for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],dete
     if not ccd in ccdlist: continue
     classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
     chisqs, fitmag, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
-    print chisq1fwhm, chisq2fwhm, chisq3fwhm
-    raw_input('xxx')
     print chisqs
     searout = open(sd,'a')
-    searout.write(bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t\t{5:>7.2f},\t\t{5:>7.2f},\t\t{5:>7.2f},\t\t{6:>7.2f}\n'.format(
+    searout.write(bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t\t{5:>7.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f}\n'.format(
         float(sn),float(m),float(round(cx,2)),float(round(cy,2)),float(fitmag),float(chisq1fwhm),float(chisq2fwhm),float(chisq3fwhm),float(chisqs[1])))
     searout.close()
     print 'done fitting, now next candidate'
