@@ -407,6 +407,12 @@ class metropolis_hastings():
                 #print 'redchi',self.redchisq[-1]
                 print 'Chisq For Each Epoch: ',chsqs
                 print 'Current Fitting position:', self.x[0] + self.current_x_offset, self.y[0]+self.current_y_offset
+                if self.counter == 1000:
+                    if np.nanmean(chsqs[chsqs != 0.]) < 1.:
+                        self.acceptance_vec = self.acceptance_vec[:1000]
+                        self.z_scores_say_keep_going = False  # GETOUT
+                        self.didtimeout = True
+
                 #print 'Total Chi Sq:',np.mean(chsqs)
                 # print 'Time per step:',(time.time()-self.t1)/self.counter
                 # print 'total_time_convolving',self.total_time_convolving
