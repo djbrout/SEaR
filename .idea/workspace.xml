@@ -84,8 +84,8 @@
       <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+            <state relative-caret-position="390">
+              <caret line="26" column="147" selection-start-line="26" selection-start-column="147" selection-end-line="26" selection-end-column="147" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -408,13 +408,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478392819639</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1478392819639</updated>
     </task>
     <task id="LOCAL-00137" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478392886394</created>
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478528875038</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="doing multiple chisq at 3 fwhm&#10;">
+      <created>1478528948207</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1478528948207</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1187,8 +1187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
+        <state relative-caret-position="390">
+          <caret line="26" column="147" selection-start-line="26" selection-start-column="147" selection-end-line="26" selection-end-column="147" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
