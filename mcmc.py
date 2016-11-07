@@ -986,6 +986,7 @@ class metropolis_hastings():
         weightstamps = []
         psfstamps = []
         chisqstamps = []
+        chisqstampsnp = np.asarray(self.data)*0.
 
         if self.dosave:
 
@@ -1006,6 +1007,7 @@ class metropolis_hastings():
                 save_fits_image((self.data[i,:,:]-self.sims[i])**2*self.weights[i,:,:]*self.mask,
                                 os.path.join(self.outpath,'MDJ'+str(self.mjd[i])+'_chisq.fits'))
                 chisqstamps.append(os.path.join(self.outpath,'MDJ'+str(self.mjd[i])+'_chisq.fits'))
+
                 save_fits_image(self.centered_psfs[i,:,:],os.path.join(self.outpath,'MDJ'+str(self.mjd[i])+'_psf.fits'))
                 psfstamps.append(os.path.join(self.outpath,'MDJ'+str(self.mjd[i])+'_psf.fits'))
                 save_fits_image(self.centered_psfs[i,:,:]-self.kicked_psfs[i,:,:],os.path.join(self.outpath,'MDJ'+str(self.mjd[i])+'_psfresidual.fits'))
@@ -1019,7 +1021,9 @@ class metropolis_hastings():
             #save_fits_image(self.data[0,:,:],'./out/MDJ'+str(self.mjd)+'data.fits')
         stamps = [datastamps,simstamps,galmodelstamps,weightstamps,psfstamps,chisqstamps]
         chsqs = self.csv / len(self.mask[self.mask > 0.].ravel())
-        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs # size: self.history[num_iter,len(self.model_params)]
+        for i in np.arange(self.Nimage):
+            chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
+        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp # size: self.history[num_iter,len(self.model_params)]
 
     def get_params_analytical_weighted( self ):
         burn_in = int(self.nphistory.shape[0]*.5)

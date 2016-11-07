@@ -129,7 +129,7 @@ class fit:
     def go(self):
         self.runDMC()
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
-        return self.chisqs, fitmag, self.ix, self.iy
+        return self.chisqs, fitmag, self.ix, self.iy, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
 
     def grabfromheader(self):
 
@@ -142,6 +142,8 @@ class fit:
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
         self.fwhm = imhdr['FWHM']
+        if 3*self.fwhm > self.stampsize:
+            raise Exception('Stampsize must be at least 3x PSF FWHM!')
         self.templatesky = 0.
         self.templateskyerr = imhdr['SKYSIGMA']
 
@@ -393,7 +395,8 @@ class fit:
         )
         print 'MCMC FIT TIME',time.time()-ts
 
-        self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs = aaa.get_params()
+        self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps = aaa.get_params()
+        self.chisqvsfwhm()
         return self.chisqs
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
@@ -431,6 +434,21 @@ class fit:
         if '.fits.fz' in self.templateweight:
             os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight))
             self.templateweight = self.templateweight[:-3]
+
+    def chisqvsfwhm(self):
+        for i in [1.,2.,3.]:
+            chisqrad = float(i)*self.fwhm
+            mask = np.zeros([stampsize, stampsize])
+            for x in np.arange(stampsize):
+                for y in np.arange(stampsize):
+                    if np.sqrt(((stampsize - 1) / 2. - x) ** 2 + ((stampsize - 1) / 2. - y) ** 2) < chisqrad:
+                            mask[int(x), int(y)] = 1.
+            if i == 1:
+                self.chisq1fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
+            if i == 2:
+                self.chisq2fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
+            if i == 3:
+                self.chisq3fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
 
     def readDefaults(self):
         import sys, getopt
@@ -574,7 +592,7 @@ class fit:
         if self.stampsize is None:
             self.stampsize = 10
         if self.fitrad is None:
-            self.fitrad = 10
+            self.fitrad = 18
         if self.initialguess is None:
             self.initialguess = 10000.
         if self.stepstd is None:
