@@ -398,8 +398,13 @@ class fit:
         )
         print 'MCMC FIT TIME',time.time()-ts
 
-        self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps = aaa.get_params()
-        self.chisqvsfwhm()
+        self.bad = False
+        try:
+            self.modelvec, modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps = aaa.get_params()
+            self.chisqvsfwhm()
+        except ValueError:
+            self.bad = True
+            return [-1,-1]
         return self.chisqs
         print 'TOTAL SMP SN TIME ', time.time() - self.tstart
 
