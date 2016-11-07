@@ -208,6 +208,7 @@ class metropolis_hastings():
         self.psfcenter = psfcenter
         self.x = x
         self.y = y
+        self.alreadyextended = False
 
         self.x[0] = self.x[0] - 3.
 
@@ -420,8 +421,15 @@ class metropolis_hastings():
                 #    print i,self.mjd[i], self.chisqvec[i]/len(self.mask[self.mask>0.].ravel()),self.mjdoff[i][0],self.mjdoff[i][1],np.mean(self.modelvec_nphistory[:,i])
 
             if self.counter > self.maxiter:
-                self.z_scores_say_keep_going = False#GETOUT
-                self.didtimeout = True
+                stop = True
+                if not self.alreadyextended:
+                    if np.nanmean(chsqs[chsqs != 0.]) > 2.:
+                        self.maxiter = self.maxiter + 50000
+                        self.alreadyextended = True
+                        stop = False
+                if stop:
+                    self.z_scores_say_keep_going = False#GETOUT
+                    self.didtimeout = True
             #plt.imshow(self.data[20,self.substamp/2.-14.:self.substamp/2.+14.,self.substamp/2.-14.:self.substamp/2.+14.])
             #plt.show()
 
