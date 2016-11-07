@@ -372,44 +372,43 @@ class fit:
 
     def runDMC(self):
         ts = time.time()
-        aaa = mcmc.metropolis_hastings(
-              galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
-            , modelvec=     np.array([self.initialguess,0])
-            , galstd=       np.sqrt(np.abs(self.data[1,:,:]))
-            , modelstd=     np.array([self.stepstd,0.])
-            , data=         self.data
-            , psfs=         self.psfs
-            , weights=      self.weights
-            , substamp=     self.stampsize
-            , Nimage=       self.Nimage
-            , maxiter=      5000#self.numiter
-            , sky=          np.array([self.imagesky, self.templatesky])
-            , mjd=          np.array([1,2])
-            , flags=        np.array([0,0])
-            , fitflags=     np.array([0,0])
-            , shft_std=     self.floatposstd
-            , shftpsf=      self.floatpos
-            , fitrad=       self.fitrad
-            , outpath=      os.path.join(self.outdir,self.candid)
-            , compress=     10
-            , burnin=       .5
-            , isfermigrid=  self.fermigrid
-            , psffile=      np.array([os.path.join(self.rootdir,self.imagepsf),
-                                      os.path.join(self.rootdir,self.templatepsf)],dtype='str')
-            , x=            np.array([self.ix,self.tx])
-             ,y=            np.array([self.iy,self.ty])
-        )
-        print 'MCMC FIT TIME',time.time()-ts
-
         self.bad = False
         try:
-            self.modelvec, self.modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo = aaa.get_params()
-            self.chisqvsfwhm()
+            aaa = mcmc.metropolis_hastings(
+                  galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
+                , modelvec=     np.array([self.initialguess,0])
+                , galstd=       np.sqrt(np.abs(self.data[1,:,:]))
+                , modelstd=     np.array([self.stepstd,0.])
+                , data=         self.data
+                , psfs=         self.psfs
+                , weights=      self.weights
+                , substamp=     self.stampsize
+                , Nimage=       self.Nimage
+                , maxiter=      5000#self.numiter
+                , sky=          np.array([self.imagesky, self.templatesky])
+                , mjd=          np.array([1,2])
+                , flags=        np.array([0,0])
+                , fitflags=     np.array([0,0])
+                , shft_std=     self.floatposstd
+                , shftpsf=      self.floatpos
+                , fitrad=       self.fitrad
+                , outpath=      os.path.join(self.outdir,self.candid)
+                , compress=     10
+                , burnin=       .5
+                , isfermigrid=  self.fermigrid
+                , psffile=      np.array([os.path.join(self.rootdir,self.imagepsf),
+                                          os.path.join(self.rootdir,self.templatepsf)],dtype='str')
+                , x=            np.array([self.ix,self.tx])
+                 ,y=            np.array([self.iy,self.ty])
+            )
+            print 'MCMC FIT TIME',time.time()-ts
         except ValueError:
             self.bad = True
-            return [-1,-1]
-        return self.chisqs
-        print 'TOTAL SMP SN TIME ', time.time() - self.tstart
+            return
+
+        self.modelvec, self.modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo = aaa.get_params()
+        self.chisqvsfwhm()
+        return
 
 
     def setupFermi(self):
