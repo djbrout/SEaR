@@ -132,6 +132,8 @@ class fit:
     def go(self):
         self.runDMC()
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
+        print self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
+        raw_input('aaa')
         return self.chisqs, fitmag, self.ix, self.iy, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
 
     def grabfromheader(self):
