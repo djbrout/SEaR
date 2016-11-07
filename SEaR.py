@@ -443,7 +443,7 @@ class fit:
             print self.fwhm
             chisqrad = float(i)*self.fwhm
             print chisqrad
-            raw_input('sss')
+            #raw_input('sss')
             mask = np.zeros([self.stampsize, self.stampsize])
             for x in np.arange(self.stampsize):
                 for y in np.arange(self.stampsize):
@@ -451,10 +451,15 @@ class fit:
                             mask[int(x), int(y)] = 1.
             if i == 1:
                 self.chisq1fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
+                print self.chisq1fwhm
             if i == 2:
                 self.chisq2fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
+                print self.chisq3fwhm
             if i == 3:
                 self.chisq3fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
+                print self.chisq3fwhm
+            raw_input('sss')
+
 
     def readDefaults(self):
         import sys, getopt
