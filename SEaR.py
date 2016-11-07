@@ -141,6 +141,7 @@ class fit:
         #self.templatezpt = tmphdr['ZP']
         self.imagesky = imhdr['SKYBRITE']
         self.imageskyerr = imhdr['SKYSIGMA']
+        self.fwhm = imhdr['FWHM']
         self.templatesky = 0.
         self.templateskyerr = imhdr['SKYSIGMA']
 
