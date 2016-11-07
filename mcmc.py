@@ -406,7 +406,7 @@ class metropolis_hastings():
                 print 'Reduced Chisq: ', np.nanmean(chsqs[chsqs != 0.])
                 #print 'redchi',self.redchisq[-1]
                 print 'Chisq For Each Epoch: ',chsqs
-                print 'Current Fitting position:', self.x[0], self.y[0]
+                print 'Current Fitting position:', self.x[0] + self.current_x_offset, self.y[0]+self.current_y_offset
                 #print 'Total Chi Sq:',np.mean(chsqs)
                 # print 'Time per step:',(time.time()-self.t1)/self.counter
                 # print 'total_time_convolving',self.total_time_convolving
