@@ -13,7 +13,7 @@ searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\t\tsearch
 searout.close()
 cntr = 0
 for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
-                         detections['sn'],detections['mag']):
+                         detections['sn'],detections['mag'])[::-1]:
     cntr += 1
     #if cntr > 50: continue
     band = bc.split('_')[0]
