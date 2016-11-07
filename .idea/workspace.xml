@@ -409,13 +409,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00172" summary="Switchin nominal zpt to the image (searhc) zpt">
-      <created>1478399443568</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1478399443568</updated>
-    </task>
     <task id="LOCAL-00173" summary="Switchin nominal zpt to the image (searhc) zpt">
       <created>1478399469730</created>
       <option name="number" value="00173" />
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478541965002</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="BIG RUN - with fitmager&#10;">
+      <created>1478542290936</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1478542290936</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="ToolWindowManager">
