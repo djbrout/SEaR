@@ -59,7 +59,7 @@ class fit:
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
-                 numiter=None, floatpos=False, floatposstd=.004,
+                 numiter=None, floatpos=None, floatposstd=.004,
                  stampsize=None, initialguess=None, stepstd=None,commandline=False):
 
         self.tstart = time.time()
