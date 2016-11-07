@@ -441,10 +441,10 @@ class fit:
     def chisqvsfwhm(self):
         for i in [1.,2.,3.]:
             chisqrad = float(i)*self.fwhm
-            mask = np.zeros([stampsize, stampsize])
-            for x in np.arange(stampsize):
-                for y in np.arange(stampsize):
-                    if np.sqrt(((stampsize - 1) / 2. - x) ** 2 + ((stampsize - 1) / 2. - y) ** 2) < chisqrad:
+            mask = np.zeros([self.stampsize, self.stampsize])
+            for x in np.arange(self.stampsize):
+                for y in np.arange(self.stampsize):
+                    if np.sqrt(((self.stampsize - 1) / 2. - x) ** 2 + ((self.stampsize - 1) / 2. - y) ** 2) < chisqrad:
                             mask[int(x), int(y)] = 1.
             if i == 1:
                 self.chisq1fwhm = np.sum((self.chisqstamps[0,:,:] * mask).ravel()) / len(mask[mask == 1.])
