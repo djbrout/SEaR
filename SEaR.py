@@ -212,7 +212,7 @@ class fit:
         imagedata = getdata(os.path.join(self.rootdir, self.image))
         imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
 
-        docntrd = True
+        docntrd = False
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
             try:
