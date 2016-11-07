@@ -214,7 +214,7 @@ class fit:
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
             try:
-                self.cix, self.ciy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 2.)
+                self.cix, self.ciy = cntrd.cntrd(imagedata, float(self.ix), float(self.iy), 1.)
             except:
                 print 'CENTROID OUT OF RANGE'
             if self.cix > 2.:
