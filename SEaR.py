@@ -30,7 +30,7 @@ import sys
 try:
     import matplotlib as m
 except:
-    raise Exception('Run the following commands:\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
+    raise Exception('Run the following commands:\n\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
 import mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
@@ -379,7 +379,7 @@ class fit:
             , weights=      self.weights
             , substamp=     self.stampsize
             , Nimage=       self.Nimage
-            , maxiter=      30000#self.numiter
+            , maxiter=      5000#self.numiter
             , sky=          np.array([self.imagesky, self.templatesky])
             , mjd=          np.array([1,2])
             , flags=        np.array([0,0])
