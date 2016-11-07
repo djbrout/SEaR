@@ -406,6 +406,7 @@ class metropolis_hastings():
                 print 'Reduced Chisq: ', np.nanmean(chsqs[chsqs != 0.])
                 #print 'redchi',self.redchisq[-1]
                 print 'Chisq For Each Epoch: ',chsqs
+                print 'Current Fitting position:', self.x[0], self.y[0]
                 #print 'Total Chi Sq:',np.mean(chsqs)
                 # print 'Time per step:',(time.time()-self.t1)/self.counter
                 # print 'total_time_convolving',self.total_time_convolving
@@ -1190,7 +1191,7 @@ class metropolis_hastings():
 
 
     def shiftPSF(self,y_off=0.0,x_off=0.0): 
-        print 'fitting position:', self.x[0]+x_off,self.y[0]+y_off
+        #print 'fitting position:', self.x[0]+x_off,self.y[0]+y_off
         thispsf, thispsfcenter = buildPSFex.build(self.psffile[0], self.x[0]+x_off, self.y[0]+y_off, self.substamp)
         #print thispsfcenter[0],thispsfcenter[1],round(self.x[0]+x_off+.),round(self.y[0]+y_off)
         #print thispsfcenter,self.psfcenter[0]
@@ -1227,6 +1228,7 @@ class metropolis_hastings():
             thispsf = newpsf
         self.kicked_psfs[0, :, :] = thispsf
 
+        '''
         thispsf, thispsfcenter = buildPSFex.build(self.psffile[1], self.x[1]+x_off, self.y[1]+y_off, self.substamp)
         # print thispsfcenter,self.psfcenter[1]
 
@@ -1261,7 +1263,7 @@ class metropolis_hastings():
 
             thispsf = newpsf
         self.kicked_psfs[1, :, :] = thispsf
-
+        '''
 
         # self.psfs[0, :, :], self.impsfcenter = buildPSFex.build(os.path.join(self.rootdir, self.impsf)
         #                                                         , self.ix, self.iy, self.stampsize)
