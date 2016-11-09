@@ -1216,28 +1216,32 @@ class metropolis_hastings():
             if thispsfcenter[1] == self.psfcenter[0][1]:
                 pass
             elif thispsfcenter[1] == self.psfcenter[0][1] - 1:
-                #print 'shifting1'
                 newpsf[:-1,:] = thispsf[1:,:]
             elif thispsfcenter[1] == self.psfcenter[0][1] + 1:
-                #print 'shifting2'
                 newpsf[1:,:] = thispsf[:-1,:]
+            elif thispsfcenter[1] == self.psfcenter[0][1] - 2:
+                newpsf[:-2,:] = thispsf[2:,:]
+            elif thispsfcenter[1] == self.psfcenter[0][1] + 2:
+                newpsf[2:,:] = thispsf[:-2,:]
             else:
-                print 'MCMC is attempting to offset the psf by more than one pixel!1'
-                raise ValueError('MCMC is attempting to offset the psf by more than one pixel!1')
+                print 'MCMC is attempting to offset the psf by more than two pixels! 0'
+                raise ValueError('MCMC is attempting to offset the psf by more than two pixels! 0')
             thispsf = copy(newpsf)
 
             newpsf = copy(thispsf)
             if thispsfcenter[0] == self.psfcenter[0][0]:
                 pass
             elif thispsfcenter[0] == self.psfcenter[0][0] - 1:
-                #print 'shifting3'
                 newpsf[:,:-1] = copy(thispsf[:, 1:])
             elif thispsfcenter[0] == self.psfcenter[0][0] + 1:
-                #print 'shifting4'
                 newpsf[:, 1:] = copy(thispsf[:, :-1])
+            elif thispsfcenter[0] == self.psfcenter[0][0] - 2:
+                newpsf[:,:-2] = copy(thispsf[:, 2:])
+            elif thispsfcenter[0] == self.psfcenter[0][0] + 2:
+                newpsf[:, 2:] = copy(thispsf[:, :-2])
             else:
-                print 'MCMC is attempting to offset the psf by more than one pixel!1'
-                raise ValueError('MCMC is attempting to offset the psf by more than one pixel!1')
+                print 'MCMC is attempting to offset the psf by more than two pixels! 1'
+                raise ValueError('MCMC is attempting to offset the psf by more than two pixels! 1')
 
             thispsf = newpsf
         self.kicked_psfs[0, :, :] = thispsf
