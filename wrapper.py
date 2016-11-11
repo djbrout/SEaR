@@ -8,7 +8,7 @@ def run(tccd):
 
     tband = 'i'
 
-    sd = 'seardetections_'+tband+'_'+tccd+'.txt'
+    sd = '/global/u1/d/dbrout/SEaR/out/detections_'+tband+'_'+tccd+'.txt'
     if tccd == '01':
         searout = open(sd, 'w')
         searout.write('band_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
@@ -17,7 +17,7 @@ def run(tccd):
     for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
                              detections['sn'],detections['mag']):
         cntr += 1
-        #if cntr > 50: continue
+        if cntr > 1: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
         if not band == tband: continue
@@ -35,7 +35,7 @@ def run(tccd):
 
 if __name__ == "__main__":
 
-    detections = dt.readcol('cleandetections.txt', delim=',')
+    detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
 
     ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
                   '20',
