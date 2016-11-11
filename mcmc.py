@@ -638,7 +638,7 @@ class metropolis_hastings():
                     S = np.exp(1j*(X*(10.0+self.x_pix_offset)+Y*(10.0+self.y_pix_offset)))
 
                     FS = np.fft.fftn(S)
-                    delta = np.fft.fftshift(FS)
+                    delta = np.fft.fftshift(FS).real
 
                     fr = fft2(self.kicked_galaxy_model)
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
