@@ -619,7 +619,8 @@ class metropolis_hastings():
 
                     from scipy.fftpack import rfft, ifft
 
-                    gc = ifft(rfft(self.kicked_galaxy_model)*rfft(centered_psfs))
+                    gc = ifft(rfft(self.kicked_galaxy_model)*rfft(centered_psfs)).real
+
                     print ((galaxy_conv - gc)/galaxy_conv)[:50]
                     print np.allclose(galaxy_conv, gc, atol=1e-1)
 
