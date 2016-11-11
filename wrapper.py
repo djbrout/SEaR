@@ -62,6 +62,8 @@ if __name__ == "__main__":
 
     for o, a in opt:
         if o in ["-ci", "--ccdi"]:
+            print a
+
             ccd = ccdlistall[int(a)]
 
     run(ccd)

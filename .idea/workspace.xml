@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/edisonsubmit.sh" afterPath="$PROJECT_DIR$/edisonsubmit.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10260">
+            <state relative-caret-position="419">
               <caret line="686" column="23" selection-start-line="683" selection-start-column="4" selection-end-line="686" selection-end-column="23" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+            <state relative-caret-position="450">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -81,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edisonsubmit.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edisonsubmit.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/edisonsubmit.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -165,9 +165,9 @@
         <option value="$USER_HOME$/Downloads/pysmp_downloads/dump_psfex_wrap.h" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
-        <option value="$PROJECT_DIR$/wrapper.py" />
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
+        <option value="$PROJECT_DIR$/wrapper.py" />
       </list>
     </option>
   </component>
@@ -420,13 +420,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00189" summary="doing multiple chisq at 3 fwhm&#10;">
-      <created>1478529542517</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1478529542517</updated>
     </task>
     <task id="LOCAL-00190" summary="doing multiple chisq at 3 fwhm&#10;">
       <created>1478529691415</created>
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478884851459</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="added edison job submission">
+      <created>1478884885926</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1478884885926</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1187,16 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10260">
-          <caret line="686" column="23" selection-start-line="683" selection-start-column="4" selection-end-line="686" selection-end-column="23" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cntrd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2760">
@@ -1241,16 +1231,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="12" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1266,6 +1246,26 @@
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="686" column="23" selection-start-line="683" selection-start-column="4" selection-end-line="686" selection-end-column="23" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
