@@ -61,7 +61,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import gc
 import buildPSFex
 from astropy.io import fits
-from scipy.fftpack import fft, ifft
+from scipy.fftpack import fft, ifft, fft2, ifft2
 from math import *
 
 
@@ -627,7 +627,15 @@ class metropolis_hastings():
 
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
-                    gc = ifft(fft(centered_psfs)).real
+
+                    fr = fft2(self.kicked_galaxy_model)
+                    fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
+                    m, n = fr.shape
+                    gc = np.real(ifft2(fr * fr2))
+                    gc = np.roll(gc, -m / 2 + 1, axis=0)
+                    gc = np.roll(gc, -n / 2 + 1, axis=1)
+
+                    #gc = ifft(fft(centered_psfs)).real
                     sims = (gc + sky) * self.mask
 
                     #print 'simshape',sims.shape
