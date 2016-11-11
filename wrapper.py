@@ -2,6 +2,14 @@ import SEaR
 import os
 import dilltools as dt
 
+detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
+
+ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+                  '20',
+                  '21', '22', '23', '24', '25', '26', '27', '28', '29', '30',
+                  '32', '33', '34', '35', '36', '37', '38', '39', '40',
+                  '41', '42', '43', '44', '45', '46', '47', '48', '49', '50',
+                  '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
 def run(tccd):
@@ -17,7 +25,7 @@ def run(tccd):
     for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
                              detections['sn'],detections['mag']):
         cntr += 1
-        if cntr > 1: continue
+        #if cntr > 1: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
         if not band == tband: continue
@@ -35,14 +43,7 @@ def run(tccd):
 
 if __name__ == "__main__":
 
-    detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
 
-    ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
-                  '20',
-                  '21', '22', '23', '24', '25', '26', '27', '28', '29', '30',
-                  '32', '33', '34', '35', '36', '37', '38', '39', '40',
-                  '41', '42', '43', '44', '45', '46', '47', '48', '49', '50',
-                  '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
     import sys, getopt
