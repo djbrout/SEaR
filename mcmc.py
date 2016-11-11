@@ -619,7 +619,7 @@ class metropolis_hastings():
 
                     from scipy.fftpack import fft, ifft
 
-                    gc = fft(ifft(self.kicked_galaxy_model))
+                    gc = fft(ifft(self.kicked_galaxy_model)*ifft(centered_psfs))
                     print galaxy_conv.shape , gc.shape
 
 
