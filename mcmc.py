@@ -622,7 +622,7 @@ class metropolis_hastings():
                 if fitflags == 0.:
                     #print 'fft2shape ',np.fft.fft2(self.kicked_galaxy_model).shape
                     n = self.kicked_galaxy_model.size
-                    sample_rate = 100
+                    sample_rate = 1000
                     freq = np.fft.fftfreq(20, d=1. / sample_rate)
 
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
@@ -630,8 +630,9 @@ class metropolis_hastings():
 
                     fr = fft2(self.kicked_galaxy_model)
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
+                    fr3 = kicked_modelvec * np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))
                     m, n = fr.shape
-                    gc = np.real(ifft2(fr * fr2))
+                    gc = np.real(ifft2(fr * fr2 * fr3))
                     gc = np.roll(gc, -m / 2 + 1, axis=0)
                     gc = np.roll(gc, -n / 2 + 1, axis=1)
 
