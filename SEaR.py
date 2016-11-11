@@ -156,13 +156,13 @@ class fit:
                 imhdr = getheader(self.image+'.fz', 1)
             except:
                 raise Exception('Could not find image',self.image)
-        try:
-            tmphdr = getheader(self.template)
-        except:
-            try:
-                tmphdr = getheader(self.template+'.fz')
-            except:
-                raise Exception('Could not find image',self.template)
+        # try:
+        #     tmphdr = getheader(self.template)
+        # except:
+        #     try:
+        #         tmphdr = getheader(self.template+'.fz')
+        #     except:
+        #         raise Exception('Could not find image',self.template)
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         #print tmphdr
         #self.templatezpt = tmphdr['ZP']
@@ -230,6 +230,7 @@ class fit:
         print self.image
         print self.template
         #raw_input()
+
 
         imagedata = getdata(os.path.join(self.rootdir, self.image))
         imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))

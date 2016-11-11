@@ -616,6 +616,13 @@ class metropolis_hastings():
             if flags == 0:
                 if fitflags == 0.:
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
+
+                    from scipy.fftpack import fft, ifft
+
+                    gc = fft(ifft(self.kicked_galaxy_model))
+                    print galaxy_conv.shape , gc.shape
+
+
                     star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
                     sims =  (star_conv + galaxy_conv + sky)*self.mask
                     
