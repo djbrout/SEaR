@@ -406,7 +406,7 @@ class fit:
                 , weights=      self.weights
                 , substamp=     self.stampsize
                 , Nimage=       self.Nimage
-                , maxiter=      5000#self.numiter
+                , maxiter=      25000#self.numiter
                 , sky=          np.array([self.imagesky, self.templatesky])
                 , mjd=          np.array([1,2])
                 , flags=        np.array([0,0])
