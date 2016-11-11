@@ -61,6 +61,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import gc
 import buildPSFex
 from astropy.io import fits
+from scipy.fftpack import fft, ifft
+from math import *
+
 
 class metropolis_hastings():
 
@@ -615,17 +618,17 @@ class metropolis_hastings():
         else:
             if flags == 0:
                 if fitflags == 0.:
-                    galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
-
-                    from scipy.fftpack import rfft, ifft
-
-                    gc = ifft(rfft(self.kicked_galaxy_model)*rfft(centered_psfs)).real
-
-                    print ((galaxy_conv - gc))[:50]
-                    print np.allclose(galaxy_conv, gc, atol=1e-1)
-
-                    star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
-                    sims =  (star_conv + galaxy_conv + sky)*self.mask
+                    print fft(self.kicked_galaxy_model).shape
+                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*np.exp(i)).real
+                    sims = (gc + sky) * self.mask
+                    n = self.kicked_galaxy_model.size
+                    sample_rate = 100
+                    freq = np.fft.fftfreq(n, d=1. / sample_rate)
+                    sims=1
+                    #THIS IS THE OLD WAY
+                    #galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
+                    #star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
+                    #sims =  (star_conv + galaxy_conv + sky)*self.mask
                     
         return sims
 
