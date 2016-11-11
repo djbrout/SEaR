@@ -624,13 +624,13 @@ class metropolis_hastings():
                     n = self.kicked_galaxy_model.size
                     sample_rate = 100
                     freq = np.fft.fftfreq(20, d=1. / sample_rate)
-
+                    ff, fa = np.meshgrid(freq,freq)
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
 
                     fr = fft2(self.kicked_galaxy_model)
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
-                    fr3 = 1000 * np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))
+                    fr3 = 1000 * np.exp(1j*(ff*(10.0+self.x_pix_offset)+ff*(10.0+self.y_pix_offset)))
                     m, n = fr.shape
                     gc = np.real(ifft2(fr3))
                     gc = np.roll(gc, -m / 2 + 1, axis=0)
