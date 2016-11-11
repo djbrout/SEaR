@@ -617,11 +617,10 @@ class metropolis_hastings():
                 if fitflags == 0.:
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
 
-                    from scipy.fftpack import fft, ifft
+                    from scipy.fftpack import rfft, ifft
 
-                    gc = fft(ifft(self.kicked_galaxy_model)*ifft(centered_psfs))/(4.*np.pi*np.pi)
-
-                    print (galaxy_conv - gc)[:50]
+                    gc = rfft(ifft(self.kicked_galaxy_model)*ifft(centered_psfs))
+                    print ((galaxy_conv - gc)/galaxy_conv)[:50]
                     print np.allclose(galaxy_conv, gc, atol=1e-1)
 
                     star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
