@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/sh
 echo 1
 cd  /global/u1/d/dbrout/SEaR/
 echo 2
