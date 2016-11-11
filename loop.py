@@ -25,5 +25,4 @@ for i in np.arange(0, 10):
     )
     f.close()
     output = Popen(["sbatch", script], stdout=PIPE).communicate()
-    jobid = output[0].strip().split(' ')[3]
     print output[0]
