@@ -641,7 +641,7 @@ class metropolis_hastings():
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
                     fr3 = 10000. * np.exp(1j*(self.ff*(10.0+self.x_pix_offset)+self.ff*(10.0+self.y_pix_offset)))
                     m, n = fr.shape
-                    gc = np.real(ifft2(S))
+                    gc = np.real(ifft2(S*fr2))
                     gc = np.roll(gc, -m / 2 + 1, axis=0)
                     gc = np.roll(gc, -n / 2 + 1, axis=1)
 
