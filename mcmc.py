@@ -178,6 +178,8 @@ class metropolis_hastings():
         self.psf_shift_std = shft_std
         self.current_x_offset = xoff
         self.current_y_offset = yoff
+        self.x_pix_offset = xoff
+        self.y_pix_offset = yoff
         self.compressioncounter = 0
         self.shiftpsf = shftpsf
         self.stop = stop
