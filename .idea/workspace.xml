@@ -421,13 +421,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00225" summary="BIG RUN - with fitmager&#10;">
-      <created>1478546401409</created>
-      <option name="number" value="00225" />
-      <option name="presentableId" value="LOCAL-00225" />
-      <option name="project" value="LOCAL" />
-      <updated>1478546401409</updated>
-    </task>
     <task id="LOCAL-00226" summary="BIG RUN - with fitmager&#10;">
       <created>1478546456042</created>
       <option name="number" value="00226" />
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478902533872</updated>
     </task>
-    <option name="localTasksCounter" value="274" />
+    <task id="LOCAL-00274" summary="doing my own fft">
+      <created>1478902603908</created>
+      <option name="number" value="00274" />
+      <option name="presentableId" value="LOCAL-00274" />
+      <option name="project" value="LOCAL" />
+      <updated>1478902603908</updated>
+    </task>
+    <option name="localTasksCounter" value="275" />
     <servers />
   </component>
   <component name="ToolWindowManager">
