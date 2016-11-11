@@ -361,14 +361,16 @@ class metropolis_hastings():
         #print 'nimage', self.Nimage
         #print 'numfitepochs',self.numfitepochs
         #raw_input()
+
+        self.sample_rate = 100
+        self.freq = np.fft.fftfreq(20, d=1. / self.sample_rate)
+        self.ff, fa = np.meshgrid(self.freq, self.freq)
         
         self.kicked_galaxy_model = copy(self.galaxy_model)
         self.simsnosn = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
         self.simsnosnnosky = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky*0.,self.flags,self.fitflags,self.sims,self.gal_conv)
 
-        self.sample_rate = 100
-        self.freq = np.fft.fftfreq(20, d=1. / self.sample_rate)
-        self.ff, fa = np.meshgrid(self.freq, self.freq)
+
 
         self.run_d_mc()
 
