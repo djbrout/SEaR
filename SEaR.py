@@ -120,8 +120,8 @@ class fit:
 
 
         if not self.ccd is None:
-            self.image.replace('i_01','i_'+ccd)
-            self.template.replace('i_01','i_'+ccd)
+            self.image = self.image.replace('i_01','i_'+ccd)
+            self.template = self.template.replace('i_01','i_'+ccd)
 
         if self.fermigrid:
             print 'setting up fermi'
