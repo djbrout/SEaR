@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="366" column="55" selection-start-line="366" selection-start-column="55" selection-end-line="366" selection-end-column="55" />
+            <state relative-caret-position="724">
+              <caret line="652" column="23" selection-start-line="652" selection-start-column="23" selection-end-line="652" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -421,13 +421,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00231" summary="BIG RUN - with fitmager&#10;">
-      <created>1478714361426</created>
-      <option name="number" value="00231" />
-      <option name="presentableId" value="LOCAL-00231" />
-      <option name="project" value="LOCAL" />
-      <updated>1478714361426</updated>
-    </task>
     <task id="LOCAL-00232" summary="BIG RUN - with fitmager&#10;">
       <created>1478714508058</created>
       <option name="number" value="00232" />
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478903599616</updated>
     </task>
-    <option name="localTasksCounter" value="280" />
+    <task id="LOCAL-00280" summary="doing my own fft">
+      <created>1478903636054</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1478903636054</updated>
+    </task>
+    <option name="localTasksCounter" value="281" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1263,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="366" column="55" selection-start-line="366" selection-start-column="55" selection-end-line="366" selection-end-column="55" />
+        <state relative-caret-position="724">
+          <caret line="652" column="23" selection-start-line="652" selection-start-column="23" selection-end-line="652" selection-end-column="23" />
           <folding />
         </state>
       </provider>
