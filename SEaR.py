@@ -149,10 +149,20 @@ class fit:
         return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
 
     def grabfromheader(self):
-
-        imhdr = getheader(self.image,1)
-        tmphdr = getheader(self.template)
-
+        try:
+            imhdr = getheader(self.image,1)
+        except:
+            try:
+                imhdr = getheader(self.image+'.fz', 1)
+            except:
+                raise Exception('Could not find image',self.image)
+        try:
+            tmphdr = getheader(self.template)
+        except:
+            try:
+                tmphdr = getheader(self.template+'.fz')
+            except:
+                raise Exception('Could not find image',self.template)
         self.imzpt = imhdr['HIERARCH DOFAKE_ZP']
         #print tmphdr
         #self.templatezpt = tmphdr['ZP']
