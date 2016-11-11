@@ -50,7 +50,7 @@ import cntrd
 
 
 class fit:
-    def __init__(self, candid=None,
+    def __init__(self, candid=None,ccd=None,
                  image=None, template=None,
                  imagepsf=None, templatepsf=None,
                  imageweight=None, templateweight=None,
@@ -95,6 +95,10 @@ class fit:
         self.initialguess = initialguess
         self.stepstd = stepstd
         self.candid = candid
+        self.ccd = ccd
+        if not self.ccd is None:
+            self.image.replace('i_01','i_'+ccd)
+            self.template.replace('i_01','i_'+ccd)
 
         self.Nimage = 2 #This is hardcoded for one image and one template
 

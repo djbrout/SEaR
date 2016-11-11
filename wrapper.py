@@ -22,7 +22,7 @@ def run(tccd):
         ccd = bc.split('_')[1]
         if not band == tband: continue
         if not ccd == tccd: continue
-        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i))
+        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i),ccd=ccd)
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
         print chisqs
         searout = open(sd,'a')
