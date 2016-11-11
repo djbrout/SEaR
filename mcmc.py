@@ -625,8 +625,9 @@ class metropolis_hastings():
                     sample_rate = 100
                     freq = np.fft.fftfreq(20, d=1. / sample_rate)
 
-                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
-                              np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
+                    #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
+                    #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
+                    gc = ifft(fft(self.kicked_galaxy_model) * fft(centered_psfs)).real
                     sims = (gc + sky) * self.mask
 
                     #print 'simshape',sims.shape
