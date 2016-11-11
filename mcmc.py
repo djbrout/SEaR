@@ -608,7 +608,7 @@ class metropolis_hastings():
     def float_sn_pos( self ):
         self.x_pix_offset = self.current_x_offset + np.random.normal( scale= self.psf_shift_std )
         self.y_pix_offset = self.current_y_offset + np.random.normal( scale= self.psf_shift_std ) 
-        self.shiftPSF(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
+        #self.shiftPSF(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
 
     def mapkernel( self, kicked_modelvec, kicked_psfs, centered_psfs,sky, flags, fitflags, sims, galconv):
 
@@ -618,20 +618,21 @@ class metropolis_hastings():
         else:
             if flags == 0:
                 if fitflags == 0.:
-                    print 'fft2shape ',np.fft.fft2(self.kicked_galaxy_model).shape
+                    #print 'fft2shape ',np.fft.fft2(self.kicked_galaxy_model).shape
                     n = self.kicked_galaxy_model.size
                     sample_rate = 100
                     freq = np.fft.fftfreq(20, d=1. / sample_rate)
 
-                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*np.exp(1j*(freq*10.0+freq*10.0))).real
+                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
+                              np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
                     sims = (gc + sky) * self.mask
 
-                    print 'simshape',sims.shape
+                    #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
-                    #galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
-                    #star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
-                    #sims =  (star_conv + galaxy_conv + sky)*self.mask
-                    
+                    # galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
+                    # star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
+                    # sims =  (star_conv + galaxy_conv + sky)*self.mask
+
         return sims
 
     def kernel( self ):
