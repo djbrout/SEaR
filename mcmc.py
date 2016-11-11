@@ -618,13 +618,15 @@ class metropolis_hastings():
         else:
             if flags == 0:
                 if fitflags == 0.:
-                    print fft(self.kicked_galaxy_model).shape
-                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*np.exp(i)).real
-                    sims = (gc + sky) * self.mask
+                    print 'fft2shape ',np.fft.fft2(self.kicked_galaxy_model).shape
                     n = self.kicked_galaxy_model.size
                     sample_rate = 100
-                    freq = np.fft.fftfreq(n, d=1. / sample_rate)
-                    sims=1
+                    freq = np.fft.fftfreq(20, d=1. / sample_rate)
+
+                    gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*np.exp(1j*(freq*10.0+freq*10.0))).real
+                    sims = (gc + sky) * self.mask
+
+                    print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
                     #galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs,mode='same')
                     #star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
