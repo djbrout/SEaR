@@ -633,7 +633,7 @@ class metropolis_hastings():
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
 
-                    [X, Y] = np.meshgrid(2 * np.pi * np.arange(20) / 12, 2 * np.pi * np.arange(20) / 12)
+                    [X, Y] = np.meshgrid(np.arange(20),np.arange(20))
 
                     S = np.exp(1j*(X*(10.0+self.x_pix_offset)+Y*(10.0+self.y_pix_offset)))
 
