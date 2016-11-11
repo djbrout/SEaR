@@ -66,5 +66,7 @@ if __name__ == "__main__":
             print a
 
             ccd = ccdlistall[int(a)]
+            print ccd
+            raw_input()
 
     run(ccd)
