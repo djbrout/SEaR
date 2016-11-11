@@ -9,5 +9,5 @@ source /global/project/projectdirs/dessn/diffim/setup.sh
 echo 5
 diffimg
 echo 6
-python wrapper.py --ccd=$1
+python wrapper.py --ccdi=$1
 echo 7
