@@ -120,7 +120,6 @@ class fit:
 
         if not os.path.exists(self.image):
             self.image = self.image+'.fz'
-
         if not os.path.exists(self.template):
             self.template = self.template+'.fz'
         if not os.path.exists(self.imageweight):
