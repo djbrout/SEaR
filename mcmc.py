@@ -645,7 +645,7 @@ class metropolis_hastings():
                     # gc = np.roll(gc, -m / 2 + 1, axis=0)
                     # gc = np.roll(gc, -n / 2 + 1, axis=1)
 
-                    FS = np.fft.fftn(kicked_modelvec * S * fr * fr2)
+                    FS = np.fft.fftn(S * fr2)
                     delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
