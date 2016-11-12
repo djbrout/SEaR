@@ -739,12 +739,12 @@ class metropolis_hastings():
 
         if flags == 0:
             if fitflags == 0:
-                if kicked_modelvec == 0:
-                    v = ((sims - data) ** 2 * weight * self.mask).ravel()
-                    chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
-                else:
-                    v = ((sims - data) ** 2 * self.mask / (sims / 3.8 + 1.)).ravel()  # hardcoded gain !!
-                    chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
+                #if kicked_modelvec == 0:
+                v = ((sims - data) ** 2 * weight * self.mask).ravel()
+                chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
+                # else:
+                #     v = ((sims - data) ** 2 * self.mask / (sims / 3.8 + 1.)).ravel()  # hardcoded gain !!
+                #     chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
                 # if self.model_errors:
                 #     chisq = np.sum( ( (sims - data)**2 / (sims/self.gain + (self.readnoise/self.gain)**2) ).ravel() )
@@ -1103,10 +1103,10 @@ class metropolis_hastings():
         for i in np.arange(self.Nimage):
             #chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
 
-            if i == 0:
-                chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2 * self.mask / (self.sims[i] / 3.8 + 1.)) # hardcoded gain !!
-            else:
-                chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2  * self.weights[i, :, :] * self.mask)
+            #if i == 0:
+            #    chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2 * self.mask / (self.sims[i] / 3.8 + 1.)) # hardcoded gain !!
+            #else:
+            chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2  * self.weights[i, :, :] * self.mask)
 
 
         return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp,self.x[0] + self.xo, self.y[0]+self.yo # size: self.history[num_iter,len(self.model_params)]
