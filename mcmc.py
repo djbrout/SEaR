@@ -515,7 +515,7 @@ class metropolis_hastings():
         #print np.median(1./(self.skyerr[aa][self.skyerr[aa] < 99999.])**2)
         #raw_input()
         t2 = time.time()
-        self.csv = np.array(map( self.mapchis, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky))
+        self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky))
         #print self.csv
         #print csv
         #raw_input()
@@ -726,17 +726,17 @@ class metropolis_hastings():
                 self.sims[ epoch,:,:] =  (star_conv + galaxy_conv)*self.mask
     '''
 
-    def mapchis( self, sims, data, flags, fitflags, weight, skyerr,simnosn,simnosnnosky):
+    def mapchis( self, kicked_modelvec, sims, data, flags, fitflags, weight, skyerr,simnosn,simnosnnosky):
         chisq  = 0
 
         if flags == 0:
             if fitflags == 0:
-                #v = ((sims - data) ** 2 * weight * self.mask).ravel()
-                #a = np.sum(v[(v > 0.) & (v < 9999999.)])
-                #chisq = a
-
-                v = ((sims - data) ** 2 * self.mask / (sims / 3.8 + 1.)).ravel()  # hardcoded gain !!
-                chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
+                if kicked_modelvec == 0:
+                    v = ((sims - data) ** 2 * weight * self.mask).ravel()
+                    chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
+                else:
+                    v = ((sims - data) ** 2 * self.mask / (sims / 3.8 + 1.)).ravel()  # hardcoded gain !!
+                    chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
                 # if self.model_errors:
                 #     chisq = np.sum( ( (sims - data)**2 / (sims/self.gain + (self.readnoise/self.gain)**2) ).ravel() )
