@@ -442,7 +442,7 @@ class metropolis_hastings():
             if self.counter > self.maxiter:
                 stop = True
                 if not self.alreadyextended:
-                    if np.nanmean(chsqs[chsqs != 0.]) > 1.:
+                    if chsqs[0] > 1.:
                         self.maxiter = self.maxiter + 100000
                         self.alreadyextended = True
                         stop = False
