@@ -639,6 +639,7 @@ class metropolis_hastings():
 
                     fr = fft2(self.kicked_galaxy_model)
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
+
                     # fr3 = 10000. * np.exp(1j*(self.ff*(self.x_pix_offset)+self.ff*(self.y_pix_offset)))
                     # m, n = fr.shape
                     # gc = np.real(ifft2(S*fr2))
@@ -649,7 +650,7 @@ class metropolis_hastings():
                     #delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
-                    sims = (delta ) * self.mask
+                    sims = (delta + sky) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
