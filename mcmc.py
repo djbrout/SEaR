@@ -649,8 +649,8 @@ class metropolis_hastings():
                         delta = 0.
                     else:
                         delta = np.fft.fftn(S * fr2).real
-                    delta = delta/np.sum(delta.ravel())
-                    delta *= kicked_modelvec
+                        delta = delta/np.sum(delta.ravel())
+                        delta *= kicked_modelvec
                     #delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
