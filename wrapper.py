@@ -24,8 +24,8 @@ def run(tccd):
     cntr = 0
     for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
                              detections['sn'],detections['mag']):
-        cntr += 1
-        if cntr > 1: continue
+        #cntr += 1
+        #if cntr > 1: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
         if not band == tband: continue
