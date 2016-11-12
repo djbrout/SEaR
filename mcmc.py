@@ -645,11 +645,11 @@ class metropolis_hastings():
                     # gc = np.roll(gc, -m / 2 + 1, axis=0)
                     # gc = np.roll(gc, -n / 2 + 1, axis=1)
 
-                    delta = np.fft.fftn(S * fr2).real
+                    delta = np.fft.fftn(kicked_modelvec * S * fr2 * fr).real
                     #delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
-                    sims = (delta ) * self.mask
+                    sims = (delta + sky ) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
