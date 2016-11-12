@@ -454,17 +454,17 @@ class fit:
 
         self.rootdir = './working'
 
-        if '.fits.fz' in self.image:
-            os.popen('funpack '+os.path.join(self.rootdir,self.image))
+        if not os.path.exists(self.image):
+            os.popen('funpack '+os.path.join(self.rootdir,self.image+'.fz'))
             self.image = self.image[:-3]
-        if '.fits.fz' in self.template:
-            os.popen('funpack ' + os.path.join(self.rootdir, self.template))
+        if not os.path.exists(self.template):
+            os.popen('funpack ' + os.path.join(self.rootdir, self.template+'.fz'))
             self.template = self.template[:-3]
-        if '.fits.fz' in self.imageweight:
-            os.popen('funpack ' + os.path.join(self.rootdir, self.imageweight))
+        if not os.path.exists(self.imageweight):
+            os.popen('funpack ' + os.path.join(self.rootdir, self.imageweight+'.fz'))
             self.imageweight = self.imageweight[:-3]
-        if '.fits.fz' in self.templateweight:
-            os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight))
+        if not os.path.exists(self.templateweight):
+            os.popen('funpack ' + os.path.join(self.rootdir, self.templateweight+'.fz'))
             self.templateweight = self.templateweight[:-3]
 
     def chisqvsfwhm(self):

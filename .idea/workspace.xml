@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2029">
-              <caret line="432" column="14" selection-start-line="432" selection-start-column="14" selection-end-line="432" selection-end-column="14" />
+            <state relative-caret-position="574">
+              <caret line="465" column="50" selection-start-line="465" selection-start-column="50" selection-end-line="465" selection-end-column="50" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -69,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -165,10 +165,10 @@
         <option value="$USER_HOME$/Downloads/pysmp_downloads/dump_psfex_wrap.h" />
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
-        <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/wwraper.sh" />
         <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
+        <option value="$PROJECT_DIR$/SEaR.py" />
       </list>
     </option>
   </component>
@@ -421,13 +421,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00280" summary="doing my own fft">
-      <created>1478903636054</created>
-      <option name="number" value="00280" />
-      <option name="presentableId" value="LOCAL-00280" />
-      <option name="project" value="LOCAL" />
-      <updated>1478903636054</updated>
     </task>
     <task id="LOCAL-00281" summary="doing my own fft">
       <created>1478903709071</created>
@@ -765,7 +758,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478912020736</updated>
     </task>
-    <option name="localTasksCounter" value="329" />
+    <task id="LOCAL-00329" summary="added wrapper wrapper shell script&#10;">
+      <created>1478912150376</created>
+      <option name="number" value="00329" />
+      <option name="presentableId" value="LOCAL-00329" />
+      <option name="project" value="LOCAL" />
+      <updated>1478912150376</updated>
+    </task>
+    <option name="localTasksCounter" value="330" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1225,16 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2029">
-          <caret line="432" column="14" selection-start-line="432" selection-start-column="14" selection-end-line="432" selection-end-column="14" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wwraper.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1267,6 +1257,16 @@
           <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="465" column="50" selection-start-line="465" selection-start-column="50" selection-end-line="465" selection-end-column="50" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
           </folding>
         </state>
       </provider>
