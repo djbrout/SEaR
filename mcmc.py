@@ -648,12 +648,12 @@ class metropolis_hastings():
                     if kicked_modelvec == 0.:
                         delta = 0.
                     else:
-                        delta = np.fft.fftn(1000 * S * fr2).real
+                        delta = np.fft.fftn(10 * S * fr2).real
                     #delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs, mode='same')
-                    sims = (delta) * self.mask
+                    sims = (delta+galaxy_conv) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
