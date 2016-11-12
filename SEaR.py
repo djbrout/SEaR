@@ -118,6 +118,15 @@ class fit:
             self.imageweight = os.path.join(self.rootdir, imageweight)
             self.templateweight = os.path.join(self.rootdir, templateweight)
 
+        if not os.path.exists(self.image):
+            self.image = self.image+'.fz'
+
+        if not os.path.exists(self.template):
+            self.template = self.template+'.fz'
+        if not os.path.exists(self.imageweight):
+            self.imageweight = self.imageweight+'.fz'
+        if not os.path.exists(self.templateweight):
+            self.templateweight = self.templateweight+'.fz'
 
         if not self.ccd is None:
             self.image = self.image.replace('i_01','i_'+ccd)

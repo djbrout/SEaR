@@ -60,8 +60,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="465" column="50" selection-start-line="465" selection-start-column="50" selection-end-line="465" selection-end-column="50" />
+            <state relative-caret-position="735">
+              <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
               </folding>
@@ -422,13 +422,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00281" summary="doing my own fft">
-      <created>1478903709071</created>
-      <option name="number" value="00281" />
-      <option name="presentableId" value="LOCAL-00281" />
-      <option name="project" value="LOCAL" />
-      <updated>1478903709072</updated>
-    </task>
     <task id="LOCAL-00282" summary="doing my own fft">
       <created>1478907379395</created>
       <option name="number" value="00282" />
@@ -765,7 +758,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478912150376</updated>
     </task>
-    <option name="localTasksCounter" value="330" />
+    <task id="LOCAL-00330" summary="added wrapper wrapper shell script&#10;">
+      <created>1478912273353</created>
+      <option name="number" value="00330" />
+      <option name="presentableId" value="LOCAL-00330" />
+      <option name="project" value="LOCAL" />
+      <updated>1478912273353</updated>
+    </task>
+    <option name="localTasksCounter" value="331" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1263,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="465" column="50" selection-start-line="465" selection-start-column="50" selection-end-line="465" selection-end-column="50" />
+        <state relative-caret-position="735">
+          <caret line="130" column="22" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
           </folding>
