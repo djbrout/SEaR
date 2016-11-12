@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="904">
-              <caret line="666" column="56" selection-start-line="666" selection-start-column="56" selection-end-line="666" selection-end-column="56" />
+            <state relative-caret-position="439">
+              <caret line="635" column="76" selection-start-line="635" selection-start-column="76" selection-end-line="635" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -421,13 +421,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00249" summary="changing image and template filenames if ccd is provided">
-      <created>1478890649886</created>
-      <option name="number" value="00249" />
-      <option name="presentableId" value="LOCAL-00249" />
-      <option name="project" value="LOCAL" />
-      <updated>1478890649886</updated>
-    </task>
     <task id="LOCAL-00250" summary="changing image and template filenames if ccd is provided">
       <created>1478890733345</created>
       <option name="number" value="00250" />
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478909038112</updated>
     </task>
-    <option name="localTasksCounter" value="298" />
+    <task id="LOCAL-00298" summary="doing my own fft">
+      <created>1478909110317</created>
+      <option name="number" value="00298" />
+      <option name="presentableId" value="LOCAL-00298" />
+      <option name="project" value="LOCAL" />
+      <updated>1478909110317</updated>
+    </task>
+    <option name="localTasksCounter" value="299" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1263,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="904">
-          <caret line="666" column="56" selection-start-line="666" selection-start-column="56" selection-end-line="666" selection-end-column="56" />
+        <state relative-caret-position="439">
+          <caret line="635" column="76" selection-start-line="635" selection-start-column="76" selection-end-line="635" selection-end-column="76" />
           <folding />
         </state>
       </provider>
