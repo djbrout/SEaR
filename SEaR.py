@@ -118,6 +118,11 @@ class fit:
             self.imageweight = os.path.join(self.rootdir, imageweight)
             self.templateweight = os.path.join(self.rootdir, templateweight)
 
+
+        if not self.ccd is None:
+            self.image = self.image.replace('i_01','i_'+ccd)
+            self.template = self.template.replace('i_01','i_'+ccd)
+
         if not os.path.exists(self.image):
             self.image = self.image+'.fz'
         if not os.path.exists(self.template):
@@ -127,9 +132,6 @@ class fit:
         if not os.path.exists(self.templateweight):
             self.templateweight = self.templateweight+'.fz'
 
-        if not self.ccd is None:
-            self.image = self.image.replace('i_01','i_'+ccd)
-            self.template = self.template.replace('i_01','i_'+ccd)
 
         if self.fermigrid:
             print 'setting up fermi'
