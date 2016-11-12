@@ -633,9 +633,8 @@ class metropolis_hastings():
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
 
-                    [X, Y] = np.meshgrid(np.arange(20)/10.,np.arange(20)/10.)
-                    self.x_pix_offset = 0
-                    self.y_pix_offset = 0
+                    [X, Y] = np.meshgrid(np.arange(20)/10000.,np.arange(20)/10000.)
+
                     S = np.exp(1j*(X*(1.+self.x_pix_offset)+Y*(1.+self.y_pix_offset)))
 
                     fr = fft2(self.kicked_galaxy_model)
@@ -646,11 +645,11 @@ class metropolis_hastings():
                     # gc = np.roll(gc, -m / 2 + 1, axis=0)
                     # gc = np.roll(gc, -n / 2 + 1, axis=1)
 
-                    delta = np.fft.fftn(kicked_modelvec * S * fr2).real
+                    delta = np.fft.fftn(S * fr2).real
                     #delta = np.fft.fftshift(FS).real
 
                     #gc = ifft(fft(centered_psfs)).real
-                    sims = (delta + sky ) * self.mask
+                    sims = (delta ) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
