@@ -1101,7 +1101,14 @@ class metropolis_hastings():
         stamps = [datastamps,simstamps,galmodelstamps,weightstamps,psfstamps,chisqstamps]
         chsqs = self.csv / len(self.mask[self.mask > 0.].ravel())
         for i in np.arange(self.Nimage):
-            chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
+            #chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
+
+            if i == 0:
+                chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2 * self.mask / (self.sims[i] / 3.8 + 1.)) # hardcoded gain !!
+            else:
+                chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2  * self.weights[i, :, :] * self.mask)
+
+
         return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp,self.x[0] + self.xo, self.y[0]+self.yo # size: self.history[num_iter,len(self.model_params)]
 
     def get_params_analytical_weighted( self ):
