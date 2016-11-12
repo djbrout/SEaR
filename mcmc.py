@@ -441,11 +441,11 @@ class metropolis_hastings():
 
             if self.counter > self.maxiter:
                 stop = True
-                # if not self.alreadyextended:
-                #     if np.nanmean(chsqs[chsqs != 0.]) > 2.:
-                #         self.maxiter = self.maxiter + 20000
-                #         self.alreadyextended = True
-                #         stop = False
+                if not self.alreadyextended:
+                    if np.nanmean(chsqs[chsqs != 0.]) > 1.:
+                        self.maxiter = self.maxiter + 50000
+                        self.alreadyextended = True
+                        stop = False
                 if stop:
                     self.z_scores_say_keep_going = False#GETOUT
                     self.didtimeout = True

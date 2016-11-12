@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="737" column="101" selection-start-line="737" selection-start-column="101" selection-end-line="737" selection-end-column="101" />
+            <state relative-caret-position="720">
+              <caret line="449" column="63" selection-start-line="449" selection-start-column="63" selection-end-line="449" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -421,13 +421,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00271" summary="doing my own fft">
-      <created>1478900275778</created>
-      <option name="number" value="00271" />
-      <option name="presentableId" value="LOCAL-00271" />
-      <option name="project" value="LOCAL" />
-      <updated>1478900275778</updated>
-    </task>
     <task id="LOCAL-00272" summary="doing my own fft">
       <created>1478902088814</created>
       <option name="number" value="00272" />
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478911407223</updated>
     </task>
-    <option name="localTasksCounter" value="320" />
+    <task id="LOCAL-00320" summary="Source poisson noise in chisq">
+      <created>1478911425540</created>
+      <option name="number" value="00320" />
+      <option name="presentableId" value="LOCAL-00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1478911425540</updated>
+    </task>
+    <option name="localTasksCounter" value="321" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -818,7 +818,8 @@
     <MESSAGE value="changing image and template filenames if ccd is provided" />
     <MESSAGE value="doing my own fft" />
     <MESSAGE value="MY OWN FFT WORKS!" />
-    <option name="LAST_COMMIT_MESSAGE" value="MY OWN FFT WORKS!" />
+    <MESSAGE value="Source poisson noise in chisq" />
+    <option name="LAST_COMMIT_MESSAGE" value="Source poisson noise in chisq" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1264,8 +1265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="737" column="101" selection-start-line="737" selection-start-column="101" selection-end-line="737" selection-end-column="101" />
+        <state relative-caret-position="720">
+          <caret line="449" column="63" selection-start-line="449" selection-start-column="63" selection-end-line="449" selection-end-column="63" />
           <folding />
         </state>
       </provider>
