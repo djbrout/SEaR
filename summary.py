@@ -21,8 +21,8 @@ diffmag = data['mag']
 wreal = diffmag > 0
 wfake = diffmag == 0
 
-plt.scatter(sn[wreal],chsq2[wreal],color='green',size=20)
-plt.scatter(sn[wfake],chsq2[wfake],color='red',size=20)
+plt.scatter(sn[wreal],chsq2[wreal],color='green')
+plt.scatter(sn[wfake],chsq2[wfake],color='red')
 plt.xlim(4.5,12.)
 plt.ylim(0,2.)
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results3/results.png')
