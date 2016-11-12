@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="650" column="66" selection-start-line="650" selection-start-column="66" selection-end-line="650" selection-end-column="66" />
+            <state relative-caret-position="904">
+              <caret line="665" column="23" selection-start-line="665" selection-start-column="23" selection-end-line="665" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -69,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -165,9 +165,9 @@
         <option value="$USER_HOME$/Downloads/pysmp_downloads/dump_psfex_wrap.h" />
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
-        <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
@@ -420,13 +420,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00263" summary="doing my own fft">
-      <created>1478897730143</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1478897730143</updated>
     </task>
     <task id="LOCAL-00264" summary="doing my own fft">
       <created>1478897770318</created>
@@ -764,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478910122090</updated>
     </task>
-    <option name="localTasksCounter" value="312" />
+    <task id="LOCAL-00312" summary="doing my own fft">
+      <created>1478910400890</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1478910400890</updated>
+    </task>
+    <option name="localTasksCounter" value="313" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1241,14 +1241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcmc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="650" column="66" selection-start-line="650" selection-start-column="66" selection-end-line="650" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -1266,6 +1258,14 @@
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcmc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="904">
+          <caret line="665" column="23" selection-start-line="665" selection-start-column="23" selection-end-line="665" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
