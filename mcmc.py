@@ -653,7 +653,7 @@ class metropolis_hastings():
 
                     #gc = ifft(fft(centered_psfs)).real
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs, mode='same')
-                    sims = (delta+galaxy_conv) * self.mask
+                    sims = (delta+galaxy_conv+sky) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
