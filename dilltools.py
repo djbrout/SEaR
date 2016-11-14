@@ -156,6 +156,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
                     #return_cols[column_list[index]].append(float(col.strip()))
                     #except:
                     print index,column_list[index],col.strip()
+                    print column_list
                     raw_input()
                     return_cols[column_list[index]].append(col.strip())
                 index += 1
