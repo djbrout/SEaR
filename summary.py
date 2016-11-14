@@ -17,6 +17,7 @@ sn = data['sn']
 chsq1 = data['search_1fwhm_chisq']
 chsq2 = data['search_2fwhm_chisq']
 tcs = data['templ_chi']
+print tcs.shape
 diffmag = data['mag']
 
 wreal = (diffmag > 0)
