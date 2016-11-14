@@ -21,8 +21,8 @@ print tcs.shape
 print chsq1.shape
 diffmag = data['mag']
 
-wreal = (diffmag > 0)
-wfake = (diffmag == 0)
+wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.)
+wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)
 
 plt.scatter(chsq1[wfake],chsq2[wfake]-chsq1[wfake],color='red',alpha=.5)
 plt.scatter(chsq1[wreal],chsq2[wreal]-chsq1[wreal],color='green',alpha=.9)
