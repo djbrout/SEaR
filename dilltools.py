@@ -153,9 +153,9 @@ def readcol(filename,headline=1,startline=2,delim=' '):
             for col in cols:
                 #try:
                 if True:
-                    return_cols[column_list[index]].append(float(col.strip()))
-                #except:
-                #    return_cols[column_list[index]].append(col.strip())
+                    #return_cols[column_list[index]].append(float(col.strip()))
+                    #except:
+                    return_cols[column_list[index]].append(col.strip())
                 index += 1
         linenum += 1
     inf.close()
