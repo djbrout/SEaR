@@ -33,6 +33,8 @@ wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)#& (sn > snlim)
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
+plt.axhline(.87,color='black',linestyle='--')
+plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(4.,20.)
 plt.ylim(0,20)
 plt.ylabel('2 FWHM Chi Squared')
@@ -42,6 +44,7 @@ print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
 
 plt.clf()
 plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-3.5,2,.2),normed=True)
+plt.axvline(-.26,color='black',linestyle='--')
 plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
