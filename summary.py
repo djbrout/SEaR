@@ -13,10 +13,10 @@ import matplotlib as m
 m.use('Agg')
 import matplotlib.pyplot as plt
 
-sn = data['sn']
-chsq1 = data['search_1fwhm_chisq']
-chsq2 = data['search_2fwhm_chisq']
-tcs = data['templ_chi']
+sn = data['sn'][:1000]
+chsq1 = data['search_1fwhm_chisq'][:1000]
+chsq2 = data['search_2fwhm_chisq'][:1000]
+tcs = data['templ_chi'][:1000]
 print tcs.shape
 print chsq1.shape
 
@@ -58,11 +58,13 @@ for i in np.arange(.2,.7,.005):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim))
-            wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim))
+            wwreal = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+            wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+            wwbad = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+            wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
-            p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
-            e = float(len(diffmag[wwreal]))/float(nreal)
+            p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
+            e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
             if e > maxe:
                 ulc = upperlimchi
                 llc = lowerlimchi
@@ -79,3 +81,26 @@ print 'upperlimchi', ulc, 'lowerlimchi', llc, 'upperlimdiff', uld, 'Purity', rou
 print '-'*50
 print '-'*50
 
+
+upperlimchi = ulc
+lowerlimchi = llc
+upperlimdiff = uld
+
+sn = data['sn'][1000:]
+chsq1 = data['search_1fwhm_chisq'][1000:]
+chsq2 = data['search_2fwhm_chisq'][1000:]
+tcs = data['templ_chi'][1000:]
+wwreal = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+
+wwbad = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+
+p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
+e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
+
+print '*'*50
+print '*'*50
+print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
+print '*'*50
+print '*'*50
