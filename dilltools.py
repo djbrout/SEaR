@@ -140,6 +140,8 @@ def readcol(filename,headline=1,startline=2,delim=' '):
     inf = open(filename)
     for line in inf:
         line = line.replace('#', '')
+        print line[100:110]
+        raw_input()
         line = line.strip()
         cols = line.split(delim)
         print cols
@@ -152,10 +154,9 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         if linenum >= startline - 1:
             index = 0
             for col in cols:
-                #try:
-                if True:
-                    #return_cols[column_list[index]].append(float(col.strip()))
-                    #except:
+                try:
+                    return_cols[column_list[index]].append(float(col.strip()))
+                except:
                     #print index,column_list[index],col.strip()
                     #print column_list
                     #raw_input()
