@@ -62,7 +62,7 @@ for i in np.arange(0.0,.1,.01):
             wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
             wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > snlim)
             wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
-
+            print np.logical_or(wwbad, wwbad2)
             p = float(len(diffmag[np.logical_or(wwbad, wwbad2)]))/float(len(diffmag[np.logical_or(np.logical_or(np.logical_or(wwreal,wwreal2),wwbad,wwbad2))]))
             e = float(len(diffmag[np.logical_or(wwreal, wwreal2)]))/float(nreal)
             if p+e > maxpe:
