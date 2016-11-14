@@ -58,7 +58,7 @@ for i in np.arange(.2,.7,.005):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim))
+            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim))
             wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim))
 
             p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
