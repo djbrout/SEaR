@@ -19,7 +19,13 @@ chsq2 = data['search_2fwhm_chisq']
 tcs = data['templ_chi']
 print tcs.shape
 print chsq1.shape
+
+
 diffmag = data['mag']
+
+nreal = len(diffmag[diffmag>0])
+nbad = len(diffmag[diffmag==0])
+
 
 wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.)
 wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)
@@ -39,3 +45,19 @@ plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
+
+for i in range(.4,2.,.02):
+    for j in range(.02,2.,.01):
+        for k in range(-4.,0,.1):
+            upperlimchi = i+j
+            lowerlimchi = i
+            upperlimdiff = k
+            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0)) or ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0))
+            wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) or ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0))
+
+            p = len(diffmag[wwbad])/(len(diffmag[wwreal])+len(diffmag[wwbad]))
+            e = len(diffmag[wwreal])/nreal
+            print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',p,'Eff',e
+
+
+print 'Purity'
