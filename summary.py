@@ -45,7 +45,12 @@ plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
-
+maxpe = 0
+ulc = 0
+llc = 0
+uld = 0
+maxp = 0
+maxe = 0
 for i in np.arange(.2,1.2,.005):
     for j in np.arange(.02,10.,.01):
         for k in np.arange(-4.,0,.05):
@@ -57,7 +62,18 @@ for i in np.arange(.2,1.2,.005):
 
             p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
             e = float(len(diffmag[wwreal]))/float(nreal)
+            if p+e > maxpe:
+                ulc = upperlimchi
+                llc = lowerlimchi
+                uld = upperlimdiff
+                maxp = p
+                maxe = e
             if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
 
+print '-'*50
+print '-'*50
+print 'upperlimchi', ulc, 'lowerlimchi', llc, 'upperlimdiff', uld, 'Purity', round(maxp,4), 'Eff', round(maxe, 4)
+print '-'*50
+print '-'*50
 
