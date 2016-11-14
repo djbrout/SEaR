@@ -425,13 +425,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00404" summary="back to se errors">
-      <created>1479139730516</created>
-      <option name="number" value="00404" />
-      <option name="presentableId" value="LOCAL-00404" />
-      <option name="project" value="LOCAL" />
-      <updated>1479139730516</updated>
-    </task>
     <task id="LOCAL-00405" summary="back to se errors">
       <created>1479139846741</created>
       <option name="number" value="00405" />
@@ -768,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479150981756</updated>
     </task>
-    <option name="localTasksCounter" value="453" />
+    <task id="LOCAL-00453" summary="back to se errors">
+      <created>1479151267840</created>
+      <option name="number" value="00453" />
+      <option name="presentableId" value="LOCAL-00453" />
+      <option name="project" value="LOCAL" />
+      <updated>1479151267840</updated>
+    </task>
+    <option name="localTasksCounter" value="454" />
     <servers />
   </component>
   <component name="ToolWindowManager">

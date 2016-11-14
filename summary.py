@@ -20,7 +20,7 @@ tcs = data['templ_chi']#[:1000]
 print tcs.shape
 print chsq1.shape
 
-snlim = 4.
+snlim = 5.
 
 diffmag = data['mag']#[:1000]
 
