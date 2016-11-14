@@ -46,7 +46,7 @@ plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
 
-for i in np.arange(.4,2.,.02):
+for i in np.arange(.2,2.,.02):
     for j in np.arange(.02,2.,.01):
         for k in np.arange(-4.,0,.1):
             upperlimchi = i+j
@@ -58,8 +58,7 @@ for i in np.arange(.4,2.,.02):
             p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
             e = float(len(diffmag[wwreal]))/float(nreal)
             if p > .95:
-                if e > .8:
+                if e > .6:
                     print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',p,'Eff',e
 
 
-print 'Purity'
