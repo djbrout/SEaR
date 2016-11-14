@@ -52,8 +52,8 @@ for i in np.arange(.4,2.,.02):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0)) or ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0))
-            wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) or ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0))
+            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0))
+            wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0))
 
             p = len(diffmag[wwbad])/(len(diffmag[wwreal])+len(diffmag[wwbad]))
             e = len(diffmag[wwreal])/nreal
