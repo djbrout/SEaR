@@ -51,7 +51,7 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(.2,1.2,.005):
+for i in np.arange(.2,.7,.005):
     for j in np.arange(.02,10.,.1):
         for k in np.arange(-4.,0,.05):
             upperlimchi = i+j
