@@ -139,6 +139,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
     column_list = []
     return_cols = {}
     inf = open(filename)
+    outf = open('results4.txt')
     for line in inf:
         line = line.replace('#', '')
 
@@ -148,6 +149,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         #print cols
         cols[:] = (value for value in cols if value != '')
         if linenum == headline - 1:
+            outf.write(line+'\n')
             for col in cols:
                 return_cols[col.strip()] = []
                 column_list.append(col.strip())
