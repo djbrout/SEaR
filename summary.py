@@ -64,7 +64,7 @@ for i in np.arange(0.0,.1,.01):
             wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
             p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
-            e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
+            e = float(len(diffmag[wwreal])+len(diffmag[wwreal2]))/float(nreal)
             if p+e > maxpe:
                 ulc = upperlimchi
                 llc = lowerlimchi
@@ -102,7 +102,7 @@ nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
 
 
 p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
-e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
+e = float(len(diffmag[wwreal])+len(diffmag[wwreal2]))/float(nreal)
 
 print '*'*50
 print '*'*50
@@ -112,6 +112,6 @@ print 'total',len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len
 print 'contamination',len(diffmag[wwbad])+len(diffmag[wwbad2])
 print ''
 print 'total good',nreal
-print 'fit good',len(diffmag[wwreal]+len(diffmag[wwreal2])
+print 'fit good',len(diffmag[wwreal])+len(diffmag[wwreal2])
 print '*'*50
 print '*'*50
