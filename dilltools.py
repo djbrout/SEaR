@@ -156,15 +156,18 @@ def readcol(filename,headline=1,startline=2,delim=' '):
             index = 0
             for col in cols:
                 if index == 9:
-                    print col
-                    raw_input()
-                try:
-                    return_cols[column_list[index]].append(float(col.strip()))
-                except:
-                    #print index,column_list[index],col.strip()
-                    #print column_list
-                    #raw_input()
-                    return_cols[column_list[index]].append(col.strip())
+                    tcol = col.split()
+                    return_cols[column_list[index]].append(float(tcol[0].strip()))
+                    index += 1
+                    return_cols[column_list[index]].append(float(tcol[1].strip()))
+                else:
+                    try:
+                        return_cols[column_list[index]].append(float(col.strip()))
+                    except:
+                        #print index,column_list[index],col.strip()
+                        #print column_list
+                        #raw_input()
+                        return_cols[column_list[index]].append(col.strip())
                 index += 1
         linenum += 1
     inf.close()
