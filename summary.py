@@ -26,7 +26,7 @@ wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
-plt.xlim(0.,20.)
+plt.xlim(4.,20.)
 plt.ylim(0,20)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
