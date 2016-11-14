@@ -16,13 +16,14 @@ import matplotlib.pyplot as plt
 sn = data['sn']
 chsq1 = data['search_1fwhm_chisq']
 chsq2 = data['search_2fwhm_chisq']
+tcs = data['templ_chi']
 diffmag = data['mag']
 
 wreal = (diffmag > 0)
 wfake = (diffmag == 0)
 
-plt.scatter(sn[wfake],chsq1[wfake],color='red',alpha=.5)
-plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.9)
+plt.scatter(sn[wfake],chsq1[wfake]/tcs[wfake],color='red',alpha=.5)
+plt.scatter(sn[wreal],chsq1[wreal]/tcs[wfake],color='green',alpha=.9)
 plt.xlim(4.,20.)
 plt.ylim(0,5.)
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/results.png')
