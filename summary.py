@@ -58,7 +58,7 @@ for i in np.arange(.2,2.,.02):
             p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
             e = float(len(diffmag[wwreal]))/float(nreal)
             if p > .9:
-                if e > .7:
+                if e > .6:
                     print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',p,'Eff',e
 
 
