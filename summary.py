@@ -72,8 +72,8 @@ for i in np.arange(.2,.7,.005):
                 maxp = p
                 maxe = e
                 maxpe = p+e
-            if p+e > 1.909:
-                print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
+            #if p+e > 1.909:
+            print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
 
 print '-'*50
 print '-'*50
