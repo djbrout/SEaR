@@ -60,8 +60,8 @@ plt.xlim(4.,40.)
 plt.ylim(0,2.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('FitMag')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/results.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultsvsmag.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultsvsmag.png'
 import sys
 sys.exit()
 maxpe = 0
