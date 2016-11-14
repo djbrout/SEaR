@@ -52,7 +52,7 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(.2,.7,.005):
+for i in np.arange(0.0,.4,.005):
     for j in np.arange(.02,10.,.1):
         for k in np.arange(-4.,0,.05):
             upperlimchi = i+j
@@ -97,6 +97,9 @@ wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn 
 
 wwbad = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
+
 
 p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
 e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
