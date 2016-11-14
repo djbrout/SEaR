@@ -66,13 +66,13 @@ for i in np.arange(0.75,.92,.01):
             #print diffmag[np.logical_or(np.logical_or(np.logical_or(wwreal,wwreal2),wwbad,wwbad2))]
             p = 1 - float(len(diffmag[np.logical_or(wwbad, wwbad2)]))/float(len(diffmag[np.logical_or(np.logical_or(np.logical_or(wwreal,wwreal2),wwbad),wwbad2)]))
             e = float(len(diffmag[np.logical_or(wwreal, wwreal2)]))/float(nreal)
-            if p+2*e > maxpe:
+            if p+e > maxpe:
                 ulc = upperlimchi
                 llc = lowerlimchi
                 uld = upperlimdiff
                 maxp = p
                 maxe = e
-                maxpe = p+2*e
+                maxpe = p+e
             #if p+e > 1.909:
             print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
 
