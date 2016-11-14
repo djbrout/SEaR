@@ -46,7 +46,7 @@ plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
 
-for i in np.arange(.2,1.2.,.01):
+for i in np.arange(.2,1.2,.01):
     for j in np.arange(.02,5.,.01):
         for k in np.arange(-4.,0,.05):
             upperlimchi = i+j
