@@ -46,7 +46,7 @@ plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
-maxe = 0
+maxpe = 0
 ulc = 0
 llc = 0
 uld = 0
