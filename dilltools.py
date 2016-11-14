@@ -141,7 +141,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
     for line in inf:
         line = line.replace('#', '')
         if linenum >= startline - 1:
-            line= line[0:62]+','+line[62:]
+            line= line[0:59]+','+line[59:]
         #raw_input()
         line = line.strip()
         cols = line.split(delim)
