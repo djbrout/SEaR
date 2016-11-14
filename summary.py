@@ -68,6 +68,7 @@ for i in np.arange(.2,1.2,.005):
                 uld = upperlimdiff
                 maxp = p
                 maxe = e
+                maxpe = p+e
             if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
 
