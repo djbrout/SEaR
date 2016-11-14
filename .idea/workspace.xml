@@ -36,8 +36,8 @@
       <file leaf-file-name="dilltools.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dilltools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+            <state relative-caret-position="240">
+              <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00316" summary="doing my own fft">
-      <created>1478911185221</created>
-      <option name="number" value="00316" />
-      <option name="presentableId" value="LOCAL-00316" />
-      <option name="project" value="LOCAL" />
-      <updated>1478911185221</updated>
-    </task>
     <task id="LOCAL-00317" summary="doing my own fft">
       <created>1478911256702</created>
       <option name="number" value="00317" />
@@ -768,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479135012858</updated>
     </task>
-    <option name="localTasksCounter" value="365" />
+    <task id="LOCAL-00365" summary="back to se errors">
+      <created>1479135065052</created>
+      <option name="number" value="00365" />
+      <option name="presentableId" value="LOCAL-00365" />
+      <option name="project" value="LOCAL" />
+      <updated>1479135065052</updated>
+    </task>
+    <option name="localTasksCounter" value="366" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1251,8 +1251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dilltools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+        <state relative-caret-position="240">
+          <caret line="143" column="41" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
