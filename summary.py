@@ -52,9 +52,9 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(0.0,1.3,.01):
-    for j in np.arange(.2,10.,.1):
-        for k in np.arange(-5.,0,.1):
+for i in np.arange(0.6,.94,.01):
+    for j in np.arange(.5,1.5,.01):
+        for k in np.arange(-5.,0,.01):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
@@ -100,6 +100,7 @@ wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > s
 wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
+nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 
 
 p = 1 - float(len(diffmag[np.logical_or(wwbad,wwbad2)]))/float(len(diffmag[np.logical_or(np.logical_or(np.logical_or(wwreal,wwreal2),wwbad),wwbad2)]))
@@ -114,5 +115,9 @@ print 'contamination',len(diffmag[np.logical_or(wwbad,wwbad2)])
 print ''
 print 'total good',nreal
 print 'fit good',len(diffmag[np.logical_or(wwreal, wwreal2)])
+
+print ''
+print 'total bad',nbad
+print 'eliminated',len(diffmag[np.logical_or(wwbad, wwbad2)])
 print '*'*50
 print '*'*50
