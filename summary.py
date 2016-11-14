@@ -35,7 +35,7 @@ print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
 
 plt.clf()
 plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-.5,.5,.1),normed=True)
-plt.xlim(-.5,.5)
+plt.xlim(-1.,1.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
