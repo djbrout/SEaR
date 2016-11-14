@@ -142,6 +142,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         line = line.replace('#', '')
         line = line.strip()
         cols = line.split(delim)
+        print cols
         cols[:] = (value for value in cols if value != '')
         if linenum == headline - 1:
             for col in cols:
