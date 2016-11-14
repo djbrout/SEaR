@@ -22,7 +22,7 @@ print chsq1.shape
 
 snlim = 5.
 
-diffmag = data['mag']
+diffmag = data['mag'][:1000]
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -90,6 +90,8 @@ sn = data['sn'][1000:]
 chsq1 = data['search_1fwhm_chisq'][1000:]
 chsq2 = data['search_2fwhm_chisq'][1000:]
 tcs = data['templ_chi'][1000:]
+diffmag = data['mag'][1000:]
+
 wwreal = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
 wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
 
