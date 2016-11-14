@@ -140,11 +140,12 @@ def readcol(filename,headline=1,startline=2,delim=' '):
     inf = open(filename)
     for line in inf:
         line = line.replace('#', '')
-        print line[50:60]
-        raw_input()
+        if linenum >= startline - 1:
+            line[58]= ','
+        #raw_input()
         line = line.strip()
         cols = line.split(delim)
-        print cols
+        #print cols
         cols[:] = (value for value in cols if value != '')
         if linenum == headline - 1:
             for col in cols:
