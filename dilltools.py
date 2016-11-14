@@ -144,12 +144,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
 
         #raw_input()
         line = line.strip()
-        if linenum >= startline - 1:
-            cols= re.split('(\d+)',line)
-            print cols
-            raw_input()
-        else:
-            cols = line.split(delim)
+        cols = line.split(delim)
         #print cols
         cols[:] = (value for value in cols if value != '')
         if linenum == headline - 1:
@@ -160,6 +155,9 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         if linenum >= startline - 1:
             index = 0
             for col in cols:
+                if index == 9:
+                    print col
+                    raw_input()
                 try:
                     return_cols[column_list[index]].append(float(col.strip()))
                 except:
