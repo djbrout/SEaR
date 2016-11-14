@@ -23,6 +23,7 @@ print chsq1.shape
 snlim = 5.
 
 diffmag = data['mag']#[:1000]
+fitmag = data['sm_mag']
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -49,6 +50,20 @@ plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
+
+plt.clf()
+plt.scatter(fitmag[wfake],chsq2[wfake],color='red',alpha=.5)
+plt.scatter(fitmag[wreal],chsq2[wreal],color='green',alpha=.9)
+plt.axhline(.87,color='black',linestyle='--')
+plt.axhline(1.37,color='black',linestyle='--')
+plt.xlim(4.,40.)
+plt.ylim(0,2.)
+plt.ylabel('2 FWHM Chi Squared')
+plt.xlabel('FitMag')
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/results.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
+import sys
+sys.exit()
 maxpe = 0
 ulc = 0
 llc = 0
