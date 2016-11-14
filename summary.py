@@ -52,9 +52,9 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(0.0,.4,.005):
+for i in np.arange(0.0,1.,.01):
     for j in np.arange(.02,10.,.1):
-        for k in np.arange(-10.,0,.05):
+        for k in np.arange(-10.,0,.1):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
