@@ -146,6 +146,8 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         line = line.strip()
         if linenum >= startline - 1:
             cols= re.split('(\d+)',line)
+            print cols
+            raw_input()
         else:
             cols = line.split(delim)
         #print cols
