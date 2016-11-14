@@ -23,11 +23,11 @@ print chsq1.shape
 
 diffmag = data['mag']
 
-nreal = len(diffmag[diffmag>0])
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.)])
 nbad = len(diffmag[diffmag==0])
 
 
-wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.)
+wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.) & (diffmag != 20.)
 wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
@@ -52,13 +52,12 @@ for i in np.arange(.2,2.,.02):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0))
+            wwreal = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.))
             wwbad = ((chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0)) | ((chsq2-chsq1 < upperlimdiff) & (diffmag == 0))
 
             p = float(len(diffmag[wwbad]))/float((len(diffmag[wwreal])+len(diffmag[wwbad])))
             e = float(len(diffmag[wwreal]))/float(nreal)
-            if p > .91:
-                if e > .66:
-                    print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',p,'Eff',e
+            if p+e > 1.5:
+                print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',p,'Eff',e
 
 
