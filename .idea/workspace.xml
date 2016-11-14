@@ -425,13 +425,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00322" summary="Source poisson noise in chisq">
-      <created>1478911506826</created>
-      <option name="number" value="00322" />
-      <option name="presentableId" value="LOCAL-00322" />
-      <option name="project" value="LOCAL" />
-      <updated>1478911506826</updated>
-    </task>
     <task id="LOCAL-00323" summary="Source poisson noise in chisq">
       <created>1478911517685</created>
       <option name="number" value="00323" />
@@ -768,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479135270349</updated>
     </task>
-    <option name="localTasksCounter" value="371" />
+    <task id="LOCAL-00371" summary="back to se errors">
+      <created>1479135301934</created>
+      <option name="number" value="00371" />
+      <option name="presentableId" value="LOCAL-00371" />
+      <option name="project" value="LOCAL" />
+      <updated>1479135301934</updated>
+    </task>
+    <option name="localTasksCounter" value="372" />
     <servers />
   </component>
   <component name="ToolWindowManager">
