@@ -58,9 +58,9 @@ for i in np.arange(0.0,1.,.01):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+            wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
             wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
-            wwbad = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+            wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > snlim)
             wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
             p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
@@ -92,10 +92,10 @@ chsq2 = data['search_2fwhm_chisq'][1000:]
 tcs = data['templ_chi'][1000:]
 diffmag = data['mag'][1000:]
 
-wwreal = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
 wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
 
-wwbad = (chsq1 > lowerlimchi) & (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
