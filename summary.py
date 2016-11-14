@@ -54,7 +54,7 @@ maxp = 0
 maxe = 0
 for i in np.arange(0.0,.4,.005):
     for j in np.arange(.02,10.,.1):
-        for k in np.arange(-4.,0,.05):
+        for k in np.arange(-10.,0,.05):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
@@ -65,7 +65,7 @@ for i in np.arange(0.0,.4,.005):
 
             p = float(len(diffmag[wwbad])+len(diffmag[wwbad2]))/float((len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])))
             e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
-            if e > maxe:
+            if p+e > maxpe:
                 ulc = upperlimchi
                 llc = lowerlimchi
                 uld = upperlimdiff
