@@ -52,8 +52,8 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(0.0,1.,.01):
-    for j in np.arange(.02,10.,.1):
+for i in np.arange(0.0,.1,.01):
+    for j in np.arange(.5,10.,.1):
         for k in np.arange(-5.,0,.1):
             upperlimchi = i+j
             lowerlimchi = i
@@ -107,5 +107,11 @@ e = float(len(diffmag[wwreal]+len(diffmag[wwreal2])))/float(nreal)
 print '*'*50
 print '*'*50
 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
+print ''
+print 'total',len(diffmag[wwreal])+len(diffmag[wwreal2])+len(diffmag[wwbad])+len(diffmag[wwbad2])
+print 'contamination',len(diffmag[wwbad])+len(diffmag[wwbad2])
+print ''
+print 'total good',nreal
+print 'fit good',len(diffmag[wwreal]+len(diffmag[wwreal2])
 print '*'*50
 print '*'*50
