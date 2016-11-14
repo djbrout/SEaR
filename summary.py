@@ -32,7 +32,7 @@ plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/results.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
 
 plt.clf()
-plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'])
+plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-.5,.5,.01))
 plt.xlim(-.5,.5)
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
