@@ -16,6 +16,8 @@ import matplotlib.pyplot as plt
 sn = data['sn']#[:1000]
 chsq1 = data['search_1fwhm_chisq']#[:1000]
 chsq2 = data['search_2fwhm_chisq']#[:1000]
+chsq3 = data['search_3fwhm_chisq']#[:1000]
+
 tcs = data['templ_chi']#[:1000]
 print tcs.shape
 print chsq1.shape
@@ -50,6 +52,13 @@ plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
 plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png'
+plt.clf()
+plt.hist([chsq3[wfake]-chsq1[wfake],chsq3[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-4.5,2,.2),normed=True)
+plt.axvline(-.26,color='black',linestyle='--')
+plt.xlim(-3.5,2.)
+plt.xlabel('Chisq 3FWHM - 1FWHM')
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist32.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist32.png'
 
 plt.clf()
 plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
