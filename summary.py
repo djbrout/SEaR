@@ -52,8 +52,8 @@ plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png')
 print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png'
 
 plt.clf()
-plt.scatter(fitmag[wfake],chsq2[wfake],color='red',alpha=.5)
-plt.scatter(fitmag[wreal],chsq2[wreal],color='green',alpha=.9)
+plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
+plt.scatter(fitmag[wreal],chsq1[wreal],color='green',alpha=.9)
 plt.axhline(.87,color='black',linestyle='--')
 plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(21.0,25.5)
