@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwraper.sh" afterPath="$PROJECT_DIR$/wwraper.sh" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-220">
@@ -82,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wwraper.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wwraper.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wwraper.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -168,11 +167,11 @@
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
         <option value="$PROJECT_DIR$/wrapper.py" />
-        <option value="$PROJECT_DIR$/wwraper.sh" />
         <option value="$PROJECT_DIR$/dilltools.py" />
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
+        <option value="$PROJECT_DIR$/wwraper.sh" />
       </list>
     </option>
   </component>
@@ -425,13 +424,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00416" summary="back to se errors">
-      <created>1479142830933</created>
-      <option name="number" value="00416" />
-      <option name="presentableId" value="LOCAL-00416" />
-      <option name="project" value="LOCAL" />
-      <updated>1479142830933</updated>
     </task>
     <task id="LOCAL-00417" summary="back to se errors">
       <created>1479142919883</created>
@@ -769,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479160483084</updated>
     </task>
-    <option name="localTasksCounter" value="465" />
+    <task id="LOCAL-00465" summary="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS">
+      <created>1479178359945</created>
+      <option name="number" value="00465" />
+      <option name="presentableId" value="LOCAL-00465" />
+      <option name="project" value="LOCAL" />
+      <updated>1479178359945</updated>
+    </task>
+    <option name="localTasksCounter" value="466" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -827,7 +826,8 @@
     <MESSAGE value="added wrapper wrapper shell script&#10;" />
     <MESSAGE value="added summary script&#10;" />
     <MESSAGE value="back to se errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="back to se errors" />
+    <MESSAGE value="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS" />
+    <option name="LAST_COMMIT_MESSAGE" value="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1204,14 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wwraper.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dilltools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-274">
@@ -1256,6 +1248,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-220">
           <caret line="1057" column="18" selection-start-line="1057" selection-start-column="8" selection-end-line="1057" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwraper.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding />
         </state>
       </provider>
