@@ -121,7 +121,12 @@ class fit:
 
         if not self.ccd is None:
             self.image = self.image.replace('i_01','i_'+ccd)
+            self.imagepsf = self.imagepsf.replace('i_01','i_'+ccd)
+            self.templatepsf = self.templatepsf.replace('i_01','i_'+ccd)
             self.template = self.template.replace('i_01','i_'+ccd)
+            self.imageweight = self.imageweight.replace('i_01','i_'+ccd)
+            self.templateweight = self.templateweight.replace('i_01','i_'+ccd)
+
 
         if not os.path.exists(self.image):
             self.image = self.image+'.fz'
@@ -332,8 +337,10 @@ class fit:
         #    self.data[0,:,:] -= self.imagesky
         #    #print '0mean before', np.median(self.data[0, :, :].ravel())
 
-        if not self.imageskyerr is None:
-            self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
+        useweights = True
+        if not useweights:
+            if not self.imageskyerr is None:
+                self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
         # if not self.imzpt is None:
         #     self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
         #     self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
@@ -386,8 +393,9 @@ class fit:
             self.data[1, :, :] -= self.templatesky
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #raw_input()
-        if not self.templateskyerr is None:
-            self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
+        if not useweights:
+            if not self.templateskyerr is None:
+                self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
         #print self.templatezpt, self.imzpt
         #raw_input('template zpt')
         if not self.templatezpt is None:
