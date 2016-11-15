@@ -443,14 +443,14 @@ class metropolis_hastings():
                 stop = True
                 if not self.alreadyextended:
                     if chsqs[0] > 1.19:
-                        self.maxiter = self.maxiter + 100000
+                        self.maxiter = self.maxiter + 30000
                         self.alreadyextended = True
                         stop = False
                     elif chsqs[0] > 1.09:
-                        self.maxiter = self.maxiter + 50000
+                        self.maxiter = self.maxiter + 20000
                         self.alreadyextended = True
                         stop = False
-                    elif chsqs[0] > 1.0:
+                    elif chsqs[0] > .8:
                         self.maxiter = self.maxiter + 10000
                         self.alreadyextended = True
                         stop = False
@@ -1099,7 +1099,7 @@ class metropolis_hastings():
                 #return np.zeros(len(self.model_params))+1e8,np.zeros(len(self.model_params))+1e9,self.nphistory
             #save_fits_image(self.data[0,:,:],'./out/MDJ'+str(self.mjd)+'data.fits')
         stamps = [datastamps,simstamps,galmodelstamps,weightstamps,psfstamps,chisqstamps]
-        chsqs = self.csv / len(self.mask[self.mask > 0.].ravel())
+        chsqs = self.csv / (len(self.mask[self.mask > 0.].ravel()))
         for i in np.arange(self.Nimage):
             #chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
 
