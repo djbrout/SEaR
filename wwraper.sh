@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in `seq 30 40`;
+for i in `seq 40 60`;
 do
 python wrapper.py --ccdi=$i
 done
