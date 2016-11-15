@@ -40,16 +40,16 @@ plt.xlim(4.,40.)
 plt.ylim(0,2.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/results.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results4/results.png'
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/results.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/results.png'
 
 plt.clf()
 plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-3.5,2,.2),normed=True)
 plt.axvline(-.26,color='black',linestyle='--')
 plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultshist.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultshist.png'
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png'
 
 plt.clf()
 plt.scatter(fitmag[wfake],chsq2[wfake],color='red',alpha=.5)
@@ -60,8 +60,8 @@ plt.xlim(21.0,25.5)
 plt.ylim(0,2.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('FitMag')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results4/resultsvsmag.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results4/resultsvsmag.png'
+plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultsvsmag.png')
+print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultsvsmag.png'
 import sys
 sys.exit()
 maxpe = 0

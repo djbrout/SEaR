@@ -157,7 +157,7 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         if linenum >= startline - 1:
             index = 0
             for col in cols:
-                if index == 9:
+                if index == 9999:
                     tcol = col.split()
                     return_cols[column_list[index]].append(float(tcol[0].strip()))
                     index += 1
