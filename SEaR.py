@@ -328,7 +328,8 @@ class fit:
         self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.imagesky = np.median(vals)
 
-        print 'imageskyerr',self.imageskyerr
+        print 'imageskyerr',self.imageskyerr**2
+        print 'imagesky',self.imagesky
         raw_input()
 
 
