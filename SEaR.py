@@ -322,8 +322,8 @@ class fit:
 
         print ';sfcenter',self.impsfcenter
 
-        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-50.,0]):min([self.impsfcenter[1]+50,imagedata.shape[0]-1]),
-                                             max([self.impsfcenter[0] - 50., 0]):min([self.impsfcenter[0] + 50,imagedata.shape[1] - 1])],
+        mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
+                                             max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
                                              clipsig=4, maxiter=8)
         self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.imagesky = np.median(vals)
@@ -337,10 +337,11 @@ class fit:
         #    self.data[0,:,:] -= self.imagesky
         #    #print '0mean before', np.median(self.data[0, :, :].ravel())
 
-        useweights = True
+        #useweights = True
+        useweights = False
         if not useweights:
             if not self.imageskyerr is None:
-                self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) + 1./self.imageskyerr**2
+                self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) * self.imageskyerr**2
         # if not self.imzpt is None:
         #     self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
         #     self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
@@ -379,8 +380,8 @@ class fit:
         #print 'templatemean',np.mean(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),
         #                                      max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[1] - 1])])
         #raw_input()
-        mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[0]-1]),
-                                             max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[1] - 1])],
+        mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
+                                             max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])],
                                              clipsig=4, maxiter=8)
         self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
@@ -393,9 +394,11 @@ class fit:
             self.data[1, :, :] -= self.templatesky
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #raw_input()
+        #print useweights
+        #raw_input()
         if not useweights:
             if not self.templateskyerr is None:
-                self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape)/ self.templateskyerr ** 2
+                self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape) * self.templateskyerr ** 2
         #print self.templatezpt, self.imzpt
         #raw_input('template zpt')
         if not self.templatezpt is None:

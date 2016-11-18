@@ -742,8 +742,9 @@ class metropolis_hastings():
                 #if kicked_modelvec == 0:
                 #v = ((sims - data) ** 2 * weight * self.mask).ravel()
                 #chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
+                denom = weight + sims/3.8 + 1.
                 # else:
-                v = ((sims - data) ** 2 * self.mask / (sims / 3.8 + 1.)).ravel()  # hardcoded gain !!
+                v = ((sims - data) ** 2 * self.mask / denom).ravel()  # hardcoded gain !!
                 chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
                 # if self.model_errors:
