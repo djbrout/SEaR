@@ -324,7 +324,7 @@ class fit:
 
         mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
-                                             clipsig=5, maxiter=5)
+                                             clipsig=3, maxiter=8)
 
         self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         self.imagesky = np.median(vals)
