@@ -345,7 +345,7 @@ class fit:
         useweights = False
         if not useweights:
             if not self.imageskyerr is None:
-                self.weights[0,:,:] = np.zeros(self.weights[0,:,:].shape) * self.imageskyerr**2
+                self.weights[0,:,:] = np.ones(self.weights[0,:,:].shape) * self.imageskyerr**2
         # if not self.imzpt is None:
         #     self.data[0, :, :] *= 10 ** (.4*(31.-self.imzpt))
         #     self.weights[0, :, :] *= 10 ** (.4*(31. - self.imzpt))
