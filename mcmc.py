@@ -190,7 +190,7 @@ class metropolis_hastings():
         self.dosave = dosave
         self.lcout = lcout
         self.chainsnpz = chainsnpz
-        self.acceptance_vec = np.zeros(maxiter+1+100000,dtype='int')
+        self.acceptance_vec = np.zeros(maxiter+1+200000,dtype='int')
         self.convolvegal = convolvegal
         self.useskyerr = useskyerr
         self.usesimerr = usesimerr
@@ -446,7 +446,7 @@ class metropolis_hastings():
                         self.maxiter = self.maxiter + 90000
                         self.alreadyextended = True
                         stop = False
-                    if chsqs[0] > 1.19:
+                    elif chsqs[0] > 1.19:
                         self.maxiter = self.maxiter + 40000
                         self.alreadyextended = True
                         stop = False
@@ -1109,7 +1109,8 @@ class metropolis_hastings():
             #chisqstampsnp[i, :, :] = (self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i, :, :]
 
             #if i == 0:
-            chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2 * self.mask / (self.sims[i] / 3.8 + 1.)) # hardcoded gain !!
+
+            chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2 * self.mask / (self.weights[i] + (self.sims[i]-self.sky[i]) / 3.8 + 1.)) # hardcoded gain !!
             #else:
             #chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2  * self.weights[i, :, :] * self.mask)
 
