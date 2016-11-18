@@ -16,7 +16,7 @@ def run(tccd):
 
     tband = 'i'
 
-    sd = '/scratch1/scratchdirs/dbrout/p9/results4/detections_'+tband+'_'+tccd+'.txt'
+    sd = '/scratch1/scratchdirs/dbrout/p9/results6skysigplusmod/detections_'+tband+'_'+tccd+'.txt'
     if tccd == '01':
         searout = open(sd, 'w')
         searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
