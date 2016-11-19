@@ -152,7 +152,7 @@ for i in np.arange(0.8,.82,.01):
                     maxpe = p+1*e
                 #if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
-                raw_input()
+                #raw_input()
 
 
 print '-'*50
