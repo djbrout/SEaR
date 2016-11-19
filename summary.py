@@ -118,10 +118,10 @@ ps = 0
 maxp = 0
 maxe = 0
 snsplit = 10.
-for i in np.arange(0.8,.82,.01):
+for i in np.arange(0.77,.85,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
-            for s in np.arange(0,.5,.005):
+            for s in np.arange(0,.5,.001):
                 #if True:
                 #s = 0.
                 upperlimchi = i+j
