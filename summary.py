@@ -190,6 +190,10 @@ chsq3 = data['search_3fwhm_chisq'][train:]
 tcs = data['templ_chi'][train:]
 diffmag = data['mag'][train:]
 
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
+nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
+ntot = len(diffmag[(sn > snlim)])
+
 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn < snsplit)
 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn > snsplit)
 wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
