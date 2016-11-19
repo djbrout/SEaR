@@ -121,7 +121,7 @@ snsplit = 10.
 for i in np.arange(0.77,.85,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
-            for s in np.arange(0,.5,.001):
+            for s in np.arange(0,.2,.002):
                 #if True:
                 #s = 0.
                 upperlimchi = i+j
