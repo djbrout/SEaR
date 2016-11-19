@@ -128,7 +128,7 @@ for i in np.arange(0.8,.85,.01):
                 upperlimdiff = k
                 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
                 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
-                print len(wwreal),len(wwreal2)
+                print len(diffmag[wwreal]),len(diffmag[wwreal2])
                 raw_input()
                 wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
 
