@@ -29,11 +29,12 @@ snlim = 4.
 
 
 
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
+
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 
 
-wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.) & (diffmag != 20.)#& (sn > snlim)
+wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.) & (diffmag != 20.001)#& (sn > snlim)
 wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)#& (sn > snlim)
 
 ll = .79
@@ -114,8 +115,8 @@ for i in np.arange(0.3,.99,.01):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
-            wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
-            wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+            wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+            wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
             wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > snlim)
             wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
             #print diffmag[np.logical_or(wwbad, wwbad2)]
@@ -149,13 +150,13 @@ chsq2 = data['search_2fwhm_chisq']#[1000:]
 tcs = data['templ_chi']#[1000:]
 diffmag = data['mag']#[1000:]
 
-wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
-wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.) & (sn > snlim)
+wwreal = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+wwreal2 = (chsq2-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
 
 wwbad = (chsq2 > lowerlimchi) & (chsq2 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 wwbad2 = (chsq2-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 
 
