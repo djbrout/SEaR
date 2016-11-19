@@ -22,7 +22,7 @@ chsq3 = data['search_3fwhm_chisq'][:train]
 tcs = data['templ_chi'][:train]
 diffmag = data['mag'][:train]
 fitmag = data['sm_mag'][:train]
-print diffmag[np.argmax(sn)]
+print sn[diffmag==20]
 print tcs.shape
 print chsq1.shape
 raw_input()
