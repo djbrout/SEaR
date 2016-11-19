@@ -38,7 +38,7 @@ fitmagt = data['sm_mag'][train:]
 #print chsq1.shape
 #raw_input()
 
-snlim = 4.
+snlim = 5.
 
 
 
