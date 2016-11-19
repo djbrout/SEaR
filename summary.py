@@ -104,8 +104,8 @@ uld = 0
 maxp = 0
 maxe = 0
 for i in np.arange(0.3,.99,.01):
-    for j in np.arange(.5,2.5,.01):
-        for k in np.arange(-1.,0,.01):
+    for j in np.arange(.1,2.5,.01):
+        for k in np.arange(-4.,0,.1):
             upperlimchi = i+j
             lowerlimchi = i
             upperlimdiff = k
