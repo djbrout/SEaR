@@ -95,8 +95,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+            <state relative-caret-position="701">
+              <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00477" summary="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS">
-      <created>1479215709745</created>
-      <option name="number" value="00477" />
-      <option name="presentableId" value="LOCAL-00477" />
-      <option name="project" value="LOCAL" />
-      <updated>1479215709745</updated>
     </task>
     <task id="LOCAL-00478" summary="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS">
       <created>1479215770866</created>
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479568631472</updated>
     </task>
-    <option name="localTasksCounter" value="526" />
+    <task id="LOCAL-00526" summary="custom errors">
+      <created>1479568732575</created>
+      <option name="number" value="00526" />
+      <option name="presentableId" value="LOCAL-00526" />
+      <option name="project" value="LOCAL" />
+      <updated>1479568732575</updated>
+    </task>
+    <option name="localTasksCounter" value="527" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1259,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="120" column="26" selection-start-line="120" selection-start-column="26" selection-end-line="120" selection-end-column="26" />
+        <state relative-caret-position="701">
+          <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="12" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

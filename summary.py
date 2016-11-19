@@ -130,7 +130,7 @@ for i in np.arange(0.8,.82,.01):
 
                 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
                 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
-                print len(diffmag[wwreal]),len(diffmag[wwreal2])
+                #print len(diffmag[wwreal]),len(diffmag[wwreal2])
                 wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
 
                 wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
@@ -142,14 +142,14 @@ for i in np.arange(0.8,.82,.01):
                         np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
                         wwreal2),wwbad),wwbad2)))]))
                 e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-                if p+2*e > maxpe:
+                if p+5*e > maxpe:
                     ulc = upperlimchi
                     llc = lowerlimchi
                     uld = upperlimdiff
                     ps = copy(s)
                     maxp = p
                     maxe = e
-                    maxpe = p+2*e
+                    maxpe = p+5*e
                 #if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
                 #raw_input()
