@@ -13,20 +13,21 @@ import matplotlib as m
 m.use('Agg')
 import matplotlib.pyplot as plt
 
-sn = data['sn']#[:1000]
-chsq1 = data['search_1fwhm_chisq']#[:1000]
-chsq2 = data['search_2fwhm_chisq']#[:1000]
-chsq3 = data['search_3fwhm_chisq']#[:1000]
-
-tcs = data['templ_chi']#[:1000]
+train = 600
+sn = data['sn'][:train]
+chsq1 = data['search_1fwhm_chisq'][:train]
+chsq2 = data['search_2fwhm_chisq'][:train]
+chsq3 = data['search_3fwhm_chisq'][:train]
+tcs = data['templ_chi'][:train]
+diffmag = data['mag'][:train]
+fitmag = data['sm_mag'][:train]
 print tcs.shape
 print chsq1.shape
-raw_input()
+#raw_input()
 
 snlim = 4.
 
-diffmag = data['mag']#[:1000]
-fitmag = data['sm_mag']
+
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -43,7 +44,7 @@ plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
 plt.axhline(ll,color='black',linestyle='--')
 plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
-plt.ylim(0,20.)
+plt.ylim(0,200.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
 plt.savefig(workingdir+'results_chi2.png')
@@ -55,7 +56,7 @@ plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.9)
 plt.axhline(ll,color='black',linestyle='--')
 plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
-plt.ylim(0,20.)
+plt.ylim(0,200.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
 plt.savefig(workingdir+'results_chi1.png')
@@ -67,7 +68,7 @@ plt.scatter(sn[wreal],chsq3[wreal],color='green',alpha=.9)
 plt.axhline(ll,color='black',linestyle='--')
 plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
-plt.ylim(0,20.)
+plt.ylim(0,200.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
 plt.savefig(workingdir+'results_chi3.png')
@@ -94,7 +95,7 @@ plt.scatter(fitmag[wreal],chsq1[wreal],color='green',alpha=.9)
 plt.axhline(.87,color='black',linestyle='--')
 plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(21.0,25.5)
-plt.ylim(0,20.)
+plt.ylim(0,200.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
