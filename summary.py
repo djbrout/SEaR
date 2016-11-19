@@ -1,6 +1,7 @@
 import numpy as np
 import dilltools as dt
 import os
+from copy import copy
 
 workingdir = '/scratch1/scratchdirs/dbrout/p9/results6skysigplusmod/'
 os.system('cat '+workingdir+'detections_i_* > '+workingdir+'detections_i_all.txt')
@@ -151,12 +152,12 @@ for i in np.arange(0.8,.85,.01):
                     maxpe = p+e
                 #if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
-                raw_input()
+                #raw_input()
 
 
 print '-'*50
 print '-'*50
-print 'upperlimchi', ulc, 'lowerlimchi', llc, 'upperlimdiff', uld, 'Purity', round(maxp,4), 'Eff', round(maxe, 4)
+print 'upperlimchi', ulc, 'lowerlimchi', llc, 'upperlimdiff', uld, 'Purity', round(maxp,4),'Slope',ps, 'Eff', round(maxe, 4)
 print '-'*50
 print '-'*50
 
@@ -164,7 +165,7 @@ print '-'*50
 upperlimchi = ulc
 lowerlimchi = llc
 upperlimdiff = uld
-s = ps
+s = copy(ps)
 
 sn = data['sn'][train:]
 chsq1 = data['search_1fwhm_chisq'][train:]
@@ -188,7 +189,7 @@ p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
 e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
 print '*'*50
 print '*'*50
-print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
+print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',ps,'Purity',round(p,3),'Eff',round(e,3)
 print ''
 print 'total',ntot
 print 'contamination',len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,wwbad2))])
