@@ -43,19 +43,19 @@ snlim = 5.
 
 
 
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 ntot = len(diffmag[(sn > snlim)])
 
-wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.001)#& (sn > snlim)
+wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.00)#& (sn > snlim)
 wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)#& (sn > snlim)
 
-wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.001)#& (sn > snlim)
+wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)#& (sn > snlim)
 wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.)#& (sn > snlim)
 
-ll = .79
-ul = 1.16
-s=.138
+ll = .8
+ul = 1.13
+s=.148
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
@@ -144,10 +144,10 @@ for i in np.arange(0.77,.85,.01):
                 lowerlimchi = i
                 upperlimdiff = k
 
-                wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
-                wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
+                wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn < snsplit)
+                wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn > snsplit)
                 print len(diffmag[wwreal]),len(diffmag[wwreal2]),len(diffmag[np.logical_or(wwreal,wwreal2)]),
-                wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+                wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
 
                 wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
                 wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
@@ -190,9 +190,9 @@ chsq3 = data['search_3fwhm_chisq'][train:]
 tcs = data['templ_chi'][train:]
 diffmag = data['mag'][train:]
 
-wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
-wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
-wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn < snsplit)
+wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn > snsplit)
+wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
 
 wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
 wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
