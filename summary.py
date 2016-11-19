@@ -120,7 +120,7 @@ snsplit = 10.
 for i in np.arange(0.7,.9,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
-            for s in np.arange(0,.1,.01):
+            for s in np.arange(0,.01,.001):
                 upperlimchi = i+j
                 lowerlimchi = i
                 upperlimdiff = k
