@@ -16,13 +16,21 @@ import matplotlib.pyplot as plt
 
 train = 600
 sn = data['sn'][:train]
-#print max(sn)
 chsq1 = data['search_1fwhm_chisq'][:train]
 chsq2 = data['search_2fwhm_chisq'][:train]
 chsq3 = data['search_3fwhm_chisq'][:train]
 tcs = data['templ_chi'][:train]
 diffmag = data['mag'][:train]
 fitmag = data['sm_mag'][:train]
+
+snt = data['sn'][train:]
+chsq1t = data['search_1fwhm_chisq'][train:]
+chsq2t = data['search_2fwhm_chisq'][train:]
+chsq3t = data['search_3fwhm_chisq'][train:]
+tcst = data['templ_chi'][train:]
+diffmagt = data['mag'][train:]
+fitmagt = data['sm_mag'][train:]
+
 #print sn[diffmag==20]
 #print tcs.shape
 #print chsq1.shape
@@ -40,12 +48,17 @@ ntot = len(diffmag[(sn > snlim)])
 wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.001)#& (sn > snlim)
 wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)#& (sn > snlim)
 
+wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.001)#& (sn > snlim)
+wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.)#& (sn > snlim)
+
 ll = .79
 ul = 1.16
 s=.14
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
-plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
+plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
+plt.scatter(snt[wfaket],chsq2t[wfaket],color='red',alpha=.5,marker='+')
+plt.scatter(snt[wrealt],chsq2t[wrealt],color='green',alpha=.9,marker='+',label='Test')
 plt.axhline(ll,color='black',linestyle='--')
 plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
@@ -53,6 +66,7 @@ plt.xlim(4.,150.)
 plt.ylim(0,20.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
+plt.legend()
 plt.savefig(workingdir+'results_chi2.png')
 print 'saved '+workingdir+'results_chi2.png'
 
