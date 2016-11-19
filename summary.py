@@ -118,7 +118,7 @@ ps = 0
 maxp = 0
 maxe = 0
 snsplit = 10.
-for i in np.arange(0.8,.85,.01):
+for i in np.arange(0.8,.82,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
             for s in np.arange(0,.1,.005):
@@ -146,7 +146,7 @@ for i in np.arange(0.8,.85,.01):
                     ulc = upperlimchi
                     llc = lowerlimchi
                     uld = upperlimdiff
-                    ps = s
+                    ps = copy(s)
                     maxp = p
                     maxe = e
                     maxpe = p+2*e
