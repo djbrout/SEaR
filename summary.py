@@ -42,7 +42,7 @@ wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)#& (sn > snlim)
 
 ll = .79
 ul = 1.16
-s=.01
+s=.14
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
