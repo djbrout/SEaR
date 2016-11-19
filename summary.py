@@ -199,6 +199,6 @@ print 'fit good',len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2
 
 print ''
 print 'total bad',nbad
-print 'eliminated',len(diffmag[np.logical_or(wwbad3,np.logical_or(wwbad, wwbad2))])
+print 'eliminated',nbad-len(diffmag[np.logical_or(wwbad3,np.logical_or(wwbad, wwbad2))])
 print '*'*50
 print '*'*50
