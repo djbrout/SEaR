@@ -14,7 +14,9 @@ import matplotlib as m
 m.use('Agg')
 import matplotlib.pyplot as plt
 
-train = 600
+tot = len(data['sn'])
+train = int(round(tot*.66))
+print 'tot',tot,'train',train
 sn = data['sn'][:train]
 chsq1 = data['search_1fwhm_chisq'][:train]
 chsq2 = data['search_2fwhm_chisq'][:train]
