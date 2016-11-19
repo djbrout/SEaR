@@ -117,7 +117,7 @@ ps = 0
 maxp = 0
 maxe = 0
 snsplit = 10.
-for i in np.arange(0.7,.9,.01):
+for i in np.arange(0.8,.85,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
             for s in np.arange(0,.01,.001):
