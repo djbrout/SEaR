@@ -95,8 +95,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+            <state relative-caret-position="360">
+              <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00486" summary="custom errors">
-      <created>1479502168713</created>
-      <option name="number" value="00486" />
-      <option name="presentableId" value="LOCAL-00486" />
-      <option name="project" value="LOCAL" />
-      <updated>1479502168713</updated>
     </task>
     <task id="LOCAL-00487" summary="custom errors">
       <created>1479502351138</created>
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479573000938</updated>
     </task>
-    <option name="localTasksCounter" value="535" />
+    <task id="LOCAL-00535" summary="custom errors">
+      <created>1479573221836</created>
+      <option name="number" value="00535" />
+      <option name="presentableId" value="LOCAL-00535" />
+      <option name="project" value="LOCAL" />
+      <updated>1479573221836</updated>
+    </task>
+    <option name="localTasksCounter" value="536" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1259,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        <state relative-caret-position="360">
+          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
