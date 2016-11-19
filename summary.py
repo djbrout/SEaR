@@ -120,16 +120,16 @@ snsplit = 10.
 for i in np.arange(0.8,.85,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
-            #for s in np.arange(0,.01,.001):
-            if True:
+            for s in np.arange(0,.01,.001):
+                #if True:
                 s = 0.
                 upperlimchi = i+j
                 lowerlimchi = i
                 upperlimdiff = k
+
                 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
                 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
                 print len(diffmag[wwreal]),len(diffmag[wwreal2])
-                raw_input()
                 wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
 
                 wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
@@ -150,7 +150,9 @@ for i in np.arange(0.8,.85,.01):
                     maxe = e
                     maxpe = p+e
                 #if p+e > 1.909:
-                print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'Purity',round(p,3),'Eff',round(e,3)
+                print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
+                raw_input()
+
 
 print '-'*50
 print '-'*50
