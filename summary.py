@@ -15,15 +15,17 @@ import matplotlib.pyplot as plt
 
 train = 600
 sn = data['sn'][:train]
+print max(sn)
 chsq1 = data['search_1fwhm_chisq'][:train]
 chsq2 = data['search_2fwhm_chisq'][:train]
 chsq3 = data['search_3fwhm_chisq'][:train]
 tcs = data['templ_chi'][:train]
 diffmag = data['mag'][:train]
 fitmag = data['sm_mag'][:train]
+print diffmag[np.argmax(sn)]
 print tcs.shape
 print chsq1.shape
-#raw_input()
+raw_input()
 
 snlim = 4.
 
