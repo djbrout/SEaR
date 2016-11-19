@@ -60,8 +60,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="326" column="65" selection-start-line="326" selection-start-column="65" selection-end-line="326" selection-end-column="65" />
+            <state relative-caret-position="249">
+              <caret line="243" column="33" selection-start-line="243" selection-start-column="32" selection-end-line="243" selection-end-column="33" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
                 <marker date="1479504875000" expanded="true" signature="12349:12486" ph="..." />
@@ -95,8 +95,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="160" column="21" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
+            <state relative-caret-position="434">
+              <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="11" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00495" summary="custom errors">
-      <created>1479505691577</created>
-      <option name="number" value="00495" />
-      <option name="presentableId" value="LOCAL-00495" />
-      <option name="project" value="LOCAL" />
-      <updated>1479505691577</updated>
     </task>
     <task id="LOCAL-00496" summary="custom errors">
       <created>1479505716154</created>
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479587374090</updated>
     </task>
-    <option name="localTasksCounter" value="544" />
+    <task id="LOCAL-00544" summary="custom errors">
+      <created>1479590308372</created>
+      <option name="number" value="00544" />
+      <option name="presentableId" value="LOCAL-00544" />
+      <option name="project" value="LOCAL" />
+      <updated>1479590308372</updated>
+    </task>
+    <option name="localTasksCounter" value="545" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1230,17 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="326" column="65" selection-start-line="326" selection-start-column="65" selection-end-line="326" selection-end-column="65" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-            <marker date="1479504875000" expanded="true" signature="12349:12486" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wwraper.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1257,10 +1246,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="243" column="33" selection-start-line="243" selection-start-column="32" selection-end-line="243" selection-end-column="33" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
+            <marker date="1479504875000" expanded="true" signature="12349:12486" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="160" column="21" selection-start-line="160" selection-start-column="21" selection-end-line="160" selection-end-column="21" />
+        <state relative-caret-position="434">
+          <caret line="127" column="11" selection-start-line="127" selection-start-column="11" selection-end-line="127" selection-end-column="11" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
