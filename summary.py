@@ -2,10 +2,10 @@ import numpy as np
 import dilltools as dt
 import os
 
+workingdir = '/scratch1/scratchdirs/dbrout/p9/results6skysigplusmod/'
+os.system('cat '+workingdir+'detections_i_* > '+workingdir+'detections_i_all.txt')
 
-os.system('cat /scratch1/scratchdirs/dbrout/p9/results4/detections_i_* > detections_i_all.txt')
-
-data = dt.readcol('detections_i_all.txt',delim=',')
+data = dt.readcol(workingdir+'detections_i_all.txt',delim=',')
 
 print data.keys()
 
@@ -42,23 +42,47 @@ plt.xlim(4.,40.)
 plt.ylim(0,2.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/results.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/results.png'
+plt.savefig(workingdir+'results_chi2.png')
+print 'saved '+workingdir+'results_chi2.png'
+
+plt.clf()
+plt.scatter(sn[wfake],chsq1[wfake],color='red',alpha=.5)
+plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.9)
+plt.axhline(.87,color='black',linestyle='--')
+plt.axhline(1.37,color='black',linestyle='--')
+plt.xlim(4.,40.)
+plt.ylim(0,2.)
+plt.ylabel('2 FWHM Chi Squared')
+plt.xlabel('S/N')
+plt.savefig(workingdir+'results_chi1.png')
+print 'saved '+workingdir+'results_chi1.png'
+
+plt.clf()
+plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.5)
+plt.scatter(sn[wreal],chsq3[wreal],color='green',alpha=.9)
+plt.axhline(.87,color='black',linestyle='--')
+plt.axhline(1.37,color='black',linestyle='--')
+plt.xlim(4.,40.)
+plt.ylim(0,2.)
+plt.ylabel('2 FWHM Chi Squared')
+plt.xlabel('S/N')
+plt.savefig(workingdir+'results_chi3.png')
+print 'saved '+workingdir+'results_chi3.png'
 
 plt.clf()
 plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-3.5,2,.2),normed=True)
 plt.axvline(-.26,color='black',linestyle='--')
 plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 2FWHM - 1FWHM')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist.png'
+plt.savefig(workingdir+'resultshist.png')
+print 'saved '+workingdir+'resultshist.png'
 plt.clf()
 plt.hist([chsq3[wfake]-chsq1[wfake],chsq3[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-4.5,2,.2),normed=True)
 plt.axvline(-.26,color='black',linestyle='--')
 plt.xlim(-3.5,2.)
 plt.xlabel('Chisq 3FWHM - 1FWHM')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist32.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultshist32.png'
+plt.savefig(workingdir+'resultshist32.png')
+print 'saved '+workingdir+'resultshist32.png'
 
 plt.clf()
 plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
@@ -69,8 +93,8 @@ plt.xlim(21.0,25.5)
 plt.ylim(0,2.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('FitMag')
-plt.savefig('/scratch1/scratchdirs/dbrout/p9/results5simerr/resultsvsmag.png')
-print 'saved /scratch1/scratchdirs/dbrout/p9/results5simerr/resultsvsmag.png'
+plt.savefig(workingdir+'resultsvsmag.png')
+print 'saved '+workingdir+'resultsvsmag.png'
 import sys
 sys.exit()
 maxpe = 0
@@ -79,8 +103,8 @@ llc = 0
 uld = 0
 maxp = 0
 maxe = 0
-for i in np.arange(0.75,.92,.01):
-    for j in np.arange(.5,1.5,.01):
+for i in np.arange(0.3,.99,.01):
+    for j in np.arange(.5,2.5,.01):
         for k in np.arange(-1.,0,.01):
             upperlimchi = i+j
             lowerlimchi = i
