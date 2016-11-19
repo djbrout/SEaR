@@ -21,6 +21,7 @@ chsq3 = data['search_3fwhm_chisq']#[:1000]
 tcs = data['templ_chi']#[:1000]
 print tcs.shape
 print chsq1.shape
+raw_input()
 
 snlim = 4.
 
@@ -34,7 +35,7 @@ nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.) & (diffmag != 20.)#& (sn > snlim)
 wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)#& (sn > snlim)
 
-ll = .86
+ll = .79
 ul = 1.16
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
