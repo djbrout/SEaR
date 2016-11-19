@@ -34,8 +34,8 @@ nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 wreal = (diffmag > 0) & (chsq1 < 1000) & (chsq1 >= 0.) & (diffmag != 20.)#& (sn > snlim)
 wfake = (diffmag == 0) & (chsq1 < 1000) & (chsq1 >= 0.)#& (sn > snlim)
 
-ll = .87
-ul = 1.06
+ll = .86
+ul = 1.16
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9)
