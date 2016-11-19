@@ -117,7 +117,7 @@ ps = 0
 maxp = 0
 maxe = 0
 snsplit = 10.
-for i in np.arange(0.6,.9,.01):
+for i in np.arange(0.7,.9,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
             for s in np.arange(0,.1,.01):
@@ -163,6 +163,7 @@ s = ps
 sn = data['sn'][train:]
 chsq1 = data['search_1fwhm_chisq'][train:]
 chsq2 = data['search_2fwhm_chisq'][train:]
+chsq3 = data['search_3fwhm_chisq'][train:]
 tcs = data['templ_chi'][train:]
 diffmag = data['mag'][train:]
 
