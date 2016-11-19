@@ -142,14 +142,14 @@ for i in np.arange(0.77,.85,.01):
                         np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
                         wwreal2),wwbad),wwbad2)))]))
                 e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-                if p+1*e > maxpe:
+                if p+2*e > maxpe:
                     ulc = upperlimchi
                     llc = lowerlimchi
                     uld = upperlimdiff
                     ps = copy(s)
                     maxp = p
                     maxe = e
-                    maxpe = p+1*e
+                    maxpe = p+2*e
                 #if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
                 #raw_input()
