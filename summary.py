@@ -121,7 +121,7 @@ snsplit = 10.
 for i in np.arange(0.8,.85,.01):
     for j in np.arange(.3,1.3,.01):
         for k in np.arange(-2.,-.5,.1):
-            for s in np.arange(0,.02,.001):
+            for s in np.arange(0,.1,.005):
                 #if True:
                 #s = 0.
                 upperlimchi = i+j
@@ -142,14 +142,14 @@ for i in np.arange(0.8,.85,.01):
                         np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
                         wwreal2),wwbad),wwbad2)))]))
                 e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-                if p+e > maxpe:
+                if p+2*e > maxpe:
                     ulc = upperlimchi
                     llc = lowerlimchi
                     uld = upperlimdiff
                     ps = s
                     maxp = p
                     maxe = e
-                    maxpe = p+e
+                    maxpe = p+2*e
                 #if p+e > 1.909:
                 print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
                 #raw_input()
