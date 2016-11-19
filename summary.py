@@ -96,7 +96,7 @@ plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
 print 'saved '+workingdir+'resultsvsmag.png'
 import sys
-sys.exit()
+#sys.exit()
 maxpe = 0
 ulc = 0
 llc = 0
