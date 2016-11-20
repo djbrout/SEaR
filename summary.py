@@ -237,7 +237,8 @@ inn = open(workingdir+'detections_i_all.txt','r').readlines()
 out = open(workingdir+'predictions_i.txt','w')
 
 wwreal4 = (sn > 100.) & (np.isnan(chsq1))
-acceptvec = np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2)))
+acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
+                        np.logical_or(wwbad,wwbad2)))
 
 for i,line in enumerate(inn):
     #    print i,line
