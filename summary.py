@@ -230,8 +230,15 @@ out = open(workingdir+'predictions_i.txt','w')
 
 for i,line in enumerate(inn):
     #    print i,line
-    print i,line.strip()+'\t 1\n'
-    if i > 10.:
-        raw_input()
+    if i == 0:
+        out.write(i, line.strip() + '\t accept\n')
+    else:
+        out.write(i,line.strip()+'\t 1\n')
+    #if i > 10.:
+    #    raw_input()
     #raw_input()
     #out.write('')
+
+out.close()
+inn.close()
+print 'saved',workingdir+'predictions_i.txt'
