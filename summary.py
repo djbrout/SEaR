@@ -183,16 +183,16 @@ lowerlimchi = llc
 upperlimdiff = uld
 s = copy(ps)
 
-sn = data['sn'][train:]
-chsq1 = data['search_1fwhm_chisq'][train:]
-chsq2 = data['search_2fwhm_chisq'][train:]
-chsq3 = data['search_3fwhm_chisq'][train:]
-tcs = data['templ_chi'][train:]
-diffmag = data['mag'][train:]
-
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
-nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
-ntot = len(diffmag[(sn > snlim)])
+# # sn = data['sn'][train:]
+# # chsq1 = data['search_1fwhm_chisq'][train:]
+# # chsq2 = data['search_2fwhm_chisq'][train:]
+# # chsq3 = data['search_3fwhm_chisq'][train:]
+# # tcs = data['templ_chi'][train:]
+# # diffmag = data['mag'][train:]
+#
+# nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
+# nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
+# ntot = len(diffmag[(sn > snlim)])
 
 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn < snsplit)
 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn > snsplit)
@@ -222,3 +222,14 @@ print 'total bad',nbad
 print 'eliminated',nbad-len(diffmag[np.logical_or(wwbad3,np.logical_or(wwbad, wwbad2))])
 print '*'*50
 print '*'*50
+
+
+inn = open(workingdir+'detections_i_all.txt','r').readlines()
+out = open(workingdir+'predictions_i.txt','w')
+
+
+for i,line in enumerate(inn):
+    print i,line
+    print i,line[-2]
+    raw_input()
+    #out.write('')
