@@ -54,8 +54,8 @@ wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)
 wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.)#& (sn > snlim)
 
 ll = .8
-ul = 1.13
-s=.148
+ul = 1.5
+s=.26
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
