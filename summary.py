@@ -230,6 +230,6 @@ out = open(workingdir+'predictions_i.txt','w')
 
 for i,line in enumerate(inn):
     print i,line
-    print i,line[-2]
+    print i,line[:-2]
     raw_input()
     #out.write('')
