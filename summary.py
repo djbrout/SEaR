@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 tot = len(data['sn'])
 #train = int(round(tot*.99))
-train = tot
+train = tot + 1
 print 'tot',tot,'train',train
 sn = data['sn'][:train]
 chsq1 = data['search_1fwhm_chisq'][:train]
