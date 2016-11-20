@@ -244,7 +244,7 @@ for i,line in enumerate(inn):
     if i == 0:
         out.write(line.strip() + '\t accept\n')
     else:
-        if acceptvec[i]:
+        if acceptvec[i-1]:
             out.write(line.strip()+'\t 1\n')
         else:
             out.write(line.strip() + '\t 0\n')
