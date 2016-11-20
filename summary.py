@@ -227,18 +227,22 @@ print '*'*50
 inn = open(workingdir+'detections_i_all.txt','r').readlines()
 out = open(workingdir+'predictions_i.txt','w')
 
+wwreal4 = (sn > 100.) & (np.isnan(chsq1))
+acceptvec = np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2)))
 
 for i,line in enumerate(inn):
     #    print i,line
     if i == 0:
         out.write(line.strip() + '\t accept\n')
     else:
-        out.write(line.strip()+'\t 1\n')
+        if acceptvec[i]:
+            out.write(line.strip()+'\t 1\n')
+        else:
+            out.write(line.strip() + '\t 0\n')
     #if i > 10.:
     #    raw_input()
     #raw_input()
     #out.write('')
 
 out.close()
-inn.close()
 print 'saved',workingdir+'predictions_i.txt'
