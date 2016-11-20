@@ -229,7 +229,9 @@ out = open(workingdir+'predictions_i.txt','w')
 
 
 for i,line in enumerate(inn):
-    print i,line
-    print i,line[:-2]
-    raw_input()
+    #    print i,line
+    print i,line.strip()+'\t 1\n'
+    if i > 10.:
+        raw_input()
+    #raw_input()
     #out.write('')
