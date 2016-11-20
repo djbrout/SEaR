@@ -95,8 +95,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="243" column="44" selection-start-line="243" selection-start-column="44" selection-end-line="243" selection-end-column="44" />
+            <state relative-caret-position="674">
+              <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00504" summary="custom errors">
-      <created>1479564301592</created>
-      <option name="number" value="00504" />
-      <option name="presentableId" value="LOCAL-00504" />
-      <option name="project" value="LOCAL" />
-      <updated>1479564301592</updated>
     </task>
     <task id="LOCAL-00505" summary="custom errors">
       <created>1479564378350</created>
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479680088522</updated>
     </task>
-    <option name="localTasksCounter" value="553" />
+    <task id="LOCAL-00553" summary="custom errors">
+      <created>1479680326389</created>
+      <option name="number" value="00553" />
+      <option name="presentableId" value="LOCAL-00553" />
+      <option name="project" value="LOCAL" />
+      <updated>1479680326389</updated>
+    </task>
+    <option name="localTasksCounter" value="554" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1259,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="243" column="44" selection-start-line="243" selection-start-column="44" selection-end-line="243" selection-end-column="44" />
+        <state relative-caret-position="674">
+          <caret line="240" column="0" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
