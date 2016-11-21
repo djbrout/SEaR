@@ -138,8 +138,8 @@ snsplit = 10.
 
 skip = False
 if not skip:
-    for i in np.arange(0.79,.81,.002):
-        for j in np.arange(.5,1.,.01):
+    for i in np.arange(0.7,.9,.01):
+        for j in np.arange(.5,1.,.02):
             for k in np.arange(-.9,-.7,.1):
                 for s in np.arange(0.12,.3,.001)[::-1]:
                     #if True:
