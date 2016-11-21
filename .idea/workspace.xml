@@ -95,11 +95,10 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+            <state relative-caret-position="494">
+              <caret line="252" column="63" selection-start-line="252" selection-start-column="63" selection-end-line="252" selection-end-column="63" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1479742708000" expanded="true" signature="6505:9672" ph="..." />
               </folding>
             </state>
           </provider>
@@ -426,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00526" summary="custom errors">
-      <created>1479568732575</created>
-      <option name="number" value="00526" />
-      <option name="presentableId" value="LOCAL-00526" />
-      <option name="project" value="LOCAL" />
-      <updated>1479568732575</updated>
     </task>
     <task id="LOCAL-00527" summary="custom errors">
       <created>1479568793664</created>
@@ -770,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479742648483</updated>
     </task>
-    <option name="localTasksCounter" value="575" />
+    <task id="LOCAL-00575" summary="snlim 4.5">
+      <created>1479742712851</created>
+      <option name="number" value="00575" />
+      <option name="presentableId" value="LOCAL-00575" />
+      <option name="project" value="LOCAL" />
+      <updated>1479742712851</updated>
+    </task>
+    <option name="localTasksCounter" value="576" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1261,11 +1260,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+        <state relative-caret-position="494">
+          <caret line="252" column="63" selection-start-line="252" selection-start-column="63" selection-end-line="252" selection-end-column="63" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1479742708000" expanded="true" signature="6505:9672" ph="..." />
           </folding>
         </state>
       </provider>
