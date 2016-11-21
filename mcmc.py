@@ -213,6 +213,7 @@ class metropolis_hastings():
         self.psfcenter = psfcenter
         self.x = x
         self.y = y
+
         self.alreadyextended = False
 
         #self.x[0] = self.x[0] - 3.
