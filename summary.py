@@ -203,7 +203,6 @@ s = copy(ps)
 # nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 # ntot = len(diffmag[(sn > snlim)])
 
-snlim = 4.
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -241,6 +240,30 @@ print '*'*50
 
 inn = open(workingdir+'detections_i_all.txt','r').readlines()
 out = open(workingdir+'predictions_i.txt','w')
+
+
+
+snlim = 4.
+
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
+nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
+ntot = len(diffmag[(sn > snlim)])
+
+wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
+wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
+wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+
+wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
+wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
+wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+
+p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
+                        wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
+                        np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
+                        wwreal2),wwbad),wwbad2)))]))
+e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
+
+
 
 wwreal4 = (sn > 95.) & (np.isnan(chsq1)) & (sn < 125.)
 acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
