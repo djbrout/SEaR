@@ -247,10 +247,10 @@ for i,line in enumerate(inn):
     if i == 0:
         out.write(line.strip() + '\t accept\n')
     else:
-        if int(line.split().replace(',','')[0]) in alreadydone:
+        if int(line.split()[0].replace(',','')) in alreadydone:
             continue
         else:
-            alreadydone.append(int(line.split().replace(',','')[0]))
+            alreadydone.append(int(line.split()[0].replace(',','')))
             if acceptvec[i-1]:
                 out.write(line.strip()+'\t 1\n')
             else:
