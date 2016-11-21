@@ -138,10 +138,10 @@ snsplit = 10.
 
 skip = False
 if not skip:
-    for i in np.arange(0.7,.9,.01):
-        for j in np.arange(.5,1.,.02):
-            for k in np.arange(-.9,-.7,.1):
-                for s in np.arange(0.12,.3,.001)[::-1]:
+    for i in np.arange(0.77,.8,.001):
+        for j in np.arange(.7,1.,.01):
+            for k in np.arange(-.88,-.72,.01):
+                for s in np.arange(0.14,.2,.001)[::-1]:
                     #if True:
                     #s = 0.
                     upperlimchi = i+j
