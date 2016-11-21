@@ -136,7 +136,7 @@ maxp = 0
 maxe = 0
 snsplit = 10.
 
-skip = False
+skip = True
 if not skip:
     for i in np.arange(0.77,.8,.001):
         for j in np.arange(.7,1.,.01):
@@ -175,10 +175,10 @@ if not skip:
                     #raw_input()
 
 else:
-    ulc = 1.5
-    llc = 0.8
-    uld = -.8
-    ps = .261
+    ulc = 1.51
+    llc = 0.78
+    uld = -.86
+    ps = .176
 
 print '-'*50
 print '-'*50
