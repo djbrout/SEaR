@@ -203,6 +203,8 @@ s = copy(ps)
 # nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 # ntot = len(diffmag[(sn > snlim)])
 
+snlim = 4.
+
 wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
 wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
 wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
