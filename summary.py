@@ -51,8 +51,8 @@ ntot = len(diffmag[(sn > snlim)])
 wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.00)& (sn > snlim)
 wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 
-wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
-wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
+#wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
+#wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
 
 ll = .8
 ul = 1.5
@@ -60,8 +60,8 @@ s=.26
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
-plt.scatter(snt[wfaket],chsq2t[wfaket],color='red',alpha=.5,marker='+')
-plt.scatter(snt[wrealt],chsq2t[wrealt],color='green',alpha=.9,marker='+',label='Test')
+#plt.scatter(snt[wfaket],chsq2t[wfaket],color='red',alpha=.5,marker='+')
+#plt.scatter(snt[wrealt],chsq2t[wrealt],color='green',alpha=.9,marker='+',label='Test')
 plt.axhline(ll,color='black',linestyle='--')
 plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
@@ -69,7 +69,7 @@ plt.xlim(4.,150.)
 plt.ylim(0,20.)
 plt.ylabel('2 FWHM Chi Squared')
 plt.xlabel('S/N')
-plt.legend()
+#plt.legend()
 plt.savefig(workingdir+'results_chi2.png')
 print 'saved '+workingdir+'results_chi2.png'
 

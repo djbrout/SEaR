@@ -95,8 +95,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="231" column="12" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
+            <state relative-caret-position="615">
+              <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -425,13 +425,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00520" summary="custom errors">
-      <created>1479567514651</created>
-      <option name="number" value="00520" />
-      <option name="presentableId" value="LOCAL-00520" />
-      <option name="project" value="LOCAL" />
-      <updated>1479567514651</updated>
     </task>
     <task id="LOCAL-00521" summary="custom errors">
       <created>1479567597226</created>
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479697250798</updated>
     </task>
-    <option name="localTasksCounter" value="569" />
+    <task id="LOCAL-00569" summary="snlim 4.5">
+      <created>1479740050676</created>
+      <option name="number" value="00569" />
+      <option name="presentableId" value="LOCAL-00569" />
+      <option name="project" value="LOCAL" />
+      <updated>1479740050676</updated>
+    </task>
+    <option name="localTasksCounter" value="570" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -829,7 +829,8 @@
     <MESSAGE value="back to se errors" />
     <MESSAGE value="FOUND PSF BUG. REVERTING BACK TO SIM ERRORS" />
     <MESSAGE value="custom errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="custom errors" />
+    <MESSAGE value="snlim 4.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="snlim 4.5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1259,8 +1260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="231" column="12" selection-start-line="231" selection-start-column="12" selection-end-line="231" selection-end-column="12" />
+        <state relative-caret-position="615">
+          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
