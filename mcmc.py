@@ -646,26 +646,17 @@ class metropolis_hastings():
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
 
                     [X, Y] = np.meshgrid(np.arange(20)/10000.,np.arange(20)/10000.)
-                    #print self.x_pix_offset
                     S = np.exp(1j*(X*(1.+self.x_pix_offset)+Y*(1.+self.y_pix_offset)))
 
                     fr = fft2(self.kicked_galaxy_model)
                     fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
 
-                    # fr3 = 10000. * np.exp(1j*(self.ff*(self.x_pix_offset)+self.ff*(self.y_pix_offset)))
-                    # m, n = fr.shape
-                    # gc = np.real(ifft2(S*fr2))
-                    # gc = np.roll(gc, -m / 2 + 1, axis=0)
-                    # gc = np.roll(gc, -n / 2 + 1, axis=1)
                     if kicked_modelvec == 0.:
                         delta = 0.
                     else:
                         delta = np.fft.fftn(S * fr2).real
                         delta = delta/np.sum(delta.ravel())
                         delta *= kicked_modelvec
-                    #delta = np.fft.fftshift(FS).real
-
-                    #gc = ifft(fft(centered_psfs)).real
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs, mode='same')
                     sims = (delta+galaxy_conv+sky) * self.mask
 
