@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 echo 1
 cd  /global/u1/d/dbrout/SEaR/
 echo 2
