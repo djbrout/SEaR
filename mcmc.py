@@ -443,7 +443,11 @@ class metropolis_hastings():
             if self.counter > self.maxiter:
                 stop = True
                 if not self.alreadyextended:
-                    if chsqs[0] > 2.19:
+                    if chsqs[0] > 100.:
+                        #self.maxiter = self.maxiter
+                        self.alreadyextended = True
+                        stop = False
+                    elif chsqs[0] > 2.19:
                         self.maxiter = self.maxiter + 150000
                         self.alreadyextended = True
                         stop = False
@@ -455,7 +459,7 @@ class metropolis_hastings():
                         self.maxiter = self.maxiter + 20000
                         self.alreadyextended = True
                         stop = False
-                    elif chsqs[0] > 1.0:
+                    elif chsqs[0] > 1.05:
                         self.maxiter = self.maxiter + 10000
                         self.alreadyextended = True
                         stop = False
@@ -974,7 +978,7 @@ class metropolis_hastings():
             cbar = fig.colorbar(axs, ax=axdiff)
             axdiff.xaxis.set_major_formatter(plt.NullFormatter())
             axdiff.yaxis.set_major_formatter(plt.NullFormatter())
-            axs = axchi.imshow((self.data[i, :, :] - self.sims[i]) ** 2 *  self.weights[i,:,:] * self.mask, cmap='gray',
+            axs = axchi.imshow((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask / denom, cmap='gray',
                                interpolation='nearest', vmin=0, vmax=6.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')

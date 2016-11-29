@@ -26,9 +26,11 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="935" column="30" selection-start-line="935" selection-start-column="30" selection-end-line="935" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="384">
+              <caret line="462" column="54" selection-start-line="462" selection-start-column="54" selection-end-line="462" selection-end-column="54" />
+              <folding>
+                <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -426,13 +428,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00539" summary="custom errors">
-      <created>1479586758021</created>
-      <option name="number" value="00539" />
-      <option name="presentableId" value="LOCAL-00539" />
-      <option name="project" value="LOCAL" />
-      <updated>1479586758021</updated>
-    </task>
     <task id="LOCAL-00540" summary="custom errors">
       <created>1479587276497</created>
       <option name="number" value="00540" />
@@ -769,7 +764,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480432892812</updated>
     </task>
-    <option name="localTasksCounter" value="588" />
+    <task id="LOCAL-00588" summary="dump_psfex based shifting again">
+      <created>1480435206176</created>
+      <option name="number" value="00588" />
+      <option name="presentableId" value="LOCAL-00588" />
+      <option name="project" value="LOCAL" />
+      <updated>1480435206176</updated>
+    </task>
+    <option name="localTasksCounter" value="589" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -865,7 +867,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -932,7 +936,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6150">
           <caret line="410" column="0" selection-start-line="410" selection-start-column="0" selection-end-line="410" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -992,7 +998,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17100">
           <caret line="1156" column="0" selection-start-line="1154" selection-start-column="0" selection-end-line="1156" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,7 +1060,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17295">
           <caret line="1153" column="44" selection-start-line="1153" selection-start-column="44" selection-end-line="1153" selection-end-column="44" />
-          <folding />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1113,7 +1123,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1263,9 +1275,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="935" column="30" selection-start-line="935" selection-start-column="30" selection-end-line="935" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="384">
+          <caret line="462" column="54" selection-start-line="462" selection-start-column="54" selection-end-line="462" selection-end-column="54" />
+          <folding>
+            <marker date="1480436281000" expanded="true" signature="16276:16418" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
