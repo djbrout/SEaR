@@ -925,8 +925,8 @@ class metropolis_hastings():
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
 
-            denom = weight[i, :, :] + (sims[i] - sky[i]) / 3.8 + 1.
-            v = ((sims[i] - data[i, :, :]) ** 2 * self.mask / denom).ravel()
+            denom = self.weight[i, :, :] + (self.sims[i] - self.sky[i]) / 3.8 + 1.
+            v = ((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask / denom).ravel()
             chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
             tchi = chisq / len(self.mask[self.mask > 0.].ravel())
