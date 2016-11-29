@@ -455,7 +455,7 @@ class metropolis_hastings():
                         self.maxiter = self.maxiter + 20000
                         self.alreadyextended = True
                         stop = False
-                    elif chsqs[0] > .9:
+                    elif chsqs[0] > 1.0:
                         self.maxiter = self.maxiter + 10000
                         self.alreadyextended = True
                         stop = False
@@ -925,7 +925,7 @@ class metropolis_hastings():
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
 
-            denom = self.weight[i, :, :] + (self.sims[i] - self.sky[i]) / 3.8 + 1.
+            denom = self.weights[i, :, :] + (self.sims[i] - self.sky[i]) / 3.8 + 1.
             v = ((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask / denom).ravel()
             chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 

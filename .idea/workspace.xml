@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="934" column="25" selection-start-line="934" selection-start-column="25" selection-end-line="934" selection-end-column="25" />
+            <state relative-caret-position="369">
+              <caret line="935" column="30" selection-start-line="935" selection-start-column="30" selection-end-line="935" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -426,13 +426,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00538" summary="custom errors">
-      <created>1479575989795</created>
-      <option name="number" value="00538" />
-      <option name="presentableId" value="LOCAL-00538" />
-      <option name="project" value="LOCAL" />
-      <updated>1479575989795</updated>
-    </task>
     <task id="LOCAL-00539" summary="custom errors">
       <created>1479586758021</created>
       <option name="number" value="00539" />
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480432873787</updated>
     </task>
-    <option name="localTasksCounter" value="587" />
+    <task id="LOCAL-00587" summary="dump_psfex based shifting again">
+      <created>1480432892812</created>
+      <option name="number" value="00587" />
+      <option name="presentableId" value="LOCAL-00587" />
+      <option name="project" value="LOCAL" />
+      <updated>1480432892812</updated>
+    </task>
+    <option name="localTasksCounter" value="588" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1263,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="934" column="25" selection-start-line="934" selection-start-column="25" selection-end-line="934" selection-end-column="25" />
+        <state relative-caret-position="369">
+          <caret line="935" column="30" selection-start-line="935" selection-start-column="30" selection-end-line="935" selection-end-column="30" />
           <folding />
         </state>
       </provider>
