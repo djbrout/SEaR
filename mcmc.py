@@ -469,6 +469,7 @@ class metropolis_hastings():
             #plt.imshow(self.data[20,self.substamp/2.-14.:self.substamp/2.+14.,self.substamp/2.-14.:self.substamp/2.+14.])
             #plt.show()
 
+
         self.summarize_run()
         self.model_params()
 
