@@ -274,16 +274,16 @@ for i,line in enumerate(inn):
     #    print i,line
 
     if i == 0:
-        out.write(line.strip() + '\t accept\n')
+        out.write(line.strip() + ',\t accept\n')
     else:
         if int(line.split()[0].replace(',','')) in alreadydone:
             continue
         else:
             alreadydone.append(int(line.split()[0].replace(',','')))
             if acceptvec[i-1]:
-                out.write(line.strip()+'\t 1\n')
+                out.write(line.strip()+',\t 1\n')
             else:
-                out.write(line.strip() + '\t 0\n')
+                out.write(line.strip() + ',\t 0\n')
     #if i > 10.:
     #    raw_input()
     #raw_input()

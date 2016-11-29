@@ -630,7 +630,7 @@ class metropolis_hastings():
     def float_sn_pos( self ):
         self.x_pix_offset = self.current_x_offset + np.random.normal( scale= self.psf_shift_std )
         self.y_pix_offset = self.current_y_offset + np.random.normal( scale= self.psf_shift_std ) 
-        #self.shiftPSF(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
+        self.shiftPSF(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
 
     def mapkernel( self, kicked_modelvec, kicked_psfs, centered_psfs,sky, flags, fitflags, sims, galconv):
 
@@ -645,27 +645,27 @@ class metropolis_hastings():
 
                     #gc = ifft(fft(self.kicked_galaxy_model)*fft(centered_psfs)*
                     #          np.exp(1j*(freq*10.0+self.x_pix_offset+freq*10.0+self.y_pix_offset))).real
-                    print centered_psfs.shape
-                    [X, Y] = np.meshgrid(np.arange(20)/10000.,np.arange(20)/10000.)
-                    S = np.exp(1j*(X*(1.+self.x_pix_offset)+Y*(1.+self.y_pix_offset)))
-
-                    fr = fft2(self.kicked_galaxy_model)
-                    fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
-
-                    if kicked_modelvec == 0.:
-                        delta = 0.
-                    else:
-                        delta = np.fft.fftn(S * fr2).real
-                        delta = delta/np.sum(delta.ravel())
-                        delta *= kicked_modelvec
+                    # print centered_psfs.shape
+                    # [X, Y] = np.meshgrid(np.arange(20)/10000.,np.arange(20)/10000.)
+                    # S = np.exp(1j*(X*(1.+self.x_pix_offset)+Y*(1.+self.y_pix_offset)))
+                    #
+                    # fr = fft2(self.kicked_galaxy_model)
+                    # fr2 = fft2(np.flipud(np.fliplr(centered_psfs)))
+                    #
+                    # if kicked_modelvec == 0.:
+                    #     delta = 0.
+                    # else:
+                    #     delta = np.fft.fftn(S * fr2).real
+                    #     delta = delta/np.sum(delta.ravel())
+                    #     delta *= kicked_modelvec
                     galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs, mode='same')
-                    sims = (delta+galaxy_conv+sky) * self.mask
+                    # sims = (delta+galaxy_conv+sky) * self.mask
 
                     #print 'simshape',sims.shape
                     #THIS IS THE OLD WAY
                     #
-                    # star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
-                    # sims =  (star_conv + galaxy_conv + sky)*self.mask
+                    star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
+                    sims =  (star_conv + galaxy_conv + sky)*self.mask
 
         return sims
 
@@ -872,8 +872,8 @@ class metropolis_hastings():
             self.modelvechistory.append(self.kicked_modelvec)
 
             if self.shiftpsf:
-                self.xhistory.append(self.current_x_offset*self.platescale)
-                self.yhistory.append(self.current_y_offset*self.platescale)
+                self.xhistory.append(self.current_x_offset)
+                self.yhistory.append(self.current_y_offset)
         return
 
     def update_unaccepted_history( self ):
@@ -920,6 +920,8 @@ class metropolis_hastings():
         return result[ result.size / 2 : ]
 
     def plotstamps(self):
+        self.model_params()
+
         pdf_pages = PdfPages('stamps.pdf')
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
