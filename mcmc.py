@@ -739,8 +739,7 @@ class metropolis_hastings():
                 #v = ((sims - data) ** 2 * weight * self.mask).ravel()
                 #chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
                 denom = weight + (sims-sky)/3.8 + 1.
-                # else:
-                v = ((sims - data) ** 2 * self.mask / denom).ravel()  # hardcoded gain !!
+                v = ((sims - data) ** 2 * self.mask / denom).ravel()
                 chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
                 # if self.model_errors:
@@ -925,8 +924,15 @@ class metropolis_hastings():
         pdf_pages = PdfPages('stamps.pdf')
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
-            tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i,:,:] * self.mask) / len(
-                self.mask[self.mask > 0.].ravel())
+
+            denom = weight[i, :, :] + (sims[i] - sky[i]) / 3.8 + 1.
+            v = ((sims[i] - data[i, :, :]) ** 2 * self.mask / denom).ravel()
+            chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
+
+            tchi = chisq / len(self.mask[self.mask > 0.].ravel())
+
+            # tchi = np.sum((self.data[i, :, :] - self.sims[i]) ** 2 * self.weights[i,:,:] * self.mask) / len(
+            #     self.mask[self.mask > 0.].ravel())
             if not tchi > -1.:
                 continue
             if self.flags[i] == 1:
