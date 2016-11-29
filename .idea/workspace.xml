@@ -426,13 +426,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00551" summary="custom errors">
-      <created>1479679962874</created>
-      <option name="number" value="00551" />
-      <option name="presentableId" value="LOCAL-00551" />
-      <option name="project" value="LOCAL" />
-      <updated>1479679962874</updated>
-    </task>
     <task id="LOCAL-00552" summary="custom errors">
       <created>1479680088522</created>
       <option name="number" value="00552" />
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480440123289</updated>
     </task>
-    <option name="localTasksCounter" value="600" />
+    <task id="LOCAL-00600" summary="sim back in error">
+      <created>1480441034705</created>
+      <option name="number" value="00600" />
+      <option name="presentableId" value="LOCAL-00600" />
+      <option name="project" value="LOCAL" />
+      <updated>1480441034705</updated>
+    </task>
+    <option name="localTasksCounter" value="601" />
     <servers />
   </component>
   <component name="ToolWindowManager">
