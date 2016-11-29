@@ -742,7 +742,7 @@ class metropolis_hastings():
                 #if kicked_modelvec == 0:
                 #v = ((sims - data) ** 2 * weight * self.mask).ravel()
                 #chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
-                denom = weight + (sims-sky)/3.8 + 1.
+                denom = weight #+ (sims-sky)/3.8 + 1.
                 v = ((sims - data) ** 2 * self.mask / denom).ravel()
                 chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
@@ -929,7 +929,7 @@ class metropolis_hastings():
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
 
-            denom = self.weights[i, :, :] + (self.sims[i] - self.sky[i]) / 3.8 + 1.
+            denom = self.weights[i, :, :] #+ (self.sims[i] - self.sky[i]) / 3.8 + 1.
             v = ((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask / denom).ravel()
             chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
