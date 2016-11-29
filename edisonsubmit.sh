@@ -4,7 +4,7 @@ cd  /global/u1/d/dbrout/SEaR/
 echo 2
 module load python
 echo 3
-source /global/project/projectdirs/dessn/diffim/setup.sh
+/global/project/projectdirs/dessn/diffim/setup.sh
 echo 5
 diffimg
 echo 6
