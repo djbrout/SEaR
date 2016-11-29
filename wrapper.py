@@ -24,13 +24,14 @@ def run(tccd):
     cntr = 0
     for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
                              detections['sn'],detections['mag']):
-        cntr += 1
-        print cntr
-        if cntr < 10000: continue
+        #print cntr
+        #if cntr < 10000: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
         if not band == tband: continue
         if not ccd == tccd: continue
+        cntr += 1
+        print cntr
         classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd)
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
         print chisqs
