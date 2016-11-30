@@ -20,7 +20,10 @@ for i in np.arange(0, 10):
         '#SBATCH --gres=craynetwork:1\n' +
         '\n' +
         'cd  /global/u1/d/dbrout/SEaR/\n' +
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
+        'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
+        'diffimg\n'
+        'python wrapper.py --ccdi='+str(i)+' \n'
+        #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )
     f.close()
