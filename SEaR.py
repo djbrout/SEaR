@@ -27,6 +27,7 @@ and you can place outdir and rootdir inside a default.config in your p9cut.py di
 import numpy as np
 import os
 import sys
+sys.path.append("/usr/common/software/python/ipython/3.1.0/lib/python:/usr/common/software/python/matplotlib/1.4.3/lib/python2.7/site-packages:/usr/common/software/python/scipy/0.15.1/lib/python:/usr/common/software/python/numpy/1.9.2/lib/python")
 try:
     import matplotlib as m
 except:

@@ -20,6 +20,7 @@ for i in np.arange(0, 2):
         '#SBATCH --gres=craynetwork:1\n' +
         '\n' +
         'cd /global/u1/d/dbrout/SEaR/\n' +
+        'module load python\n'+
         'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
         'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
         'python test.py\n'
