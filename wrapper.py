@@ -33,7 +33,7 @@ def run(tccd):
         cntr += 1
         #print cntr
         if cntr < 29: continue
-        if cntr > 31: continue
+        if cntr > 35: continue
         classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd)
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
         print chisqs
