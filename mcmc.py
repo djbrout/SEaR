@@ -926,7 +926,7 @@ class metropolis_hastings():
     def plotstamps(self):
         self.model_params()
 
-        pdf_pages = PdfPages('stamps.pdf')
+        pdf_pages = PdfPages(self.outpath+'_stamps.pdf')
         fig = plt.figure(figsize=(25, 10))
         for i in range(self.Nimage):
 
@@ -995,7 +995,7 @@ class metropolis_hastings():
         #    print os.popen('ifdh cp stamps.pdf ' + self.lcout + '_stamps.pdf').read()
         #else:
         #    print os.popen('mv stamps.pdf ' + self.lcout + '_stamps.pdf').read()
-        self.tmpwriter.cp('stamps.pdf',self.outpath+'_stamps.pdf')
+        #self.tmpwriter.cp('stamps.pdf',self.outpath+'_stamps.pdf')
 
     def plotchains( self ):
         self.model_params()

@@ -121,7 +121,7 @@ plt.axhline(.87,color='black',linestyle='--')
 plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(19.0,25.5)
 plt.ylim(0,2.5)
-plt.ylabel('2 FWHM Chi Squared')
+plt.ylabel('1 FWHM Chi Squared')
 plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
 print 'saved '+workingdir+'resultsvsmag.png'
