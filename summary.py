@@ -34,6 +34,10 @@ tcst = data['templ_chi'][train:]
 diffmagt = data['mag'][train:]
 fitmagt = data['sm_mag'][train:]
 
+x = data['x'][:train]
+smx = data['sm_x'][:train]
+y = data['y'][:train]
+smy = data['sm_y'][:train]
 #print sn[diffmag==20]
 #print tcs.shape
 #print chsq1.shape
@@ -57,6 +61,15 @@ wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 ll = .8
 ul = 1.5
 s=.26
+
+
+drad = np.sqrt((x-smx)**2+(y-smy)**2)
+plt.scatter(fitmag[wfake],drad[wfake],color='red',alpha=.5)
+plt.scatter(fitmag[wreal],drad[wreal],color='green',alpha=.9)
+plt.xlim(19.0,25.5)
+plt.savefig(workingdir+'drad.png')
+
+plt.clf()
 
 plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
