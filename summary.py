@@ -128,6 +128,16 @@ plt.savefig(workingdir+'resultshist32.png')
 print 'saved '+workingdir+'resultshist32.png'
 
 plt.clf()
+plt.scatter(chsq3,chsq3[wfake]-chsq1[wfake],color='red',alpha=.5)
+plt.scatter(chsq3,chsq3[wreal]-chsq1[wreal],color='green',alpha=.9)
+plt.xlim(0,3.)
+plt.ylim(-3,2)
+plt.ylabel('Chisq 3FWHM - 1FWHM')
+plt.xlabel('Chisq 3FWHM')
+plt.savefig(workingdir+'chidiff.png')
+print 'saved '+workingdir+'chidfiff.png'
+
+plt.clf()
 plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
 plt.scatter(fitmag[wreal],chsq1[wreal],color='green',alpha=.9)
 plt.axhline(.87,color='black',linestyle='--')
