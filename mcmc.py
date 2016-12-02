@@ -447,22 +447,22 @@ class metropolis_hastings():
                         #self.maxiter = self.maxiter
                         self.alreadyextended = True
                         stop = False
-                    elif chsqs[0] > 2.19:
-                        self.maxiter = self.maxiter + 20000
-                        self.alreadyextended = True
-                        stop = False
-                    elif chsqs[0] > 1.19:
-                        self.maxiter = self.maxiter + 15000
-                        self.alreadyextended = True
-                        stop = False
-                    elif chsqs[0] > 1.09:
+                    elif chsqs[0] > 1.5:
                         self.maxiter = self.maxiter + 10000
                         self.alreadyextended = True
                         stop = False
-                    elif chsqs[0] > 1.05:
-                        self.maxiter = self.maxiter + 5000
-                        self.alreadyextended = True
-                        stop = False
+                    # elif chsqs[0] > 1.19:
+                    #     self.maxiter = self.maxiter + 15000
+                    #     self.alreadyextended = True
+                    #     stop = False
+                    # elif chsqs[0] > 1.09:
+                    #     self.maxiter = self.maxiter + 10000
+                    #     self.alreadyextended = True
+                    #     stop = False
+                    # elif chsqs[0] > 1.05:
+                    #     self.maxiter = self.maxiter + 5000
+                    #     self.alreadyextended = True
+                    #     stop = False
                 if stop:
                     self.z_scores_say_keep_going = False#GETOUT
                     self.didtimeout = True

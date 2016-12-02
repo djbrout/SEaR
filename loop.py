@@ -11,9 +11,9 @@ for i in np.arange(0, 60):
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=18:00:00\n' +
-        '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v1.log\n' +
-        '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v1.err\n' +
+        '#SBATCH --time=36:00:00\n' +
+        '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v8.log\n' +
+        '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v8.err\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=All\n' +
         '#SBATCH --mail-user=djbrout@gmail.com\n' +
