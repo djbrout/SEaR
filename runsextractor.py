@@ -21,9 +21,10 @@ import pyfits as pf
 import dilltools as dt
 import os
 
-def getsky_and_skyerr(imagefilename,xlow,xhi,ylow,yhi):
+def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi):
 
-    im = pf.getdata(imagefilename)
+    #im = pf.getdata(imagefilename)
+    im = imagedata
     #hdr = pf.getheader(imagefilename)
     im = im[ylow:yhi,xlow:xhi]
     if not os.path.exists('sewpy_logs/'):

@@ -327,7 +327,7 @@ class fit:
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
                                              clipsig=3, maxiter=8)
         import runsextractor
-        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image, self.impsfcenter[0] - 100,
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 100,
                                                          self.impsfcenter[0] + 100,
                                                          self.impsfcenter[1] - 100,
                                                          self.impsfcenter[1] + 100)
@@ -395,7 +395,7 @@ class fit:
                                              max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])],
                                              clipsig=4, maxiter=8)
         import runsextractor
-        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)
 
         print mean,sexsky
         print st,sexrms
