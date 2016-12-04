@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="sextractor sky and skeyerr now">
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -87,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -426,13 +425,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00599" summary="sim back in error">
-      <created>1480440123289</created>
-      <option name="number" value="00599" />
-      <option name="presentableId" value="LOCAL-00599" />
-      <option name="project" value="LOCAL" />
-      <updated>1480440123289</updated>
-    </task>
     <task id="LOCAL-00600" summary="sim back in error">
       <created>1480441034705</created>
       <option name="number" value="00600" />
@@ -769,7 +761,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480874577450</updated>
     </task>
-    <option name="localTasksCounter" value="648" />
+    <task id="LOCAL-00648" summary="sextractor sky and skeyerr now">
+      <created>1480874667629</created>
+      <option name="number" value="00648" />
+      <option name="presentableId" value="LOCAL-00648" />
+      <option name="project" value="LOCAL" />
+      <updated>1480874667629</updated>
+    </task>
+    <option name="localTasksCounter" value="649" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1268,7 +1267,7 @@
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
