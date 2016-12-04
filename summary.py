@@ -24,6 +24,11 @@ chsq1 = data['search_1fwhm_chisq'][:train]
 chsq2 = data['search_2fwhm_chisq'][:train]
 chsq3 = data['search_3fwhm_chisq'][:train]
 tcs = data['templ_chi'][:train]
+
+chsq1[tcs<1] = chsq1[tcs<1] + 1 - tcs[tcs<1]
+chsq2[tcs<1] = chsq2[tcs<1] + 1 - tcs[tcs<1]
+chsq3[tcs<1] = chsq3[tcs<1] + 1 - tcs[tcs<1]
+
 diffmag = data['mag'][:train]
 fitmag = data['sm_mag'][:train]
 ind = data['ind'][:train]
@@ -168,7 +173,7 @@ indf = ind[wfake]
 chf = chsq3[wfake]
 
 print indf[(snf>18) & (chf<.4)]
-raw_input('good bad guys')
+#raw_input('good bad guys')
 import sys
 #sys.exit()
 maxpe = 0
