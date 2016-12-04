@@ -18,6 +18,7 @@ tot = len(data['sn'])
 #train = int(round(tot*.99))
 train = tot + 1
 print 'tot',tot,'train',train
+
 sn = data['sn'][:train]
 chsq1 = data['search_1fwhm_chisq'][:train]
 chsq2 = data['search_2fwhm_chisq'][:train]
@@ -25,6 +26,7 @@ chsq3 = data['search_3fwhm_chisq'][:train]
 tcs = data['templ_chi'][:train]
 diffmag = data['mag'][:train]
 fitmag = data['sm_mag'][:train]
+ind = data['ind'][:train]
 
 snt = data['sn'][train:]
 chsq1t = data['search_1fwhm_chisq'][train:]
@@ -160,6 +162,13 @@ plt.ylabel('1 FWHM Chi Squared')
 plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
 print 'saved '+workingdir+'resultsvsmag.png'
+
+snf = sn[wfake]
+indf = ind[wfake]
+chf = chsq3[wfake]
+
+print indf[(snf>18) & (chf<.4)]
+raw_input('good bad guys')
 import sys
 #sys.exit()
 maxpe = 0

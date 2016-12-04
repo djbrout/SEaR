@@ -100,8 +100,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+            <state relative-caret-position="390">
+              <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -430,13 +430,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00586" summary="dump_psfex based shifting again">
-      <created>1480432873787</created>
-      <option name="number" value="00586" />
-      <option name="presentableId" value="LOCAL-00586" />
-      <option name="project" value="LOCAL" />
-      <updated>1480432873787</updated>
     </task>
     <task id="LOCAL-00587" summary="dump_psfex based shifting again">
       <created>1480432892812</created>
@@ -774,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480690349955</updated>
     </task>
-    <option name="localTasksCounter" value="635" />
+    <task id="LOCAL-00635" summary="sim back in error">
+      <created>1480690716376</created>
+      <option name="number" value="00635" />
+      <option name="presentableId" value="LOCAL-00635" />
+      <option name="project" value="LOCAL" />
+      <updated>1480690716376</updated>
+    </task>
+    <option name="localTasksCounter" value="636" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1298,8 +1298,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="147" column="36" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+        <state relative-caret-position="390">
+          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
