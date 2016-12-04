@@ -3,7 +3,7 @@ import dilltools as dt
 import os
 from copy import copy
 
-workingdir = '/scratch1/scratchdirs/dbrout/p9/results8/'
+workingdir = '/scratch1/scratchdirs/dbrout/p9/results9/'
 os.system('cat '+workingdir+'detections_i_* > '+workingdir+'detections_i_all.txt')
 
 data = dt.readcol(workingdir+'detections_i_all.txt',delim=',')
