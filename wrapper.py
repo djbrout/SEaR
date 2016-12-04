@@ -23,7 +23,7 @@ def run(tccd):
         searout.close()
     cntr = 0
     for i,bc,x,y,sn,m in zip(range(len(detections['x'])),detections['band_ccd'],detections['x'],detections['y'],
-                             detections['sn'],detections['mag']):
+                             detections['sn'],detections['mag'])[::-1]:
         #print cntr
         #if cntr < 10000: continue
         band = bc.split('_')[0]
