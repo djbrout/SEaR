@@ -326,10 +326,16 @@ class fit:
         mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
                                              clipsig=3, maxiter=8)
+        import runsextractor
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image, self.impsfcenter[0] - 100,
+                                                         self.impsfcenter[0] + 100,
+                                                         self.impsfcenter[1] - 100,
+                                                         self.impsfcenter[1] + 100)
 
-        self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
-        self.imagesky = np.median(vals)
-
+        # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
+        # self.imagesky = np.median(vals)
+        self.imageskyerr = sexrms
+        self.imagesky = sexsky
         # print 'skystd',st**2
         # print 'imageskyerr',self.imageskyerr**2
         # print 'imagesky',self.imagesky/3.8
@@ -343,7 +349,7 @@ class fit:
         #    #print '0mean before', np.median(self.data[0, :, :].ravel())
 
         #useweights = True
-        useweights = False
+        useweights = True
         if not useweights:
             if not self.imageskyerr is None:
                 self.weights[0,:,:] = np.ones(self.weights[0,:,:].shape) * self.imageskyerr**2
@@ -393,10 +399,12 @@ class fit:
 
         print mean,sexsky
         print st,sexrms
-        raw_input('tesing ')
-        self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
+        self.templateskyerr = sexrms
+        #raw_input('tesing ')
+        #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
-        self.templatesky =np.median(vals)
+        #self.templatesky =np.median(vals)
+        self.templatesky = sexsky
         print 'self.templateskyerr',self.templateskyerr
 
 
