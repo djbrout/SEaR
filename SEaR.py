@@ -388,6 +388,12 @@ class fit:
         mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
                                              max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])],
                                              clipsig=4, maxiter=8)
+        import runsextractor
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)
+
+        print mean,sexsky
+        print st,sexrms
+        raw_input('tesing ')
         self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         self.templatesky =np.median(vals)
