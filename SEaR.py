@@ -336,6 +336,9 @@ class fit:
         # self.imagesky = np.median(vals)
         self.imageskyerr = sexrms
         self.imagesky = sexsky
+        print mean, sexsky
+        print st, sexrms
+        print 'imageeeee'
         # print 'skystd',st**2
         # print 'imageskyerr',self.imageskyerr**2
         # print 'imagesky',self.imagesky/3.8
@@ -406,7 +409,9 @@ class fit:
         #self.templatesky =np.median(vals)
         self.templatesky = sexsky
         print 'self.templateskyerr',self.templateskyerr
-
+        print mean, sexsky
+        print st, sexrms
+        print 'templateeeeee'
 
         if not self.templatesky is None:
             #print 'mean before', np.median(self.data[1, :, :].ravel())
