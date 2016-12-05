@@ -2,7 +2,7 @@ import os
 from subprocess import *
 import numpy as np
 
-for i in np.arange(0, 60):
+for i in np.arange(0, 3750):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
@@ -11,7 +11,7 @@ for i in np.arange(0, 60):
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=46:00:00\n' +
+        '#SBATCH --time=4:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.err\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +
@@ -24,7 +24,7 @@ for i in np.arange(0, 60):
         'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
         'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
         'python test.py\n'
-        'python wrapper.py --ccdi='+str(i)+' \n'
+        'python wrapper.py --ti='+str(i)+' \n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )
