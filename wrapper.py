@@ -28,16 +28,17 @@ def run(tccd):
         #if cntr < 10000: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
+
         if not band == tband: continue
         if not ccd == tccd: continue
         #data = dt.read(sd,1,2,',')
+        print ccd,i
         data = open(sd,'r').readlines()
         for line in data:
             if line.split(',')[0] == i:
                 print 'hereeeee'
                 raw_input()
                 continue
-
         continue
 
         cntr += 1
