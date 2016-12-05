@@ -1054,15 +1054,17 @@ class metropolis_hastings():
                  chisqvec=self.csv,raoff=raoff,decoff=decoff)
 
     def savefig(self, fname):
-        tempfile = 'tmp.png'
-        plt.savefig(tempfile)
 
         if self.isfermigrid:
+            tempfile = 'tmp.png'
+
+            plt.savefig(tempfile)
+
             os.popen('ifdh cp '+tempfile+' '+fname)
         else:
             if os.path.isfile(fname):
                 os.remove(fname)
-            os.system('mv '+tempfile+' '+fname)
+            plt.savefig(fname)
         print 'saved',fname
 
     def get_params( self ):
