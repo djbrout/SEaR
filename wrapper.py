@@ -32,7 +32,7 @@ def run(tccd):
         if not band == tband: continue
         if not ccd == tccd: continue
         #data = dt.read(sd,1,2,',')
-        print ccd,i
+        print ccd,i,sd
         data = open(sd,'r').readlines()
         for line in data:
             if line.split(',')[0] == i:
