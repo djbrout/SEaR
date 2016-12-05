@@ -12,11 +12,11 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
                   '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
-def run(tccd):
+def run(index):
 
     tband = 'i'
 
-    sd = '/scratch1/scratchdirs/dbrout/p9/results9/detections_'+tband+'_'+tccd+'.txt'
+
     # if tccd == '01':
     #     searout = open(sd, 'w' )
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
@@ -29,17 +29,20 @@ def run(tccd):
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
 
+        sd = '/scratch1/scratchdirs/dbrout/p9/results9/detections_' + tband + '_' + ccd + '.txt'
+
         if not band == tband: continue
-        if not ccd == tccd: continue
+        #if not ccd == tccd: continue
+        if not i == index: continue
         #data = dt.read(sd,1,2,',')
-        print ccd,i,sd
-        data = open(sd,'r').readlines()
-        for line in data:
-            if line.split(',')[0] == i:
-                print 'hereeeee'
-                raw_input()
-                continue
-        continue
+        # print ccd,i,sd
+        # data = open(sd,'r').readlines()
+        # for line in data:
+        #     if line.split(',')[0] == i:
+        #         print 'hereeeee'
+        #         raw_input()
+        #         continue
+        # continue
 
         cntr += 1
         #print cntr
@@ -72,7 +75,7 @@ if __name__ == "__main__":
 
         opt, arg = getopt.getopt(
             args, "ci",
-            longopts=["ccdi="])
+            longopts=["ccdi=","ti="])
 
     except getopt.GetoptError as err:
         print "No command line arguments"
@@ -87,6 +90,8 @@ if __name__ == "__main__":
 
             ccd = ccdlistall[int(a)]
             print ccd
+        if o in ["--ti"]:
+            i = int(a)
             #raw_input()
     #raw_input()
-    run(ccd)
+    run(i)
