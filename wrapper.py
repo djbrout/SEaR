@@ -30,12 +30,15 @@ def run(tccd):
         ccd = bc.split('_')[1]
         if not band == tband: continue
         if not ccd == tccd: continue
-        data = dt.read(sd,1,2,',')
-        print data.keys()
-        if i in data['ind']:
-            print 'inside'
-            raw_input()
+        #data = dt.read(sd,1,2,',')
+        data = open(sd,'r').readlines()
+        for line in data:
+            if line.split(',')[0] == i:
+                print 'hereeeee'
+                raw_input()
+                continue
 
+        continue
 
         cntr += 1
         #print cntr
