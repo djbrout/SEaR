@@ -23,7 +23,7 @@ for i in np.arange(0, 3750):
         'module load python\n'+
         'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
         'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
-        'python test.py\n'
+        #'python test.py\n'
         'python wrapper.py --ti='+str(i)+' \n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'

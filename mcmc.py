@@ -412,7 +412,7 @@ class metropolis_hastings():
             self.mcmc_func()
             
 
-            if (self.counter % 1000) == 0:
+            if (self.counter % 10) == 0:
                 print 'Acceptance Rate:',self.accepted_history
                 print 'Counter:',self.counter
                 chsqs = self.csv/len(self.mask[self.mask>0.].ravel())
