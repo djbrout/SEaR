@@ -31,6 +31,7 @@ def run(tccd):
         if not band == tband: continue
         if not ccd == tccd: continue
         data = dt.read(sd,1,2,',')
+        print data.keys()
         if i in data['ind']:
             print 'inside'
             raw_input()
