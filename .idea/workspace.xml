@@ -60,12 +60,12 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="410" column="33" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
+            <state relative-caret-position="219">
+              <caret line="398" column="56" selection-start-line="398" selection-start-column="56" selection-end-line="398" selection-end-column="56" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
-                <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-                <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+                <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+                <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
               </folding>
             </state>
           </provider>
@@ -426,13 +426,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00623" summary="sim back in error">
-      <created>1480635085174</created>
-      <option name="number" value="00623" />
-      <option name="presentableId" value="LOCAL-00623" />
-      <option name="project" value="LOCAL" />
-      <updated>1480635085174</updated>
-    </task>
     <task id="LOCAL-00624" summary="sim back in error">
       <created>1480635259473</created>
       <option name="number" value="00624" />
@@ -769,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481047218794</updated>
     </task>
-    <option name="localTasksCounter" value="672" />
+    <task id="LOCAL-00672" summary="index run">
+      <created>1481047283236</created>
+      <option name="number" value="00672" />
+      <option name="presentableId" value="LOCAL-00672" />
+      <option name="project" value="LOCAL" />
+      <updated>1481047283236</updated>
+    </task>
+    <option name="localTasksCounter" value="673" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -892,8 +892,8 @@
           <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-            <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
           </folding>
         </state>
       </provider>
@@ -974,8 +974,8 @@
           <caret line="12" column="48" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-            <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1021,8 +1021,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-            <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1082,8 +1082,8 @@
           <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-            <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1271,12 +1271,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="410" column="33" selection-start-line="410" selection-start-column="33" selection-end-line="410" selection-end-column="33" />
+        <state relative-caret-position="219">
+          <caret line="398" column="56" selection-start-line="398" selection-start-column="56" selection-end-line="398" selection-end-column="56" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481047277000" expanded="true" signature="13130:13267" ph="..." />
-            <marker date="1481047277000" expanded="true" signature="17613:17661" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="13130:13267" ph="..." />
+            <marker date="1481047312000" expanded="true" signature="16251:16608" ph="..." />
           </folding>
         </state>
       </provider>
