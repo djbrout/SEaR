@@ -50,6 +50,7 @@ import sigma_clip
 import cntrd
 
 
+
 class fit:
     def __init__(self, candid=None,ccd=None,
                  image=None, template=None,
@@ -283,6 +284,7 @@ class fit:
             self.tx = float(self.tx)
             self.ty = float(self.ty)
 
+        import numpy as np
         #GRABBING PSFS
         self.psfs = np.zeros((2, self.stampsize, self.stampsize))
 
