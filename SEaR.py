@@ -432,6 +432,9 @@ class fit:
 
         py.savefig('ps.png')
 
+        py.clf()
+        py.imshow(image)
+        py.savefig('psi.png')
 
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 300, self.templatepsfcenter[0] + 300, self.templatepsfcenter[1]-300, self.templatepsfcenter[1]+300)
