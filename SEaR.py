@@ -415,11 +415,23 @@ class fit:
         py.clf()
         py.figure(3)
         py.clf()
-        py.semilogy(psd1D)
+        py.semilogy(psd1D,label='Template')
         py.xlabel('Spatial Frequency')
         py.ylabel('Power Spectrum')
         py.axhline(max(psd1D),linestyle='--')
-        py.savefig('ps.png')
+
+        image = imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
+                                             max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])]
+        F1 = fftpack.fft2(image.astype(float))
+        F2 = fftpack.fftshift(F1)
+        psd2D = np.abs(F2) ** 2
+        psd1D = radialProfile.azimuthalAverage(psd2D)
+
+        py.semilogy(psd1D,label='SEarch')
+        py.legend()
+
+        py.savefig('pstemp.png')
+
 
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 300, self.templatepsfcenter[0] + 300, self.templatepsfcenter[1]-300, self.templatepsfcenter[1]+300)
