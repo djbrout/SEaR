@@ -418,6 +418,7 @@ class fit:
         py.semilogy(psd1D)
         py.xlabel('Spatial Frequency')
         py.ylabel('Power Spectrum')
+        py.axhline(max(psd1D),linestyle='--')
         py.savefig('ps.png')
 
         import runsextractor
