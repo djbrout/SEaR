@@ -394,11 +394,11 @@ class fit:
         #print 'templatemean',np.mean(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),
         #                                      max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[1] - 1])])
         #raw_input()
-        mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
-                                             max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])],
+        mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-300.,0]):min([self.templatepsfcenter[1]+300, templatedata.shape[0]-1]),
+                                             max([self.templatepsfcenter[0] - 300., 0]):min([self.templatepsfcenter[0] + 300, templatedata.shape[1] - 1])],
                                              clipsig=2., maxiter=18)
         import runsextractor
-        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 300, self.templatepsfcenter[0] + 300, self.templatepsfcenter[1]-300, self.templatepsfcenter[1]+300)
 
         print mean,sexsky
         print st,sexrms
@@ -419,7 +419,7 @@ class fit:
             self.data[1, :, :] -= self.templatesky
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #raw_input()
-        #print useweights
+        #print useweights       sss
         #raw_input()
         if not useweights:
             if not self.templateskyerr is None:
