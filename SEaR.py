@@ -396,7 +396,7 @@ class fit:
         #raw_input()
         mean, st, vals = sigma_clip.meanclip(templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
                                              max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])],
-                                             clipsig=2.5, maxiter=18)
+                                             clipsig=2., maxiter=18)
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)
 
