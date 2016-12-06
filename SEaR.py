@@ -407,7 +407,7 @@ class fit:
         import radialProfile
         image = templatedata[max([self.templatepsfcenter[1]-300.,0]):min([self.templatepsfcenter[1]+300, templatedata.shape[0]-1]),
                                              max([self.templatepsfcenter[0] - 300., 0]):min([self.templatepsfcenter[0] + 300, templatedata.shape[1] - 1])]
-        F1 = fftpack.fft2(image)
+        F1 = fftpack.fft2(image.astype(float))
         F2 = fftpack.fftshift(F1)
         psd2D = np.abs(F2) ** 2
         psd1D = radialProfile.azimuthalAverage(psd2D)
