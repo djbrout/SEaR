@@ -418,7 +418,7 @@ class fit:
         py.semilogy(psd1D,label='Template')
         py.xlabel('Spatial Frequency')
         py.ylabel('Power Spectrum')
-        py.axhline(max(psd1D),linestyle='--')
+        #py.axhline(max(psd1D),linestyle='--')
 
         image = imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])]
@@ -430,7 +430,7 @@ class fit:
         py.semilogy(psd1D,label='SEarch')
         py.legend()
 
-        py.savefig('pstemp.png')
+        py.savefig('ps.png')
 
 
         import runsextractor
