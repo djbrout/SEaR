@@ -433,7 +433,7 @@ class fit:
         py.savefig('ps.png')
 
         py.clf()
-        py.imshow(image)
+        py.imshow(image,interpolation='nearest', vmin=min(image), vmax=max(image),cmap='gray')
         py.savefig('psi.png')
 
         import runsextractor
