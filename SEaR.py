@@ -402,6 +402,7 @@ class fit:
 
         print mean,sexsky
         print st,sexrms
+        raw_input('compare errors')
         self.templateskyerr = sexrms
         #raw_input('tesing ')
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
