@@ -479,6 +479,7 @@ class fit:
             self.weights[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.templatesky *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.templateskyerr *= 10 ** (.4*(self.imzpt - self.templatezpt))
+            self.weights[1, :, :] = np.ones(self.weights[1, :, :].shape) * self.templateskyerr ** 2
 
         self.data[1,:,:] = np.swapaxes(self.data[1,:,:],0,1)[::-1,::-1]
         self.weights[1,:,:] = np.swapaxes(self.weights[1,:,:],0,1)[::-1,::-1]
