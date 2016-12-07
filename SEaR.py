@@ -464,7 +464,8 @@ class fit:
 
         if not self.templatesky is None:
             #print 'mean before', np.median(self.data[1, :, :].ravel())
-            self.data[1, :, :] -= self.templatesky
+            #self.data[1, :, :] -= self.templatesky
+            #self.data[0, : ,:] -= self.imagesky
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #raw_input()
         #print useweights       sss
