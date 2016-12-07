@@ -24,13 +24,13 @@ import os
 def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi):
 
     #im = pf.getdata(imagefilename)
-    im = imagedata
-    #hdr = pf.getheader(imagefilename)
-    im = im[ylow:yhi,xlow:xhi]
+    # im = imagedata
+    # #hdr = pf.getheader(imagefilename)
+    # im = im[ylow:yhi,xlow:xhi]
     if not os.path.exists('sewpy_logs/'):
         os.makedirs('sewpy_logs/')
-    newfilename = 'sewpy_logs/trimmed_'+imagefilename.split('/')[-1]
-    dt.save_fits_image(im, newfilename)
+    # newfilename = 'sewpy_logs/trimmed_'+imagefilename.split('/')[-1]
+    # dt.save_fits_image(im, newfilename)
 
     logging.basicConfig(format='%(levelname)s: %(name)s(%(funcName)s): %(message)s', level=logging.DEBUG)
     sew = sewpy.SEW(
@@ -39,7 +39,7 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi):
             , loglevel="CRITICAL"
             , config={"checkimage_type":"BACKGROUND,BACKGROUND_RMS","checkimage_name":imagefilename+'.background, '+imagefilename+'.background_rms'}
         )
-    out = sew(newfilename)
+    out = sew(imagefilename)
     path = out['logfilepath']
     log = open(path, 'r')
     background = -9
