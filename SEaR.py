@@ -463,6 +463,7 @@ class fit:
         print 'templateeeeee'
 
         if not self.templatesky is None:
+            pass
             #print 'mean before', np.median(self.data[1, :, :].ravel())
             #self.data[1, :, :] -= self.templatesky
             #self.data[0, : ,:] -= self.imagesky
