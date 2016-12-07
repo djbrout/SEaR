@@ -48,6 +48,7 @@ from astropy.io.fits import getdata
 from astropy.io import fits
 import sigma_clip
 import cntrd
+import pyfits as pf
 
 
 
@@ -336,18 +337,21 @@ class fit:
 
         # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         # self.imagesky = np.median(vals)
-        self.imageskyerr = sexrms
-        self.imagesky = sexsky
-        print mean, sexsky
-        print st, sexrms
-        print 'imageeeee'
+        self.imageskyerr = pf.getdata(self.image+'.background_rms')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+
+        self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+        #print mean, sexsky
+        #print st, sexrms
+        #print 'imageeeee'
         # print 'skystd',st**2
         # print 'imageskyerr',self.imageskyerr**2
         # print 'imagesky',self.imagesky/3.8
         # raw_input()
 
 
-        print self.imagesky
+        #print self.imagesky
         #if not self.imagesky is None:
         #    #print '0mean before', np.median(self.data[0, :, :].ravel())
         #    self.data[0,:,:] -= self.imagesky
@@ -390,9 +394,9 @@ class fit:
         self.weights[1,:,:] = np.swapaxes(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
 
-        print self.templatepsfcenter
-        print templatedata.shape
-        print max([self.templatepsfcenter[1]-50.,0]),min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),max([self.templatepsfcenter[0] - 50., 0]),min([self.templatepsfcenter[0] + 50, templatedata.shape[0] - 1])
+        #print self.templatepsfcenter
+        #print templatedata.shape
+        #print max([self.templatepsfcenter[1]-50.,0]),min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),max([self.templatepsfcenter[0] - 50., 0]),min([self.templatepsfcenter[0] + 50, templatedata.shape[0] - 1])
         #print 'templatemean',np.mean(templatedata[max([self.templatepsfcenter[1]-50.,0]):min([self.templatepsfcenter[1]+50, templatedata.shape[1]-1]),
         #                                      max([self.templatepsfcenter[0] - 50., 0]):min([self.templatepsfcenter[0] + 50, templatedata.shape[1] - 1])])
         #raw_input()
@@ -400,54 +404,59 @@ class fit:
                                              max([self.templatepsfcenter[0] - 300., 0]):min([self.templatepsfcenter[0] + 300, templatedata.shape[1] - 1])],
                                              clipsig=2.5, maxiter=18)
 
-        from scipy import fftpack
-        import pyfits
-        import numpy as np
-        import pylab as py
-        import radialProfile
-        image = templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
-                                             max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])]
-        F1 = fftpack.fft2(image.astype(float))
-        F2 = fftpack.fftshift(F1)
-        psd2D = np.abs(F2) ** 2
-        psd1D = radialProfile.azimuthalAverage(psd2D)
-
-        py.clf()
-        py.figure(3)
-        py.clf()
-        py.semilogy(psd1D,label='Template')
-        py.xlabel('Spatial Frequency')
-        py.ylabel('Power Spectrum')
+        #from scipy import fftpack
+        #import pyfits
+        #import numpy as np
+        #import pylab as py
+        # #import radialProfile
+        # image = templatedata[max([self.templatepsfcenter[1]-100.,0]):min([self.templatepsfcenter[1]+100, templatedata.shape[0]-1]),
+        #                                      max([self.templatepsfcenter[0] - 100., 0]):min([self.templatepsfcenter[0] + 100, templatedata.shape[1] - 1])]
+        # F1 = fftpack.fft2(image.astype(float))
+        # F2 = fftpack.fftshift(F1)
+        # psd2D = np.abs(F2) ** 2
+        # psd1D = radialProfile.azimuthalAverage(psd2D)
+        #
+        # py.clf()
+        # py.figure(3)
+        # py.clf()
+        # py.semilogy(psd1D,label='Template')
+        # py.xlabel('Spatial Frequency')
+        # py.ylabel('Power Spectrum')
         #py.axhline(max(psd1D),linestyle='--')
 
-        image = imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
-                                             max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])]
-        F1 = fftpack.fft2(image.astype(float))
-        F2 = fftpack.fftshift(F1)
-        psd2D = np.abs(F2) ** 2
-        psd1D = radialProfile.azimuthalAverage(psd2D)
-
-        py.semilogy(psd1D,label='SEarch')
-        py.legend()
-
-        py.savefig('ps.png')
-
-        py.clf()
-        py.imshow(image,interpolation='nearest', vmin=1000, vmax=3000,cmap='gray')
-        py.savefig('psi.png')
+        # image = imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
+        #                                      max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])]
+        # F1 = fftpack.fft2(image.astype(float))
+        # F2 = fftpack.fftshift(F1)
+        # psd2D = np.abs(F2) ** 2
+        # psd1D = radialProfile.azimuthalAverage(psd2D)
+        #
+        # py.semilogy(psd1D,label='SEarch')
+        # py.legend()
+        #
+        # py.savefig('ps.png')
+        #
+        # py.clf()
+        # py.imshow(image,interpolation='nearest', vmin=1000, vmax=3000,cmap='gray')
+        # py.savefig('psi.png')
 
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 300, self.templatepsfcenter[0] + 300, self.templatepsfcenter[1]-300, self.templatepsfcenter[1]+300)
 
+
+
         print mean,sexsky
         print st,sexrms
-        raw_input('compare errors')
-        self.templateskyerr = sexrms
+        #raw_input('compare errors')
+        self.templateskyerr = pf.getdata(self.template+'.background_rms')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
         #raw_input('tesing ')
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
-        self.templatesky = sexsky
+        self.templatesky = pf.getdata(self.template+'.background')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+
         print 'self.templateskyerr',self.templateskyerr
         print mean, sexsky
         print st, sexrms
