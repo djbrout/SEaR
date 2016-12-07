@@ -27,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="747" column="32" selection-start-line="747" selection-start-column="32" selection-end-line="747" selection-end-column="32" />
+              <caret line="747" column="38" selection-start-line="747" selection-start-column="38" selection-end-line="747" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -427,13 +427,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00644" summary="sextractor sky and skeyerr now">
-      <created>1480874126494</created>
-      <option name="number" value="00644" />
-      <option name="presentableId" value="LOCAL-00644" />
-      <option name="project" value="LOCAL" />
-      <updated>1480874126494</updated>
-    </task>
     <task id="LOCAL-00645" summary="sextractor sky and skeyerr now">
       <created>1480874184316</created>
       <option name="number" value="00645" />
@@ -770,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481083273118</updated>
     </task>
-    <option name="localTasksCounter" value="693" />
+    <task id="LOCAL-00693" summary="sextracktor background and rms maps">
+      <created>1481083747545</created>
+      <option name="number" value="00693" />
+      <option name="presentableId" value="LOCAL-00693" />
+      <option name="project" value="LOCAL" />
+      <updated>1481083747545</updated>
+    </task>
+    <option name="localTasksCounter" value="694" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1272,7 +1272,7 @@
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="747" column="32" selection-start-line="747" selection-start-column="32" selection-end-line="747" selection-end-column="32" />
+          <caret line="747" column="38" selection-start-line="747" selection-start-column="38" selection-end-line="747" selection-end-column="38" />
           <folding />
         </state>
       </provider>
