@@ -8,10 +8,10 @@ for i in np.arange(1, 1):
     f = open(script, 'w')
     f.write(
         '#!/bin/bash -l\n' +
-        '#SBATCH --partition=shared\n' +
+        '#SBATCH --partition=debug\n' +
         '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=4:30:00\n' +
+        '#SBATCH --time=00:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.err\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +

@@ -328,7 +328,7 @@ class fit:
 
         mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
-                                             clipsig=3, maxiter=8)
+                                             clipsig=5, maxiter=8)
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 100,
                                                          self.impsfcenter[0] + 100,
