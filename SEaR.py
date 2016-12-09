@@ -338,7 +338,7 @@ class fit:
         # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         # self.imagesky = np.median(vals)
         self.imageskyerr = pf.getdata(self.image+'.background_rms')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]*0. + st
 
         self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
