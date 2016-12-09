@@ -4,7 +4,6 @@
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loop.py" afterPath="$PROJECT_DIR$/loop.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +60,11 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="345" column="25" selection-start-line="345" selection-start-column="25" selection-end-line="345" selection-end-column="25" />
+            <state relative-caret-position="519">
+              <caret line="353" column="28" selection-start-line="353" selection-start-column="28" selection-end-line="353" selection-end-column="28" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
-                <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+                <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
               </folding>
             </state>
           </provider>
@@ -428,13 +427,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00647" summary="sextractor sky and skeyerr now">
-      <created>1480874577450</created>
-      <option name="number" value="00647" />
-      <option name="presentableId" value="LOCAL-00647" />
-      <option name="project" value="LOCAL" />
-      <updated>1480874577450</updated>
-    </task>
     <task id="LOCAL-00648" summary="sextractor sky and skeyerr now">
       <created>1480874667629</created>
       <option name="number" value="00648" />
@@ -771,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481306959287</updated>
     </task>
-    <option name="localTasksCounter" value="696" />
+    <task id="LOCAL-00696" summary="sextracktor background and rms maps">
+      <created>1481307298862</created>
+      <option name="number" value="00696" />
+      <option name="presentableId" value="LOCAL-00696" />
+      <option name="project" value="LOCAL" />
+      <updated>1481307298863</updated>
+    </task>
+    <option name="localTasksCounter" value="697" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -893,7 +892,7 @@
           <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+            <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -973,7 +972,7 @@
           <caret line="12" column="48" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+            <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1019,7 +1018,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+            <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1078,7 +1077,7 @@
           <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+            <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1263,11 +1262,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="345" column="25" selection-start-line="345" selection-start-column="25" selection-end-line="345" selection-end-column="25" />
+        <state relative-caret-position="519">
+          <caret line="353" column="28" selection-start-line="353" selection-start-column="28" selection-end-line="353" selection-end-column="28" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1481307295000" expanded="true" signature="13624:13761" ph="..." />
+            <marker date="1481307331000" expanded="true" signature="13624:13761" ph="..." />
           </folding>
         </state>
       </provider>

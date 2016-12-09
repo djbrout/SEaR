@@ -328,7 +328,7 @@ class fit:
 
         mean, st, vals = sigma_clip.meanclip(imagedata[max([self.impsfcenter[1]-100.,0]):min([self.impsfcenter[1]+100,imagedata.shape[0]-1]),
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
-                                             clipsig=5, maxiter=8)
+                                             clipsig=3, maxiter=8)
         import runsextractor
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 100,
                                                          self.impsfcenter[0] + 100,
@@ -358,7 +358,7 @@ class fit:
         #    #print '0mean before', np.median(self.data[0, :, :].ravel())
 
         #useweights = True
-        useweights = True
+        useweights = False
         if not useweights:
             if not self.imageskyerr is None:
                 self.weights[0,:,:] = np.ones(self.weights[0,:,:].shape) * self.imageskyerr**2
@@ -471,6 +471,7 @@ class fit:
             #raw_input()
         #print useweights       sss
         #raw_input()
+        useweights = True
         if not useweights:
             if not self.templateskyerr is None:
                 self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape) * self.templateskyerr ** 2
