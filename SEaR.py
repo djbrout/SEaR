@@ -253,6 +253,11 @@ class fit:
         imagedata = getdata(os.path.join(self.rootdir, self.image))
         imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
 
+        import aper
+        mag, magerr, flux, fluxerr, assky, asskyerr, badflagx, outstr = \
+            aper.aper(imagedata, self.ix, self.iy, apr=13., verbose=False)
+
+
         docntrd = False
         if docntrd:
             print 'Integer Pix',self.ix, self.iy
@@ -323,6 +328,8 @@ class fit:
         self.weights[0,:,:] = imweightdata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
+        self.weights[0,:,:] = self.weights[0,:,:]*0. + 1./(asskyerr)
+
 
         print ';sfcenter',self.impsfcenter
 
@@ -342,6 +349,9 @@ class fit:
 
         self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+
+        self.imagesky = self.imagesky*0. + assky
+        self.imageskyerr = self.imageskyerr*0. + asskyerr
         #print mean, sexsky
         #print st, sexrms
         #print 'imageeeee'
@@ -393,6 +403,11 @@ class fit:
 
         self.weights[1,:,:] = np.swapaxes(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                            self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
+
+
+
+        mag, magerr, flux, fluxerr, atsky, atskyerr, badflagx, outstr = \
+            aper.aper(templatedata, self.tx, self.ty, apr=13., verbose=False)
 
         #print self.templatepsfcenter
         #print templatedata.shape
@@ -477,6 +492,12 @@ class fit:
                 self.weights[1, :, :] = np.ones(self.weights[1,:,:].shape) * self.templateskyerr ** 2
         #print self.templatezpt, self.imzpt
         #raw_input('template zpt')
+
+
+        self.templatesky = atsky
+        self.templateskyerr = atskyerr
+
+
         if not self.templatezpt is None:
             self.data[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.weights[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
