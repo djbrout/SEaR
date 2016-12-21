@@ -16,6 +16,7 @@ for i in np.arange(1000, 1001):
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=All\n' +
+        '#SBATCH --qos=premium\n'+
         '#SBATCH --mail-user=djbrout@gmail.com\n' +
         '#SBATCH --gres=craynetwork:1\n' +
         '\n' +
