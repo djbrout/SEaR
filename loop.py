@@ -26,7 +26,7 @@ for i in np.arange(1000, 1001):
         'echo "RUNNING NOW"'+
         #'python test.py\n'
         'cd /global/u1/d/dbrout/SEaR/\n' +
-        'python wrapper.py --ti='+str(i)+' \n'
+        'python wrapper.py --ti='+str(i)+' > /scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10p.log 2>&1\n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )

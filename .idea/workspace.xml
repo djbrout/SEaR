@@ -97,8 +97,8 @@
       <file leaf-file-name="loop.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            <state relative-caret-position="525">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -405,13 +405,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00653" summary="sextractor sky and skeyerr now">
-      <created>1480900976503</created>
-      <option name="number" value="00653" />
-      <option name="presentableId" value="LOCAL-00653" />
-      <option name="project" value="LOCAL" />
-      <updated>1480900976503</updated>
     </task>
     <task id="LOCAL-00654" summary="sextractor sky and skeyerr now">
       <created>1480901012726</created>
@@ -749,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482335342558</updated>
     </task>
-    <option name="localTasksCounter" value="702" />
+    <task id="LOCAL-00702" summary="testing edison">
+      <created>1482335386154</created>
+      <option name="number" value="00702" />
+      <option name="presentableId" value="LOCAL-00702" />
+      <option name="project" value="LOCAL" />
+      <updated>1482335386154</updated>
+    </task>
+    <option name="localTasksCounter" value="703" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1235,8 +1235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        <state relative-caret-position="525">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
