@@ -12,8 +12,8 @@ for i in np.arange(1, 1):
         '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
-        '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.log\n' +
-        '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v9.err\n' +
+        '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
+        '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=All\n' +
         '#SBATCH --mail-user=djbrout@gmail.com\n' +
@@ -23,7 +23,9 @@ for i in np.arange(1, 1):
         'module load python\n'+
         'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
         'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
+        'echo "RUNNING NOW"'+
         #'python test.py\n'
+        'cd /global/u1/d/dbrout/SEaR/\n' +
         'python wrapper.py --ti='+str(i)+' \n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'

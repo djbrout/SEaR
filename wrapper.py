@@ -16,7 +16,7 @@ def run(index):
 
     tband = 'i'
 
-
+    print 'inside run'
     # if tccd == '01':
     #     searout = open(sd, 'w' )
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
@@ -49,6 +49,7 @@ def run(index):
         #if cntr < 29: continue
         #if cntr > 35: continue
         #if i != 632: continue
+        print 'about to fit'
         classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd)
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
         print chisqs
@@ -65,7 +66,7 @@ def run(index):
     print 'finished successfully'
 
 if __name__ == "__main__":
-
+    print 'inside wrapper'
 
 
 
@@ -94,4 +95,5 @@ if __name__ == "__main__":
             i = int(a)
             #raw_input()
     #raw_input()
+    print 'ti is ', i
     run(i)

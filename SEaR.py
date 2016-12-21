@@ -64,7 +64,7 @@ class fit:
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
                  numiter=None, floatpos=None, floatposstd=.01,
                  stampsize=None, initialguess=None, stepstd=None,commandline=False):
-
+        print 'inside fit'
         self.tstart = time.time()
 
 
@@ -193,7 +193,7 @@ class fit:
         self.templateskyerr = imhdr['SKYSIGMA']
 
     def setupMCMC(self):
-
+        print 'setting up data for MCMC'
         if self.tx is None or self.ty is None:
             ihl = fits.open(self.image)
             thl = fits.open(self.template)
@@ -512,6 +512,7 @@ class fit:
         #self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
 
     def runDMC(self):
+        print 'About to run mcmc'
         ts = time.time()
         self.bad = False
         try:
