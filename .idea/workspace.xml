@@ -406,13 +406,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00652" summary="sextractor sky and skeyerr now">
-      <created>1480889162824</created>
-      <option name="number" value="00652" />
-      <option name="presentableId" value="LOCAL-00652" />
-      <option name="project" value="LOCAL" />
-      <updated>1480889162825</updated>
-    </task>
     <task id="LOCAL-00653" summary="sextractor sky and skeyerr now">
       <created>1480900976503</created>
       <option name="number" value="00653" />
@@ -749,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482335323322</updated>
     </task>
-    <option name="localTasksCounter" value="701" />
+    <task id="LOCAL-00701" summary="testing edison">
+      <created>1482335342558</created>
+      <option name="number" value="00701" />
+      <option name="presentableId" value="LOCAL-00701" />
+      <option name="project" value="LOCAL" />
+      <updated>1482335342558</updated>
+    </task>
+    <option name="localTasksCounter" value="702" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -790,7 +790,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="WORKS NOW! getting ready to run wrapper" />
     <MESSAGE value="Switchin nominal zpt to the image (searhc) zpt" />
     <MESSAGE value="WORKS doing big run" />
     <MESSAGE value="doing multiple chisq at 3 fwhm&#10;" />
@@ -815,7 +814,8 @@
     <MESSAGE value="sextractor sky and skeyerr now" />
     <MESSAGE value="index run" />
     <MESSAGE value="sextracktor background and rms maps" />
-    <option name="LAST_COMMIT_MESSAGE" value="sextracktor background and rms maps" />
+    <MESSAGE value="testing edison" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing edison" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
