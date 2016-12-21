@@ -8,7 +8,7 @@ for i in np.arange(1000, 1001):
     f = open(script, 'w')
     f.write(
         '#!/bin/bash -l\n' +
-        '#SBATCH --partition=debug\n' +
+        '#SBATCH --partition=shared\n' +
         '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
