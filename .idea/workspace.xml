@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,14 +45,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="353" column="43" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
-                <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
+                <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
               </folding>
             </state>
           </provider>
@@ -105,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loop.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loop.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+            <state relative-caret-position="240">
+              <caret line="16" column="67" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="67" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -154,12 +155,12 @@
         <option value="$PROJECT_DIR$/dilltools.py" />
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/wwraper.sh" />
-        <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
         <option value="$PROJECT_DIR$/mpp.py" />
         <option value="$PROJECT_DIR$/runsextractor.py" />
         <option value="$PROJECT_DIR$/loop.py" />
+        <option value="$PROJECT_DIR$/SEaR.py" />
       </list>
     </option>
   </component>
@@ -417,13 +418,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00671" summary="index run">
-      <created>1481047218794</created>
-      <option name="number" value="00671" />
-      <option name="presentableId" value="LOCAL-00671" />
-      <option name="project" value="LOCAL" />
-      <updated>1481047218794</updated>
     </task>
     <task id="LOCAL-00672" summary="index run">
       <created>1481047283236</created>
@@ -761,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482369648933</updated>
     </task>
-    <option name="localTasksCounter" value="720" />
+    <task id="LOCAL-00720" summary="mpp added for parallel processing">
+      <created>1482369676672</created>
+      <option name="number" value="00720" />
+      <option name="presentableId" value="LOCAL-00720" />
+      <option name="project" value="LOCAL" />
+      <updated>1482369676672</updated>
+    </task>
+    <option name="localTasksCounter" value="721" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -842,7 +843,7 @@
           <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
+            <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
           </folding>
         </state>
       </provider>
@@ -922,7 +923,7 @@
           <caret line="12" column="48" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
+            <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
           </folding>
         </state>
       </provider>
@@ -968,7 +969,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
+            <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1027,7 +1028,7 @@
           <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
+            <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1224,17 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-            <marker date="1482335216000" expanded="true" signature="14039:14176" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runsextractor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -1247,10 +1237,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="240">
+          <caret line="16" column="67" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="67" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="353" column="43" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
+            <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
           </folding>
         </state>
       </provider>
