@@ -381,7 +381,7 @@ class metropolis_hastings():
 
 
     def run_d_mc( self ):
-        print 'running d mc'
+        #print 'running d mc'
         self.lastchisq = 9999999999.9
         self.chisq = []
         self.chisq.append(self.lastchisq/len(self.mask[self.mask>0.].ravel())/len(self.modelvec[self.flags==0]))
@@ -501,12 +501,12 @@ class metropolis_hastings():
 
 
     def mcmc_func( self ):
-        print 'adjusting'
+        #print 'adjusting'
         t1 = time.time()
         self.adjust_model()
         t2 = time.time()
         self.total_time_adjusting += t2-t1
-        print 'shifting'
+        #print 'shifting'
         if self.shiftpsf:
             t3 = time.time()
             self.float_sn_pos()
@@ -520,7 +520,7 @@ class metropolis_hastings():
         #self.kernel()
         #self.gal_conv = copy(self.kicked_modelvec)
         t2 = time.time()
-        print 'kernel start'
+        #print 'kernel start'
         self.sims = map(self.mapkernel,self.kicked_modelvec,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
         t3 = time.time()
         self.total_time_convolving += t3-t2
@@ -537,7 +537,7 @@ class metropolis_hastings():
         #print np.median(1./(self.skyerr[aa][self.skyerr[aa] < 99999.])**2)
         #raw_input()
         t2 = time.time()
-        print 'chisq calc'
+        #print 'chisq calc'
         self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky,self.sky))
         #print self.csv
         #print csv
