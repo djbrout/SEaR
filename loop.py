@@ -11,7 +11,7 @@ for i in np.arange(100, 101):
     f.write(
         '#!/bin/bash -l\n' +
         '#SBATCH --partition=debug\n' +
-        '#SBATCH -n 32\n' +
+        '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
