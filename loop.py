@@ -29,8 +29,8 @@ for i in np.arange(100, 101):
         'echo "RUNNING NOW"'+
         #'python test.py\n'
         'cd /global/u1/d/dbrout/SEaR/\n' +
-        'echo "--start='+str(i*nproc)+' --stop'+str((i+1)*nproc)+'" \n'+
-        'python mpp.py --start='+str(i*nproc)+' --stop'+str((i+1)*nproc)+' \n'
+        'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
+        'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )
