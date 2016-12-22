@@ -29,7 +29,7 @@ def run(index):
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
 
-        sd = '/scratch1/scratchdirs/dbrout/p9/results11/detections_' + tband + '_' + ccd + '.txt'
+        sd = '/scratch1/scratchdirs/dbrout/p9/results12/detections_' + tband + '_' + ccd + '.txt'
 
         if not band == tband: continue
         #if not ccd == tccd: continue
