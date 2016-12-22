@@ -1,20 +1,30 @@
-import pprocess
+import multiprocessing
 import wrapper
 import time
 
 def run(start,stop):
     # Parallel computation:
-    indices = [i for i in range(start,stop)]
+    # indices = [i for i in range(start,stop)]
+    #
+    # nproc = len(indices)  # maximum number of simultaneous processes desired
+    # results = pprocess.Map(limit=nproc, reuse=1)
+    # parallel_function = results.manage(pprocess.MakeReusable(wrapper.run))
+    # tic = time.time()
+    # [parallel_function(ind) for ind in indices];  # Start computing things
+    # parallel_results = results[0:3]
+    # print "%f s for parallel computation." % (time.time() - tic)
 
-    nproc = len(indices)  # maximum number of simultaneous processes desired
-    results = pprocess.Map(limit=nproc, reuse=1)
-    parallel_function = results.manage(pprocess.MakeReusable(wrapper.run))
-    tic = time.time()
-    [parallel_function(ind) for ind in indices];  # Start computing things
-    parallel_results = results[0:3]
-    print "%f s for parallel computation." % (time.time() - tic)
+    # results.finish()
 
-    results.finish()
+    jobs = []
+    for i in range(start,stop):
+        p = multiprocessing.Process(target=wrapper.run, args=(i,))
+        jobs.append(p)
+        p.start()
+
+    for j in jobs:
+        j.join()
+        print '%s.exitcode = %s' % (j.name, j.exitcode)
 
 if __name__ == "__main__":
 
