@@ -2,14 +2,16 @@ import os
 from subprocess import *
 import numpy as np
 
-for i in np.arange(1000, 1100):
+nproc=8
+
+for i in np.arange(100, 101):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
     f.write(
         '#!/bin/bash -l\n' +
-        '#SBATCH --partition=shared\n' +
-        '#SBATCH -n 2\n' +
+        '#SBATCH --partition=debug\n' +
+        '#SBATCH -n 32\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
@@ -27,7 +29,7 @@ for i in np.arange(1000, 1100):
         'echo "RUNNING NOW"'+
         #'python test.py\n'
         'cd /global/u1/d/dbrout/SEaR/\n' +
-        'python wrapper.py --ti='+str(i)+' > /scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10p.log 2>&1\n'
+        'python mpp.py --start='+str(i*nproc)+' --stop'+str((i+1)*nproc)+'\n'
         #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )
