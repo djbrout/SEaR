@@ -2,7 +2,7 @@ import os
 from subprocess import *
 import numpy as np
 
-nproc=12
+nproc=4
 
 for i in np.arange(200, 201):
     print i
@@ -11,7 +11,7 @@ for i in np.arange(200, 201):
     f.write(
         '#!/bin/bash -l\n' +
         '#SBATCH --partition=debug\n' +
-        '#SBATCH -N 4\n' +
+        '#SBATCH -N 2\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
