@@ -26,8 +26,8 @@
       <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="626" column="41" selection-start-line="626" selection-start-column="41" selection-end-line="626" selection-end-column="41" />
+            <state relative-caret-position="317">
+              <caret line="417" column="35" selection-start-line="417" selection-start-column="35" selection-end-line="417" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -419,13 +419,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00659" summary="sextractor sky and skeyerr now">
-      <created>1480902237647</created>
-      <option name="number" value="00659" />
-      <option name="presentableId" value="LOCAL-00659" />
-      <option name="project" value="LOCAL" />
-      <updated>1480902237647</updated>
-    </task>
     <task id="LOCAL-00660" summary="index run">
       <created>1480902799043</created>
       <option name="number" value="00660" />
@@ -762,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482365304030</updated>
     </task>
-    <option name="localTasksCounter" value="708" />
+    <task id="LOCAL-00708" summary="mpp added for parallel processing">
+      <created>1482365846333</created>
+      <option name="number" value="00708" />
+      <option name="presentableId" value="LOCAL-00708" />
+      <option name="project" value="LOCAL" />
+      <updated>1482365846333</updated>
+    </task>
+    <option name="localTasksCounter" value="709" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1250,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="626" column="41" selection-start-line="626" selection-start-column="41" selection-end-line="626" selection-end-column="41" />
+        <state relative-caret-position="317">
+          <caret line="417" column="35" selection-start-line="417" selection-start-column="35" selection-end-line="417" selection-end-column="35" />
           <folding />
         </state>
       </provider>
