@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="353" column="43" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
+            <state relative-caret-position="242">
+              <caret line="338" column="30" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="30" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
                 <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
@@ -419,13 +418,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00672" summary="index run">
-      <created>1481047283236</created>
-      <option name="number" value="00672" />
-      <option name="presentableId" value="LOCAL-00672" />
-      <option name="project" value="LOCAL" />
-      <updated>1481047283236</updated>
-    </task>
     <task id="LOCAL-00673" summary="index run">
       <created>1481047318134</created>
       <option name="number" value="00673" />
@@ -762,7 +754,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482369676672</updated>
     </task>
-    <option name="localTasksCounter" value="721" />
+    <task id="LOCAL-00721" summary="mpp added for parallel processing">
+      <created>1482370649008</created>
+      <option name="number" value="00721" />
+      <option name="presentableId" value="LOCAL-00721" />
+      <option name="project" value="LOCAL" />
+      <updated>1482370649008</updated>
+    </task>
+    <option name="localTasksCounter" value="722" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1247,8 +1246,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="353" column="43" selection-start-line="353" selection-start-column="43" selection-end-line="353" selection-end-column="43" />
+        <state relative-caret-position="242">
+          <caret line="338" column="30" selection-start-line="338" selection-start-column="20" selection-end-line="338" selection-end-column="30" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
             <marker date="1482370645000" expanded="true" signature="14082:14219" ph="..." />
