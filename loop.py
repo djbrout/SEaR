@@ -2,7 +2,7 @@ import os
 from subprocess import *
 import numpy as np
 
-nproc=4
+nproc=8
 
 for i in np.arange(200, 201):
     print i
