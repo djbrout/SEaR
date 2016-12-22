@@ -14,7 +14,7 @@ def run(start,stop):
     parallel_results = results[0:3]
     print "%f s for parallel computation." % (time.time() - tic)
 
-
+    results.finish()
 
 if __name__ == "__main__":
 
