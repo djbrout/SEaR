@@ -2,9 +2,9 @@ import os
 from subprocess import *
 import numpy as np
 
-nproc=8
+nproc=2
 
-for i in np.arange(100, 101):
+for i in np.arange(200, 201):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
