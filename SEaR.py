@@ -511,6 +511,7 @@ class fit:
         print 'skyyyyyerrrrr',self.templateskyerr,self.imageskyerr
         #self.data[0, :, :] = self.data[1, :, :] + self.psfs[0,:,:]*20000.
 
+
     def runDMC(self):
         print 'About to run mcmc'
         ts = time.time()
