@@ -449,9 +449,9 @@ class metropolis_hastings():
                     if chsqs[0] > 100.:
                         #self.maxiter = self.maxiter
                         self.alreadyextended = True
-                        stop = False
+                        stop = True
                     elif chsqs[0] > 1.5:
-                        self.maxiter = self.maxiter + 10000
+                        self.maxiter = self.maxiter + 9000
                         self.alreadyextended = True
                         stop = False
                     # elif chsqs[0] > 1.19:
