@@ -4,14 +4,14 @@ import numpy as np
 
 nproc=4
 
-for i in np.arange(200, 201):
+for i in np.arange(0, 4000):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
     f.write(
         '#!/bin/bash -l\n' +
-        '#SBATCH --partition=debug\n' +
-        '#SBATCH -N 2\n' +
+        '#SBATCH --partition=shared\n' +
+        '#SBATCH -n 12\n' +
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:30:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v10.log\n' +
@@ -30,8 +30,8 @@ for i in np.arange(200, 201):
         #'python test.py\n'
         'cd /global/u1/d/dbrout/SEaR/\n' +
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
-        'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
-        #'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
+        #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' \n' +
         '\n'
     )
     f.close()
