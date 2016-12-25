@@ -419,6 +419,8 @@ class fit:
                                              max([self.templatepsfcenter[0] - 300., 0]):min([self.templatepsfcenter[0] + 300, templatedata.shape[1] - 1])],
                                              clipsig=2.5, maxiter=18)
 
+
+
         #from scipy import fftpack
         #import pyfits
         #import numpy as np
