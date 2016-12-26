@@ -479,14 +479,14 @@ class fit:
         # print st,sexrms
         #raw_input('compare errors')
         self.templateskyerr = pf.getdata(self.template+'.background_rms')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]* 0 + sexrms
 
         #raw_input('tesing ')
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
         self.templatesky = pf.getdata(self.template+'.background')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2] * 0 + sexsky
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]*0
 
         # print 'self.templateskyerr',self.templateskyerr
         # print mean, sexsky
