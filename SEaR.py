@@ -342,14 +342,18 @@ class fit:
                                                          self.impsfcenter[1] - 100,
                                                          self.impsfcenter[1] + 100)
 
-        print assky,sexsky
-        print asskyerr,sexrms
-        raw_input()
+        #asskyerr = sexrms
+
+        #print assky,sexsky
+        #print asskyerr,sexrms
+        #raw_input()
         #
         # # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         # # self.imagesky = np.median(vals)
-        # self.imageskyerr = pf.getdata(self.image+'.background_rms')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-        #                    self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]*0. + st
+        self.imageskyerr = pf.getdata(self.image+'.background_rms')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+
+        print asskyerr, np.mean(self.imageskyerr.ravel())
         #
         # self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
         #                    self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
@@ -462,15 +466,16 @@ class fit:
         # py.savefig('psi.png')
 
         # import runsextractor
-        # sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 300, self.templatepsfcenter[0] + 300, self.templatepsfcenter[1]-300, self.templatepsfcenter[1]+300)
-        #
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100)#
+
         #
         #
         # print mean,sexsky
         # print st,sexrms
         #raw_input('compare errors')
-        # self.templateskyerr = pf.getdata(self.template+'.background_rms')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-        #                    self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+        self.templateskyerr = pf.getdata(self.template+'.background_rms')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+
         #raw_input('tesing ')
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
