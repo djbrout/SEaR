@@ -355,8 +355,13 @@ class fit:
 
         print asskyerr, np.mean(self.imageskyerr.ravel())
         #
-        # self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-        #                    self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+        self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
+                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+
+        print assky, np.mean(self.imagesky.ravel())
+
+        raw_input()
+
 
         self.imagesky = self.data[0,:,:]*0. + assky
         self.imageskyerr = self.data[0,:,:]*0. + asskyerr
