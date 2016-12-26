@@ -360,7 +360,7 @@ class fit:
 
         print asskyerr, np.mean(self.imageskyerr.ravel()), sexrms
 
-        raw_input()
+        #raw_input()
 
 
         #self.imagesky = self.data[0,:,:]*0. + assky
