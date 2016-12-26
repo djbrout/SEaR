@@ -58,6 +58,8 @@ smy = data['sm_y'][:train]
 snlim = 4.5
 
 print ind[(chsq2<.2) & (sn>12)]
+print ind[(chsq2<1.2) & (diffmag == 20)]
+
 raw_input()
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
