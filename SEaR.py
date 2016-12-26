@@ -486,7 +486,7 @@ class fit:
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
         self.templatesky = pf.getdata(self.template+'.background')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2] * 0 + sexsky
 
         # print 'self.templateskyerr',self.templateskyerr
         # print mean, sexsky
