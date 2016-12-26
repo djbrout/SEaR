@@ -358,9 +358,9 @@ class fit:
         self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
-        #print assky, np.mean(self.imagesky.ravel())
+        print assky, np.mean(self.imagesky.ravel()), sexrms
 
-        #raw_input()
+        raw_input()
 
 
         #self.imagesky = self.data[0,:,:]*0. + assky
