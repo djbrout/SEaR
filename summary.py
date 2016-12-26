@@ -4,6 +4,11 @@ import os
 from copy import copy
 
 workingdir = '/scratch1/scratchdirs/dbrout/p9/results15/'
+
+header = open('detections_i_00.txt','r')
+header.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
+header.close()
+
 os.system('cat '+workingdir+'detections_i_* > '+workingdir+'detections_i_all.txt')
 
 data = dt.readcol(workingdir+'detections_i_all.txt',delim=',')
