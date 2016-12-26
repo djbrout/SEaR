@@ -13,7 +13,7 @@ for i in np.arange(0, 3800):
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 4\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=00:60:00\n' +
+        '#SBATCH --time=02:00:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v16.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v16.log\n' +
         '#SBATCH --job-name=iband_' + str(i) + '\n' +
