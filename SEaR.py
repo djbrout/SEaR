@@ -353,18 +353,18 @@ class fit:
         self.imageskyerr = pf.getdata(self.image+'.background_rms')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
-        print asskyerr, np.mean(self.imageskyerr.ravel())
+        #print asskyerr, np.mean(self.imageskyerr.ravel())
         #
         self.imagesky = pf.getdata(self.image+'.background')[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
                            self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
 
-        print assky, np.mean(self.imagesky.ravel())
+        #print assky, np.mean(self.imagesky.ravel())
 
-        raw_input()
+        #raw_input()
 
 
-        self.imagesky = self.data[0,:,:]*0. + assky
-        self.imageskyerr = self.data[0,:,:]*0. + asskyerr
+        #self.imagesky = self.data[0,:,:]*0. + assky
+        #self.imageskyerr = self.data[0,:,:]*0. + asskyerr
         #print mean, sexsky
         #print st, sexrms
         #print 'imageeeee'
@@ -485,8 +485,8 @@ class fit:
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
-        # self.templatesky = pf.getdata(self.template+'.background')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-        #                    self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+        self.templatesky = pf.getdata(self.template+'.background')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
+                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
 
         # print 'self.templateskyerr',self.templateskyerr
         # print mean, sexsky
@@ -510,8 +510,8 @@ class fit:
         #raw_input('template zpt')
 
 
-        self.templatesky = atsky
-        self.templateskyerr = atskyerr
+        #self.templatesky = atsky
+        #self.templateskyerr = atskyerr
 
 
         if not self.templatezpt is None:
