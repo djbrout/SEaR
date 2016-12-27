@@ -3,9 +3,9 @@ import dilltools as dt
 import os
 from copy import copy
 
-workingdir = '/scratch1/scratchdirs/dbrout/p9/results16/'
+workingdir = '/scratch1/scratchdirs/dbrout/p9/results17/'
 
-header = open('/scratch1/scratchdirs/dbrout/p9/results16/detections_i_00.txt','w')
+header = open('/scratch1/scratchdirs/dbrout/p9/results17/detections_i_00.txt','w')
 header.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
 header.close()
 
