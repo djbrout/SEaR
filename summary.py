@@ -237,7 +237,7 @@ if not skip:
         # raw_input()
 
 else:
-    ulc = 1.09
+    ulc = 1.08
     llc = 0.
     uld = 100
     ps = 0
