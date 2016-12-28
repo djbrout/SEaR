@@ -116,8 +116,8 @@ print 'saved '+workingdir+'results_chi1.png'
 plt.clf()
 plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq3[wreal],color='green',alpha=.9)
-plt.axhline(ll,color='black',linestyle='--')
-plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
+plt.axhline(1.09,color='black',linestyle='--')
+#plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
 plt.ylim(0,1.7)
@@ -192,7 +192,7 @@ maxp = 0
 maxe = 0
 snsplit = 10.
 
-skip = False
+skip = True
 if not skip:
     for i in np.arange(0.7,1.9,.001):
         #for j in np.arange(0,0.,.01):
@@ -237,10 +237,10 @@ if not skip:
         # raw_input()
 
 else:
-    ulc = 1.51
-    llc = 0.78
-    uld = -.86
-    ps = .176
+    ulc = 1.09
+    llc = 0.
+    uld = 100
+    ps = 0
 
 print '-'*50
 print '-'*50
