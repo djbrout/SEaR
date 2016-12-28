@@ -192,43 +192,49 @@ maxp = 0
 maxe = 0
 snsplit = 10.
 
-skip = True
+skip = False
 if not skip:
-    for i in np.arange(0.77,.8,.001):
-        for j in np.arange(.7,1.,.01):
-            for k in np.arange(-.88,-.72,.01):
-                for s in np.arange(0.14,.2,.001)[::-1]:
+    for i in np.arange(0.6,1.9,.001):
+        #for j in np.arange(0,0.,.01):
+        #    for k in np.arange(0,0,.01):
+        #        for s in np.arange(0.14,.2,.001)[::-1]:
                     #if True:
-                    #s = 0.
-                    upperlimchi = i+j
-                    lowerlimchi = i
-                    upperlimdiff = k
+        s = 0.
+        upperlimchi = i
+        lowerlimchi = 0
+        upperlimdiff = 1000
 
-                    wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn < snsplit)
-                    wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (sn > snsplit)
-                    print len(diffmag[wwreal]),len(diffmag[wwreal2]),len(diffmag[np.logical_or(wwreal,wwreal2)]),
-                    wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
+        wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (
+        sn < snsplit)
+        wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (
+        sn > snlim) & (sn > snsplit)
+        print len(diffmag[wwreal]), len(diffmag[wwreal2]), len(diffmag[np.logical_or(wwreal, wwreal2)]),
+        wwreal3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
 
-                    wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
-                    wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
-                    wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+        wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn < snsplit)
+        wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag == 0) & (sn > snlim) & (
+        sn > snsplit)
+        wwbad3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
 
-                    p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
-                            wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
-                            np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
-                            wwreal2),wwbad),wwbad2)))]))
-                    e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-                    if p+1.1*e > maxpe:
-                        ulc = upperlimchi
-                        llc = lowerlimchi
-                        uld = upperlimdiff
-                        ps = copy(s)
-                        maxp = p
-                        maxe = e
-                        maxpe = p+1.1*e
-                    #if p+e > 1.909:
-                    print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',s,'Purity',round(p,3),'Eff',round(e,3)
-                    #raw_input()
+        p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
+                                                                      wwbad2))])) / float(
+            len(diffmag[np.logical_or(wwbad3,
+                                      np.logical_or(wwreal3, np.logical_or(np.logical_or(np.logical_or(wwreal,
+                                                                                                       wwreal2), wwbad),
+                                                                           wwbad2)))]))
+        e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
+        if p + 1.1 * e > maxpe:
+            ulc = upperlimchi
+            llc = lowerlimchi
+            uld = upperlimdiff
+            ps = copy(s)
+            maxp = p
+            maxe = e
+            maxpe = p + 1.1 * e
+            # if p+e > 1.909:
+        print 'upperlimchi', upperlimchi, 'lowerlimchi', lowerlimchi, 'upperlimdiff', upperlimdiff, 'slope', s, 'Purity', round(
+            p, 3), 'Eff', round(e, 3)
+        # raw_input()
 
 else:
     ulc = 1.51
@@ -337,9 +343,9 @@ for i,line in enumerate(inn):
         else:
             alreadydone.append(int(line.split()[0].replace(',','')))
             if acceptvec[i-1]:
-                out.write(line.strip()+',\t 1\n')
+                out.write(line.strip().replace('nan','9999')+',\t 1\n')
             else:
-                out.write(line.strip() + ',\t 0\n')
+                out.write(line.strip().replace('nan','9999')+',\t 0\n')
     #if i > 10.:
     #    raw_input()
     #raw_input()
