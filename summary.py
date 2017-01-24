@@ -175,7 +175,8 @@ plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
 print 'saved '+workingdir+'resultsvsmag.png'
 
-print ind[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)]
+for i,c in zip(ind[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)],chsq1[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)]):
+    print i,c
 raw_input()
 snf = sn[wfake]
 indf = ind[wfake]
