@@ -515,7 +515,7 @@ class fit:
 
 
         if not self.templatezpt is None:
-            print 'adjusting template to search'
+            print 'adjusting template to search',self.imzpt,self.templatezpt
             self.data[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.weights[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.templatesky *= 10 ** (.4*(self.imzpt - self.templatezpt))
@@ -563,6 +563,7 @@ class fit:
             )
             print 'MCMC FIT TIME',time.time()-ts
         except ValueError:
+            print 'value Error'
             self.bad = True
             return
 
