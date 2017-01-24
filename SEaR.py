@@ -515,6 +515,7 @@ class fit:
 
 
         if not self.templatezpt is None:
+            print 'adjusting template to search'
             self.data[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.weights[1, :, :] *= 10 ** (.4*(self.imzpt - self.templatezpt))
             self.templatesky *= 10 ** (.4*(self.imzpt - self.templatezpt))
