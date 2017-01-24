@@ -179,7 +179,7 @@ for i,c in zip(ind[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)],chsq1[wfa
     print i,c
 raw_input()
 
-for i,c,s in zip(ind[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],chsq1[wreal][(chsq1[wreal] < .9) & (fitmag[wreal] > 8.)],sn[wreal][(chsq1[wreal] < .9) & (fitmag[wreal] > 8.)]):
+for i,c,s in zip(ind[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],chsq1[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],sn[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)]):
     print i,c,s
 raw_input()
 
