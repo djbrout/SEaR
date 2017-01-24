@@ -178,9 +178,19 @@ print 'saved '+workingdir+'resultsvsmag.png'
 for i,c in zip(ind[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)],chsq1[wfake][(chsq1[wfake] > 5.) & (fitmag[wfake] < 21.)]):
     print i,c
 raw_input()
+
+for i,c in zip(ind[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],chsq1[wreal][(chsq1[wreal] < .9.) & (fitmag[wreal] > 8.)]):
+    print i,c
+raw_input()
+
+
+
+
 snf = sn[wfake]
 indf = ind[wfake]
 chf = chsq3[wfake]
+
+
 
 print indf[(snf>18) & (chf<.4)]
 #raw_input('good bad guys')
