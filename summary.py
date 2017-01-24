@@ -60,7 +60,7 @@ snlim = 4.0
 print ind[(chsq2<.2) & (sn>12)]
 print ind[(chsq2<1.2) & (diffmag == 20)]
 
-raw_input()
+#raw_input()
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -175,6 +175,8 @@ plt.xlabel('FitMag')
 plt.savefig(workingdir+'resultsvsmag.png')
 print 'saved '+workingdir+'resultsvsmag.png'
 
+print ind[wfake][chsq1[wfake] > 5.]
+raw_input()
 snf = sn[wfake]
 indf = ind[wfake]
 chf = chsq3[wfake]
