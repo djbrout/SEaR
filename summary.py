@@ -166,7 +166,6 @@ print 'saved '+workingdir+'chidfiff1.png'
 plt.clf()
 plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
 plt.scatter(fitmag[wreal],chsq1[wreal],color='green',alpha=.9)
-plt.axhline(.87,color='black',linestyle='--')
 plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(19.0,25.5)
 plt.ylim(0,5.5)
@@ -177,13 +176,12 @@ print 'saved '+workingdir+'resultsvsfitmag.png'
 
 
 plt.clf()
-plt.scatter(diffmag[wfake],chsq1[wfake],color='red',alpha=.5)
-plt.scatter(diffmag[wreal],chsq1[wreal],color='green',alpha=.9)
-plt.axhline(.87,color='black',linestyle='--')
+plt.scatter(diffmag[wfake],chsq3[wfake],color='red',alpha=.5)
+plt.scatter(fitmag[wreal],chsq3[wreal],color='green',alpha=.9)
 plt.axhline(1.37,color='black',linestyle='--')
 plt.xlim(19.0,25.5)
 plt.ylim(0,5.5)
-plt.ylabel('1 FWHM Chi Squared')
+plt.ylabel('3 FWHM Chi Squared')
 plt.xlabel('DiffMag')
 plt.savefig(workingdir+'resultsvsdiffmag.png')
 print 'saved '+workingdir+'resultsvsdiffmag.png'
