@@ -218,7 +218,7 @@ snsplit = 10000.
 
 skip = False
 if not skip:
-    for i in np.arange(0.2,2.9,.001):
+    for i in np.arange(0.2,5.9,.001):
         #for j in np.arange(0,0.,.01):
         #    for k in np.arange(0,0,.01):
         #        for s in np.arange(0.14,.2,.001)[::-1]:
