@@ -254,7 +254,7 @@ if not skip:
 
         #e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
 
-        e = float(len(diffmag[wwreal]))/float(len(diffmag[diffmag>0.]))
+        e = float(len(diffmag[wwreal]))/max([float(len(diffmag[diffmag>0.])),1])
 
         if p+e > maxpe:
             ulc = upperlimchi
@@ -265,8 +265,7 @@ if not skip:
             maxe = e
             maxpe = p+e
             # if p+e > 1.909:
-        print 'upperlimchi', upperlimchi, 'lowerlimchi', lowerlimchi, 'upperlimdiff', upperlimdiff, 'slope', s, 'Purity', round(
-            p, 3), 'Eff', round(e, 3)
+        print 'upperlimchi', upperlimchi, 'Purity', round(p, 3), 'Eff', round(e, 3)
         # raw_input()
 
 else:
