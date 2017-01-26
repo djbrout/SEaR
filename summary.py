@@ -55,7 +55,7 @@ smy = data['sm_y'][:train]
 #print chsq1.shape
 #raw_input()
 
-snlim = 4.0
+snlim = 5.0
 
 print ind[(chsq2<.2) & (sn>12)]
 print ind[(chsq2<1.2) & (diffmag == 20)]
@@ -214,7 +214,7 @@ uld = 0
 ps = 0
 maxp = 0
 maxe = 0
-snsplit = 10.
+snsplit = 10000.
 
 skip = False
 if not skip:
@@ -228,25 +228,34 @@ if not skip:
         lowerlimchi = 0
         upperlimdiff = 1000
 
-        wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (
-        sn < snsplit)
-        wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (
-        sn > snlim) & (sn > snsplit)
-        print len(diffmag[wwreal]), len(diffmag[wwreal2]), len(diffmag[np.logical_or(wwreal, wwreal2)]),
-        wwreal3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
+        #wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim) & (
+        #sn < snsplit)
 
-        wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn < snsplit)
-        wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag == 0) & (sn > snlim) & (
-        sn > snsplit)
-        wwbad3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+        wwreal = (chsq3 < upperlimchi) & (diffmag > 0) & (sn > snlim)
+        #wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag > 0) & (diffmag != 20.00) & (
+        #sn > snlim) & (sn > snsplit)
+        #print len(diffmag[wwreal]), len(diffmag[wwreal2]), len(diffmag[np.logical_or(wwreal, wwreal2)]),
+        #wwreal3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.00) & (sn > snlim)
 
-        p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
-                                                                      wwbad2))])) / float(
-            len(diffmag[np.logical_or(wwbad3,
-                                      np.logical_or(wwreal3, np.logical_or(np.logical_or(np.logical_or(wwreal,
-                                                                                                       wwreal2), wwbad),
-                                                                           wwbad2)))]))
-        e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
+        #wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn < snsplit)
+        wwbad = (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+        #wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s * sn) + upperlimchi) & (diffmag == 0) & (sn > snlim) & (
+        #sn > snsplit)
+        #wwbad3 = (chsq3 - chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+
+        # p = 1. - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
+        #                                                               wwbad2))])) / float(
+        #     len(diffmag[np.logical_or(wwbad3,
+        #                               np.logical_or(wwreal3, np.logical_or(np.logical_or(np.logical_or(wwreal,
+        #                                                                                                wwreal2), wwbad),
+        #                                                                    wwbad2)))]))
+
+        p = 1. - float(len(diffmag[wwbad]))/float(len(diffmag[wwbad])+len(diffmag[wwreal]))
+
+        #e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
+
+        e = float(len(diffmag[wwreal]))/float(len(diffmag[diffmag>0.]))
+
         if p+e > maxpe:
             ulc = upperlimchi
             llc = lowerlimchi
