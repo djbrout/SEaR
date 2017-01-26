@@ -256,14 +256,14 @@ if not skip:
 
         e = float(len(diffmag[wwreal]))/max([float(len(diffmag[diffmag>0.])),1])
 
-        if p+e > maxpe:
+        if p+2*e > maxpe:
             ulc = upperlimchi
             llc = lowerlimchi
             uld = upperlimdiff
             ps = copy(s)
             maxp = p
             maxe = e
-            maxpe = p+e
+            maxpe = p+2*e
             # if p+e > 1.909:
         print 'upperlimchi', upperlimchi, 'Purity', round(p, 3), 'Eff', round(e, 3)
         # raw_input()
