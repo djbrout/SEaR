@@ -207,7 +207,7 @@ snsplit = 10.
 
 skip = False
 if not skip:
-    for i in np.arange(0.7,1.9,.001):
+    for i in np.arange(0.2,2.9,.001):
         #for j in np.arange(0,0.,.01):
         #    for k in np.arange(0,0,.01):
         #        for s in np.arange(0.14,.2,.001)[::-1]:
@@ -236,14 +236,14 @@ if not skip:
                                                                                                        wwreal2), wwbad),
                                                                            wwbad2)))]))
         e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
-        if p > maxpe:
+        if p+e > maxpe:
             ulc = upperlimchi
             llc = lowerlimchi
             uld = upperlimdiff
             ps = copy(s)
             maxp = p
             maxe = e
-            maxpe = p
+            maxpe = p+e
             # if p+e > 1.909:
         print 'upperlimchi', upperlimchi, 'lowerlimchi', lowerlimchi, 'upperlimdiff', upperlimdiff, 'slope', s, 'Purity', round(
             p, 3), 'Eff', round(e, 3)
