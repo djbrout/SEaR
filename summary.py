@@ -250,7 +250,7 @@ if not skip:
         #                                                                                                wwreal2), wwbad),
         #                                                                    wwbad2)))]))
 
-        p = 1. - float(len(diffmag[wwbad]))/float(len(diffmag[wwbad])+len(diffmag[wwreal]))
+        p = 1. - float(len(diffmag[wwbad]))/max([float(len(diffmag[wwbad])+len(diffmag[wwreal])),1])
 
         #e = float(len(diffmag[np.logical_or(wwreal3, np.logical_or(wwreal, wwreal2))])) / float(nreal)
 
