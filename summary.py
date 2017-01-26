@@ -172,8 +172,21 @@ plt.xlim(19.0,25.5)
 plt.ylim(0,5.5)
 plt.ylabel('1 FWHM Chi Squared')
 plt.xlabel('FitMag')
-plt.savefig(workingdir+'resultsvsmag.png')
-print 'saved '+workingdir+'resultsvsmag.png'
+plt.savefig(workingdir+'resultsvsfitmag.png')
+print 'saved '+workingdir+'resultsvsfitmag.png'
+
+
+plt.clf()
+plt.scatter(diffmag[wfake],chsq1[wfake],color='red',alpha=.5)
+plt.scatter(diffmag[wreal],chsq1[wreal],color='green',alpha=.9)
+plt.axhline(.87,color='black',linestyle='--')
+plt.axhline(1.37,color='black',linestyle='--')
+plt.xlim(19.0,25.5)
+plt.ylim(0,5.5)
+plt.ylabel('1 FWHM Chi Squared')
+plt.xlabel('DiffMag')
+plt.savefig(workingdir+'resultsvsdiffmag.png')
+print 'saved '+workingdir+'resultsvsdiffmag.png'
 
 for i,c,s in zip(ind[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)],chsq1[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)], sn[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)]):
     print i,c,s
