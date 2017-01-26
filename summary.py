@@ -298,72 +298,81 @@ s = copy(ps)
 # ntot = len(diffmag[(sn > snlim)])
 
 
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
-nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
-ntot = len(diffmag[(sn > snlim)])
+# nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
+# nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
+# ntot = len(diffmag[(sn > snlim)])
+#
+# wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
+# wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
+# #wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+# wwreal3 = (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+#
+# wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
+# wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
+# #wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+# wwbad3 = (diffmag == 0) & (sn > snlim)
+#
+# p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
+#                         wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
+#                         np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
+#                         wwreal2),wwbad),wwbad2)))]))
+# e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
 
-wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
-wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
-#wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
-wwreal3 = (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
 
-wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
-wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
-#wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
-wwbad3 = (diffmag == 0) & (sn > snlim)
 
-p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
-                        wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
-                        np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
-                        wwreal2),wwbad),wwbad2)))]))
-e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-print '*'*50
-print '*'*50
-print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',ps,'Purity',round(p,3),'Eff',round(e,3)
-print ''
-print 'total',ntot
-print 'contamination',len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,wwbad2))])
-print ''
-print 'total good',nreal
-print 'fit good',len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))])
+# print '*'*50
+# print '*'*50
+# print 'upperlimchi',upperlimchi,'lowerlimchi',lowerlimchi,'upperlimdiff',upperlimdiff,'slope',ps,'Purity',round(p,3),'Eff',round(e,3)
+# print ''
+# print 'total',ntot
+# print 'contamination',len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,wwbad2))])
+# print ''
+# print 'total good',nreal
+# print 'fit good',len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))])
+#
+# print ''
+# print 'total bad',nbad
+# print 'eliminated',nbad-len(diffmag[np.logical_or(wwbad3,np.logical_or(wwbad, wwbad2))])
+# print '*'*50
+# print '*'*50
 
-print ''
-print 'total bad',nbad
-print 'eliminated',nbad-len(diffmag[np.logical_or(wwbad3,np.logical_or(wwbad, wwbad2))])
-print '*'*50
-print '*'*50
 
+
+
+upperlimchi = 1.37
+wwreal = (chsq1 < upperlimchi) & (diffmag > 0) & (sn > snlim)
+wwbad = (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 
 inn = open(workingdir+'detections_i_all.txt','r').readlines()
 out = open(workingdir+'predictions_i.txt','w')
 
 
 
-snlim = 4.
-
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
-nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
-ntot = len(diffmag[(sn > snlim)])
-
-wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
-wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
-wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
-
-wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
-wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
-wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
-
-p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
-                        wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
-                        np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
-                        wwreal2),wwbad),wwbad2)))]))
-e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
-
-
-
-wwreal4 = (sn > 1000000.) & (np.isnan(chsq1)) & (sn < 125.)
-acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
-                        np.logical_or(wwbad,wwbad2)))
+# snlim = 4.
+#
+# nreal = len(diffmag[(diffmag>0) & (diffmag != 20.001) & (sn > snlim)])
+# nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
+# ntot = len(diffmag[(sn > snlim)])
+#
+# wwreal = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn < snsplit)
+# wwreal2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim) & (sn > snsplit)
+# wwreal3 = (chsq3-chsq1 < upperlimdiff) & (diffmag > 0) & (diffmag != 20.001) & (sn > snlim)
+#
+# wwbad = (chsq3 > lowerlimchi) & (chsq3 < upperlimchi) & (diffmag == 0) & (sn > snlim)  & (sn < snsplit)
+# wwbad2 = (chsq3 > lowerlimchi) & (chsq3 < (s*sn)+upperlimchi) & (diffmag == 0) & (sn > snlim) & (sn > snsplit)
+# wwbad3 = (chsq3-chsq1 < upperlimdiff) & (diffmag == 0) & (sn > snlim)
+#
+# p = 1 - float(len(diffmag[np.logical_or(wwbad3, np.logical_or(wwbad,
+#                         wwbad2))]))/float(len(diffmag[np.logical_or(wwbad3,
+#                         np.logical_or(wwreal3,np.logical_or(np.logical_or(np.logical_or(wwreal,
+#                         wwreal2),wwbad),wwbad2)))]))
+# e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/float(nreal)
+#
+#
+#
+# # wwreal4 = (sn > 1000000.) & (np.isnan(chsq1)) & (sn < 125.)
+# acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
+#                         np.logical_or(wwbad,wwbad2)))
 
 alreadydone = []
 for i,line in enumerate(inn):
@@ -376,7 +385,7 @@ for i,line in enumerate(inn):
             continue
         else:
             alreadydone.append(int(line.split()[0].replace(',','')))
-            if acceptvec[i-1]:
+            if wwreal[i-1]:
                 out.write(line.strip().replace('nan','9999')+',\t 1\n')
             else:
                 out.write(line.strip().replace('nan','9999')+',\t 0\n')
