@@ -72,8 +72,8 @@ wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 #wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
 #wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
 
-ll = .8
-ul = 1.5
+ll = 4.35
+ul = 4.35
 s=.26
 
 
@@ -89,8 +89,8 @@ plt.scatter(sn[wfake],chsq2[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.9,label='Train')
 #plt.scatter(snt[wfaket],chsq2t[wfaket],color='red',alpha=.5,marker='+')
 #plt.scatter(snt[wrealt],chsq2t[wrealt],color='green',alpha=.9,marker='+',label='Test')
-plt.axhline(ll,color='black',linestyle='--')
-plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
+plt.axhline(ul,color='black',linestyle='--')
+#plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
 plt.ylim(0.8,1.6)
@@ -103,8 +103,8 @@ print 'saved '+workingdir+'results_chi2.png'
 plt.clf()
 plt.scatter(sn[wfake],chsq1[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.9)
-plt.axhline(ll,color='black',linestyle='--')
-plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
+plt.axhline(ul,color='black',linestyle='--')
+#plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
 plt.ylim(0,10.)
@@ -116,7 +116,7 @@ print 'saved '+workingdir+'results_chi1.png'
 plt.clf()
 plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.5)
 plt.scatter(sn[wreal],chsq3[wreal],color='green',alpha=.9)
-plt.axhline(1.09,color='black',linestyle='--')
+plt.axhline(ul,color='black',linestyle='--')
 #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,40.)
@@ -166,7 +166,7 @@ print 'saved '+workingdir+'chidfiff1.png'
 plt.clf()
 plt.scatter(fitmag[wfake],chsq1[wfake],color='red',alpha=.5)
 plt.scatter(fitmag[wreal],chsq1[wreal],color='green',alpha=.9)
-plt.axhline(1.37,color='black',linestyle='--')
+plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(19.0,28.5)
 plt.ylim(0,5.5)
 plt.ylabel('1 FWHM Chi Squared')
@@ -178,7 +178,7 @@ print 'saved '+workingdir+'resultsvsfitmag.png'
 plt.clf()
 plt.scatter(diffmag[wfake],chsq3[wfake],color='red',alpha=.5)
 plt.scatter(fitmag[wreal],chsq3[wreal],color='green',alpha=.9)
-plt.axhline(1.37,color='black',linestyle='--')
+plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(19.0,29.5)
 plt.ylim(0,5.5)
 plt.ylabel('3 FWHM Chi Squared')
