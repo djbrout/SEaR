@@ -340,8 +340,8 @@ s = copy(ps)
 
 
 upperlimchi = 1.37
-wwreal = (chsq1 < upperlimchi) & (diffmag > 0) & (sn > snlim)
-wwbad = (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
+accept = (chsq1 < upperlimchi) & (sn > snlim)
+#wwbad = (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 
 inn = open(workingdir+'detections_i_all.txt','r').readlines()
 out = open(workingdir+'predictions_i.txt','w')
@@ -385,7 +385,7 @@ for i,line in enumerate(inn):
             continue
         else:
             alreadydone.append(int(line.split()[0].replace(',','')))
-            if wwreal[i-1]:
+            if accept[i-1]:
                 out.write(line.strip().replace('nan','9999')+',\t 1\n')
             else:
                 out.write(line.strip().replace('nan','9999')+',\t 0\n')
