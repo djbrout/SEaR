@@ -177,11 +177,11 @@ print 'saved '+workingdir+'resultsvsmag.png'
 
 for i,c,s in zip(ind[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)],chsq1[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)], sn[wfake][(chsq1[wfake] > 1.25) & (sn[wfake] > 10.)]):
     print i,c,s
-raw_input()
+#raw_input()
 
 for i,c,s in zip(ind[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],chsq1[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)],sn[wreal][(chsq1[wreal] < .9) & (sn[wreal] > 8.)]):
     print i,c,s
-raw_input()
+#raw_input()
 
 
 
@@ -205,7 +205,7 @@ maxp = 0
 maxe = 0
 snsplit = 10.
 
-skip = True
+skip = False
 if not skip:
     for i in np.arange(0.7,1.9,.001):
         #for j in np.arange(0,0.,.01):
@@ -342,7 +342,7 @@ e = float(len(diffmag[np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))]))/f
 
 
 
-wwreal4 = (sn > 95.) & (np.isnan(chsq1)) & (sn < 125.)
+wwreal4 = (sn > 1000000.) & (np.isnan(chsq1)) & (sn < 125.)
 acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
                         np.logical_or(wwbad,wwbad2)))
 
