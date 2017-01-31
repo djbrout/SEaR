@@ -7,7 +7,7 @@ detectionslistall = open('/global/u1/d/dbrout/SEaR/clean_detections.list', 'r').
 detectionslist = []
 for dtl in detectionslistall:
     if dtl[0] != '#':
-        detectionslist.append(dtl)
+        detectionslist.append(dtl.strip())
 
 #detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
 
@@ -100,7 +100,7 @@ if __name__ == "__main__":
                       "imageskyerr=","templateskyerr=",
                       "image=","template=","initialguess=","stepstd=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
-                      "imagezpt=","templatezpt=","fitrad="])
+                      "imagezpt=","templatezpt=","fitrad=","ccdi=","ti=","listi="])
 
 
         #print opt
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     try:
         args = sys.argv[1:]
 
-        opt, arg = getopt.getopt(
+        optt, argg = getopt.getopt(
             args, "ci",
             longopts=["ccdi=","ti=","listi="])
 
@@ -130,6 +130,17 @@ if __name__ == "__main__":
         if o in ["-ci", "--ccdi"]:
             print a
 
+            ccd = ccdlistall[int(a)]
+            print ccd
+        if o in ["--ti"]:
+            i = int(a)
+        if o in ["--listi"]:
+            li = int(a)
+        if o in ["--rootdir"]:
+            root = a
+    for o, a in optt:
+        if o in ["-ci", "--ccdi"]:
+            print a
             ccd = ccdlistall[int(a)]
             print ccd
         if o in ["--ti"]:
