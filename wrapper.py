@@ -59,7 +59,7 @@ def run(listindex,index,root,templatedir):
             os.mkdir('/scratch1/scratchdirs/dbrout/p9/results18/')
 
         sd = '/scratch1/scratchdirs/dbrout/p9/results18/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
-        #print 'outfile',sd
+        print 'outfile',sd
 
         if not band == tband: continue
         #if not ccd == tccd: continue
