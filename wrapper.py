@@ -21,10 +21,21 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
 
 def run(listindex,index,root):
 
-    print root+'/'+detectionslist[listindex]
-    raw_input()
+    #print root+'/'+detectionslist[listindex]
+    #raw_input()
     detections = dt.readcol(root+'/'+detectionslist[listindex], delim=',')
 
+    try:
+        detections['x']
+    except:
+        l = open(root+'/'+detectionslist[listindex],'r')
+        ll = l.readlines()
+        l.close()
+        f = open(root+'/'+detectionslist[listindex],'w')
+        f.write('band_ccd,x,y,sn,mag\n')
+        for j in ll:
+            f.write(j)
+        f.close()
     tband = 'i'
 
     print 'inside run'
