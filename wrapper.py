@@ -3,7 +3,7 @@ import os
 import dilltools as dt
 
 
-detectionslistall = open('/global/u1/d/dbrout/SEaR/cleandetections.list', 'r').readlines()
+detectionslistall = open('/global/u1/d/dbrout/SEaR/clean_detections.list', 'r').readlines()
 detectionslist = []
 for dtl in detectionslistall:
     if dtl[0] != '#':
