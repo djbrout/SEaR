@@ -57,6 +57,23 @@ def run(listindex,index,root):
         rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
         print os.listdir(imagepath)
+        imlist = os.listdir(imagepath)
+        for il in imlist:
+            if 'Template' in il:
+                if '.weight.fits' in il:
+                    templateimageweight = imagepath+'/'+il
+                elif bc+'.fits' in il:
+                    templateimage = imagepath+'/'+il
+                elif '.psf' in il:
+                    templateimagepsf = imagepath+'/'+il
+            else:
+                if '+fakeSN.fits' in il:
+                    searchimage = imagepath+'/'+il
+                elif '+fakeSN.weight.fits' in il:
+                    searchimageweight = imagepath+'/'+il
+                elif '.psf' in il:
+                    searchimagepsf = imagepath+'/'+il
+
         raw_input()
         if not band == tband: continue
         #if not ccd == tccd: continue
