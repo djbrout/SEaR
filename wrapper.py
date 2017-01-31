@@ -21,7 +21,8 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
 
 def run(listindex,index,root):
 
-
+    print root+'/'+detectionslist[listindex]
+    raw_input()
     detections = dt.readcol(root+'/'+detectionslist[listindex], delim=',')
 
     tband = 'i'
