@@ -42,6 +42,7 @@ def run(listindex,index,root,templatedir):
     print detections.keys()
     print 'inside run'
     print detections['x'].shape
+    print range(detections['x'].shape[0])
     # if tccd == '01':
     #     searout = open(sd, 'w' )
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
