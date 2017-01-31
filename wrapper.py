@@ -61,11 +61,11 @@ def run(listindex,index,root,templatedir):
 
         for tf in os.listdir(templatedir):
             if bc+'.weight.fits' in il:
-                templateimageweight = templatedir + '/' + il
+                templateimageweight = templatedir + '/' + tf
             elif bc + '.fits' in il:
-                templateimage = templatedir + '/' + il
+                templateimage = templatedir + '/' + tf
             elif bc+'.psf' in il:
-                templateimagepsf = templatedir + '/' + il
+                templateimagepsf = templatedir + '/' + tf
 
         for il in imlist:
             if '+fakeSN.fits' in il:
