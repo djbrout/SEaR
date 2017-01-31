@@ -21,7 +21,7 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
 
 def run(listindex,index,root,templatedir):
 
-    #print root+'/'+detectionslist[listindex]
+    print root+'/'+detectionslist[listindex]
     #raw_input()
     detections = dt.readcol(root+'/'+detectionslist[listindex], delim=',')
 
@@ -38,13 +38,13 @@ def run(listindex,index,root,templatedir):
         f.close()
         detections = dt.readcol(root + '/' + detectionslist[listindex], delim=',')
     tband = 'i'
-    print root + '/' + detectionslist[listindex]
-    print detections.keys()
-    print 'inside run'
-    print detections['x'].shape
+    #print root + '/' + detectionslist[listindex]
+    #print detections.keys()
+    #print 'inside run'
+    #print detections['x'].shape
     #print range(detections['x'].shape[0])
-    print detections['band_ccd'].shape
-    print detections['mag'].shape
+    #print detections['band_ccd'].shape
+    #print detections['mag'].shape
     # if tccd == '01':
     #     searout = open(sd, 'w' )
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
