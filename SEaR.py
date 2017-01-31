@@ -63,7 +63,7 @@ class fit:
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
                  numiter=None, floatpos=None, floatposstd=.01,
-                 stampsize=None, initialguess=None, stepstd=None,commandline=False):
+                 stampsize=None, initialguess=None, stepstd=None,commandline=False,dontrootimages=True):
         print 'inside fit'
         self.tstart = time.time()
 
@@ -105,7 +105,9 @@ class fit:
 
         self.fermigrid = fermigrid
 
-        if not commandline:
+        if dontrootimages:
+            pass
+        elif not commandline:
             self.readDefaults()
             self.image = os.path.join(self.rootdir, self.image)
             self.template = os.path.join(self.rootdir, self.template)
@@ -113,16 +115,16 @@ class fit:
             self.templatepsf = os.path.join(self.rootdir, self.templatepsf)
             self.imageweight = os.path.join(self.rootdir, self.imageweight)
             self.templateweight = os.path.join(self.rootdir, self.templateweight)
-        else:
-            self.image = os.path.join(self.rootdir, image)
-            self.template = os.path.join(self.rootdir, template)
-            self.imagepsf = os.path.join(self.rootdir, imagepsf)
-            self.templatepsf = os.path.join(self.rootdir, templatepsf)
-            self.imageweight = os.path.join(self.rootdir, imageweight)
-            self.templateweight = os.path.join(self.rootdir, templateweight)
+        # else:
+        #     self.image = os.path.join(self.rootdir, image)
+        #     self.template = os.path.join(self.rootdir, template)
+        #     self.imagepsf = os.path.join(self.rootdir, imagepsf)
+        #     self.templatepsf = os.path.join(self.rootdir, templatepsf)
+        #     self.imageweight = os.path.join(self.rootdir, imageweight)
+        #     self.templateweight = os.path.join(self.rootdir, templateweight)
 
 
-        if not self.ccd is None:
+        #if not self.ccd is None:
             self.image = self.image.replace('i_01','i_'+ccd)
             self.imagepsf = self.imagepsf.replace('i_01','i_'+ccd)
             self.templatepsf = self.templatepsf.replace('i_01','i_'+ccd)

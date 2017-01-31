@@ -56,24 +56,29 @@ def run(listindex,index,root,templatedir):
 
         rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
+
+        if not band == tband: continue
+        #if not ccd == tccd: continue
+        if not i == index: continue
+
         print os.listdir(imagepath)
         imlist = os.listdir(imagepath)
 
         for tf in os.listdir(templatedir):
-            if bc+'.weight.fits' in tf:
+            if bc + '.weight.fits' in tf:
                 templateimageweight = templatedir + '/' + tf
             elif bc + '.fits' in tf:
                 templateimage = templatedir + '/' + tf
-            elif bc+'.psf' in tf:
+            elif bc + '.psf' in tf:
                 templateimagepsf = templatedir + '/' + tf
 
         for il in imlist:
             if '+fakeSN.fits' in il:
-                searchimage = imagepath+'/'+il
+                searchimage = imagepath + '/' + il
             elif '+fakeSN.weight.fits' in il:
-                searchimageweight = imagepath+'/'+il
+                searchimageweight = imagepath + '/' + il
             elif '.psf' in il:
-                searchimagepsf = imagepath+'/'+il
+                searchimagepsf = imagepath + '/' + il
 
         print templateimageweight
         print templateimage
@@ -81,10 +86,9 @@ def run(listindex,index,root,templatedir):
         print searchimage
         print searchimageweight
         print searchimagepsf
-        raw_input()
-        if not band == tband: continue
-        #if not ccd == tccd: continue
-        if not i == index: continue
+        #raw_input()
+
+
         #data = dt.read(sd,1,2,',')
         # print ccd,i,sd
         # data = open(sd,'r').readlines()
@@ -101,7 +105,10 @@ def run(listindex,index,root,templatedir):
         #if cntr > 35: continue
         #if i != 632: continue
         print 'about to fit'
-        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd)
+        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd,
+                              templateweight=templateimageweight,template=templateimage,
+                              templatepsf=templateimagepsf,image=searchimage,
+                              imageweight=searchimageweight,imagepsf=searchimagepsf)
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
         print chisqs
         searout = open(sd,'a')
