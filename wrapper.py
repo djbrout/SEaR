@@ -2,7 +2,14 @@ import SEaR
 import os
 import dilltools as dt
 
-detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
+
+detectionslistall = open('/global/u1/d/dbrout/SEaR/cleandetections.list', 'r').readlines()
+detectionslist = []
+for dtl in detectionslistall:
+    if dtl[0] != '#':
+        detectionslist.append(dtl)
+
+#detections = dt.readcol('/global/u1/d/dbrout/SEaR/cleandetections.txt', delim=',')
 
 ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
                   '20',
@@ -12,7 +19,10 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
                   '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
-def run(index):
+def run(listindex,index,root):
+
+
+    detections = dt.readcol(root+'/'+detectionslist[listindex], delim=',')
 
     tband = 'i'
 
@@ -29,8 +39,12 @@ def run(index):
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
 
-        sd = '/scratch1/scratchdirs/dbrout/p9/results17/detections_' + tband + '_' + ccd + '.txt'
+        sd = '/scratch1/scratchdirs/dbrout/p9/results17/detections_'+str(listindex)+'_' + tband + '_' + ccd + '.txt'
 
+        rootplus = detectionslist[listindex].split('/')[0]
+        imagepath = root+'/'+rootplus
+        print os.listdir(imagepath)
+        raw_input()
         if not band == tband: continue
         #if not ccd == tccd: continue
         if not i == index: continue
@@ -68,15 +82,42 @@ def run(index):
 if __name__ == "__main__":
     print 'inside wrapper'
 
-
-
     import sys, getopt
+
+
+    try:
+        if os.path.exists("default.config"):
+            args = open("default.config", 'r').read().split()
+        else:
+            args = sys.argv[1:]
+
+        opt, arg = getopt.getopt(
+            args, "hs:o:r:n:i:cl:s:fg",
+            longopts=["outdir=", "rootdir=", "floatpos","numiter=","index=","candlist=",
+                      "stampsize=","fermigrid","imagexpix=","imageypix=",
+                      "templatexpix=","templateypix=",
+                      "imagesky=","templatesky=",
+                      "imageskyerr=","templateskyerr=",
+                      "image=","template=","initialguess=","stepstd=",
+                      "imagepsf=","templatepsf=","imageweight=","templateweight=",
+                      "imagezpt=","templatezpt=","fitrad="])
+
+
+        #print opt
+        #print arg
+    except getopt.GetoptError as err:
+        print str(err)
+        print "Error : incorrect option or missing argument."
+        #print __doc__
+        sys.exit(1)
+
+
     try:
         args = sys.argv[1:]
 
         opt, arg = getopt.getopt(
             args, "ci",
-            longopts=["ccdi=","ti="])
+            longopts=["ccdi=","ti=","listi="])
 
     except getopt.GetoptError as err:
         print "No command line arguments"
@@ -84,7 +125,7 @@ if __name__ == "__main__":
 
     ccdi = 1
     ccd = '01'
-
+    root = "."
     for o, a in opt:
         if o in ["-ci", "--ccdi"]:
             print a
@@ -93,7 +134,11 @@ if __name__ == "__main__":
             print ccd
         if o in ["--ti"]:
             i = int(a)
+        if o in ["--listi"]:
+            li = int(a)
+        if o in ["--rootdir"]:
+            root = a
             #raw_input()
     #raw_input()
     print 'ti is ', i
-    run(i)
+    run(li,i,root)
