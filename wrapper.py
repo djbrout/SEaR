@@ -54,7 +54,7 @@ def run(listindex,index,root):
 
         sd = '/scratch1/scratchdirs/dbrout/p9/results17/detections_'+str(listindex)+'_' + tband + '_' + ccd + '.txt'
 
-        rootplus = detectionslist[listindex].split('/')[0]
+        rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
         print os.listdir(imagepath)
         raw_input()

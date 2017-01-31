@@ -77,8 +77,8 @@
       <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+            <state relative-caret-position="570">
+              <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -423,13 +423,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00776" summary="mpp added for parallel processing">
-      <created>1482779499584</created>
-      <option name="number" value="00776" />
-      <option name="presentableId" value="LOCAL-00776" />
-      <option name="project" value="LOCAL" />
-      <updated>1482779499584</updated>
-    </task>
     <task id="LOCAL-00777" summary="mpp added for parallel processing">
       <created>1482779593453</created>
       <option name="number" value="00777" />
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485887335955</updated>
     </task>
-    <option name="localTasksCounter" value="825" />
+    <task id="LOCAL-00825" summary="mpp added for parallel processing">
+      <created>1485887370035</created>
+      <option name="number" value="00825" />
+      <option name="presentableId" value="LOCAL-00825" />
+      <option name="project" value="LOCAL" />
+      <updated>1485887370035</updated>
+    </task>
+    <option name="localTasksCounter" value="826" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="38" selection-end-column="82" />
+        <state relative-caret-position="570">
+          <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
