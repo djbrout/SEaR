@@ -120,7 +120,7 @@ if __name__ == "__main__":
             longopts=["ccdi=","ti=","listi="])
 
     except getopt.GetoptError as err:
-        print "No command line arguments"
+        print "No command line arguments  "
 
 
     ccdi = 1
