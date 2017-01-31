@@ -38,7 +38,8 @@ def run(listindex,index,root,templatedir):
         f.close()
         detections = dt.readcol(root + '/' + detectionslist[listindex], delim=',')
     tband = 'i'
-
+    print root + '/' + detectionslist[listindex]
+    print detections.keys()
     print 'inside run'
     # if tccd == '01':
     #     searout = open(sd, 'w' )
