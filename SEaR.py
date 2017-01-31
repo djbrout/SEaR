@@ -67,7 +67,6 @@ class fit:
         print 'inside fit'
         self.tstart = time.time()
 
-        self.readDefaults()
 
         self.imzpt = imagezpt
         self.templatezpt = templatezpt
@@ -108,7 +107,7 @@ class fit:
 
 
         if not commandline:
-            #self.readDefaults()
+            self.readDefaults()
             if not dontrootimages:
                 self.image = os.path.join(self.rootdir, self.image)
                 self.template = os.path.join(self.rootdir, self.template)
