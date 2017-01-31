@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="mpp added for parallel processing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
     </list>
@@ -123,8 +123,8 @@
       <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1704">
-              <caret line="50" column="116" selection-start-line="50" selection-start-column="116" selection-end-line="50" selection-end-column="116" />
+            <state relative-caret-position="261">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -422,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00798" summary="mpp added for parallel processing">
-      <created>1485281070766</created>
-      <option name="number" value="00798" />
-      <option name="presentableId" value="LOCAL-00798" />
-      <option name="project" value="LOCAL" />
-      <updated>1485281070766</updated>
     </task>
     <task id="LOCAL-00799" summary="mpp added for parallel processing">
       <created>1485282183790</created>
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485899311392</updated>
     </task>
-    <option name="localTasksCounter" value="847" />
+    <task id="LOCAL-00847" summary="mpp added for parallel processing">
+      <created>1485899357194</created>
+      <option name="number" value="00847" />
+      <option name="presentableId" value="LOCAL-00847" />
+      <option name="project" value="LOCAL" />
+      <updated>1485899357194</updated>
+    </task>
+    <option name="localTasksCounter" value="848" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1704">
-          <caret line="50" column="116" selection-start-line="50" selection-start-column="116" selection-end-line="50" selection-end-column="116" />
+        <state relative-caret-position="261">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

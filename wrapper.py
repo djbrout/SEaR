@@ -32,7 +32,7 @@ def run(listindex,index,root,templatedir):
         ll = l.readlines()
         l.close()
         f = open(root+'/'+detectionslist[listindex],'w')
-        f.write('band_ccd,x,y,sn,mag\n')
+        f.write('band_ccd,x,y,sn,mag \n')
         for j in ll:
             f.write(j)
         f.close()
@@ -43,6 +43,8 @@ def run(listindex,index,root,templatedir):
     print 'inside run'
     print detections['x'].shape
     print range(detections['x'].shape[0])
+    print detections['band_ccd'].shape
+    print detections['mag'].shape
     # if tccd == '01':
     #     searout = open(sd, 'w' )
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
