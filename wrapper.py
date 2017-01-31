@@ -52,10 +52,13 @@ def run(listindex,index,root,templatedir):
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
 
-        sd = '/scratch1/scratchdirs/dbrout/p9/results17/detections_'+str(listindex)+'_' + tband + '_' + ccd + '.txt'
 
         rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
+
+
+        sd = '/scratch1/scratchdirs/dbrout/p9/results17/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
+        print 'outfile',sd
 
         if not band == tband: continue
         #if not ccd == tccd: continue
