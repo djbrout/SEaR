@@ -67,6 +67,7 @@ class fit:
         print 'inside fit'
         self.tstart = time.time()
 
+        self.readDefaults()
 
         self.imzpt = imagezpt
         self.templatezpt = templatezpt
@@ -105,23 +106,23 @@ class fit:
 
         self.fermigrid = fermigrid
 
-        if dontrootimages:
-            pass
-        elif not commandline:
-            self.readDefaults()
-            self.image = os.path.join(self.rootdir, self.image)
-            self.template = os.path.join(self.rootdir, self.template)
-            self.imagepsf = os.path.join(self.rootdir, self.imagepsf)
-            self.templatepsf = os.path.join(self.rootdir, self.templatepsf)
-            self.imageweight = os.path.join(self.rootdir, self.imageweight)
-            self.templateweight = os.path.join(self.rootdir, self.templateweight)
-        # else:
-        #     self.image = os.path.join(self.rootdir, image)
-        #     self.template = os.path.join(self.rootdir, template)
-        #     self.imagepsf = os.path.join(self.rootdir, imagepsf)
-        #     self.templatepsf = os.path.join(self.rootdir, templatepsf)
-        #     self.imageweight = os.path.join(self.rootdir, imageweight)
-        #     self.templateweight = os.path.join(self.rootdir, templateweight)
+
+        if not commandline:
+            #self.readDefaults()
+            if not dontrootimages:
+                self.image = os.path.join(self.rootdir, self.image)
+                self.template = os.path.join(self.rootdir, self.template)
+                self.imagepsf = os.path.join(self.rootdir, self.imagepsf)
+                self.templatepsf = os.path.join(self.rootdir, self.templatepsf)
+                self.imageweight = os.path.join(self.rootdir, self.imageweight)
+                self.templateweight = os.path.join(self.rootdir, self.templateweight)
+        else:
+            self.image = os.path.join(self.rootdir, image)
+            self.template = os.path.join(self.rootdir, template)
+            self.imagepsf = os.path.join(self.rootdir, imagepsf)
+            self.templatepsf = os.path.join(self.rootdir, templatepsf)
+            self.imageweight = os.path.join(self.rootdir, imageweight)
+            self.templateweight = os.path.join(self.rootdir, templateweight)
 
 
         #if not self.ccd is None:
