@@ -42,7 +42,7 @@ def run(listindex,index,root,templatedir):
     print detections.keys()
     print 'inside run'
     print detections['x'].shape
-    print range(detections['x'].shape[0])
+    #print range(detections['x'].shape[0])
     print detections['band_ccd'].shape
     print detections['mag'].shape
     # if tccd == '01':
