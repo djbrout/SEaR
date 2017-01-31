@@ -36,6 +36,7 @@ def run(listindex,index,root):
         for j in ll:
             f.write(j)
         f.close()
+        detections = dt.readcol(root + '/' + detectionslist[listindex], delim=',')
     tband = 'i'
 
     print 'inside run'
