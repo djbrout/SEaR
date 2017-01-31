@@ -60,11 +60,11 @@ def run(listindex,index,root,templatedir):
         imlist = os.listdir(imagepath)
 
         for tf in os.listdir(templatedir):
-            if bc+'.weight.fits' in il:
+            if bc+'.weight.fits' in tf:
                 templateimageweight = templatedir + '/' + tf
-            elif bc + '.fits' in il:
+            elif bc + '.fits' in tf:
                 templateimage = templatedir + '/' + tf
-            elif bc+'.psf' in il:
+            elif bc+'.psf' in tf:
                 templateimagepsf = templatedir + '/' + tf
 
         for il in imlist:
