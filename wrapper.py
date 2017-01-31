@@ -19,7 +19,7 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
                   '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
-def run(listindex,index,root):
+def run(listindex,index,root,templatedir):
 
     #print root+'/'+detectionslist[listindex]
     #raw_input()
@@ -58,22 +58,29 @@ def run(listindex,index,root):
         imagepath = root+'/'+rootplus
         print os.listdir(imagepath)
         imlist = os.listdir(imagepath)
-        for il in imlist:
-            if 'Template' in il:
-                if '.weight.fits' in il:
-                    templateimageweight = imagepath+'/'+il
-                elif bc+'.fits' in il:
-                    templateimage = imagepath+'/'+il
-                elif '.psf' in il:
-                    templateimagepsf = imagepath+'/'+il
-            else:
-                if '+fakeSN.fits' in il:
-                    searchimage = imagepath+'/'+il
-                elif '+fakeSN.weight.fits' in il:
-                    searchimageweight = imagepath+'/'+il
-                elif '.psf' in il:
-                    searchimagepsf = imagepath+'/'+il
 
+        for tf in os.listdir(templatedir):
+            if bc+'.weight.fits' in il:
+                templateimageweight = templatedir + '/' + il
+            elif bc + '.fits' in il:
+                templateimage = templatedir + '/' + il
+            elif bc+'.psf' in il:
+                templateimagepsf = templatedir + '/' + il
+
+        for il in imlist:
+            if '+fakeSN.fits' in il:
+                searchimage = imagepath+'/'+il
+            elif '+fakeSN.weight.fits' in il:
+                searchimageweight = imagepath+'/'+il
+            elif '.psf' in il:
+                searchimagepsf = imagepath+'/'+il
+
+        print templateimageweight
+        print templateimage
+        print templateimagepsf
+        print searchimage
+        print searchimageweight
+        print searchimagepsf
         raw_input()
         if not band == tband: continue
         #if not ccd == tccd: continue
@@ -130,7 +137,7 @@ if __name__ == "__main__":
                       "imageskyerr=","templateskyerr=",
                       "image=","template=","initialguess=","stepstd=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
-                      "imagezpt=","templatezpt=","fitrad=","ccdi=","ti=","listi="])
+                      "imagezpt=","templatezpt=","fitrad=","ccdi=","ti=","listi=","templatedir="])
 
 
         #print opt
@@ -168,6 +175,8 @@ if __name__ == "__main__":
             li = int(a)
         if o in ["--rootdir"]:
             root = a
+        if o in ["--templatedir"]:
+            tdir = a
     for o, a in optt:
         if o in ["-ci", "--ccdi"]:
             print a
@@ -182,4 +191,4 @@ if __name__ == "__main__":
             #raw_input()
     #raw_input()
     print 'ti is ', i
-    run(li,i,root)
+    run(li,i,root,templatedir)
