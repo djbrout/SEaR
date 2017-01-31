@@ -647,7 +647,7 @@ class fit:
                           "imageskyerr=", "templateskyerr=",
                           "image=", "template=", "initialguess=", "stepstd=",
                           "imagepsf=", "templatepsf=", "imageweight=", "templateweight=",
-                          "imagezpt=", "templatezpt=", "fitrad="])
+                          "imagezpt=", "templatezpt=", "fitrad=","templatedir="])
             # print opt
             # print arg
         except getopt.GetoptError as err:
