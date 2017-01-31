@@ -191,4 +191,4 @@ if __name__ == "__main__":
             #raw_input()
     #raw_input()
     print 'ti is ', i
-    run(li,i,root,templatedir)
+    run(li,i,root,tdir)
