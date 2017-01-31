@@ -804,7 +804,7 @@ if __name__ == "__main__":
                       "imageskyerr=","templateskyerr=",
                       "image=","template=","initialguess=","stepstd=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
-                      "imagezpt=","templatezpt=","fitrad="])
+                      "imagezpt=","templatezpt=","fitrad=","templatedir="])
 
 
         #print opt
@@ -822,7 +822,7 @@ if __name__ == "__main__":
             args, "hs:cf:cl:o:r:n:i:s:fg",
             longopts=["help", "candfile=","candlist=", "outdir=", "rootdir=",
                       "floatpos","numiter=","index=","stampsize=",
-                      "fermigrid","fitrad=","initialguess=","stepstd="])
+                      "fermigrid","fitrad=","initialguess=","stepstd=","templatedir="])
 
     except getopt.GetoptError as err:
         print
