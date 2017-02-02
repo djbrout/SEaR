@@ -73,6 +73,8 @@ def run(listindex,index,root,templatedir):
         imlist = os.listdir(imagepath)
 
         for tf in os.listdir(templatedir):
+            if 'background' in tf:
+                continue
             if bc + '.weight.fits' in tf:
                 templateimageweight = templatedir + '/' + tf
             elif bc + '.fits' in tf:
@@ -81,6 +83,8 @@ def run(listindex,index,root,templatedir):
                 templateimagepsf = templatedir + '/' + tf
 
         for il in imlist:
+            if 'background' in il:
+                continue
             if '+fakeSN.fits' in il:
                 searchimage = imagepath + '/' + il
             elif '+fakeSN.weight.fits' in il:
