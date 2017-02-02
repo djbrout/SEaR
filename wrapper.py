@@ -51,7 +51,7 @@ def run(listindex,index,root,templatedir):
     #     searout.close()
     cntr = 0
     for i,bc,x,y,sn,m in zip(range(detections['x'].shape[0]),detections['band_ccd'],detections['x'],detections['y'],detections['sn'],detections['mag']):
-        print cntr
+        #print cntr
         #if cntr < 10000: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
