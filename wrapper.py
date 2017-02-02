@@ -50,7 +50,7 @@ def run(listindex,index,root,templatedir):
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
     #     searout.close()
     cntr = 0
-    for i,bc,x,y,sn in zip(range(detections['x'].shape[0]),detections['band_ccd'],detections['x'],detections['y'],detections['sn']):
+    for i,bc,x,y,sn,m in zip(range(detections['x'].shape[0]),detections['band_ccd'],detections['x'],detections['y'],detections['sn'],detections['mag']):
         print cntr
         #if cntr < 10000: continue
         band = bc.split('_')[0]
