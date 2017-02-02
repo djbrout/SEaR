@@ -3,15 +3,21 @@ import dilltools as dt
 import os
 from copy import copy
 
-workingdir = '/scratch1/scratchdirs/dbrout/p9/results17/'
+workingdir = '/scratch1/scratchdirs/dbrout/p9/results18/'
+#
+# os.system('cat '+workingdir+'detections*.txt > '+workingdir+'/alldetections.txt')
+#
+# header = open('/scratch1/scratchdirs/dbrout/p9/results18/alldetections.txt','w')
+# header.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
+# header.close()
 
-header = open('/scratch1/scratchdirs/dbrout/p9/results17/detections_i_00.txt','w')
-header.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
-header.close()
+os.system('cat '+workingdir+'/detections_*.txt > '+workingdir+'/alldetections.txt')
 
-os.system('cat '+workingdir+'detections_i_* > '+workingdir+'detections_i_all.txt')
+with file(workingdir+'alldetections.txt', 'r') as original: data = original.read()
+with file(workingdir+'alldetections.txt', 'w') as modified: modified.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n" + data)
 
-data = dt.readcol(workingdir+'detections_i_all.txt',delim=',')
+
+data = dt.readcol(workingdir+'alldetections.txt',delim=',')
 
 print data.keys()
 
