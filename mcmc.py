@@ -375,6 +375,10 @@ class metropolis_hastings():
         self.simsnosn = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
         self.simsnosnnosky = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky*0.,self.flags,self.fitflags,self.sims,self.gal_conv)
 
+        self.fpsfs =[]
+
+        for i in range(self.Nimage):
+            self.fpsfs.append(np.fft.fft2(self.centered_psfs[i,:,:]))
 
 
         self.run_d_mc()
@@ -644,7 +648,7 @@ class metropolis_hastings():
     def float_sn_pos( self ):
         self.x_pix_offset = self.current_x_offset + np.random.normal( scale= self.psf_shift_std )
         self.y_pix_offset = self.current_y_offset + np.random.normal( scale= self.psf_shift_std ) 
-        self.shiftPSF(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
+        self.garyshiftpsf(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
 
     def mapkernel( self, kicked_modelvec, kicked_psfs, centered_psfs,sky, flags, fitflags, sims, galconv):
 
@@ -1288,6 +1292,19 @@ class metropolis_hastings():
         #print zscores[1,:,:]
         #raw_input()
         return zscores
+
+    def fouriershift(self, xoff, yoff, fpsf):
+        dim = fpsf.shape[0]
+        k = np.arange(0, dim)
+        phasex = np.exp(np.fft.fftfreq(dim) * (-2j * np.pi * xoff))
+        phasey = np.exp(np.fft.fftfreq(dim) * (-2j * np.pi * yoff))
+        # This tweak is needed to maintain perfect Hermitian arrays
+        phasex.imag[dim / 2] = 0.
+        phasey.imag[dim / 2] = 0.
+        return fpsf * phasex[np.newaxis, :] * phasey[:, np.newaxis]
+
+    def garyshiftpsf(self,y_off=0.0,x_off=0.0):
+        self.kicked_psfs[0, :, :] = np.fft.ifft2(self.fouriershift(x_off, y_off, self.fpsfs[0,:,:]))
 
 
     def shiftPSF(self,y_off=0.0,x_off=0.0): 
