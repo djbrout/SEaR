@@ -4,6 +4,7 @@
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loop.py" afterPath="$PROJECT_DIR$/loop.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmc.py" afterPath="$PROJECT_DIR$/mcmc.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,15 +24,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="457" column="55" selection-start-line="457" selection-start-column="55" selection-end-line="457" selection-end-column="55" />
+            <state relative-caret-position="467">
+              <caret line="464" column="43" selection-start-line="464" selection-start-column="43" selection-end-line="464" selection-end-column="43" />
               <folding>
                 <element signature="e#810#828#0" expanded="true" />
-                <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-                <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
+                <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+                <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loop.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loop.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="285">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -161,10 +162,10 @@
         <option value="$PROJECT_DIR$/runsextractor.py" />
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
         <option value="$PROJECT_DIR$/wrapper.py" />
-        <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/loop.py" />
+        <option value="$PROJECT_DIR$/mcmc.py" />
       </list>
     </option>
   </component>
@@ -422,13 +423,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00835" summary="mpp added for parallel processing">
-      <created>1485892157171</created>
-      <option name="number" value="00835" />
-      <option name="presentableId" value="LOCAL-00835" />
-      <option name="project" value="LOCAL" />
-      <updated>1485892157172</updated>
     </task>
     <task id="LOCAL-00836" summary="mpp added for parallel processing">
       <created>1485892202972</created>
@@ -766,7 +760,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487172542805</updated>
     </task>
-    <option name="localTasksCounter" value="884" />
+    <task id="LOCAL-00884" summary="mpp added for parallel processing">
+      <created>1487172948412</created>
+      <option name="number" value="00884" />
+      <option name="presentableId" value="LOCAL-00884" />
+      <option name="project" value="LOCAL" />
+      <updated>1487172948412</updated>
+    </task>
+    <option name="localTasksCounter" value="885" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -885,8 +886,8 @@
           <caret line="410" column="0" selection-start-line="410" selection-start-column="0" selection-end-line="410" selection-end-column="0" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
-            <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-            <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
           </folding>
         </state>
       </provider>
@@ -946,8 +947,8 @@
           <caret line="1156" column="0" selection-start-line="1154" selection-start-column="0" selection-end-line="1156" selection-end-column="0" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
-            <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-            <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1006,8 +1007,8 @@
           <caret line="1153" column="44" selection-start-line="1153" selection-start-column="44" selection-end-line="1153" selection-end-column="44" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
-            <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-            <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1067,8 +1068,8 @@
           <caret line="219" column="43" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="43" />
           <folding>
             <element signature="e#810#828#0" expanded="true" />
-            <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-            <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1221,18 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcmc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="457" column="55" selection-start-line="457" selection-start-column="55" selection-end-line="457" selection-end-column="55" />
-          <folding>
-            <element signature="e#810#828#0" expanded="true" />
-            <marker date="1487129518000" expanded="true" signature="16605:16754" ph="..." />
-            <marker date="1487129518000" expanded="true" signature="16796:17547" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1256,10 +1245,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="285">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcmc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="464" column="43" selection-start-line="464" selection-start-column="43" selection-end-line="464" selection-end-column="43" />
+          <folding>
+            <element signature="e#810#828#0" expanded="true" />
+            <marker date="1487177880000" expanded="true" signature="16605:16754" ph="..." />
+            <marker date="1487177880000" expanded="true" signature="16796:17547" ph="..." />
           </folding>
         </state>
       </provider>
