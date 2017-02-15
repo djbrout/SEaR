@@ -4,7 +4,6 @@
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/loop.py" afterPath="$PROJECT_DIR$/loop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrapper.py" afterPath="$PROJECT_DIR$/wrapper.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loop.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loop.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+            <state relative-caret-position="255">
+              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -121,7 +120,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1512">
@@ -164,8 +163,8 @@
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
-        <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
+        <option value="$PROJECT_DIR$/loop.py" />
       </list>
     </option>
   </component>
@@ -423,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00838" summary="mpp added for parallel processing">
-      <created>1485897674940</created>
-      <option name="number" value="00838" />
-      <option name="presentableId" value="LOCAL-00838" />
-      <option name="project" value="LOCAL" />
-      <updated>1485897674941</updated>
     </task>
     <task id="LOCAL-00839" summary="mpp added for parallel processing">
       <created>1485897751132</created>
@@ -767,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487178129022</updated>
     </task>
-    <option name="localTasksCounter" value="887" />
+    <task id="LOCAL-00887" summary="mpp added for parallel processing">
+      <created>1487193223731</created>
+      <option name="number" value="00887" />
+      <option name="presentableId" value="LOCAL-00887" />
+      <option name="project" value="LOCAL" />
+      <updated>1487193223731</updated>
+    </task>
+    <option name="localTasksCounter" value="888" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1233,6 +1232,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1512">
+          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mcmc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
@@ -1247,20 +1256,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1512">
-          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
