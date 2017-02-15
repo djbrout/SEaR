@@ -1304,7 +1304,7 @@ class metropolis_hastings():
         return fpsf * phasex[np.newaxis, :] * phasey[:, np.newaxis]
 
     def garyshiftpsf(self,y_off=0.0,x_off=0.0):
-        print x_off,y_off
+        #print x_off,y_off
         fs = self.fouriershift(x_off, y_off, self.fpsfs[0])
         self.kicked_psfs[0, :, :] = np.fft.ifft2(fs)
 
