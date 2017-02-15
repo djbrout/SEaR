@@ -3,7 +3,7 @@ import dilltools as dt
 import os
 from copy import copy
 
-workingdir = '/scratch1/scratchdirs/dbrout/p9/results20/'
+workingdir = '/scratch1/scratchdirs/dbrout/p9/results21/'
 #
 # os.system('cat '+workingdir+'detections*.txt > '+workingdir+'/alldetections.txt')
 #
