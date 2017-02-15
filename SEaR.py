@@ -252,9 +252,12 @@ class fit:
         #raw_input()
 
 
-        imagedata = getdata(os.path.join(self.rootdir, self.image))
-        imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
-
+        try:
+            imagedata = getdata(os.path.join(self.rootdir, self.image))
+            imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
+        except:
+            imagedata = pf.getdata(os.path.join(self.rootdir, self.image))
+            imweightdata = pf.getdata(os.path.join(self.rootdir, self.imageweight))
         import aper
         mag, magerr, flux, fluxerr, assky, asskyerr, badflagx, outstr = \
             aper.aper(imagedata, self.ix, self.iy, apr=13., verbose=False)
