@@ -1295,7 +1295,7 @@ class metropolis_hastings():
 
     def fouriershift(self, xoff, yoff, fpsf):
         dim = fpsf.shape[0]
-        k = np.arange(0, dim)
+        #k = np.arange(0, dim)
         phasex = np.exp(np.fft.fftfreq(dim) * (-2j * np.pi * xoff))
         phasey = np.exp(np.fft.fftfreq(dim) * (-2j * np.pi * yoff))
         # This tweak is needed to maintain perfect Hermitian arrays
