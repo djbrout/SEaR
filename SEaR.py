@@ -253,6 +253,7 @@ class fit:
 
 
         try:
+            print os.path.join(self.rootdir, self.image)
             imagedata = getdata(os.path.join(self.rootdir, self.image))
             imweightdata = getdata(os.path.join(self.rootdir, self.imageweight))
         except:
