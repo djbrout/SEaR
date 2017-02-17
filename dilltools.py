@@ -132,11 +132,16 @@ def psfphotometry(im, psf, sky, weight, gal, guess_scale):
 # By Dillon Brout
 # dbrout@physics.upenn.edu
 
-def readcol(filename,headline=1,startline=2,delim=' '):
+def readcol(filename,headline=1,startline=2,delim=' ',noheaders=False):
+    column_list = []
+
+    if noheaders:
+        headline = -100
+        startline = 1
+        column_list = range(1000)
     import re
     linenum = 0
     go = 0
-    column_list = []
     return_cols = {}
     inf = open(filename)
     #outf = open('results4.txt')
@@ -148,6 +153,8 @@ def readcol(filename,headline=1,startline=2,delim=' '):
         cols = line.split(delim)
         #print cols
         cols[:] = (value for value in cols if value != '')
+
+
         if linenum == headline - 1:
             #outf.write(line+'\n')
             for col in cols:

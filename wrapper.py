@@ -65,6 +65,9 @@ def run(listindex,index,root,templatedir):
         sd = '/scratch1/scratchdirs/dbrout/p9/results22/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
         #print 'outfile',sd
 
+        sdd = dt.readcol(sd,delim=',',noheaders=True)
+
+
         if not band == tband: continue
         #if not ccd == tccd: continue
         if not i == index: continue
