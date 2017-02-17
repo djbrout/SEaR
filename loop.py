@@ -4,7 +4,7 @@ import numpy as np
 
 nproc=4
 
-for i in np.arange(0, 2000):
+for i in np.arange(0, 4000):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
@@ -13,7 +13,7 @@ for i in np.arange(0, 2000):
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 12\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=00:30:00\n' +
+        '#SBATCH --time=00:19:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --job-name=2_iband_' + str(i) + '\n' +

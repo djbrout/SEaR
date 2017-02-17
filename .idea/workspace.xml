@@ -101,8 +101,8 @@
       <file leaf-file-name="loop.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="405">
+              <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -422,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00851" summary="mpp added for parallel processing">
-      <created>1485899924471</created>
-      <option name="number" value="00851" />
-      <option name="presentableId" value="LOCAL-00851" />
-      <option name="project" value="LOCAL" />
-      <updated>1485899924471</updated>
     </task>
     <task id="LOCAL-00852" summary="mpp added for parallel processing">
       <created>1485900384199</created>
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487342282455</updated>
     </task>
-    <option name="localTasksCounter" value="900" />
+    <task id="LOCAL-00900" summary="mpp added for parallel processing">
+      <created>1487342326351</created>
+      <option name="number" value="00900" />
+      <option name="presentableId" value="LOCAL-00900" />
+      <option name="project" value="LOCAL" />
+      <updated>1487342326351</updated>
+    </task>
+    <option name="localTasksCounter" value="901" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="405">
+          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
