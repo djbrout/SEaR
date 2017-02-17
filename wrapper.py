@@ -1,6 +1,8 @@
 import SEaR
 import os
 import dilltools as dt
+import numpy as np
+import sys
 
 
 detectionslistall = open('/global/u1/d/dbrout/SEaR/clean_detections.list', 'r').readlines()
@@ -65,7 +67,6 @@ def run(listindex,index,root,templatedir):
         sd = '/scratch1/scratchdirs/dbrout/p9/results22/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
         #print 'outfile',sd
 
-        sdd = dt.readcol(sd,delim=',',noheaders=True)
 
 
         if not band == tband: continue
@@ -113,6 +114,13 @@ def run(listindex,index,root,templatedir):
         #         raw_input()
         #         continue
         # continue
+
+
+        sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
+        if int(i) in sdd:
+            print 'already ran. exiting now'
+            sys.exit()
+
 
         cntr += 1
         #print cntr
