@@ -32,7 +32,7 @@ for i in np.arange(0, 4000):
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 0 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 1 \n' +
         '\n'
     )
     f.close()
