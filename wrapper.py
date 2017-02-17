@@ -117,7 +117,7 @@ def run(listindex,index,root,templatedir):
         #if cntr > 35: continue
         #if i != 632: continue
         print 'about to fit'
-        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(i)+'_'+band+'_'+ccd,ccd=ccd,
+        classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(listindex)+'_'+str(i)+'_'+band+'_'+ccd,ccd=ccd,
                               templateweight=templateimageweight,template=templateimage,
                               templatepsf=templateimagepsf,image=searchimage,
                               imageweight=searchimageweight,imagepsf=searchimagepsf)
