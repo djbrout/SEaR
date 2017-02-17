@@ -139,6 +139,7 @@ def readcol(filename,headline=1,startline=2,delim=' ',noheaders=False):
         headline = -100
         startline = 1
         column_list = range(1000)
+        return_cols = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]}
     import re
     linenum = 0
     go = 0
