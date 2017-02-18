@@ -11,9 +11,9 @@ for i in np.arange(0, 4000):
     f.write(
         '#!/bin/bash -l\n' +
         '#SBATCH --partition=shared\n' +
-        '#SBATCH -n 12\n' +
+        '#SBATCH -n 1\n' +
         '#SBATCH -A des\n' +
-        '#SBATCH --time=00:19:00\n' +
+        '#SBATCH --time=00:29:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --job-name=2_iband_' + str(i) + '\n' +
@@ -32,7 +32,7 @@ for i in np.arange(0, 4000):
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 1 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 2 \n' +
         '\n'
     )
     f.close()
