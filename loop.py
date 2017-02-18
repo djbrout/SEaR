@@ -4,7 +4,7 @@ import numpy as np
 
 nproc=4
 
-for i in np.arange(3700, 3705):
+for i in np.arange(0, 100):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
@@ -32,7 +32,7 @@ for i in np.arange(3700, 3705):
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 1 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 5 \n' +
         '\n'
     )
     f.close()
