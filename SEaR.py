@@ -50,8 +50,6 @@ import sigma_clip
 import cntrd
 import pyfits as pf
 
-
-
 class fit:
     def __init__(self, candid=None,ccd=None,
                  image=None, template=None,
@@ -158,7 +156,9 @@ class fit:
         if grabfromheader:
             self.grabfromheader()
 
+        print 'about to set up mcmc',time.time()-self.tstart
         self.okaytogo = self.setupMCMC()
+        print 'finished setting up',time.time()-self.tstart
 
     def go(self):
         self.runDMC()
