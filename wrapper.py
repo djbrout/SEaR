@@ -115,12 +115,13 @@ def run(listindex,index,root,templatedir):
         #         continue
         # continue
 
-
-        sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
-        if int(i) in sdd:
-            print 'already ran. exiting now'
-            sys.exit()
-
+        try:
+            sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
+            if int(i) in sdd:
+                print 'already ran. exiting now'
+                sys.exit()
+        except:
+            pass
 
         cntr += 1
         #print cntr
