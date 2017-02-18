@@ -4,7 +4,7 @@ import numpy as np
 
 nproc=4
 
-for i in np.arange(0, 4000):
+for i in np.arange(0, 4):
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
