@@ -489,13 +489,20 @@ class fit:
             self.templateskyerr = pf.getdata(self.template+'.background_rms')[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
                                self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]* 0 + sexrms
         except:
-            time.sleep(10)
-            self.templateskyerr = pf.getdata(self.template + '.background_rms')[
+            time.sleep(10*(np.random.rand()+2))
+            try:
+                self.templateskyerr = pf.getdata(self.template + '.background_rms')[
                               self.templatepsfcenter[1] - self.stampsize / 2:self.templatepsfcenter[
                                                                                  1] + self.stampsize / 2,
                               self.templatepsfcenter[0] - self.stampsize / 2:self.templatepsfcenter[
                                                                                  0] + self.stampsize / 2] * 0 + sexrms
-
+            except:
+                time.sleep(10*(np.random.rand()+2))
+                self.templateskyerr = pf.getdata(self.template + '.background_rms')[
+                                  self.templatepsfcenter[1] - self.stampsize / 2:self.templatepsfcenter[
+                                                                                     1] + self.stampsize / 2,
+                                  self.templatepsfcenter[0] - self.stampsize / 2:self.templatepsfcenter[
+                                                                                     0] + self.stampsize / 2] * 0 + sexrms
         #raw_input('tesing ')
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
