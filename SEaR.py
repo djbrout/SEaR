@@ -343,10 +343,11 @@ class fit:
                                              max([self.impsfcenter[0] - 100., 0]):min([self.impsfcenter[0] + 100,imagedata.shape[1] - 1])],
                                              clipsig=3, maxiter=8)
         import runsextractor
+        print 'running sextractor',self.candid
         sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 100,
                                                          self.impsfcenter[0] + 100,
                                                          self.impsfcenter[1] - 100,
-                                                         self.impsfcenter[1] + 100)
+                                                         self.impsfcenter[1] + 100,index=self.candid)
 
         #asskyerr = sexrms
 

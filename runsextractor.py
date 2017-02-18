@@ -21,7 +21,7 @@ import pyfits as pf
 import dilltools as dt
 import os
 
-def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi):
+def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
 
     #im = pf.getdata(imagefilename)
     im = imagedata
@@ -29,7 +29,7 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi):
     # im = im[ylow:yhi,xlow:xhi]
     if not os.path.exists('sewpy_logs/'):
         os.makedirs('sewpy_logs/')
-    newfilename = 'sewpy_logs/trimmed_'+imagefilename.split('/')[-1]
+    newfilename = 'sewpy_logs/'+index+'trimmed_'+imagefilename.split('/')[-1]
     dt.save_fits_image(im, newfilename)
 
     logging.basicConfig(format='%(levelname)s: %(name)s(%(funcName)s): %(message)s', level=logging.DEBUG)

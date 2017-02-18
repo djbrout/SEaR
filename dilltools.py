@@ -72,8 +72,11 @@ def read(filename, headline, startline, delim=' '):
 
 def save_fits_image(image,filename):
     hdu = pf.PrimaryHDU(image)
-    if os.path.exists(filename):
-        os.remove(filename)
+    try:
+        if os.path.exists(filename):
+            os.remove(filename)
+    except:
+        pass
     hdu.writeto(filename)
 
     return
