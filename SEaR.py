@@ -344,10 +344,10 @@ class fit:
                                              clipsig=3, maxiter=8)
         import runsextractor
         print 'running sextractor',self.candid
-        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 100,
-                                                         self.impsfcenter[0] + 100,
-                                                         self.impsfcenter[1] - 100,
-                                                         self.impsfcenter[1] + 100,index=self.candid)
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.image,imagedata, self.impsfcenter[0] - 50,
+                                                         self.impsfcenter[0] + 50,
+                                                         self.impsfcenter[1] - 50,
+                                                         self.impsfcenter[1] + 50,index=self.candid)
 
         #asskyerr = sexrms
 
@@ -478,7 +478,9 @@ class fit:
         # py.savefig('psi.png')
 
         # import runsextractor
-        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 100, self.templatepsfcenter[0] + 100, self.templatepsfcenter[1]-100, self.templatepsfcenter[1]+100,index=self.candid)#
+        sexsky, sexrms = runsextractor.getsky_and_skyerr(self.template,templatedata, self.templatepsfcenter[0] - 50,
+                                                         self.templatepsfcenter[0] + 50, self.templatepsfcenter[1]-50,
+                                                         self.templatepsfcenter[1]+50,index=self.candid)#
 
         #
         #
