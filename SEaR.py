@@ -354,6 +354,8 @@ class fit:
         #print assky,sexsky
         #print asskyerr,sexrms
         #raw_input()
+
+        print 'sexsky',sexsky,'sexrms',sexrms
         #
         # # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         # # self.imagesky = np.median(vals)
