@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runsextractor.py" afterPath="$PROJECT_DIR$/runsextractor.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -50,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runsextractor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="runsextractor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runsextractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            <state relative-caret-position="423">
+              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
               <folding>
                 <element signature="e#279#291#0" expanded="true" />
               </folding>
@@ -164,8 +163,8 @@
         <option value="$PROJECT_DIR$/wrapper.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
         <option value="$PROJECT_DIR$/loop.py" />
-        <option value="$PROJECT_DIR$/runsextractor.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
+        <option value="$PROJECT_DIR$/runsextractor.py" />
       </list>
     </option>
   </component>
@@ -423,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00883" summary="mpp added for parallel processing">
-      <created>1487172542805</created>
-      <option name="number" value="00883" />
-      <option name="presentableId" value="LOCAL-00883" />
-      <option name="project" value="LOCAL" />
-      <updated>1487172542805</updated>
     </task>
     <task id="LOCAL-00884" summary="mpp added for parallel processing">
       <created>1487172948412</created>
@@ -767,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487520814680</updated>
     </task>
-    <option name="localTasksCounter" value="932" />
+    <task id="LOCAL-00932" summary="mpp added for parallel processing">
+      <created>1487520975535</created>
+      <option name="number" value="00932" />
+      <option name="presentableId" value="LOCAL-00932" />
+      <option name="project" value="LOCAL" />
+      <updated>1487520975535</updated>
+    </task>
+    <option name="localTasksCounter" value="933" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1244,16 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runsextractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
-          <folding>
-            <element signature="e#279#291#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -1261,6 +1250,16 @@
           <folding>
             <element signature="e#622#640#0" expanded="true" />
             <marker date="1487520972000" expanded="true" signature="14841:14978" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runsextractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding>
+            <element signature="e#279#291#0" expanded="true" />
           </folding>
         </state>
       </provider>
