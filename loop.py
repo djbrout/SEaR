@@ -4,7 +4,7 @@ import numpy as np
 
 nproc=4
 
-allindexes = range(0,1)
+allindexes = range(3000,3001)
 np.random.shuffle(allindexes)
 
 for i in allindexes:
