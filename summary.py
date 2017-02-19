@@ -68,11 +68,11 @@ print ind[(chsq2<1.2) & (diffmag == 20)]
 
 #raw_input()
 
-nreal = len(diffmag[(diffmag>0) & (diffmag != 20.00) & (sn > snlim)])
+nreal = len(diffmag[(diffmag>0) & (diffmag != 20.0001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 ntot = len(diffmag[(sn > snlim)])
 
-wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.00)& (sn > snlim)
+wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.0001)& (sn > snlim)
 wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 
 #wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
