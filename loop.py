@@ -4,7 +4,10 @@ import numpy as np
 
 nproc=4
 
-for i in np.arange(0, 4000):
+allindexes = np.arange(0,4000)
+allindexes = np.random.shuffle(allindexes)
+
+for i allindexes:
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
@@ -32,7 +35,7 @@ for i in np.arange(0, 4000):
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 1 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 0 \n' +
         '\n'
     )
     f.close()
