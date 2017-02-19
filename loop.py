@@ -7,7 +7,7 @@ nproc=4
 allindexes = np.arange(0,4000)
 allindexes = np.random.shuffle(allindexes)
 
-for i allindexes:
+for i in allindexes:
     print i
     script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
