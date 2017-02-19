@@ -22,7 +22,7 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
 
 
 def run(listindex,index,root,templatedir):
-
+    print 'running',time.time()
     print root+'/'+detectionslist[listindex]
     #raw_input()
     detections = dt.readcol(root+'/'+detectionslist[listindex], delim=',')
@@ -52,8 +52,11 @@ def run(listindex,index,root,templatedir):
     #     searout.write('ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n')
     #     searout.close()
     cntr = 0
+    didfit = False
     for i,bc,x,y,sn,m in zip(range(detections['x'].shape[0]),detections['band_ccd'],detections['x'],detections['y'],detections['sn'],detections['mag']):
         #print cntr
+        if didfit:
+            continue
         #if cntr < 10000: continue
         band = bc.split('_')[0]
         ccd = bc.split('_')[1]
@@ -73,7 +76,7 @@ def run(listindex,index,root,templatedir):
         #if not ccd == tccd: continue
         if not i == index: continue
 
-        print os.listdir(imagepath)
+        print os.listdir(imagepath),time.time()
         imlist = os.listdir(imagepath)
 
         for tf in os.listdir(templatedir):
@@ -127,12 +130,14 @@ def run(listindex,index,root,templatedir):
         #if cntr < 29: continue
         #if cntr > 35: continue
         #if i != 632: continue
-        print 'about to fit'
+        print 'about to fit',time.time()
         classifier = SEaR.fit(ix=x,iy=y,candid='test_'+str(listindex)+'_'+str(i)+'_'+band+'_'+ccd,ccd=ccd,
                               templateweight=templateimageweight,template=templateimage,
                               templatepsf=templateimagepsf,image=searchimage,
                               imageweight=searchimageweight,imagepsf=searchimagepsf)
+        print 'about to go',time.time()
         chisqs, fitmag, fitmagerr, cx, cy, chisq1fwhm, chisq2fwhm, chisq3fwhm = classifier.go()
+        print 'went',time.time()
         print chisqs
         searout = open(sd,'a')
         searout.write(str(int(i))+',\t'+bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t{5:2.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f},\t\t{9:>7.2f}\n'.format(
@@ -142,12 +147,14 @@ def run(listindex,index,root,templatedir):
         print str(int(i))+',\t'+bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t{5:2.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f},\t\t{9:>7.2f}\n'.format(
             float(sn),float(m),float(round(cx,2)),float(round(cy,2)),float(fitmag),float(fitmagerr),float(chisq1fwhm),float(chisq2fwhm),float(chisq3fwhm),float(chisqs[1]))
         print '-'*100
-        print 'done fitting, now next candidate'
+        print 'done fitting, now next candidate',time.time()
+        didfit = True
 
     print 'finished successfully'
 
 if __name__ == "__main__":
-    print 'inside wrapper'
+    import time
+    print 'inside wrapper',time.time()
 
     import sys, getopt
 
@@ -220,5 +227,5 @@ if __name__ == "__main__":
             root = a
             #raw_input()
     #raw_input()
-    print 'ti is ', i
+    print 'ti is ', i, time.time()
     run(li,i,root,tdir)
