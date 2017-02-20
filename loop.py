@@ -41,4 +41,4 @@ for i in allindexes:
     f.close()
     output = Popen(["sbatch", script], stdout=PIPE).communicate()
     print output[0]
-    #time.sleep(1)
+    time.sleep(1)
