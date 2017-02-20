@@ -391,7 +391,7 @@ for l in open('clean_detections.list','r').readlines():
         #    print i,line
         #if i == 0:
         #else:
-        accept = (line.split()[10] < upperlimchi) & (line.split()[10] > lowerlimchi)
+        accept = (float(line.split()[10]) < upperlimchi) & (float(line.split()[10]) > lowerlimchi)
 
         if int(line.split()[0].replace(',', '')) in alreadydone:
             continue
