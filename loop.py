@@ -35,10 +35,10 @@ for i in allindexes:
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 6 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 5 \n' +
         '\n'
     )
     f.close()
     output = Popen(["sbatch", script], stdout=PIPE).communicate()
     print output[0]
-    time.sleep(1)
+    #time.sleep(1)
