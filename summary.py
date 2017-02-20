@@ -364,7 +364,7 @@ for l in open('clean_detections.list','r').readlines():
         continue
     im = l.split('/')[0]
     detfile = workingdir + '/'+im+'_alldetections.txt'
-    out = workingdir + '/'+im+'_smpdetections.txt'
+    out = open(workingdir + '/'+im+'_smpdetections.txt')
 
     inn = open(detfile)
     dets = dt.readcol(detfile,noheaders=True)
