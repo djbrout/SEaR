@@ -19,7 +19,7 @@ for l in open('clean_detections.list','r').readlines():
     im = l.split('/')[0]
     os.system('cat ' + workingdir + '/detections_'+im+'*.txt > ' + workingdir + '/'+im+'_alldetections.txt')
 
-raw_input('catted')
+#raw_input('catted')
 with file(workingdir+'alldetections.txt', 'r') as original: data = original.read()
 with file(workingdir+'alldetections.txt', 'w') as modified: modified.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n" + data)
 
@@ -352,12 +352,47 @@ s = copy(ps)
 
 
 
-upperlimchi = 1.37
-accept = (chsq1 < upperlimchi) & (sn > snlim)
+#upperlimchi = 1.37
+#accept = (chsq1 < upperlimchi) & (sn > snlim)
 #wwbad = (chsq1 < upperlimchi) & (diffmag == 0) & (sn > snlim)
 
-inn = open(workingdir+'detections_i_all.txt','r').readlines()
-out = open(workingdir+'predictions_i.txt','w')
+
+
+
+for l in open('clean_detections.list','r').readlines():
+    if '#' in l:
+        continue
+    im = l.split('/')[0]
+    detfile = workingdir + '/'+im+'_alldetections.txt'
+    out = workingdir + '/'+im+'_smpdetections.txt'
+
+    inn = open(detfile)
+    dets = dt.readcol(detfile,noheaders=True)
+
+    upperlimchi = 1.37
+    lowerlimchi = .8
+
+    accept = (dets[10] < upperlimchi) & (dets[10] > lowerlimchi)
+
+    alreadydone = []
+    for i, line in enumerate(inn):
+        #    print i,line
+        if i == 0:
+            out.write(line.strip() + ',\t accept\n')
+        else:
+            if int(line.split()[0].replace(',', '')) in alreadydone:
+                continue
+            else:
+                alreadydone.append(int(line.split()[0].replace(',', '')))
+                if accept[i - 1]:
+                    out.write(line.strip().replace('nan', '9999') + ',\t 1\n')
+                else:
+                    out.write(line.strip().replace('nan', '9999') + ',\t 0\n')
+
+    out.close()
+
+# inn = open(workingdir+'detections_i_all.txt','r').readlines()
+# out = open(workingdir+'predictions_i.txt','w')
 
 
 
@@ -385,26 +420,27 @@ out = open(workingdir+'predictions_i.txt','w')
 #
 # # wwreal4 = (sn > 1000000.) & (np.isnan(chsq1)) & (sn < 125.)
 # acceptvec = np.logical_or(np.logical_or(wwreal4,np.logical_or(wwreal3,np.logical_or(wwreal, wwreal2))),np.logical_or(wwbad3,
-#                         np.logical_or(wwbad,wwbad2)))
+# #                         np.logical_or(wwbad,wwbad2)))
+#
+# alreadydone = []
+# for i,line in enumerate(inn):
+#     #    print i,line
+#     if i == 0:
+#         out.write(line.strip() + ',\t accept\n')
+#     else:
+#         if int(line.split()[0].replace(',','')) in alreadydone:
+#             continue
+#         else:
+#             alreadydone.append(int(line.split()[0].replace(',','')))
+#             if accept[i-1]:
+#                 out.write(line.strip().replace('nan','9999')+',\t 1\n')
+#             else:
+#                 out.write(line.strip().replace('nan','9999')+',\t 0\n')
+#     #if i > 10.:
+#     #    raw_input()
+#     #raw_input()
+#     #out.write('')
 
-alreadydone = []
-for i,line in enumerate(inn):
-    #    print i,line
-    if i == 0:
-        out.write(line.strip() + ',\t accept\n')
-    else:
-        if int(line.split()[0].replace(',','')) in alreadydone:
-            continue
-        else:
-            alreadydone.append(int(line.split()[0].replace(',','')))
-            if accept[i-1]:
-                out.write(line.strip().replace('nan','9999')+',\t 1\n')
-            else:
-                out.write(line.strip().replace('nan','9999')+',\t 0\n')
-    #if i > 10.:
-    #    raw_input()
-    #raw_input()
-    #out.write('')
 
-out.close()
-print 'saved',workingdir+'predictions_i.txt'
+# out.close()
+print 'saved',workingdir
