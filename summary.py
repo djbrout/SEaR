@@ -366,8 +366,11 @@ for l in open('clean_detections.list','r').readlines():
     detfile = workingdir + '/'+im+'_alldetections.txt'
     out = open(workingdir + '/'+im+'_smpdetections.txt','w')
 
-    inn = open(detfile,'r')
+    inn = open(detfile,'r').readlines()
     dets = dt.readcol(detfile,noheaders=True)
+
+    if len(inn) == 0:
+        continue
 
     upperlimchi = 1.37
     lowerlimchi = .8
