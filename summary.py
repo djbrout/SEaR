@@ -368,17 +368,17 @@ for l in open('clean_detections.list','r').readlines():
 
     print detfile
     inn = open(detfile,'r').readlines()
-    dets = dt.readcol(detfile,noheaders=True)
+    #dets = dt.readcol(detfile,noheaders=True)
 
-    if len(dets[0]) == 0:
-        continue
+    #if len(dets[0]) == 0:
+    #    continue
 
     upperlimchi = 1.37
     lowerlimchi = .8
 
     #print dets[10]
 
-    accept = (np.array(dets[10],dtype='float') < upperlimchi) & (np.array(dets[10],dtype='float') > lowerlimchi)
+    #accept = (np.array(dets[10],dtype='float') < upperlimchi) & (np.array(dets[10],dtype='float') > lowerlimchi)
 
 
     out = open(workingdir + '/'+im+'_smpdetections.txt','w')
@@ -391,11 +391,13 @@ for l in open('clean_detections.list','r').readlines():
         #    print i,line
         #if i == 0:
         #else:
+        accept = (line.split()[10] < upperlimchi) & (line.split()[10] > lowerlimchi)
+
         if int(line.split()[0].replace(',', '')) in alreadydone:
             continue
         else:
             alreadydone.append(int(line.split()[0].replace(',', '')))
-            if accept[i]:
+            if accept:
                 out.write(line.strip().replace('nan', '9999') + ',\t 1\n')
             else:
                 out.write(line.strip().replace('nan', '9999') + ',\t 0\n')
