@@ -373,21 +373,21 @@ for l in open('clean_detections.list','r').readlines():
     lowerlimchi = .8
 
     accept = (dets[10] < upperlimchi) & (dets[10] > lowerlimchi)
+    out.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi,\taccept\n")
 
     alreadydone = []
     for i, line in enumerate(inn):
         #    print i,line
-        if i == 0:
-            out.write(line.strip() + ',\t accept\n')
+        #if i == 0:
+        #else:
+        if int(line.split()[0].replace(',', '')) in alreadydone:
+            continue
         else:
-            if int(line.split()[0].replace(',', '')) in alreadydone:
-                continue
+            alreadydone.append(int(line.split()[0].replace(',', '')))
+            if accept[i - 1]:
+                out.write(line.strip().replace('nan', '9999') + ',\t 1\n')
             else:
-                alreadydone.append(int(line.split()[0].replace(',', '')))
-                if accept[i - 1]:
-                    out.write(line.strip().replace('nan', '9999') + ',\t 1\n')
-                else:
-                    out.write(line.strip().replace('nan', '9999') + ',\t 0\n')
+                out.write(line.strip().replace('nan', '9999') + ',\t 0\n')
 
     out.close()
 
