@@ -13,8 +13,13 @@ workingdir = '/scratch1/scratchdirs/dbrout/p9/results26/'
 
 os.system('cat '+workingdir+'/detections_*.txt > '+workingdir+'/alldetections.txt')
 
+for l in 'clean_detections.list':
+    if '#' in l:
+        continue
+    im = l.split('/')[0]
+    os.system('cat ' + workingdir + '/detections_'+im+'*.txt > ' + workingdir + '/'+im+'_alldetections.txt')
 
-
+raw_input('catted')
 with file(workingdir+'alldetections.txt', 'r') as original: data = original.read()
 with file(workingdir+'alldetections.txt', 'w') as modified: modified.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n" + data)
 
@@ -385,7 +390,6 @@ out = open(workingdir+'predictions_i.txt','w')
 alreadydone = []
 for i,line in enumerate(inn):
     #    print i,line
-
     if i == 0:
         out.write(line.strip() + ',\t accept\n')
     else:
