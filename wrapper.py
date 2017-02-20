@@ -76,7 +76,11 @@ def run(listindex,index,root,templatedir):
         #if not ccd == tccd: continue
         if not i == index: continue
 
-        print os.listdir(imagepath),time.time()
+        try:
+            print os.listdir(imagepath),time.time()
+        except:
+            print 'could not fine image path',imagepath
+            sys.exit()
         imlist = os.listdir(imagepath)
 
         for tf in os.listdir(templatedir):
