@@ -65,8 +65,8 @@
       <file leaf-file-name="runsextractor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/runsextractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+            <state relative-caret-position="168">
+              <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
               <folding>
                 <element signature="e#279#291#0" expanded="true" />
               </folding>
@@ -423,13 +423,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00936" summary="mpp added for parallel processing">
-      <created>1487523018218</created>
-      <option name="number" value="00936" />
-      <option name="presentableId" value="LOCAL-00936" />
-      <option name="project" value="LOCAL" />
-      <updated>1487523018218</updated>
-    </task>
     <task id="LOCAL-00937" summary="mpp added for parallel processing">
       <created>1487523081014</created>
       <option name="number" value="00937" />
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487565698004</updated>
     </task>
-    <option name="localTasksCounter" value="985" />
+    <task id="LOCAL-00985" summary="mpp added for parallel processing">
+      <created>1487565810843</created>
+      <option name="number" value="00985" />
+      <option name="presentableId" value="LOCAL-00985" />
+      <option name="project" value="LOCAL" />
+      <updated>1487565810843</updated>
+    </task>
+    <option name="localTasksCounter" value="986" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/runsextractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        <state relative-caret-position="168">
+          <caret line="73" column="66" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
           <folding>
             <element signature="e#279#291#0" expanded="true" />
           </folding>
