@@ -1,7 +1,7 @@
 import os
 from subprocess import *
 import numpy as np
-from time import time
+import time
 nproc=4
 
 allindexes = range(0,4000)
