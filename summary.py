@@ -85,8 +85,8 @@ wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 #wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
 #wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
 
-ll = 4.35
-ul = 4.35
+ll = .8
+ul = 1.4
 s=.26
 
 
@@ -103,6 +103,8 @@ plt.scatter(sn[wreal],chsq2[wreal],color='green',alpha=.2,label='Train')
 #plt.scatter(snt[wfaket],chsq2t[wfaket],color='red',alpha=.5,marker='+')
 #plt.scatter(snt[wrealt],chsq2t[wrealt],color='green',alpha=.9,marker='+',label='Test')
 plt.axhline(ul,color='black',linestyle='--')
+plt.axhline(ll,color='black',linestyle='--')
+
 #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
@@ -117,6 +119,8 @@ plt.clf()
 plt.scatter(sn[wfake],chsq1[wfake],color='red',alpha=.2)
 plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.2)
 plt.axhline(ul,color='black',linestyle='--')
+plt.axhline(ll,color='black',linestyle='--')
+
 #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
@@ -130,6 +134,7 @@ plt.clf()
 plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.2)
 plt.scatter(sn[wreal],chsq3[wreal],color='green',alpha=.2)
 plt.axhline(ul,color='black',linestyle='--')
+plt.axhline(ll,color='black',linestyle='--')
 #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
