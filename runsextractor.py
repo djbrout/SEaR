@@ -67,7 +67,7 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     bgrms = pf.getdata('sewpy_logs/'+index+'.background_rms')
 
     os.remove('sewpy_logs/' + index + '.background')
-    os.system('sewpy_logs/' + index + '.background_rms')
+    os.remove('sewpy_logs/' + index + '.background_rms')
     os.system('yes | rm sewpy_logs/'+index+'*.txt')
     os.popen('rm sewpy_logs/'+index+'*')
 
