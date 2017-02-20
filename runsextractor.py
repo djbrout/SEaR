@@ -18,6 +18,7 @@ background, rms = runsextractor.getsky_and_skyerr(im)
 import sewpy
 import logging
 import pyfits as pf
+import sys
 import numpy as np
 import dilltools as dt
 import os
@@ -45,7 +46,11 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
                                                                                               imagefilename+'.background_rms',
                               "back_size":"256"}
                 )
-            out = sew(imagefilename)
+            try:
+                out = sew(imagefilename)
+            except:
+                print 'log file issue'
+                sys.exit()
             print imagefilename
     # path = out['logfilepath']
     # log = open(path, 'r')
