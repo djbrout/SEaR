@@ -13,7 +13,7 @@ workingdir = '/scratch1/scratchdirs/dbrout/p9/results26/'
 
 os.system('cat '+workingdir+'/detections_*.txt > '+workingdir+'/alldetections.txt')
 
-for l in 'clean_detections.list':
+for l in open('clean_detections.list','r').readlines():
     if '#' in l:
         continue
     im = l.split('/')[0]
