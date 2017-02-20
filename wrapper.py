@@ -105,6 +105,14 @@ def run(listindex,index,root,templatedir):
         print searchimage
         print searchimageweight
         print searchimagepsf
+
+        if not os.path.exists(templateimage):
+            print 'cannot find template image',templateimage
+            sys.exit()
+        if not os.path.exists(searchimage):
+            print 'cannot find search image', searchimage
+            sys.exit()
+
         #raw_input()
 
 
