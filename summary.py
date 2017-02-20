@@ -363,8 +363,10 @@ for l in open('clean_detections.list','r').readlines():
     if '#' in l:
         continue
     im = l.split('/')[0]
+
     detfile = workingdir + '/'+im+'_alldetections.txt'
 
+    print detfile
     inn = open(detfile,'r').readlines()
     dets = dt.readcol(detfile,noheaders=True)
 
