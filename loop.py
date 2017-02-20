@@ -19,7 +19,7 @@ for i in allindexes:
         '#SBATCH --time=00:19:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
-        '#SBATCH --job-name=2_iband_' + str(i) + '\n' +
+        '#SBATCH --job-name=3_iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=NONE\n' +
         '#SBATCH --qos=premium\n'+
         '#SBATCH --mail-user=bdrizzle@yahoo.com\n' +
@@ -35,7 +35,7 @@ for i in allindexes:
         'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 2 \n' +
+        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 3 \n' +
         '\n'
     )
     f.close()
