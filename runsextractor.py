@@ -29,8 +29,8 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     im = imagedata
     # #hdr = pf.getheader(imagefilename)
     # im = im[ylow:yhi,xlow:xhi]
-    if not os.path.exists('sewpy_logs/'):
-        os.makedirs('sewpy_logs/')
+    #if not os.path.exists('sewpy_logs/'):
+    #    os.makedirs('sewpy_logs/')
     #newfilename = 'sewpy_logs/'+index+'trimmed_'+imagefilename.split('/')[-1]
     #dt.save_fits_image(im, newfilename)
 
@@ -47,11 +47,11 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
                                                                                               imagefilename+'.background_rms',
                               "back_size":"256"}
                 )
-            try:
-                out = sew(imagefilename)
-            except:
-                print 'log file issue'
-                sys.exit()
+            #try:
+            out = sew(imagefilename)
+            #except:
+            #    print 'log file issue'
+            #    sys.exit()
             print imagefilename
     # path = out['logfilepath']
     # log = open(path, 'r')
