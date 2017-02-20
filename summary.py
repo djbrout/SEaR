@@ -85,7 +85,7 @@ wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
 #wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
 #wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
 
-ll = .8
+ll = .5
 ul = 1.4
 s=.26
 
@@ -379,7 +379,7 @@ for l in open('clean_detections.list','r').readlines():
     #    continue
 
     upperlimchi = 1.4
-    lowerlimchi = .8
+    lowerlimchi = .5
 
     #print dets[10]
 
