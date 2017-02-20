@@ -1,7 +1,7 @@
 import os
 from subprocess import *
 import numpy as np
-
+from time import time
 nproc=4
 
 allindexes = range(0,4000)
@@ -41,3 +41,4 @@ for i in allindexes:
     f.close()
     output = Popen(["sbatch", script], stdout=PIPE).communicate()
     print output[0]
+    time.sleep(1)
