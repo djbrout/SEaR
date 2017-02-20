@@ -387,7 +387,7 @@ for l in open('clean_detections.list','r').readlines():
             continue
         else:
             alreadydone.append(int(line.split()[0].replace(',', '')))
-            if accept[i - 1]:
+            if accept[i]:
                 out.write(line.strip().replace('nan', '9999') + ',\t 1\n')
             else:
                 out.write(line.strip().replace('nan', '9999') + ',\t 0\n')
