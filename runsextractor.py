@@ -84,11 +84,11 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
                                                                                        imagefilename + '.background_rms',
                     "back_size": "256"}
         )
-        try:
-            out = sew(imagefilename)
-        except:
-            print 'log file issue'
-            sys.exit()
+        #try:
+        out = sew(imagefilename)
+        #except:
+        #    print 'log file issue'
+        #    sys.exit()
         bg = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background')
         bgrms = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background_rms')
 
