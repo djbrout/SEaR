@@ -364,7 +364,6 @@ for l in open('clean_detections.list','r').readlines():
         continue
     im = l.split('/')[0]
     detfile = workingdir + '/'+im+'_alldetections.txt'
-    out = open(workingdir + '/'+im+'_smpdetections.txt','w')
 
     inn = open(detfile,'r').readlines()
     dets = dt.readcol(detfile,noheaders=True)
@@ -375,10 +374,18 @@ for l in open('clean_detections.list','r').readlines():
     upperlimchi = 1.37
     lowerlimchi = .8
 
-    print dets[10]
+    #print dets[10]
 
     accept = (dets[10] < upperlimchi) & (dets[10] > lowerlimchi)
+    try:
+        accept[10]
+    except:
+        continue
+
+    out = open(workingdir + '/'+im+'_smpdetections.txt','w')
     out.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi,\taccept\n")
+
+
 
     alreadydone = []
     for i, line in enumerate(inn):
