@@ -378,7 +378,7 @@ for l in open('clean_detections.list','r').readlines():
     #if len(dets[0]) == 0:
     #    continue
 
-    upperlimchi = 1.37
+    upperlimchi = 1.4
     lowerlimchi = .8
 
     #print dets[10]
