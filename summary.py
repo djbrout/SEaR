@@ -378,11 +378,8 @@ for l in open('clean_detections.list','r').readlines():
 
     #print dets[10]
 
-    accept = (dets[10] < upperlimchi) & (dets[10] > lowerlimchi)
-    try:
-        accept[10]
-    except:
-        continue
+    accept = (np.array(dets[10],dtype='float') < upperlimchi) & (np.array(dets[10],dtype='float') > lowerlimchi)
+
 
     out = open(workingdir + '/'+im+'_smpdetections.txt','w')
     out.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi,\taccept\n")

@@ -89,8 +89,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="378" column="19" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
+            <state relative-caret-position="456">
+              <caret line="387" column="0" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -422,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-00961" summary="mpp added for parallel processing">
-      <created>1487551927759</created>
-      <option name="number" value="00961" />
-      <option name="presentableId" value="LOCAL-00961" />
-      <option name="project" value="LOCAL" />
-      <updated>1487551927759</updated>
     </task>
     <task id="LOCAL-00962" summary="mpp added for parallel processing">
       <created>1487554123943</created>
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487612809448</updated>
     </task>
-    <option name="localTasksCounter" value="1010" />
+    <task id="LOCAL-01010" summary="mpp added for parallel processing">
+      <created>1487613054549</created>
+      <option name="number" value="01010" />
+      <option name="presentableId" value="LOCAL-01010" />
+      <option name="project" value="LOCAL" />
+      <updated>1487613054549</updated>
+    </task>
+    <option name="localTasksCounter" value="1011" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1256,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="378" column="19" selection-start-line="378" selection-start-column="19" selection-end-line="378" selection-end-column="19" />
+        <state relative-caret-position="456">
+          <caret line="387" column="0" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
