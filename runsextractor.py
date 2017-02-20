@@ -34,6 +34,7 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     #newfilename = 'sewpy_logs/'+index+'trimmed_'+imagefilename.split('/')[-1]
     #dt.save_fits_image(im, newfilename)
 
+
     if not os.path.exists(imagefilename+'.background'):
         if not os.path.exists(imagefilename+'.background_rms'):
 
@@ -68,8 +69,28 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     os.system('cp '+imagefilename+'.background sewpy_logs/'+index+'.background')
     os.system('cp '+imagefilename+'.background_rms sewpy_logs/'+index+'.background_rms')
 
-    bg = pf.getdata('sewpy_logs/'+index+'.background')
-    bgrms = pf.getdata('sewpy_logs/'+index+'.background_rms')
+    try:
+        bg = pf.getdata('sewpy_logs/'+index+'.background')
+        bgrms = pf.getdata('sewpy_logs/'+index+'.background_rms')
+
+    except:
+        logging.basicConfig(format='%(levelname)s: %(name)s(%(funcName)s): %(message)s', level=logging.DEBUG)
+        sew = sewpy.SEW(
+            workdir='/scratch1/scratchdirs/dbrout/p9/sewpy/'
+            , sexpath="sex"
+            , loglevel="CRITICAL"
+            ,
+            config={"checkimage_type": "BACKGROUND,BACKGROUND_RMS", "checkimage_name": imagefilename + '.background, ' +
+                                                                                       imagefilename + '.background_rms',
+                    "back_size": "256"}
+        )
+        try:
+            out = sew(imagefilename)
+        except:
+            print 'log file issue'
+            sys.exit()
+        bg = pf.getdata('sewpy_logs/' + index + '.background')
+        bgrms = pf.getdata('sewpy_logs/' + index + '.background_rms')
 
     os.remove('sewpy_logs/' + index + '.background')
     os.remove('sewpy_logs/' + index + '.background_rms')
