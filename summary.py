@@ -369,7 +369,7 @@ for l in open('clean_detections.list','r').readlines():
     inn = open(detfile,'r').readlines()
     dets = dt.readcol(detfile,noheaders=True)
 
-    if len(inn) == 0:
+    if len(dets[0]) == 0:
         continue
 
     upperlimchi = 1.37
