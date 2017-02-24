@@ -67,7 +67,7 @@ def run(listindex,index,root,templatedir):
         if not os.path.exists('/project/projectdirs/des/p9smp/results26/'):
             os.mkdir('/project/projectdirs/des/p9smp/results26/')
 
-        sd = '/project/projectdirs/des/p9smp/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
+        sd = '/project/projectdirs/des/p9smp/results26/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
         #print 'outfile',sd
 
 
