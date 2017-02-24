@@ -4,7 +4,7 @@ import numpy as np
 import time
 nproc=4
 
-allindexes = range(40,55)
+allindexes = range(40,55    )
 np.random.shuffle(allindexes)
 
 for i in allindexes:
@@ -15,13 +15,14 @@ for i in allindexes:
         '#!/bin/bash -l\n' +
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 1\n' +
+        '#SBATCH -c 1'+
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:19:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --job-name=2_iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=NONE\n' +
-        '#SBATCH --qos=premium\n'+
+        #'#SBATCH --qos=premium\n'+
         '#SBATCH --mail-user=bdrizzle@yahoo.com\n' +
         '#SBATCH --gres=craynetwork:1\n' +
         '\n' +
