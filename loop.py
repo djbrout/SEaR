@@ -31,7 +31,7 @@ for i in allindexes:
         'module load python\n'+
         'source setupcori.sh\n'+
         #'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
-        'echo "RUNNING NOW"'+
+        'echo "RUNNING NOW"\n'+
         #'python test.py\n'
         #'cd /global/u1/d/dbrout/SEaR/\n' +
         #'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
