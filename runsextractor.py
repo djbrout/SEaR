@@ -40,7 +40,7 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
 
             logging.basicConfig(format='%(levelname)s: %(name)s(%(funcName)s): %(message)s', level=logging.DEBUG)
             sew = sewpy.SEW(
-                    workdir='/scratch1/scratchdirs/dbrout/p9/sewpy/'
+                    workdir='/project/projectdirs/des/p9smp/sewpy/'
                     , sexpath="sex"
                     , loglevel="CRITICAL"
                     , config={"checkimage_type":"BACKGROUND,BACKGROUND_RMS","checkimage_name":imagefilename+'.background, '+
@@ -66,17 +66,17 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     #     os.remove(newfilename)
     # except:
     #     pass
-    os.system('cp '+imagefilename+'.background /scratch1/scratchdirs/dbrout/p9/sewpy/'+index+'.background')
-    os.system('cp '+imagefilename+'.background_rms /scratch1/scratchdirs/dbrout/p9/sewpy/'+index+'.background_rms')
+    os.system('cp '+imagefilename+'.background /project/projectdirs/des/p9smp/sewpy/'+index+'.background')
+    os.system('cp '+imagefilename+'.background_rms /project/projectdirs/des/p9smp/sewpy/'+index+'.background_rms')
 
     try:
-        bg = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/'+index+'.background')
-        bgrms = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/'+index+'.background_rms')
+        bg = pf.getdata('/project/projectdirs/des/p9smp/sewpy/'+index+'.background')
+        bgrms = pf.getdata('/project/projectdirs/des/p9smp/sewpy/'+index+'.background_rms')
 
     except:
         logging.basicConfig(format='%(levelname)s: %(name)s(%(funcName)s): %(message)s', level=logging.DEBUG)
         sew = sewpy.SEW(
-            workdir='/scratch1/scratchdirs/dbrout/p9/sewpy/'
+            workdir='/project/projectdirs/des/p9smp/sewpy/'
             , sexpath="sex"
             , loglevel="CRITICAL"
             ,
@@ -89,11 +89,11 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
         #except:
         #    print 'log file issue'
         #    sys.exit()
-        bg = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background')
-        bgrms = pf.getdata('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background_rms')
+        bg = pf.getdata('/project/projectdirs/des/p9smp/sewpy/' + index + '.background')
+        bgrms = pf.getdata('/project/projectdirs/des/p9smp/sewpy/' + index + '.background_rms')
 
-    os.remove('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background')
-    os.remove('/scratch1/scratchdirs/dbrout/p9/sewpy/' + index + '.background_rms')
+    os.remove('/project/projectdirs/des/p9smp/sewpy/' + index + '.background')
+    os.remove('/project/projectdirs/des/p9smp/sewpy/' + index + '.background_rms')
     #os.popen('rm sewpy_logs/'+index+'*')
     #os.popen("find ~/SEaR/sewpy_logs/ -type f -mmin +12 -name '*.background*' -exec rm {} \;")
     #os.popen("find ~/SEaR/sewpy_logs/ -type f -mmin +4 -name '*.log.txt' -exec rm {} \;")
