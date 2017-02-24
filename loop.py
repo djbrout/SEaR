@@ -9,7 +9,7 @@ np.random.shuffle(allindexes)
 
 for i in allindexes:
     print i
-    script = '/global/u1/d/dbrout/SEaR/submission_scripts/sm_' + str(i) + '.sh'
+    script = '/project/projectdirs/des/p9smp/SEaR/submission_scripts/sm_' + str(i) + '.sh'
     f = open(script, 'w')
     f.write(
         '#!/bin/bash -l\n' +
@@ -25,17 +25,17 @@ for i in allindexes:
         '#SBATCH --mail-user=bdrizzle@yahoo.com\n' +
         '#SBATCH --gres=craynetwork:1\n' +
         '\n' +
-        'cd /global/u1/d/dbrout/SEaR/\n' +
+        'cd /project/projectdirs/des/p9smp/SEaR/\n' +
         'module load python\n'+
-        'source /global/project/projectdirs/dessn/diffim/setup.sh\n'+
-        'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
+        'source setupcori.sh\n'+
+        #'source /scratch3/scratchdirs/masao/setup_DiffImg.sh\n'
         'echo "RUNNING NOW"'+
         #'python test.py\n'
-        'cd /global/u1/d/dbrout/SEaR/\n' +
-        'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
+        #'cd /global/u1/d/dbrout/SEaR/\n' +
+        #'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source /global/u1/d/dbrout/SEaR/edisonsubmit.sh ' + str(i) + ' 6 \n' +
+        'source edisonsubmit.sh ' + str(i) + ' 6 \n' +
         '\n'
     )
     f.close()
