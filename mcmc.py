@@ -63,6 +63,7 @@ import buildPSFex
 from astropy.io import fits
 from scipy.fftpack import fft, ifft, fft2, ifft2
 from math import *
+import psfex
 
 
 class metropolis_hastings():
@@ -1310,7 +1311,7 @@ class metropolis_hastings():
     def garyshiftpsf(self,y_off=0.0,x_off=0.0):
         fs = self.fouriershift(x_off, y_off, self.fpsfs[0])
         self.kicked_psfs[0, :, :] = np.fft.ifft2(fs)
-
+        #self.kicked_psfs[0,:,:] = psfex.PSFEx(y_o)
 
     def shiftPSF(self,y_off=0.0,x_off=0.0): 
         #print 'fitting position:', self.x[0]+x_off,self.y[0]+y_off
