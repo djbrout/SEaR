@@ -19,8 +19,8 @@ for i in allindexes:
         '#SBATCH -C haswell\n'+
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:19:00\n' +
-        '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
-        '#SBATCH --error=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
+        '#SBATCH --output=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
+        '#SBATCH --error=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --job-name=2_iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=NONE\n' +
         #'#SBATCH --qos=premium\n'+
