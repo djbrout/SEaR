@@ -5,7 +5,7 @@ import numpy as np
 import sys
 
 
-detectionslistall = open('/global/u1/d/dbrout/SEaR/clean_detections.list', 'r').readlines()
+detectionslistall = open('/project/projectdirs/des/p9smp/clean_detections.list', 'r').readlines()
 detectionslist = []
 for dtl in detectionslistall:
     if dtl[0] != '#':
@@ -64,10 +64,10 @@ def run(listindex,index,root,templatedir):
 
         rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
-        if not os.path.exists('/scratch1/scratchdirs/dbrout/p9/results26/'):
-            os.mkdir('/scratch1/scratchdirs/dbrout/p9/results26/')
+        if not os.path.exists('/project/projectdirs/des/p9smp/results26/'):
+            os.mkdir('/project/projectdirs/des/p9smp/results26/')
 
-        sd = '/scratch1/scratchdirs/dbrout/p9/results26/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
+        sd = '/project/projectdirs/des/p9smp/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
         #print 'outfile',sd
 
 
