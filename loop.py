@@ -15,7 +15,8 @@ for i in allindexes:
         '#!/bin/bash -l\n' +
         '#SBATCH --partition=shared\n' +
         '#SBATCH -n 1\n' +
-        '#SBATCH -c 1'+
+        '#SBATCH -c 1\n'+
+        '#SBATCH -C haswell\n'+
         '#SBATCH -A des\n' +
         '#SBATCH --time=00:19:00\n' +
         '#SBATCH --output=/scratch1/scratchdirs/dbrout/searscratch/sm_' + str(i) + '_v22_0.log\n' +
