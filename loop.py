@@ -4,7 +4,7 @@ import numpy as np
 import time
 nproc=4
 
-allindexes = range(1000,4000)
+allindexes = range(0,4000)
 np.random.shuffle(allindexes)
 
 for i in allindexes:
@@ -37,7 +37,7 @@ for i in allindexes:
         #'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source edisonsubmit.sh ' + str(i) + ' 6 \n' +
+        'source edisonsubmit.sh ' + str(i) + ' 5 \n' +
         '\n'
     )
     f.close()
