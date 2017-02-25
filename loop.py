@@ -4,7 +4,7 @@ import numpy as np
 import time
 nproc=4
 
-allindexes = range(40,90)
+allindexes = range(0,1000)
 np.random.shuffle(allindexes)
 
 for i in allindexes:
