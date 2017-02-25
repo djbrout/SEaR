@@ -545,13 +545,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01003" summary="mpp added for parallel processing">
-      <created>1487612340273</created>
-      <option name="number" value="01003" />
-      <option name="presentableId" value="LOCAL-01003" />
-      <option name="project" value="LOCAL" />
-      <updated>1487612340273</updated>
-    </task>
     <task id="LOCAL-01004" summary="mpp added for parallel processing">
       <created>1487612467367</created>
       <option name="number" value="01004" />
@@ -888,7 +881,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488034383427</updated>
     </task>
-    <option name="localTasksCounter" value="1052" />
+    <task id="LOCAL-01052" summary="mpp added for parallel processing">
+      <created>1488036615318</created>
+      <option name="number" value="01052" />
+      <option name="presentableId" value="LOCAL-01052" />
+      <option name="project" value="LOCAL" />
+      <updated>1488036615318</updated>
+    </task>
+    <option name="localTasksCounter" value="1053" />
     <servers />
   </component>
   <component name="ToolWindowManager">

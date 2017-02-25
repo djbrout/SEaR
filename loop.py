@@ -37,7 +37,7 @@ for i in allindexes:
         #'echo "--start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+'" \n'+
         #'python mpp.py --start='+str(i*nproc)+' --stop='+str((i+1)*nproc)+' \n'
         #'python mpp.py --start=' + str(i * nproc) + ' --stop=' + str((i + 1) * nproc) + ' \n'
-        'source edisonsubmit.sh ' + str(i) + ' 3 \n' +
+        'source edisonsubmit.sh ' + str(i) + ' 2 \n' +
         '\n'
     )
     f.close()
