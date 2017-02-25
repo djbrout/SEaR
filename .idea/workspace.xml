@@ -114,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/loop.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -545,13 +545,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-00994" summary="mpp added for parallel processing">
-      <created>1487608935236</created>
-      <option name="number" value="00994" />
-      <option name="presentableId" value="LOCAL-00994" />
-      <option name="project" value="LOCAL" />
-      <updated>1487608935236</updated>
-    </task>
     <task id="LOCAL-00995" summary="mpp added for parallel processing">
       <created>1487610721780</created>
       <option name="number" value="00995" />
@@ -888,7 +881,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487981244774</updated>
     </task>
-    <option name="localTasksCounter" value="1043" />
+    <task id="LOCAL-01043" summary="mpp added for parallel processing">
+      <created>1487981423065</created>
+      <option name="number" value="01043" />
+      <option name="presentableId" value="LOCAL-01043" />
+      <option name="project" value="LOCAL" />
+      <updated>1487981423065</updated>
+    </task>
+    <option name="localTasksCounter" value="1044" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1382,7 +1382,7 @@
     <entry file="file://$PROJECT_DIR$/loop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
