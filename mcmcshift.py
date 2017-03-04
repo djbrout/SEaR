@@ -129,7 +129,7 @@ class metropolis_hastings():
                 , psfcenter = None
                 , x=None
                 , y=None
-                , galshiftstd=0.
+                , galshiftstd=0.001
                 ):
         '''
         if model is None:
@@ -701,7 +701,7 @@ class metropolis_hastings():
                     #     delta = np.fft.fftn(S * fr2).real
                     #     delta = delta/np.sum(delta.ravel())
                     #     delta *= kicked_modelvec
-                    if self.shiftgalstd > 0.:
+                    if self.galshiftstd > 0.:
                         galaxy_conv = np.fft.ifft2(fpsf * self.fouriershift(galoffx, galoffy, self.fgal)).real
                         star_conv = kicked_modelvec * kicked_psfs
                         sims = (star_conv + galaxy_conv + sky) * self.mask
