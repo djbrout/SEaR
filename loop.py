@@ -18,10 +18,10 @@ for i in allindexes:
         '#SBATCH -c 1\n'+
         '#SBATCH -C haswell\n'+
         '#SBATCH -A des\n' +
-        '#SBATCH --time=00:19:00\n' +
+        '#SBATCH --time=00:29:00\n' +
         '#SBATCH --output=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
-        '#SBATCH --job-name=1_iband_' + str(i) + '\n' +
+        '#SBATCH --job-name=p9_iband_' + str(i) + '\n' +
         '#SBATCH --mail-type=NONE\n' +
         #'#SBATCH --qos=premium\n'+
         '#SBATCH --mail-user=bdrizzle@yahoo.com\n' +
