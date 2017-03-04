@@ -70,7 +70,8 @@ smy = data['sm_y'][:train]
 
 snlim = 5.0
 
-print ind[(chsq2<.2) & (sn>12)]
+print ind[(chsq2>3.) & (sn>60)]
+raw_input()
 print ind[(chsq2<1.2) & (diffmag == 20)]
 
 #raw_input()
