@@ -203,7 +203,7 @@ if __name__ == "__main__":
 
         optt, argg = getopt.getopt(
             args, "ci",
-            longopts=["ccdi=","ti=","listi="])
+            longopts=["ccdi=","ti=","listi=","dontskip"])
 
     except getopt.GetoptError as err:
         print "No command line arguments  "
