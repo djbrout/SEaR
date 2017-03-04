@@ -32,7 +32,9 @@ try:
     import matplotlib as m
 except:
     raise Exception('Run the following commands:\n\nmodule load python\nbash\nsource /global/project/projectdirs/dessn/diffim/setup.sh\ndiffimg\n')
-import mcmc
+
+#import mcmc
+import mcmcshift as mcmc
 m.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
