@@ -21,7 +21,7 @@ ccdlistall = ['01', '03', '04', '05', '06', '07', '09', '10', '11', '12', '13', 
                   '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '62']
 
 
-def run(listindex,index,root,templatedir):
+def run(listindex,index,root,templatedir,dontskip):
     print 'running',time.time()
     print root+'/'+detectionslist[listindex]
     #raw_input()
@@ -129,12 +129,12 @@ def run(listindex,index,root,templatedir):
         #         raw_input()
         #         continue
         # continue
-
-        if os.path.exists(sd):
-            sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
-            if int(i) in sdd:
-                print 'already ran. exiting now'
-                sys.exit()
+        if not dontskip:
+            if os.path.exists(sd):
+                sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
+                if int(i) in sdd:
+                    print 'already ran. exiting now'
+                    sys.exit()
 
 
         cntr += 1
@@ -182,7 +182,7 @@ if __name__ == "__main__":
             longopts=["outdir=", "rootdir=", "floatpos","numiter=","index=","candlist=",
                       "stampsize=","fermigrid","imagexpix=","imageypix=",
                       "templatexpix=","templateypix=",
-                      "imagesky=","templatesky=",
+                      "imagesky=","templatesky=","dontskip",
                       "imageskyerr=","templateskyerr=",
                       "image=","template=","initialguess=","stepstd=",
                       "imagepsf=","templatepsf=","imageweight=","templateweight=",
@@ -208,7 +208,7 @@ if __name__ == "__main__":
     except getopt.GetoptError as err:
         print "No command line arguments  "
 
-
+    dontskip=False
     ccdi = 1
     ccd = '01'
     root = "."
@@ -226,6 +226,8 @@ if __name__ == "__main__":
             root = a
         if o in ["--templatedir"]:
             tdir = a
+        if o in ["--dontskip"]:
+            dontskip = True
     for o, a in optt:
         if o in ["-ci", "--ccdi"]:
             print a
@@ -237,7 +239,9 @@ if __name__ == "__main__":
             li = int(a)
         if o in ["--rootdir"]:
             root = a
+        if o in ["--dontskip"]:
+            dontskip = True
             #raw_input()
     #raw_input()
     print 'ti is ', i, time.time()
-    run(li,i,root,tdir)
+    run(li,i,root,tdir,dontskip)
