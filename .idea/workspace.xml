@@ -77,11 +77,9 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="545" column="12" selection-start-line="545" selection-start-column="12" selection-end-line="545" selection-end-column="12" />
-              <folding>
-                <marker date="1488651778000" expanded="true" signature="20235:20344" ph="..." />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="201" column="50" selection-start-line="201" selection-start-column="50" selection-end-line="201" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -536,13 +534,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01036" summary="mpp added for parallel processing">
-      <created>1487979492192</created>
-      <option name="number" value="01036" />
-      <option name="presentableId" value="LOCAL-01036" />
-      <option name="project" value="LOCAL" />
-      <updated>1487979492192</updated>
-    </task>
     <task id="LOCAL-01037" summary="mpp added for parallel processing">
       <created>1487979538964</created>
       <option name="number" value="01037" />
@@ -879,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488650823414</updated>
     </task>
-    <option name="localTasksCounter" value="1085" />
+    <task id="LOCAL-01085" summary="mpp added for parallel processing">
+      <created>1488651784110</created>
+      <option name="number" value="01085" />
+      <option name="presentableId" value="LOCAL-01085" />
+      <option name="project" value="LOCAL" />
+      <updated>1488651784110</updated>
+    </task>
+    <option name="localTasksCounter" value="1086" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1371,11 +1369,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="545" column="12" selection-start-line="545" selection-start-column="12" selection-end-line="545" selection-end-column="12" />
-          <folding>
-            <marker date="1488651778000" expanded="true" signature="20235:20344" ph="..." />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="201" column="50" selection-start-line="201" selection-start-column="50" selection-end-line="201" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>

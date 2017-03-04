@@ -199,7 +199,7 @@ class metropolis_hastings():
         self.dosave = dosave
         self.lcout = lcout
         self.chainsnpz = chainsnpz
-        self.acceptance_vec = np.zeros(maxiter+1+200000,dtype='int')
+        self.acceptance_vec = np.zeros(maxiter+1+400000,dtype='int')
         self.convolvegal = convolvegal
         self.useskyerr = useskyerr
         self.usesimerr = usesimerr
@@ -469,7 +469,7 @@ class metropolis_hastings():
                         self.alreadyextended = True
                         stop = True
                     if chsqs[0] > 0:
-                        self.maxiter = self.maxiter + 150000
+                        self.maxiter = self.maxiter + 350000
                         self.alreadyextended = True
                         stop = False
                     # elif chsqs[0] > 1.:
