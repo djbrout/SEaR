@@ -77,8 +77,8 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
+            <state relative-caret-position="242">
+              <caret line="1357" column="20" selection-start-line="1357" selection-start-column="8" selection-end-line="1357" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -123,8 +123,8 @@
       <file leaf-file-name="wrapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1149">
-              <caret line="67" column="62" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="62" />
+            <state relative-caret-position="90">
+              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="63" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -534,13 +534,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01025" summary="mpp added for parallel processing">
-      <created>1487895972432</created>
-      <option name="number" value="01025" />
-      <option name="presentableId" value="LOCAL-01025" />
-      <option name="project" value="LOCAL" />
-      <updated>1487895972432</updated>
-    </task>
     <task id="LOCAL-01026" summary="mpp added for parallel processing">
       <created>1487896425410</created>
       <option name="number" value="01026" />
@@ -877,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488598948235</updated>
     </task>
-    <option name="localTasksCounter" value="1074" />
+    <task id="LOCAL-01074" summary="mpp added for parallel processing">
+      <created>1488599281182</created>
+      <option name="number" value="01074" />
+      <option name="presentableId" value="LOCAL-01074" />
+      <option name="project" value="LOCAL" />
+      <updated>1488599281182</updated>
+    </task>
+    <option name="localTasksCounter" value="1075" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1346,16 +1346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1149">
-          <caret line="67" column="62" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-360">
@@ -1367,10 +1357,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
+        <state relative-caret-position="242">
+          <caret line="1357" column="20" selection-start-line="1357" selection-start-column="8" selection-end-line="1357" selection-end-column="20" />
           <folding />
         </state>
       </provider>

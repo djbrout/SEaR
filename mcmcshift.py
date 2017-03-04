@@ -968,7 +968,7 @@ class metropolis_hastings():
         if self.shiftpsf:
             self.xo = np.mean(self.xhistory[burn_in:])
             self.yo = np.mean(self.yhistory[burn_in:])
-            self.shiftPSF(x_off=self.xo, y_off=self.yo)
+            self.garyshiftpsf(x_off=self.xo, y_off=self.yo)
             self.kicked_galaxy_model = self.galmodel_params
         if self.galshiftstd > 0.:
             for i in np.arange(self.Nimage):
