@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmcshift.py" afterPath="$PROJECT_DIR$/mcmcshift.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -64,11 +65,11 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+            <state relative-caret-position="-7378">
+              <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
-                <marker date="1488594877000" expanded="true" signature="14895:15032" ph="..." />
+                <marker date="1488596859000" expanded="true" signature="14896:15033" ph="..." />
               </folding>
             </state>
           </provider>
@@ -77,8 +78,8 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="545" column="34" selection-start-line="545" selection-start-column="34" selection-end-line="545" selection-end-column="34" />
+            <state relative-caret-position="510">
+              <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -163,8 +164,8 @@
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/buildPSFex.py" />
-        <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
+        <option value="$PROJECT_DIR$/SEaR.py" />
         <option value="$PROJECT_DIR$/mcmcshift.py" />
       </list>
     </option>
@@ -534,13 +535,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01018" summary="mpp added for parallel processing">
-      <created>1487613733016</created>
-      <option name="number" value="01018" />
-      <option name="presentableId" value="LOCAL-01018" />
-      <option name="project" value="LOCAL" />
-      <updated>1487613733016</updated>
-    </task>
     <task id="LOCAL-01019" summary="mpp added for parallel processing">
       <created>1487652880825</created>
       <option name="number" value="01019" />
@@ -877,7 +871,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488596560085</updated>
     </task>
-    <option name="localTasksCounter" value="1067" />
+    <task id="LOCAL-01067" summary="mpp added for parallel processing">
+      <created>1488596571939</created>
+      <option name="number" value="01067" />
+      <option name="presentableId" value="LOCAL-01067" />
+      <option name="project" value="LOCAL" />
+      <updated>1488596571939</updated>
+    </task>
+    <option name="localTasksCounter" value="1068" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1028,7 +1029,7 @@
           <caret line="12" column="48" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1488594877000" expanded="true" signature="14895:15032" ph="..." />
+            <marker date="1488596859000" expanded="true" signature="14896:15033" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1075,7 +1076,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1488594877000" expanded="true" signature="14895:15032" ph="..." />
+            <marker date="1488596859000" expanded="true" signature="14896:15033" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1135,7 +1136,7 @@
           <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1488594877000" expanded="true" signature="14895:15032" ph="..." />
+            <marker date="1488596859000" expanded="true" signature="14896:15033" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1346,17 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SEaR.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-          <folding>
-            <element signature="e#622#640#0" expanded="true" />
-            <marker date="1488594877000" expanded="true" signature="14895:15032" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1149">
@@ -1367,10 +1357,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SEaR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7378">
+          <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+          <folding>
+            <element signature="e#622#640#0" expanded="true" />
+            <marker date="1488596859000" expanded="true" signature="14896:15033" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="545" column="34" selection-start-line="545" selection-start-column="34" selection-end-line="545" selection-end-column="34" />
+        <state relative-caret-position="510">
+          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
           <folding />
         </state>
       </provider>

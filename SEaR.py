@@ -64,7 +64,7 @@ class fit:
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
-                 numiter=None, floatpos=None, floatposstd=.01,
+                 numiter=None, floatpos=None, floatposstd=.005,
                  stampsize=None, initialguess=None, stepstd=None,commandline=False,dontrootimages=True):
         print 'inside fit',time.time()
         self.tstart = time.time()
