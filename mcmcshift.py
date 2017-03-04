@@ -542,8 +542,8 @@ class metropolis_hastings():
         if self.galshiftstd > 0.:
             self.xgal_pix_offset = self.current_xgal_offset + np.random.normal(size=self.Nimage,scale=self.galshiftstd)
             self.ygal_pix_offset = self.current_ygal_offset + np.random.normal(size=self.Nimage,scale=self.galshiftstd)
-            #self.xgal_pix_offset[1] = 0.
-            #self.ygal_pix_offset[1] = 0.
+            self.xgal_pix_offset[1] = 0.
+            self.ygal_pix_offset[1] = 0.
 
             # Contains the convolution
         #print self.kicked_galaxy_model.shape
