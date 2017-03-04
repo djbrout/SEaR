@@ -77,8 +77,8 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="1357" column="20" selection-start-line="1357" selection-start-column="8" selection-end-line="1357" selection-end-column="20" />
+            <state relative-caret-position="407">
+              <caret line="989" column="42" selection-start-line="989" selection-start-column="42" selection-end-line="989" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -534,13 +534,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01026" summary="mpp added for parallel processing">
-      <created>1487896425410</created>
-      <option name="number" value="01026" />
-      <option name="presentableId" value="LOCAL-01026" />
-      <option name="project" value="LOCAL" />
-      <updated>1487896425411</updated>
-    </task>
     <task id="LOCAL-01027" summary="mpp added for parallel processing">
       <created>1487899289258</created>
       <option name="number" value="01027" />
@@ -877,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488599281182</updated>
     </task>
-    <option name="localTasksCounter" value="1075" />
+    <task id="LOCAL-01075" summary="mpp added for parallel processing">
+      <created>1488600263498</created>
+      <option name="number" value="01075" />
+      <option name="presentableId" value="LOCAL-01075" />
+      <option name="project" value="LOCAL" />
+      <updated>1488600263498</updated>
+    </task>
+    <option name="localTasksCounter" value="1076" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1271,7 +1271,7 @@
         <state relative-caret-position="210">
           <caret line="14" column="55" selection-start-line="6" selection-start-column="4" selection-end-line="14" selection-end-column="55" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1369,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="1357" column="20" selection-start-line="1357" selection-start-column="8" selection-end-line="1357" selection-end-column="20" />
+        <state relative-caret-position="407">
+          <caret line="989" column="42" selection-start-line="989" selection-start-column="42" selection-end-line="989" selection-end-column="42" />
           <folding />
         </state>
       </provider>

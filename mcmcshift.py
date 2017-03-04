@@ -976,7 +976,8 @@ class metropolis_hastings():
                 self.ygal_pix_offset[i] = np.std(self.ygalnphistory[burn_in:, i])
 
         self.sims = map(self.mapkernel, self.modelvec_params, self.kicked_psfs, self.centered_psfs, self.sky,
-                        self.flags, self.fitflags, self.sims, self.gal_conv)
+                        self.flags, self.fitflags, self.sims, self.gal_conv, self.fpsfs,
+                        self.xgal_pix_offset,self.ygal_pix_offset)
 
     def autocorr( self, x ):
         result = np.correlate( x, x, mode='full' )
