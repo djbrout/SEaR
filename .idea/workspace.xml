@@ -77,8 +77,8 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="548" column="40" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+            <state relative-caret-position="270">
+              <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -534,13 +534,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01024" summary="mpp added for parallel processing">
-      <created>1487894496633</created>
-      <option name="number" value="01024" />
-      <option name="presentableId" value="LOCAL-01024" />
-      <option name="project" value="LOCAL" />
-      <updated>1487894496633</updated>
-    </task>
     <task id="LOCAL-01025" summary="mpp added for parallel processing">
       <created>1487895972432</created>
       <option name="number" value="01025" />
@@ -877,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488598546979</updated>
     </task>
-    <option name="localTasksCounter" value="1073" />
+    <task id="LOCAL-01073" summary="mpp added for parallel processing">
+      <created>1488598948235</created>
+      <option name="number" value="01073" />
+      <option name="presentableId" value="LOCAL-01073" />
+      <option name="project" value="LOCAL" />
+      <updated>1488598948235</updated>
+    </task>
+    <option name="localTasksCounter" value="1074" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1369,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="548" column="40" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
           <folding />
         </state>
       </provider>
