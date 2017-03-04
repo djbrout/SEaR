@@ -1226,7 +1226,7 @@ class metropolis_hastings():
             self.galmodel_nphistory = np.zeros( (num_iter , self.galaxy_model.shape[0], self.galaxy_model.shape[1]))
         self.modelvec_nphistory = np.zeros( (num_iter , len(self.modelvec)))
         self.xgalnphistory = np.zeros( (num_iter , len(self.modelvec)))
-        self.xgalnphistory = np.zeros( (num_iter , len(self.modelvec)))
+        self.ygalnphistory = np.zeros( (num_iter , len(self.modelvec)))
 
         for i in np.arange( num_iter ):
             if not self.dontsavegalaxy:
