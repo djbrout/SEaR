@@ -51,7 +51,8 @@ from astropy.io import fits
 import sigma_clip
 import cntrd
 import pyfits as pf
-import psfex
+
+#import psfex
 
 class fit:
     def __init__(self, candid=None,ccd=None,
