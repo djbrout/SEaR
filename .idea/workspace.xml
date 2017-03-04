@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmcshift.py" afterPath="$PROJECT_DIR$/mcmcshift.py" />
     </list>
     <ignored path="p9cut.iws" />
@@ -78,8 +77,8 @@
       <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
+            <state relative-caret-position="465">
+              <caret line="474" column="41" selection-start-line="474" selection-start-column="41" selection-end-line="474" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -535,13 +534,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01019" summary="mpp added for parallel processing">
-      <created>1487652880825</created>
-      <option name="number" value="01019" />
-      <option name="presentableId" value="LOCAL-01019" />
-      <option name="project" value="LOCAL" />
-      <updated>1487652880825</updated>
-    </task>
     <task id="LOCAL-01020" summary="mpp added for parallel processing">
       <created>1487653444657</created>
       <option name="number" value="01020" />
@@ -878,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488596571939</updated>
     </task>
-    <option name="localTasksCounter" value="1068" />
+    <task id="LOCAL-01068" summary="mpp added for parallel processing">
+      <created>1488596897422</created>
+      <option name="number" value="01068" />
+      <option name="presentableId" value="LOCAL-01068" />
+      <option name="project" value="LOCAL" />
+      <updated>1488596897422</updated>
+    </task>
+    <option name="localTasksCounter" value="1069" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1370,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcmcshift.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
+        <state relative-caret-position="465">
+          <caret line="474" column="41" selection-start-line="474" selection-start-column="41" selection-end-line="474" selection-end-column="41" />
           <folding />
         </state>
       </provider>
