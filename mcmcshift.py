@@ -63,8 +63,11 @@ import buildPSFex
 from astropy.io import fits
 from scipy.fftpack import fft, ifft, fft2, ifft2
 from math import *
-import psfex
-
+# psfexworked = True
+# try:
+#     import psfex
+# except:
+#     psfworked = False
 
 class metropolis_hastings():
 
