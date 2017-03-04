@@ -382,8 +382,8 @@ class metropolis_hastings():
 
         
         self.kicked_galaxy_model = copy(self.galaxy_model)
-        self.simsnosn = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
-        self.simsnosnnosky = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky*0.,self.flags,self.fitflags,self.sims,self.gal_conv)
+        #self.simsnosn = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,self.fitflags,self.sims,self.gal_conv)
+        #self.simsnosnnosky = map(self.mapkernel,self.modelvec*0.,self.kicked_psfs,self.centered_psfs,self.sky*0.,self.flags,self.fitflags,self.sims,self.gal_conv)
 
         self.fpsfs =[]
 
@@ -570,7 +570,7 @@ class metropolis_hastings():
         #raw_input()
         t2 = time.time()
         #print 'chisq calc'
-        self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.simsnosn,self.simsnosnnosky,self.sky))
+        self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.sky))
         #print self.csv
         #print csv
         #raw_input()
@@ -778,7 +778,7 @@ class metropolis_hastings():
                 self.sims[ epoch,:,:] =  (star_conv + galaxy_conv)*self.mask
     '''
 
-    def mapchis( self, kicked_modelvec, sims, data, flags, fitflags, weight, skyerr,simnosn,simnosnnosky,sky):
+    def mapchis( self, kicked_modelvec, sims, data, flags, fitflags, weight, skyerr,sky):
         chisq  = 0
 
         if flags == 0:
