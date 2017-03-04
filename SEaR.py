@@ -64,7 +64,7 @@ class fit:
                  imageskyerr=None,templateskyerr=None,
                  ix=None, iy=None, tx=None, ty=None,
                  outdir=None, rootdir=None, fermigrid=None, fitrad=None,
-                 numiter=None, floatpos=None, floatposstd=.005,
+                 numiter=None, floatpos=None, floatposstd=.01,
                  stampsize=None, initialguess=None, stepstd=None,commandline=False,dontrootimages=True):
         print 'inside fit',time.time()
         self.tstart = time.time()
@@ -567,7 +567,7 @@ class fit:
             aaa = mcmc.metropolis_hastings(
                   galmodel=     self.data[1,:,:]/4.#setting the initial guess of the galaxy/background model to the template image
                 , modelvec=     np.array([self.initialguess,0])
-                , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/3.
+                , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/2.
                 , modelstd=     np.array([self.stepstd,0.])
                 , data=         self.data
                 , psfs=         self.psfs
