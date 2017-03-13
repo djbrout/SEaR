@@ -153,7 +153,7 @@ def run(listindex,index,root,templatedir,dontskip):
         print 'went',time.time()
         print chisqs
         allchitext = ''
-        for ch in allsearchchi:
+        for ch in allsearchchi.ravel():
             allchitext+=str(round(ch,4))+';'
         allchitext = allchitext[:-1]
 
