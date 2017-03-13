@@ -82,7 +82,7 @@ snlim = 4.0
 
 #print ind[(chsq2>3.) & (sn>60)]
 #raw_input()
-for iii in np.unique(ind[(chsq2<2.) & (diffmag < 21.)]):
+for iii in np.unique(ind[(chsq2<2.) & (diffmag < 21.) & (diffmag > 0.)]):
     print iii
 
 raw_input()
