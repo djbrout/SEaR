@@ -35,6 +35,7 @@ for i,acp,dm,indd in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag
     print round(chiprod[i],3),dm,indd
     if float(dm) > 0.:
         if float(chiprod[i]) > 10**10:
+            pass
             #raw_input()
 #raw_input()
 import matplotlib as m
