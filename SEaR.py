@@ -567,8 +567,8 @@ class fit:
             aaa = mcmc.metropolis_hastings(
                   galmodel=     self.data[1,:,:]/3.#setting the initial guess of the galaxy/background model to the template image
                 , modelvec=     np.array([self.initialguess,0])
-                , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/4.
-                , modelstd=     np.array([self.stepstd,0.])/4.
+                , galstd=       np.sqrt(np.abs(self.data[1,:,:]))/6.
+                , modelstd=     np.array([self.stepstd,0.])/6.
                 , data=         self.data
                 , psfs=         self.psfs
                 , weights=      self.weights
