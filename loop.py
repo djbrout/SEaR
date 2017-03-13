@@ -18,7 +18,7 @@ for i in allindexes:
         '#SBATCH -c 1\n'+
         '#SBATCH -C haswell\n'+
         '#SBATCH -A des\n' +
-        '#SBATCH --time=00:15:00\n' +
+        '#SBATCH --time=00:19:00\n' +
         '#SBATCH --output=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --error=/project/projectdirs/des/p9smp/searscratch/sm_' + str(i) + '_v22_0.log\n' +
         '#SBATCH --job-name=0p9i_' + str(i) + '\n' +
