@@ -29,10 +29,13 @@ data = dt.readcol(workingdir+'alldetections.txt',delim=',')
 print data.keys()
 print data['allchipix'].shape
 chiprod = np.zeros(len(data['allchipix']))
-for i,acp,dm in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag']):
+for i,acp,dm,indd in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag'],data['ind']):
     acparr = np.array(acp.split(';'),dtype='float')
     chiprod[i] = np.prod(acparr[acparr>0.2])
-    print round(chiprod[i],3),dm
+    print round(chiprod[i],3),dm,indd
+    if float(dm) > 0.:
+        if float(chiprod[i]) > 10**60:
+            raw_input()
 #raw_input()
 import matplotlib as m
 m.use('Agg')
