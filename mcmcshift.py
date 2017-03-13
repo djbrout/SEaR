@@ -129,7 +129,7 @@ class metropolis_hastings():
                 , psfcenter = None
                 , x=None
                 , y=None
-                , galshiftstd=0.001
+                , galshiftstd=0.005
                 ):
         '''
         if model is None:
