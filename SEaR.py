@@ -170,7 +170,7 @@ class fit:
             return [9999,9999], 9999, 9999, 9999, 9999, 9999, 9999, 9999
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
         fitmagerr = - 2.5*np.log10(self.modelvec[0]) + 2.5*np.log10(self.modelvec[0]+self.modelvec_uncertainty[0])
-        return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm, self.chisqstamps[0], self.chisqstamps[1]
+        return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm, self.chisqstamps[0], self.chisqstamps[1], self.mask
 
     def grabfromheader(self):
         try:
@@ -597,7 +597,7 @@ class fit:
             self.bad = True
             return
 
-        self.modelvec, self.modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo = aaa.get_params()
+        self.modelvec, self.modelvec_uncertainty, galmodel_params, galmodel_uncertainty, modelvec_nphistory, galmodel_nphistory, sims, xhistory, yhistory, accepted_history, pix_stamp, chisqhist, redchisqhist, stamps, self.chisqs, self.chisqstamps, self.xo, self.yo,self.mask = aaa.get_params()
         self.chisqvsfwhm()
         return
 
