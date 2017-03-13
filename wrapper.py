@@ -64,10 +64,10 @@ def run(listindex,index,root,templatedir,dontskip):
 
         rootplus = detectionslist[listindex].split('/')[0]+'/'+bc
         imagepath = root+'/'+rootplus
-        if not os.path.exists('/project/projectdirs/des/p9smp/results29/'):
-            os.mkdir('/project/projectdirs/des/p9smp/results29/')
+        if not os.path.exists('/project/projectdirs/des/p9smp/results30/'):
+            os.mkdir('/project/projectdirs/des/p9smp/results30/')
 
-        sd = '/project/projectdirs/des/p9smp/results29/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
+        sd = '/project/projectdirs/des/p9smp/results30/detections_'+detectionslist[listindex].split('/')[0]+'_' + tband + '_' + ccd + '.txt'
         #print 'outfile',sd
 
 
