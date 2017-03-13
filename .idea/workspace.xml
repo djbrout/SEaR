@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcmcshift.py" afterPath="$PROJECT_DIR$/mcmcshift.py" />
     </list>
     <ignored path="p9cut.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,20 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mcmc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mcmc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="463" column="53" selection-start-line="463" selection-start-column="53" selection-end-line="463" selection-end-column="53" />
-              <folding>
-                <element signature="e#810#828#0" expanded="true" />
-                <marker date="1489370456000" expanded="true" signature="16616:16766" ph="..." />
-                <marker date="1489370456000" expanded="true" signature="17006:17757" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="buildPSFex.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buildPSFex.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -74,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mcmcshift.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mcmcshift.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="463" column="43" selection-start-line="463" selection-start-column="43" selection-end-line="463" selection-end-column="43" />
+            <state relative-caret-position="242">
+              <caret line="471" column="57" selection-start-line="471" selection-start-column="57" selection-end-line="471" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -172,10 +158,10 @@
         <option value="$PROJECT_DIR$/edisonsubmit.sh" />
         <option value="$PROJECT_DIR$/loop.py" />
         <option value="$PROJECT_DIR$/mcmc.py" />
-        <option value="$PROJECT_DIR$/mcmcshift.py" />
         <option value="$PROJECT_DIR$/wrapper.py" />
         <option value="$PROJECT_DIR$/summary.py" />
         <option value="$PROJECT_DIR$/SEaR.py" />
+        <option value="$PROJECT_DIR$/mcmcshift.py" />
       </list>
     </option>
   </component>
@@ -433,13 +419,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-01065" summary="mpp added for parallel processing">
-      <created>1488596485971</created>
-      <option name="number" value="01065" />
-      <option name="presentableId" value="LOCAL-01065" />
-      <option name="project" value="LOCAL" />
-      <updated>1488596485971</updated>
     </task>
     <task id="LOCAL-01066" summary="mpp added for parallel processing">
       <created>1488596560083</created>
@@ -777,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489421957332</updated>
     </task>
-    <option name="localTasksCounter" value="1114" />
+    <task id="LOCAL-01114" summary="mpp added for parallel processing">
+      <created>1489421983610</created>
+      <option name="number" value="01114" />
+      <option name="presentableId" value="LOCAL-01114" />
+      <option name="project" value="LOCAL" />
+      <updated>1489421983610</updated>
+    </task>
+    <option name="localTasksCounter" value="1115" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1253,14 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcmcshift.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="463" column="43" selection-start-line="463" selection-start-column="43" selection-end-line="463" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1269,6 +1247,14 @@
             <element signature="e#622#640#0" expanded="true" />
             <marker date="1489421979000" expanded="true" signature="14948:15085" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcmcshift.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="471" column="57" selection-start-line="471" selection-start-column="57" selection-end-line="471" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
