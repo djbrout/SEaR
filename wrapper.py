@@ -162,7 +162,7 @@ def run(listindex,index,root,templatedir,dontskip):
             float(sn),float(m),float(round(cx,2)),float(round(cy,2)),float(fitmag),float(fitmagerr),float(chisq1fwhm),float(chisq2fwhm),float(chisq3fwhm),float(chisqs[1])))
         searout.close()
         print '-'*100
-        print str(int(i))+',\t'+bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t{5:2.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f},\t\t{9:>7.2f},\t\t{s}\n'.format(
+        print str(int(i))+',\t'+bc+',\t\t'+str(x)+',\t'+str(y)+',\t{0:.2f},\t{1:2.2f},\t{2:>7},\t{3:>7},\t{4:2.2f},\t{5:2.2f},\t\t{6:>7.2f},\t\t{7:>7.2f},\t\t{8:>7.2f},\t\t{9:>7.2f},\t\t{}\n'.format(
             float(sn),float(m),float(round(cx,2)),float(round(cy,2)),float(fitmag),float(fitmagerr),float(chisq1fwhm),float(chisq2fwhm),float(chisq3fwhm),float(chisqs[1]),allchitext)
         print '-'*100
         print 'done fitting, now next candidate',time.time()
