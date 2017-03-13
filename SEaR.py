@@ -170,7 +170,7 @@ class fit:
             return [9999,9999], 9999, 9999, 9999, 9999, 9999, 9999, 9999
         fitmag = self.imzpt - 2.5*np.log10(self.modelvec[0])
         fitmagerr = - 2.5*np.log10(self.modelvec[0]) + 2.5*np.log10(self.modelvec[0]+self.modelvec_uncertainty[0])
-        return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm
+        return self.chisqs, fitmag, fitmagerr, self.xo, self.yo, self.chisq1fwhm, self.chisq2fwhm, self.chisq3fwhm, self.chisqstamps[0], self.chisqstamps[1]
 
     def grabfromheader(self):
         try:
