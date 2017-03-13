@@ -73,7 +73,7 @@ smy = data['sm_y'][:train]
 #print chsq1.shape
 #raw_input()
 
-snlim = 5.0
+snlim = 4.0
 
 print ind[(chsq2>3.) & (sn>60)]
 #raw_input()
