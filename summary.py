@@ -29,7 +29,7 @@ data = dt.readcol(workingdir+'alldetections.txt',delim=',')
 print data.keys()
 print data['allchipix'].shape
 chiprod = np.zeros(len(data['allchipix']))
-for i,acp,dm in zip(range(data['mag'].shape[0],data['allchipix'],data['mag'])):
+for i,acp,dm in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag']):
     acparr = np.array(acp.split(';'),dtype='float')
     chiprod[i] = np.prod(acparr[acparr>0.2])
     print round(chiprod[i],3),dm
