@@ -32,6 +32,7 @@ chiprod = np.zeros(len(data['allchipix']))
 for i,acp in enumerate(data['allchipix']):
     acparr = np.array(acp.split(';'),dtype='float')
     chiprod[i] = np.prod(acparr[acparr>0.001])
+    print chiprod[i]
 #raw_input()
 import matplotlib as m
 m.use('Agg')
