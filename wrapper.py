@@ -129,6 +129,7 @@ def run(listindex,index,root,templatedir,dontskip):
         #         raw_input()
         #         continue
         # continue
+
         if not dontskip:
             if os.path.exists(sd):
                 sdd = np.array(dt.readcol(sd,delim=',',noheaders=True)[0],dtype='int')
