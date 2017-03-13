@@ -31,7 +31,7 @@ print data['allchipix'].shape
 chiprod = np.zeros(len(data['allchipix']))
 for i,acp in enumerate(data['allchipix']):
     acparr = np.array(acp.split(';'),dtype='float')
-    chiprod[i] = np.prod(acparr[acparr!=0.])
+    chiprod[i] = np.prod(acparr[acparr>0.001])
 #raw_input()
 import matplotlib as m
 m.use('Agg')
@@ -159,7 +159,7 @@ plt.axhline(ll,color='black',linestyle='--')
 #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
 #plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
-plt.ylim(-.001,.001)
+#plt.ylim(-.001,.001)
 plt.ylabel('Product of All Chisq Pixels')
 plt.xlabel('S/N')
 plt.savefig(workingdir+'results_chiprod.png')
