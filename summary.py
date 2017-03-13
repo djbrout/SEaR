@@ -21,13 +21,14 @@ for l in open('clean_detections.list','r').readlines():
 
 #raw_input('catted')
 with file(workingdir+'alldetections.txt', 'r') as original: data = original.read()
-with file(workingdir+'alldetections.txt', 'w') as modified: modified.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\n" + data)
+with file(workingdir+'alldetections.txt', 'w') as modified: modified.write("ind,\tband_ccd,\tx,\ty,\tsn,\tmag,\tsm_x,\t\tsm_y,\t\tsm_mag,\tsm_mag_err,\tsearch_1fwhm_chisq,\tsearch_2fwhm_chisq,\tsearch_3fwhm_chisq,\ttempl_chi\tallchipix\n" + data)
 
 
 data = dt.readcol(workingdir+'alldetections.txt',delim=',')
 
 print data.keys()
-
+print data['allchipix'].shape
+raw_input()
 import matplotlib as m
 m.use('Agg')
 import matplotlib.pyplot as plt
