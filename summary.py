@@ -35,7 +35,7 @@ for i,acp,dm,indd in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag
     print round(chiprod[i],3),dm,indd
     if float(dm) > 0.:
         if float(chiprod[i]) > 10**10:
-            raw_input()
+            #raw_input()
 #raw_input()
 import matplotlib as m
 m.use('Agg')
@@ -79,11 +79,11 @@ smy = data['sm_y'][:train]
 
 snlim = 4.0
 
-print ind[(chsq2>3.) & (sn>60)]
+#print ind[(chsq2>3.) & (sn>60)]
 #raw_input()
-print ind[(chsq2<1.2) & (diffmag == 20)]
+print ind[(chsq2<2.) & (diffmag < 21.)]
 
-#raw_input()
+raw_input()
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.0001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
