@@ -1182,7 +1182,7 @@ class metropolis_hastings():
             #chisqstampsnp[i, :, :] = ((self.data[i, :, :] - self.sims[i]) ** 2  * self.weights[i, :, :] * self.mask)
 
 
-        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp,self.x[0] + self.xo, self.y[0]+self.yo # size: self.history[num_iter,len(self.model_params)]
+        return self.modelvec_params, self.modelvec_uncertainty, self.galmodel_params, self.galmodel_uncertainty, self.modelvec_nphistory, self.galmodel_nphistory, self.sims,np.asarray(self.xhistory),np.asarray(self.yhistory),self.accepted_history,self.pix_stamp,self.chisq,self.redchisq,stamps,chsqs,chisqstampsnp,self.x[0] + self.xo, self.y[0]+self.yo,self.mask # size: self.history[num_iter,len(self.model_params)]
 
     def get_params_analytical_weighted( self ):
         burn_in = int(self.nphistory.shape[0]*.5)
