@@ -86,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+              <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -419,13 +419,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
-    </task>
-    <task id="LOCAL-01075" summary="mpp added for parallel processing">
-      <created>1488600263498</created>
-      <option name="number" value="01075" />
-      <option name="presentableId" value="LOCAL-01075" />
-      <option name="project" value="LOCAL" />
-      <updated>1488600263498</updated>
     </task>
     <task id="LOCAL-01076" summary="mpp added for parallel processing">
       <created>1488602390297</created>
@@ -763,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489436407430</updated>
     </task>
-    <option name="localTasksCounter" value="1124" />
+    <task id="LOCAL-01124" summary="mpp added for parallel processing">
+      <created>1489436451625</created>
+      <option name="number" value="01124" />
+      <option name="presentableId" value="LOCAL-01124" />
+      <option name="project" value="LOCAL" />
+      <updated>1489436451625</updated>
+    </task>
+    <option name="localTasksCounter" value="1125" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1251,7 +1251,7 @@
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
