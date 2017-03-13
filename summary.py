@@ -30,7 +30,8 @@ print data.keys()
 print data['allchipix'].shape
 chiprod = np.zeros(len(data['allchipix']))
 for i,acp in enumerate(data['allchipix']):
-    chiprod[i] = np.prod(np.array(acp.split(';'),dtype='float'))
+    acparr = np.array(acp.split(';'),dtype='float')
+    chiprod[i] = np.prod(acparr[acparr!=0.])
 #raw_input()
 import matplotlib as m
 m.use('Agg')
