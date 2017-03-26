@@ -323,7 +323,8 @@ class fit:
         #print
 
 
-
+        print self.ix, self.iy, self.imagedata.shape
+        raw_input()
         if self.iy - (self.stampsize-1)/2 - 60. < 0:
             raise Exception('candidate is too close to edge of ccd')
         if self.iy + (self.stampsize-1)/2 + 60. > imagedata.shape[0]:
