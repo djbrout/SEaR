@@ -407,6 +407,8 @@ class fit:
         #GRABBING TEMPLATE STAMPS
         templatedata = getdata(os.path.join(self.rootdir,self.template))
         templateweightdata = getdata(os.path.join(self.rootdir,self.templateweight))
+        self.ty = templatedata.shape[1]
+        self.tx = templatedata.shape[0]
         if self.ty - (self.stampsize - 1) / 2 < 0:
             raise Exception('candidate is too close to edge of ccd')
         else:
