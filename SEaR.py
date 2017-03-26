@@ -333,10 +333,10 @@ class fit:
         if self.ix + (self.stampsize-1)/2 > imagedata.shape[1]:
             raise Exception('candidate is too close to edge of ccd')
 
-        self.data[0,:,:] = imagedata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
-        self.weights[0,:,:] = imweightdata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]
+        self.data[0,:,:] = imagedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
+        self.weights[0,:,:] = imweightdata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
 
         self.weights[0,:,:] = self.weights[0,:,:]*0. + 1./(asskyerr)
 
@@ -363,13 +363,13 @@ class fit:
         #
         # # self.imageskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         # # self.imagesky = np.median(vals)
-        self.imageskyerr = imagedata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]*0. + sexrms
+        self.imageskyerr = imagedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]*0. + sexrms
 
         #print asskyerr, np.mean(self.imageskyerr.ravel())
         #
-        self.imagesky = imagedata[self.impsfcenter[1] - self.stampsize/2:self.impsfcenter[1] + self.stampsize/2,
-                           self.impsfcenter[0] - self.stampsize/2:self.impsfcenter[0] + self.stampsize/2]*0. + sexsky
+        self.imagesky = imagedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]*0. + sexsky
 
         #print asskyerr, np.mean(self.imageskyerr.ravel()), sexrms
 
@@ -424,11 +424,11 @@ class fit:
         else:
             xhi = np.floor(self.tx) + (self.stampsize - 1) / 2 + 1
 
-        self.data[1,:,:] = templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]
+        self.data[1,:,:] = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
 
-        self.weights[1,:,:] = np.swapaxes(templateweightdata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2],0,1)
+        self.weights[1,:,:] = np.swapaxes(templateweightdata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)],0,1)
 
 
 
@@ -494,8 +494,8 @@ class fit:
         # print st,sexrms
         #raw_input('compare errors')
         # try:
-        self.templateskyerr = templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                               self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]* 0 + sexrms
+        self.templateskyerr = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]* 0 + sexrms
         # except:
         #     time.sleep(10*(np.random.rand()+2))
         #     try:
@@ -515,8 +515,8 @@ class fit:
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
-        self.templatesky = templatedata[self.templatepsfcenter[1] - self.stampsize/2:self.templatepsfcenter[1] + self.stampsize/2,
-                           self.templatepsfcenter[0] - self.stampsize/2:self.templatepsfcenter[0] + self.stampsize/2]*0 + sexsky
+        self.templatesky = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]*0 + sexsky
 
         # print 'self.templateskyerr',self.templateskyerr
         # print mean, sexsky
