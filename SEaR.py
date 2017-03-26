@@ -427,6 +427,8 @@ class fit:
         print self.data[1,:,:].shape
         print templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)].shape
+        print imagedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)].shape
         self.data[1,:,:] = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
 
