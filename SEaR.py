@@ -439,9 +439,10 @@ class fit:
         print imagedata.shape
         print os.path.join(self.rootdir,self.template)
         print os.path.join(self.rootdir,self.image)
+        print self.tx, self.ty
         #raw_input()
-        self.data[1,:,:] = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
-                           int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
+        self.data[1,:,:] = templatedata[int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2),
+                           int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2)]
 
         self.weights[1,:,:] = np.swapaxes(templateweightdata[int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2),
                            int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2)],0,1)
