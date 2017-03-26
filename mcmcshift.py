@@ -579,7 +579,7 @@ class metropolis_hastings():
         #raw_input()
         t2 = time.time()
         #print 'chisq calc'
-        self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.sky))
+        self.csv = np.array(map( self.mapchis,self.kicked_modelvec, self.sims, self.data, self.flags, self.fitflags, self.weights, self.skyerr,self.sky,self.masks))
         #print self.csv
         #print csv
         #raw_input()
@@ -787,7 +787,7 @@ class metropolis_hastings():
                 self.sims[ epoch,:,:] =  (star_conv + galaxy_conv)*self.mask
     '''
 
-    def mapchis( self, kicked_modelvec, sims, data, flags, fitflags, weight, skyerr,sky):
+    def mapchis( self, kicked_modelvec, sims, data, flags, fitflags, weight, skyerr,sky,msk):
         chisq  = 0
 
         if flags == 0:
@@ -796,7 +796,7 @@ class metropolis_hastings():
                 #v = ((sims - data) ** 2 * weight * self.mask).ravel()
                 #chisq = np.sum(v[(v > 0.) & (v < 9999999.)])
                 denom = weight + (sims-sky)/3.8 + 1.
-                v = ((sims - data) ** 2 * self.mask / denom).ravel()
+                v = ((sims - data) ** 2 * self.mask * msk / denom).ravel()
                 chisq = np.sum(v[(v > 0.) & (v < 99999999.)])
 
                 # if self.model_errors:
