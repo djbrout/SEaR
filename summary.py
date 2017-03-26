@@ -40,7 +40,7 @@ for i,acp,dm,indd in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag
     acparr = np.array(acp.split(';'),dtype='float')
 
 
-    hist, bin_edges = np.histogram(acparr.ravel(), bins=np.arange(0, 1000, .05), density=True)
+    hist, bin_edges = np.histogram(acparr[np.isfinite(acparr)], bins=np.arange(0, 1000, .05), density=True)
     bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2.
 
     chisqfitprob = scipy.stats.chisquare(hist, f_exp=dist.pdf(bin_centers), ddof=len(bin_centers) - 2.)
