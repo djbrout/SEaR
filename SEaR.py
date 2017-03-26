@@ -435,7 +435,7 @@ class fit:
         self.data[1,:,:] = templatedata.T[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
 
-        self.weights[1,:,:] = np.swapaxes(templateweightdata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+        self.weights[1,:,:] = np.swapaxes(templateweightdata.T[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)],0,1)
 
 
@@ -502,7 +502,7 @@ class fit:
         # print st,sexrms
         #raw_input('compare errors')
         # try:
-        self.templateskyerr = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+        self.templateskyerr = templatedata.T[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]* 0 + sexrms
         # except:
         #     time.sleep(10*(np.random.rand()+2))
@@ -523,7 +523,7 @@ class fit:
         #self.templateskyerr = 1.48 * np.median(abs(vals - np.median(vals)))
         #print np.median(self.data[1,:,:])
         #self.templatesky =np.median(vals)
-        self.templatesky = templatedata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
+        self.templatesky = templatedata.T[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]*0 + sexsky
 
         # print 'self.templateskyerr',self.templateskyerr
