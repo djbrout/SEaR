@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="mpp added for parallel processing">
+    <list default="true" id="f46d31e9-03df-4d80-ac3c-fc4e39c34e1f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SEaR.py" afterPath="$PROJECT_DIR$/SEaR.py" />
     </list>
@@ -50,11 +50,11 @@
       <file leaf-file-name="SEaR.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SEaR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="432" column="36" selection-start-line="432" selection-start-column="36" selection-end-line="432" selection-end-column="36" />
+            <state relative-caret-position="291">
+              <caret line="448" column="0" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
               <folding>
                 <element signature="e#622#640#0" expanded="true" />
-                <marker date="1490547893000" expanded="true" signature="15122:15259" ph="..." />
+                <marker date="1490561522000" expanded="true" signature="15122:15259" ph="..." />
               </folding>
             </state>
           </provider>
@@ -85,8 +85,8 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="163" column="11" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
+            <state relative-caret-position="-105">
+              <caret line="7" column="61" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1490543102000" expanded="true" signature="5989:6542" ph="..." />
@@ -434,13 +434,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01145" summary="mpp added for parallel processing">
-      <created>1489443008900</created>
-      <option name="number" value="01145" />
-      <option name="presentableId" value="LOCAL-01145" />
-      <option name="project" value="LOCAL" />
-      <updated>1489443008901</updated>
-    </task>
     <task id="LOCAL-01146" summary="mpp added for parallel processing">
       <created>1489443070175</created>
       <option name="number" value="01146" />
@@ -777,11 +770,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490547497158</updated>
     </task>
-    <option name="localTasksCounter" value="1194" />
+    <task id="LOCAL-01194" summary="mpp added for parallel processing">
+      <created>1490548200655</created>
+      <option name="number" value="01194" />
+      <option name="presentableId" value="LOCAL-01194" />
+      <option name="project" value="LOCAL" />
+      <updated>1490548200655</updated>
+    </task>
+    <option name="localTasksCounter" value="1195" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.064129665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -923,7 +923,7 @@
           <caret line="12" column="48" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="48" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1490547893000" expanded="true" signature="15122:15259" ph="..." />
+            <marker date="1490561522000" expanded="true" signature="15122:15259" ph="..." />
           </folding>
         </state>
       </provider>
@@ -965,7 +965,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1490547893000" expanded="true" signature="15122:15259" ph="..." />
+            <marker date="1490561522000" expanded="true" signature="15122:15259" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1020,7 +1020,7 @@
           <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1490547893000" expanded="true" signature="15122:15259" ph="..." />
+            <marker date="1490561522000" expanded="true" signature="15122:15259" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1205,17 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/summary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="163" column="11" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1490543102000" expanded="true" signature="5989:6542" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buildPSFex.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1234,13 +1223,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/summary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1490543102000" expanded="true" signature="5989:6542" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SEaR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="432" column="36" selection-start-line="432" selection-start-column="36" selection-end-line="432" selection-end-column="36" />
+        <state relative-caret-position="291">
+          <caret line="448" column="0" selection-start-line="448" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
           <folding>
             <element signature="e#622#640#0" expanded="true" />
-            <marker date="1490547893000" expanded="true" signature="15122:15259" ph="..." />
+            <marker date="1490561522000" expanded="true" signature="15122:15259" ph="..." />
           </folding>
         </state>
       </provider>
