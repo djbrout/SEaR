@@ -5,7 +5,7 @@ from copy import copy
 import scipy.stats
 from scipy.stats import chi2
 
-workingdir = '/project/projectdirs/des/p9smp/results31chichi/'
+workingdir = '/project/projectdirs/des/p9smp/results30/'
 #
 # os.system('cat '+workingdir+'detections*.txt > '+workingdir+'/alldetections.txt')
 #
