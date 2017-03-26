@@ -2,8 +2,10 @@ import numpy as np
 import dilltools as dt
 import os
 from copy import copy
+import scipy.stats
+from scipy.stats import chi2
 
-workingdir = '/project/projectdirs/des/p9smp/results30/'
+workingdir = '/project/projectdirs/des/p9smp/results31chichi/'
 #
 # os.system('cat '+workingdir+'detections*.txt > '+workingdir+'/alldetections.txt')
 #
@@ -28,15 +30,27 @@ data = dt.readcol(workingdir+'alldetections.txt',delim=',')
 
 print data.keys()
 print data['allchipix'].shape
-chiprod = np.zeros(len(data['allchipix']))
+chisqnew = np.zeros(len(data['allchipix']))
+
+k = 1
+mu = 0
+x = np.linspace(0, 10., 100)
+dist = chi2(k, mu)
 for i,acp,dm,indd in zip(range(data['mag'].shape[0]),data['allchipix'],data['mag'],data['ind']):
     acparr = np.array(acp.split(';'),dtype='float')
-    chiprod[i] = np.prod(acparr[acparr>0.2])
-    print round(chiprod[i],3),dm,indd
-    if float(dm) > 0.:
-        if float(chiprod[i]) > 10**10:
-            pass
-            #raw_input()
+
+
+    hist, bin_edges = np.histogram(acparr.ravel(), bins=np.arange(0, 1000, .05), density=True)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2.
+
+    chisqfitprob = scipy.stats.chisquare(hist, f_exp=dist.pdf(bin_centers), ddof=len(bin_centers) - 2.)
+    csq = chisqfitprob[0]
+    chisqnew[i] = csq
+    # print round(chiprod[i],3),dm,indd
+    # if float(dm) > 0.:
+    #     if float(chiprod[i]) > 10**10:
+    #         pass
+    #         #raw_input()
 #raw_input()
 import matplotlib as m
 m.use('Agg')
@@ -85,7 +99,7 @@ snlim = 4.0
 for iii in np.unique(ind[(chsq2>1.4) & (diffmag < 21.) & (diffmag > 0.)]):
     print iii
 
-raw_input()
+#raw_input()
 
 nreal = len(diffmag[(diffmag>0) & (diffmag != 20.0001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
@@ -133,14 +147,25 @@ plt.scatter(sn[wreal],chsq1[wreal],color='green',alpha=.2)
 plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 
-#plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
-#plt.axhline(ul,color='black',linestyle='--')
 plt.xlim(4.,150.)
 plt.ylim(0,4.)
 plt.ylabel('1 FWHM Chi Squared')
 plt.xlabel('S/N')
 plt.savefig(workingdir+'results_chi1.png')
 print 'saved '+workingdir+'results_chi1.png'
+
+plt.clf()
+plt.scatter(sn[wfake],chisqnew[wfake],color='red',alpha=.2)
+plt.scatter(sn[wreal],chisqnew[wreal],color='green',alpha=.2)
+plt.axhline(ul,color='black',linestyle='--')
+plt.axhline(ll,color='black',linestyle='--')
+
+plt.xlim(4.,150.)
+plt.ylim(0,4.)
+plt.ylabel('Chi Chi')
+plt.xlabel('S/N')
+plt.savefig(workingdir+'results_chichi.png')
+print 'saved '+workingdir+'results_chichi.png'
 
 plt.clf()
 plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.2)
