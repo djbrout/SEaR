@@ -105,8 +105,8 @@ nreal = len(diffmag[(diffmag>0) & (diffmag != 20.0001) & (sn > snlim)])
 nbad = len(diffmag[(diffmag==0)& (sn > snlim)])
 ntot = len(diffmag[(sn > snlim)])
 
-wreal = (diffmag > 0) & (chsq3 < 1000) & (chsq3 >= 0.) & (diffmag != 20.0001)& (sn > snlim)
-wfake = (diffmag == 0) & (chsq3 < 1000) & (chsq3 >= 0.)& (sn > snlim)
+wreal = (diffmag > 0) & (diffmag != 20.0001)& (sn > snlim)
+wfake = (diffmag == 0) & (sn > snlim)
 
 #wrealt = (diffmagt > 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (diffmagt != 20.00)& (sn > snlim)
 #wfaket = (diffmagt == 0) & (chsq3t < 1000) & (chsq3t >= 0.) & (sn > snlim)
@@ -167,6 +167,9 @@ plt.xlabel('S/N')
 plt.yscale('log')
 plt.savefig(workingdir+'results_chichi.png')
 print 'saved '+workingdir+'results_chichi.png'
+
+print ind[wreal][(sn[wreal]<10.)&(sn[wreal]>8.)&(chisqnew[wreal]>100.)]
+raw_input()
 
 plt.clf()
 plt.scatter(sn[wfake],chsq3[wfake],color='red',alpha=.2)
