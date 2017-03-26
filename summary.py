@@ -5,7 +5,7 @@ from copy import copy
 import scipy.stats
 from scipy.stats import chi2
 
-workingdir = '/project/projectdirs/des/p9smp/results30/'
+workingdir = '/project/projectdirs/des/p9smp/results31chichi/'
 #
 # os.system('cat '+workingdir+'detections*.txt > '+workingdir+'/alldetections.txt')
 #
@@ -160,7 +160,7 @@ plt.scatter(sn[wreal],chisqnew[wreal],color='green',alpha=.2)
 plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 
-plt.xlim(4.,40.)
+plt.xlim(4.,150.)
 plt.ylim(0,200.)
 plt.ylabel('Chi Chi')
 plt.xlabel('S/N')
