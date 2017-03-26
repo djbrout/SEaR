@@ -182,19 +182,19 @@ plt.savefig(workingdir+'results_chi3.png')
 print 'saved '+workingdir+'results_chi3.png'
 
 
-plt.clf()
-plt.scatter(sn[wfake],chiprod[wfake],color='red',alpha=.2)
-plt.scatter(sn[wreal],chiprod[wreal],color='green',alpha=.2)
-plt.axhline(ul,color='black',linestyle='--')
-plt.axhline(ll,color='black',linestyle='--')
-#plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
-#plt.axhline(ul,color='black',linestyle='--')
-plt.xlim(4.,150.)
-#plt.ylim(-.001,.001)
-plt.ylabel('Product of All Chisq Pixels')
-plt.xlabel('S/N')
-plt.savefig(workingdir+'results_chiprod.png')
-print 'saved '+workingdir+'results_chiprod.png'
+# plt.clf()
+# plt.scatter(sn[wfake],chiprod[wfake],color='red',alpha=.2)
+# plt.scatter(sn[wreal],chiprod[wreal],color='green',alpha=.2)
+# plt.axhline(ul,color='black',linestyle='--')
+# plt.axhline(ll,color='black',linestyle='--')
+# #plt.plot([0,10,500],[ul,ul,500*s + ul],color='black',linestyle='--')
+# #plt.axhline(ul,color='black',linestyle='--')
+# plt.xlim(4.,150.)
+# #plt.ylim(-.001,.001)
+# plt.ylabel('Product of All Chisq Pixels')
+# plt.xlabel('S/N')
+# plt.savefig(workingdir+'results_chiprod.png')
+# print 'saved '+workingdir+'results_chiprod.png'
 
 plt.clf()
 plt.hist([chsq2[wfake]-chsq1[wfake],chsq2[wreal]-chsq1[wreal]],color=['red','green'],bins=np.arange(-3.5,2,.2),normed=True)
