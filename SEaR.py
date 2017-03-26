@@ -315,6 +315,7 @@ class fit:
         #GRABBING IMAGE STAMPS
         self.data = np.zeros((2, self.stampsize, self.stampsize))
         self.weights = np.zeros((2, self.stampsize, self.stampsize))
+        self.masks = np.zeros((2,self.stampsize, self.stampsize))
 
         print os.path.join(self.rootdir,self.imageweight)
         print os.path.join(self.rootdir, self.image)
@@ -339,7 +340,11 @@ class fit:
         self.weights[0,:,:] = imweightdata[int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2),
                            int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2)]
 
-        self.weights[0,:,:] = self.weights[0,:,:]*0. + 1./(asskyerr)
+        mask = copy(self.weights[0,:,:])
+        mask[mask < 1e-8] = 0.
+        mask[mask>0.] = 1.
+        self.masks[0,:,:] = copy(mask)
+        self.weights[0,:,:] = self.weights[0,:,:]*0.+ 1./(asskyerr)
 
 
         print ';sfcenter',self.impsfcenter
@@ -451,6 +456,12 @@ class fit:
             self.impsfcenter[0] + self.stampsize / 2),
                                             int(self.impsfcenter[1] - self.stampsize / 2):int(
                                                 self.impsfcenter[1] + self.stampsize / 2)]
+
+        mask = copy(self.weights[1, :, :])
+        mask[mask < 1e-8] = 0.
+        mask[mask > 0.] = 1.
+
+        self.masks[1,:,:] = copy(mask)
 
         mag, magerr, flux, fluxerr, atsky, atskyerr, badflagx, outstr = \
             aper.aper(templatedata, self.tx, self.ty, apr=13., verbose=False)
@@ -591,6 +602,7 @@ class fit:
                 , modelstd=     np.array([self.stepstd,0.])
                 , data=         self.data
                 , psfs=         self.psfs
+                , masks=        self.masks
                 , weights=      self.weights
                 , substamp=     self.stampsize
                 , Nimage=       self.Nimage

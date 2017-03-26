@@ -78,6 +78,7 @@ class metropolis_hastings():
                 , modelstd = None
                 , data = None
                 , psfs = None
+                , masks = None
                 , weights = None
                 , substamp = 0
                 , Nimage = 1
@@ -223,6 +224,8 @@ class metropolis_hastings():
         self.x = x
         self.y = y
         self.galshiftstd = galshiftstd
+        self.masks = masks
+
 
 
 
@@ -559,7 +562,7 @@ class metropolis_hastings():
         #print 'kernel start'
         self.fgal = np.fft.fft2(self.kicked_galaxy_model)
         self.sims = map(self.mapkernel,self.kicked_modelvec,self.kicked_psfs,self.centered_psfs,self.sky,self.flags,
-                        self.fitflags,self.sims,self.gal_conv,self.fpsfs,self.xgal_pix_offset,self.ygal_pix_offset)
+                        self.fitflags,self.sims,self.gal_conv,self.fpsfs,self.xgal_pix_offset,self.ygal_pix_offset,self.masks)
         t3 = time.time()
         self.total_time_convolving += t3-t2
         #print self.sims.shape
@@ -681,7 +684,7 @@ class metropolis_hastings():
         self.garyshiftpsf(x_off=self.x_pix_offset,y_off=self.y_pix_offset)
 
     def mapkernel( self, kicked_modelvec, kicked_psfs, centered_psfs,sky, flags, fitflags, sims, galconv,
-                   fpsf, galoffx, galoffy):
+                   fpsf, galoffx, galoffy, msk):
 
         if self.fix_gal_model:
             star_conv = kicked_modelvec * kicked_psfs
@@ -710,7 +713,7 @@ class metropolis_hastings():
                     if self.galshiftstd > 0.:
                         galaxy_conv = np.fft.ifft2(fpsf * self.fouriershift(galoffx, galoffy, self.fgal)).real
                         star_conv = kicked_modelvec * kicked_psfs
-                        sims = (star_conv + galaxy_conv + sky) * self.mask
+                        sims = (star_conv + galaxy_conv + sky) * self.mask * msk
                     else:
                         galaxy_conv = scipy.signal.fftconvolve(self.kicked_galaxy_model, centered_psfs, mode='same')
                         # sims = (delta+galaxy_conv+sky) * self.mask
@@ -719,7 +722,7 @@ class metropolis_hastings():
                         #THIS IS THE OLD WAY
                         #
                         star_conv = kicked_modelvec * kicked_psfs/np.sum(kicked_psfs.ravel())
-                        sims =  (star_conv + galaxy_conv + sky)*self.mask
+                        sims =  (star_conv + galaxy_conv + sky)*self.mask*msk
 
         return sims
 
@@ -981,7 +984,7 @@ class metropolis_hastings():
 
         self.sims = map(self.mapkernel, self.modelvec_params, self.kicked_psfs, self.centered_psfs, self.sky,
                         self.flags, self.fitflags, self.sims, self.gal_conv, self.fpsfs,
-                        self.xgal_pix_offset,self.ygal_pix_offset)
+                        self.xgal_pix_offset,self.ygal_pix_offset,self.masks)
 
     def autocorr( self, x ):
         result = np.correlate( x, x, mode='full' )
@@ -1022,28 +1025,28 @@ class metropolis_hastings():
             cbar = fig.colorbar(axs, ax=axgm)
             axgm.xaxis.set_major_formatter(plt.NullFormatter())
             axgm.yaxis.set_major_formatter(plt.NullFormatter())
-            axs = axim.imshow(self.data[i, :, :] * self.mask, cmap='gray', interpolation='nearest',
+            axs = axim.imshow(self.data[i, :, :] * self.mask * self.masks[i,:,:], cmap='gray', interpolation='nearest',
                               vmin=np.min(self.data[i, :, :]), vmax=np.max(self.data[i, :, :]))
             axim.xaxis.set_major_formatter(plt.NullFormatter())
             axim.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axim)
-            axs = axpsf.imshow(self.sims[i] * self.mask, cmap='gray', interpolation='nearest',
+            axs = axpsf.imshow(self.sims[i] * self.mask * self.masks[i,:,:], cmap='gray', interpolation='nearest',
                                vmin=np.min(self.data[i, :, :]), vmax=np.max(self.data[i, :, :]))
             axpsf.xaxis.set_major_formatter(plt.NullFormatter())
             axpsf.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axpsf)
-            axs = axppsf.imshow(self.psfs[i] * self.mask, cmap='gray', interpolation='nearest')
+            axs = axppsf.imshow(self.psfs[i] * self.mask * self.masks[i,:,:], cmap='gray', interpolation='nearest')
             axppsf.xaxis.set_major_formatter(plt.NullFormatter())
             axppsf.yaxis.set_major_formatter(plt.NullFormatter())
             cbar = fig.colorbar(axs, ax=axppsf)
             md = np.median((self.data[i, :, :] - self.sims[i]).ravel())
             std = np.std(((self.data[i, :, :] - self.sims[i]) * self.mask).ravel())
-            axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask, cmap='gray', interpolation='nearest',
+            axs = axdiff.imshow((self.data[i, :, :] - self.sims[i]) * self.mask * self.masks[i,:,:], cmap='gray', interpolation='nearest',
                                 vmin=-3*std, vmax=3*std)
             cbar = fig.colorbar(axs, ax=axdiff)
             axdiff.xaxis.set_major_formatter(plt.NullFormatter())
             axdiff.yaxis.set_major_formatter(plt.NullFormatter())
-            axs = axchi.imshow((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask / denom, cmap='gray',
+            axs = axchi.imshow((self.sims[i] - self.data[i, :, :]) ** 2 * self.mask * self.masks[i,:,:] / denom, cmap='gray',
                                interpolation='nearest', vmin=0, vmax=6.)
             cbar = fig.colorbar(axs, ax=axchi)
             # plt.imshow((subim-scaledpsf)/imhdr['SKYSIG'],cmap='gray',interpolation='nearest')
