@@ -161,9 +161,10 @@ plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 
 plt.xlim(4.,90.)
-plt.ylim(0,500.)
+plt.ylim(0,1000000.)
 plt.ylabel('Chi Chi')
 plt.xlabel('S/N')
+plt.yscale('log')
 plt.savefig(workingdir+'results_chichi.png')
 print 'saved '+workingdir+'results_chichi.png'
 
