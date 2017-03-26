@@ -98,8 +98,8 @@ def getsky_and_skyerr(imagefilename,imagedata,xlow,xhi,ylow,yhi,index=''):
     #os.popen("find ~/SEaR/sewpy_logs/ -type f -mmin +12 -name '*.background*' -exec rm {} \;")
     #os.popen("find ~/SEaR/sewpy_logs/ -type f -mmin +4 -name '*.log.txt' -exec rm {} \;")
 
-    background = np.mean(bg[ylow:yhi,xlow:xhi].ravel())
-    rms = np.mean(bgrms[ylow:yhi,xlow:xhi].ravel())
+    background = np.mean(bg[int(ylow):int(yhi),int(xlow):int(xhi)].ravel())
+    rms = np.mean(bgrms[int(ylow):int(yhi),int(xlow):int(xhi)].ravel())
 
     return float(background), float(rms)
 
