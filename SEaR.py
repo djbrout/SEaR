@@ -409,6 +409,9 @@ class fit:
         templateweightdata = getdata(os.path.join(self.rootdir,self.templateweight))
         #self.ty = templatedata.shape[1]
         #self.tx = templatedata.shape[0]
+        print self.ty + (self.stampsize - 1) / 2 + 50.
+        print self.tx + (self.stampsize - 1) / 2  + 50.
+
         if self.ty - (self.stampsize - 1) / 2 - 50. < 0:
             raise Exception('candidate is too close to edge of ccd')
         else:
