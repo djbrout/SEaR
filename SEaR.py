@@ -323,8 +323,8 @@ class fit:
         #print
 
 
-        print self.ix, self.iy, imagedata.shape
-        raw_input()
+        #print self.ix, self.iy, imagedata.shape
+        #raw_input()
         if self.iy - (self.stampsize-1)/2 - 60. < 0:
             raise Exception('candidate is too close to edge of ccd')
         if self.iy + (self.stampsize-1)/2 + 60. > imagedata.shape[0]:
@@ -439,7 +439,7 @@ class fit:
         print imagedata.shape
         print os.path.join(self.rootdir,self.template)
         print os.path.join(self.rootdir,self.image)
-        raw_input()
+        #raw_input()
         self.data[1,:,:] = templatedata[int(self.impsfcenter[0] - self.stampsize/2):int(self.impsfcenter[0] + self.stampsize/2),
                            int(self.impsfcenter[1] - self.stampsize/2):int(self.impsfcenter[1] + self.stampsize/2)]
 
