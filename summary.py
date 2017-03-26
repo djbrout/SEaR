@@ -161,7 +161,7 @@ plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 
 plt.xlim(4.,90.)
-plt.ylim(0,1000000.)
+plt.ylim(1.,1000000.)
 plt.ylabel('Chi Chi')
 plt.xlabel('S/N')
 plt.yscale('log')
