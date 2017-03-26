@@ -86,10 +86,10 @@
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="162" column="15" selection-start-line="162" selection-start-column="15" selection-end-line="162" selection-end-column="15" />
+              <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1490499387000" expanded="true" signature="5934:6487" ph="..." />
+                <marker date="1490499466000" expanded="true" signature="5933:6486" ph="..." />
               </folding>
             </state>
           </provider>
@@ -434,13 +434,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01122" summary="mpp added for parallel processing">
-      <created>1489436263884</created>
-      <option name="number" value="01122" />
-      <option name="presentableId" value="LOCAL-01122" />
-      <option name="project" value="LOCAL" />
-      <updated>1489436263884</updated>
-    </task>
     <task id="LOCAL-01123" summary="mpp added for parallel processing">
       <created>1489436407430</created>
       <option name="number" value="01123" />
@@ -777,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490499330360</updated>
     </task>
-    <option name="localTasksCounter" value="1171" />
+    <task id="LOCAL-01171" summary="mpp added for parallel processing">
+      <created>1490499408600</created>
+      <option name="number" value="01171" />
+      <option name="presentableId" value="LOCAL-01171" />
+      <option name="project" value="LOCAL" />
+      <updated>1490499408600</updated>
+    </task>
+    <option name="localTasksCounter" value="1172" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1237,10 +1237,10 @@
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="162" column="15" selection-start-line="162" selection-start-column="15" selection-end-line="162" selection-end-column="15" />
+          <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1490499387000" expanded="true" signature="5934:6487" ph="..." />
+            <marker date="1490499466000" expanded="true" signature="5933:6486" ph="..." />
           </folding>
         </state>
       </provider>

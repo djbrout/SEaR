@@ -160,7 +160,7 @@ plt.scatter(sn[wreal],chisqnew[wreal],color='green',alpha=.2)
 plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 
-plt.xlim(4.,150.)
+plt.xlim(4.,20.)
 plt.ylim(0,200.)
 plt.ylabel('Chi Chi')
 plt.xlabel('S/N')
