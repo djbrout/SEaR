@@ -156,7 +156,7 @@ print 'saved '+workingdir+'results_chi1.png'
 
 plt.clf()
 plt.scatter(sn[wfake],chisqnew[wfake],color='red',alpha=.2)
-plt.scatter(sn[wreal],chisqnew[wreal],color='green',alpha=.2)
+plt.scatter(sn[wreal],chisqnew[wreal],color='green',alpha=.5)
 plt.axhline(ul,color='black',linestyle='--')
 plt.axhline(ll,color='black',linestyle='--')
 

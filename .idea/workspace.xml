@@ -85,11 +85,11 @@
       <file leaf-file-name="summary.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/summary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="227">
+              <caret line="158" column="60" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1490501119000" expanded="true" signature="5946:6499" ph="..." />
+                <marker date="1490501329000" expanded="true" signature="5946:6499" ph="..." />
               </folding>
             </state>
           </provider>
@@ -434,13 +434,6 @@
       <option name="presentableId" value="Default" />
       <updated>1474889823156</updated>
     </task>
-    <task id="LOCAL-01124" summary="mpp added for parallel processing">
-      <created>1489436451625</created>
-      <option name="number" value="01124" />
-      <option name="presentableId" value="LOCAL-01124" />
-      <option name="project" value="LOCAL" />
-      <updated>1489436451625</updated>
-    </task>
     <task id="LOCAL-01125" summary="mpp added for parallel processing">
       <created>1489436467166</created>
       <option name="number" value="01125" />
@@ -777,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490499469599</updated>
     </task>
-    <option name="localTasksCounter" value="1173" />
+    <task id="LOCAL-01173" summary="mpp added for parallel processing">
+      <created>1490501122774</created>
+      <option name="number" value="01173" />
+      <option name="presentableId" value="LOCAL-01173" />
+      <option name="project" value="LOCAL" />
+      <updated>1490501122774</updated>
+    </task>
+    <option name="localTasksCounter" value="1174" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1236,11 +1236,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="227">
+          <caret line="158" column="60" selection-start-line="158" selection-start-column="60" selection-end-line="158" selection-end-column="60" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1490501119000" expanded="true" signature="5946:6499" ph="..." />
+            <marker date="1490501329000" expanded="true" signature="5946:6499" ph="..." />
           </folding>
         </state>
       </provider>
